@@ -1,0 +1,58 @@
+.accordion {
+    background-color: #000000;
+    color: #FFFFFF;
+    cursor: pointer;
+    padding: 0;
+    width: 100%;
+    border: none;
+    text-align: center;
+    outline: none;
+    font-size: 25px;
+    font-weight: bolder;
+    transition: 0.5s;
+}
+
+.active, .accordion:hover {
+    /*background-color: #ccc;*/
+    /*font-weight: bolder;*/
+    /*transition: 0.5s;*/
+    background-color: #6E7074;
+    border-radius: 15px;
+
+}
+
+.accordion:after {
+    /*content: '\002B';*/
+    content: '\2713';
+    /*content: '\2228';*/
+    color: #FFFFFF;
+    /*font-weight: bold;*/
+    float: right;
+    /*margin-left: 5px;*/
+    margin-bottom: 5px;
+}
+
+.active:after {
+    /*content: "\2212";*/
+    content: "\2717";
+    /*content: '\2227';*/
+}
+
+.panel {
+    padding: 0 5px;
+    /*background-color: white;*/
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+button.accordion {
+    /*box-sizing: border-box;*/
+    /*margin: 5px;*/
+    margin-bottom: 5px;
+}
+
+button.accordion:hover {
+    background-color: #6E7074;
+    border-radius: 15px;
+}

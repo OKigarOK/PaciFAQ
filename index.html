@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Burger</title>
+    <link rel="stylesheet" href="burger.css">
+    <link rel="stylesheet" href="accordion.css">
+</head>
+<body>
+
+<div class="wrapper">
+    <header class="header">
+        <div class="container">
+            <div class="header_body">
+<!--                <a href="#" class="header_logo">-->
+<!--                    <img src="./images/my_logo.jpg">-->
+<!--                </a>-->
+                <div class="header_burger" id="header_burger">
+                    <span></span>
+                </div>
+                <nav class="header_menu" id="header_menu">
+                    <ul class="header_menu_list">
+                        <li>
+                            <a href="#" class="header_menu_link">Полезное</a>
+                        </li>
+                        <li>
+                            <a href="#" class="header_menu_link">События</a>
+                        </li>
+                        <li>
+                            <a href="#" class="header_menu_link">Поддержать</a>
+                        </li>
+                        <li>
+                            <a href="#" class="header_menu_link">Контакты</a>
+                        </li>
+                        <li>
+                            <a href="#" class="header_menu_link">О приложении</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div>
+                    <form class="form-search" action="/search/" target="_blank">
+                        <input type="hidden" name="searchid" value="808327">
+                        <input type="search" name="text" required placeholder="Я ищу...">
+                        <input type="image" src="http://3.bp.blogspot.com/-4w14hQHr5yQ/Tgm6u7KwUkI/AAAAAAAACAI/Hu2poBOPx3g/s1600/search.png"/>  <!-- вместо кнопки submit -->
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <div class="content">
+        <div class="content_container">
+<!--            <div>Обновлено</div>-->
+            <div class="content_header">
+                <button class="accordion">Детали ТО</button>
+                <div class="panel">
+                    <button class="accordion">Фильтр маслянный</button>
+                    <div class="panel">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do</p>
+                    </div>
+
+                    <button class="accordion">Фильтр воздушный</button>
+                    <div class="panel">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do</p>
+                    </div>
+
+                    <button class="accordion">Фильтр салона</button>
+                    <div class="panel">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do</p>
+                    </div>
+                </div>
+            </div>
+            <div class="content_header">Двигатель</div>
+            <div class="content_header">Топливная система</div>
+            <div class="content_header">Система охлаждения</div>
+            <div class="content_header">Система выпуска</div>
+            <div class="content_header">Трансмиссия</div>
+            <div class="content_header">Ходовая часть</div>
+            <div class="content_header">Рулевое управление</div>
+            <div class="content_header">Тормозная система</div>
+            <div class="content_header">Электрооборудование</div>
+            <div class="content_header">Отопление / Кондиционирование</div>
+            <div class="content_header">Детали салона</div>
+            <div class="content_header">Детали кузова</div>
+        </div>
+    </div>
+
+</div>
+
+<script src="burger.js"></script>
+<script src="accordion.js"></script>
+</body>
+</html>
