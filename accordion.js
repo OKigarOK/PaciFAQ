@@ -9,7 +9,7 @@ for (i = 0; i < acc.length; i++) {
             panel.style.maxHeight = null;
         } else {
             // panel.style.maxHeight = panel.scrollHeight + "px";
-            panel.style.maxHeight = '100vh';
+            panel.style.maxHeight = '100%';
 
         }
     });
