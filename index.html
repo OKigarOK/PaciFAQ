@@ -22,117 +22,163 @@
                 <nav class="header_menu" id="header_menu">
                     <ul class="header_menu_list">
                         <li>
-                            <a href="#" class="header_menu_link">Полезное</a>
+                            <a href="#" class="header_menu_link js-open-modal" data-modal="1">Полезное</a>
                         </li>
                         <li>
-                            <a href="#" class="header_menu_link">События</a>
+                            <a href="#" class="header_menu_link js-open-modal" data-modal="2">События</a>
                         </li>
                         <li>
-                            <a href="#" class="header_menu_link">Поддержать</a>
+                            <a href="#" class="header_menu_link js-open-modal" data-modal="3">Настройки</a>
                         </li>
                         <li>
-                            <a href="#" class="header_menu_link">Контакты</a>
+                            <a href="#" class="header_menu_link js-open-modal" data-modal="4">Поддержать</a>
                         </li>
                         <li>
-                            <a href="#" class="header_menu_link">О приложении</a>
+                            <a href="#" class="header_menu_link js-open-modal" data-modal="5">Контакты</a>
+                        </li>
+                        <li>
+                            <a href="#" class="header_menu_link js-open-modal" data-modal="6">О приложении</a>
                         </li>
                     </ul>
                 </nav>
+
+                <!-- Несколько модальных окон -->
+
+                <div class="modal" data-modal="1">
+                    <!--   Svg иконка для закрытия окна  -->
+                    <svg class="modal__cross js-modal-close" xmlns="http://www.w3.org/2000/svg"               viewBox="0 0 24 24"><path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/></svg>
+                    <p class="modal__title">Полезное</p>
+                    <p>Всякие схемы, ёмкости, моменты и т.д....</p>
+                </div>
+
+                <div class="modal" data-modal="2">
+                    <svg class="modal__cross js-modal-close" xmlns="http://www.w3.org/2000/svg"               viewBox="0 0 24 24"><path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/></svg>
+                    <p class="modal__title">События</p>
+                    <p>Здесь наверное ДР и прочие праздники )))</p>
+                    <p>Может сделать календарь...</p>
+                    <p>Возмсожно сделать висящее уведомление</p>
+                </div>
+
+<!--                <div class="modal" data-modal="3">-->
+                    <!--   Svg иконка для закрытия окна  -->
+<!--                    <svg class="modal__cross js-modal-close" xmlns="http://www.w3.org/2000/svg"               viewBox="0 0 24 24"><path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/></svg>-->
+
+                    <div class="modal theme_container" id="setSettings" data-modal="3">
+                        <div class="theme_body">
+                            <h1>Настройки</h1>
+                            <h2>Основная тема:</h2>
+                            <div>
+                                <input type="radio" id="light_theme" name="theme" >
+                                <label for="light_theme">Светлая</label>
+
+                                <input type="radio" id="dark_theme" name="theme">
+                                <label for="dark_theme">Тёмная</label>
+                            </div>
+
+                            <!--        <p>Обои (задний фон)</p>-->
+
+                            <h2>Размер шрифта:</h2>
+                            <div>
+                                <input type="radio" id="fontSizeS" name="fontSize">
+                                <label for="fontSizeS" class="fontSizeS">Мелкий</label>
+
+                                <input type="radio" id="fontSizeM" name="fontSize">
+                                <label for="fontSizeM" class="fontSizeM">Средний</label>
+
+                                <input type="radio" id="fontSizeL" name="fontSize">
+                                <label for="fontSizeL" class="fontSizeL">Крупный</label>
+                            </div>
+
+                            <h2>Отображение деталей:</h2>
+                            <div>
+                                <input type="radio" id="12" name="view" checked>
+                                <label for="12">Списком</label>
+
+                                <input type="radio" id="34" name="view">
+                                <label for="34">Таблицей</label>
+                            </div>
+
+                            <h2 id="reset_settings">Сбросить настройки</h2>
+
+                            <br>
+                            <!--        <div>-->
+                            <!--            Светлая-->
+                            <!--            <input type="range" min="0" max="1">-->
+                            <!--            Темная-->
+                            <!--        </div>-->
+                        </div>
+                    </div>
+
+<!--                </div>-->
+
+                <div class="modal" data-modal="4">
+                    <svg class="modal__cross js-modal-close" xmlns="http://www.w3.org/2000/svg"               viewBox="0 0 24 24"><path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/></svg>
+                    <p class="modal__title">Поддержать</p>
+                    <p>В двух словах про донатики и ссылку...</p>
+                </div>
+
+                <div class="modal" data-modal="5">
+                    <svg class="modal__cross js-modal-close" xmlns="http://www.w3.org/2000/svg"               viewBox="0 0 24 24"><path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/></svg>
+                    <p class="modal__title">Контакты</p>
+                    <p>Замечания и предложения по улучшению приложения можно
+                        присылать мне лично, скромному собирателю житейской мудрости Пацифистов всех времен и народов,
+                        удобным для Вас способом:
+                    </p>
+                    <p>Ссылки для связи....</p>
+                </div>
+
+                <div class="modal" data-modal="6">
+                    <svg class="modal__cross js-modal-close" xmlns="http://www.w3.org/2000/svg"               viewBox="0 0 24 24"><path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/></svg>
+                    <p class="modal__title">Справочник составлен благодаря и с помощью гуру сообщества Пацифистов,
+                        а также всех причастных к эксплуатации замечательного автомобиля  Chrysler Pacifica CS.
+                        Все рекомендуемые запчасти – проверены на автомобилях чатлан, методы и способы ремонта
+                        – апробированы ими же. Следовательно, заслуживают полного доверия и абсолютного одобрения.
+                        Также спешу напомнить, что для общительных людей функционирует чат в WhatsApp, где вежливые
+                        и веселые чатлане с удовольствием проконсультируют Вас по любым вопросам, в том числе и
+                        касающимся ремонта автомобиля.
+                    </p>
+                </div>
+
+                <!-- Подложка под модальным окном -->
+                <div class="overlay js-overlay-modal"></div>
+
+<!--                ПРОДОЛЖЕНИЕ -->
+
                 <div>
                     <form class="form-search" action="/search/" target="_blank">
                         <input type="hidden" name="searchid" value="808327">
-                        <input type="search" name="text" required placeholder="Я ищу...">
+                        <input type="search" name="text" autocomplete="off" required placeholder="Я ищу...">
                         <input type="image" src="http://3.bp.blogspot.com/-4w14hQHr5yQ/Tgm6u7KwUkI/AAAAAAAACAI/Hu2poBOPx3g/s1600/search.png"/>  <!-- вместо кнопки submit -->
                     </form>
                 </div>
 
             </div>
         </div>
+
+        <!--                SEARCH WINDOW-->
+        <div class="add_class"></div>
+
+
     </header>
+
+
 
     <div class="content">
         <div class="content_container">
 <!--            <div>Обновлено</div>-->
-            <div class="content_header">
-                <button class="accordion">Детали ТО</button>
-                <div class="panel">
-                    <button class="accordion title">Фильтр маслянный</button>
-                    <div class="panel">
-                        <div class="container_items">
-
-                            <div class="container_detail">
-                                <div class="detail_image">
-                                    <img src="./images/details/oil_filters/oil-filter_mopar_05281090AB.jpg" alt="">
-                                </div>
-                                <div class="detail_info">Фильтр маслянный</div>
-                                <div class="detail_manufacturer">05281090AB Mopar </div>
-<!--                                <div class="detail_code">05281090AB</div>-->
-                                <div class="detail_options">
-                                    <div class="detail_price">Стоимость</div>
-                                    <div class="detail_more">Подробнее</div>
-                                    <div class="detail_scheme">На схеме</div>
-                                </div>
-                            </div>
-
-                            <div class="container_detail">
-                                <div class="detail_image">
-                                    <img src="./images/details/oil_filters/oil-filter_fram_PH16.jpg" alt="">
-                                </div>
-                                <div class="detail_info">Фильтр маслянный</div>
-                                <div class="detail_manufacturer">PH16 Fram</div>
-                                <div class="detail_options">
-                                    <div class="detail_price">Стоимость</div>
-                                    <div class="detail_more">Подробнее</div>
-                                </div>
-                            </div>
-
-                            <div class="container_detail">
-                                <div class="detail_image">
-                                    <img src="./images/details/oil_filters/oil-filter_mopar_05281090AB.jpg" alt="">
-                                </div>
-                                <div class="detail_info">Фильтр маслянный</div>
-                                <div class="detail_manufacturer">05281090AB Mopar </div>
-                                <!--                                <div class="detail_code">05281090AB</div>-->
-                                <div class="detail_options">
-                                    <div class="detail_price">Стоимость</div>
-                                    <div class="detail_more">Подробнее</div>
-                                    <div class="detail_scheme">На схеме</div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <button class="accordion title">Фильтр воздушный</button>
-                    <div class="panel">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do</p>
-                    </div>
-
-                    <button class="accordion title">Фильтр салона</button>
-                    <div class="panel">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do</p>
-                    </div>
-                </div>
-            </div>
-            <div class="content_header">Двигатель</div>
-            <div class="content_header">Топливная система</div>
-            <div class="content_header">Система охлаждения</div>
-            <div class="content_header">Система выпуска</div>
-            <div class="content_header">Трансмиссия</div>
-            <div class="content_header">Ходовая часть</div>
-            <div class="content_header">Рулевое управление</div>
-            <div class="content_header">Тормозная система</div>
-            <div class="content_header">Электрооборудование</div>
-            <div class="content_header">Отопление / Кондиционирование</div>
-            <div class="content_header">Детали салона</div>
-            <div class="content_header">Детали кузова</div>
+<!--            <div class="content_header">-->
         </div>
     </div>
 
 </div>
 
+
+<!--<script src="./data/maintenance.js"></script>-->
+<script type="module" src="app.js"></script>
+
 <script src="burger.js"></script>
+
 <script src="accordion.js"></script>
+
 </body>
 </html>

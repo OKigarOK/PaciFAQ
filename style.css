@@ -1,4 +1,8 @@
-*, *:before, *:after, body, html{
+*,
+*:before,
+*:after,
+body,
+html {
     margin: 0;
     padding: 0;
     border: 0;
@@ -107,6 +111,10 @@ body {
     text-transform: uppercase;
     font-size: 20px;
     text-decoration: none;
+
+/* для молалки */
+
+
 }
 
 /*SEARCH*/
@@ -160,11 +168,27 @@ body {
     position: relative;
     z-index: 2;
 }
+
+
+
 .form-search input[type="image"] {  /* картинка лупы */
     padding: 0;
     vertical-align: bottom;
     position: relative;
     z-index: 2;
+}
+
+.search_list {
+    width: 100%;
+    height: 100vh;
+    background-color: wheat;
+    color: #2F2F2F;
+    display: none;
+    z-index: 0;
+}
+
+.search_list.active {
+    visibility: visible;
 }
 
 /* MENU LIST */
@@ -181,16 +205,18 @@ body {
 .content_header {
     width: 748px;
     height: 100%;
-    border: 5px solid wheat;
+    border: 6px solid wheat;
     border-radius: 25px;
     background-color: #000000;
+
+    /*background-color: rgba(0,0,0,0.1);*/
     /*opacity: 0.95;*/
     text-align: center;
     margin: 20px auto 20px;
     font-size: 25px;
     font-weight: bolder;
     color: #FFFFFF;
-    padding: 6px;
+    padding: 6px 6px 6px 6px;
     /*display: flex;*/
     /*justify-content: center;*/
     /*align-items: center;*/
@@ -207,6 +233,160 @@ body {
 
 ._full_height {
     height: 100%;
+}
+
+
+
+/*ACCORDION*/
+.accordion {
+    background-color: #000000;
+    color: #FFFFFF;
+    cursor: pointer;
+    padding: 0;
+    width: 100%;
+    border: none;
+    text-align: center;
+    outline: none;
+    font-family: "Roboto Thin", sans-serif;
+    font-size: 20px;
+    font-weight: bolder;
+    transition: 0.5s;
+}
+
+.accordion.title {
+    font-size: 20px;
+    margin: 10px 0;
+    border: 4px solid wheat;
+    border-radius: 15px;
+}
+
+.accordion:hover {
+    /*background-color: #ccc;*/
+    /*font-weight: bolder;*/
+    /*transition: 0.5s;*/
+    /*background-color: #6E7074;*/
+    /*border-radius: 10px;*/
+}
+
+.accordion:after {
+    /*content: '\002B';*/
+    content: '\2713';
+    /*content: '\2228';*/
+    color: #FFFFFF;
+    /*font-weight: bold;*/
+    float: right;
+    margin-right: 5px;
+    /*margin-bottom: 5px;*/
+
+}
+
+.accordion.active:after {
+    /*content: "\2212";*/
+    content: "\2717";
+    /*content: '\2227';*/
+}
+
+.panel {
+    /*padding: 0 5px;*/
+    /*background-color: white;*/
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+button.accordion {
+    /*box-sizing: border-box;*/
+    /*margin: 5px;*/
+    /*margin-bottom: 5px;*/
+}
+
+button.accordion:hover {
+    /*background-color: #6E7074;*/
+    /*border-radius: 10px;*/
+}
+
+button:disabled {
+    opacity: 0.75;
+}
+
+/*DETAILS*/
+
+.container_detail {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: 2px solid wheat;
+    border-radius: 10px;
+    padding: 6px;
+    font-size: 15px;
+}
+
+.container_detail {
+    margin: 10px 0;
+}
+
+.container_items {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    /*border: 3px solid wheat;*/
+    border-radius: 10px;
+    /*padding: 2px;*/
+    font-size: 15px;
+
+    /*display: flex;*/
+}
+
+.detail_image img {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.detail_nav_container {
+    display: flex;
+}
+
+.detail_options {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.detail_price,
+.detail_more,
+.detail_scheme {
+    width: 100%;
+    background-color: wheat;
+    padding: 5px;
+    color: black;
+    border-radius: 5px;
+}
+
+.detail_info,
+.detail_manufacturer,
+.detail_code {
+    padding-bottom: 5px;
+}
+
+/*СЛАЙДЕР*/
+
+.slide {
+    width: 100%;
+     /*height: 80vh;*/
+    /*border-radius: 20px;*/
+    /*margin: 5px 1px;*/
+    cursor: pointer;
+    /*color: black;*/
+    flex: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    transition: all 0.25s ease-in-out;
+    /*height: 300px;*/
+    /*width: 100%;*/
 }
 
 /*АДАПТИВ + БУРГЕР*/
@@ -292,125 +472,156 @@ body {
     .content_header {
         width: 100%;
     }
+
+    .container_detail {
+        padding: 2px;
+        margin: 0 0 5px;
+    }
+
+    .detail_options {
+        gap: 2px;
+    }
+
+    .detail_image {
+        display: block;
+    }
+    .detail_code,
+    .detail_info {
+        padding-bottom: 2px;
+    }
+
+    .accordion.title {
+        margin: 5px 0;
+    }
+
+
+
 }
 
-/*ACCORDION*/
-.accordion {
-    background-color: #000000;
-    color: #FFFFFF;
-    cursor: pointer;
-    padding: 0;
+/* МОДАЛКИ */
+
+/* Стили для подложки */
+
+.overlay {
+
+    /* Скрываем подложку  */
+    opacity: 0;
+    visibility: hidden;
+
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    border: none;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .9);
+    z-index: 20;
+    transition: .3s all;
+}
+
+
+/* Стили для модальных окон */
+
+.modal {
+
+    /* Скрываем окна  */
+    opacity: 0;
+    visibility: hidden;
+
+    /*  Установаем ширину окна  */
+    width: 100%;
+    max-width: 300px;
+    border: 5px solid wheat;
+
+    /*  Центрируем и задаем z-index */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 30; /* Должен быть выше чем у подложки*/
+
+    /*  Побочные стили   */
+    box-shadow: 0 3px 10px -.5px rgba(0, 0, 0, .2);
     text-align: center;
-    outline: none;
-    font-size: 25px;
-    font-weight: bolder;
-    transition: 0.5s;
+    padding: 30px 10px 10px;
+    border-radius: 10px;
+    background-color: #000000;
+    color: whitesmoke;
+    transition: 0.3s all;
 }
 
-.accordion.title {
-    font-size: 20px;
-    margin: 2px 0;
+
+/* Стили для активных классов подложки и окна */
+
+.modal.active,
+.overlay.active{
+    opacity: 1;
+    visibility: visible;
 }
 
-.accordion:hover {
-    /*background-color: #ccc;*/
-    /*font-weight: bolder;*/
-    /*transition: 0.5s;*/
-    background-color: #6E7074;
-    border-radius: 15px;
+
+/* Стили для кнопки закрытия */
+
+.modal__cross {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    fill: #444;
+    cursor: pointer;
 }
 
-.accordion:after {
-    /*content: '\002B';*/
-    content: '\2713';
-    /*content: '\2228';*/
-    color: #FFFFFF;
-    /*font-weight: bold;*/
-    float: right;
-    /*margin-left: 5px;*/
-    margin-bottom: 5px;
-}
+/* SETTINGS MODAL */
 
-.accordion.active:after {
-    /*content: "\2212";*/
-    content: "\2717";
-    /*content: '\2227';*/
-}
-
-.panel {
-    /*padding: 0 5px;*/
-    /*background-color: white;*/
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease;
-}
-
-button.accordion {
+.theme_container {
+    width: 300px;
+    height: 500px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    font-size: 14px;
+    /*margin: 10px;*/
     /*box-sizing: border-box;*/
-    /*margin: 5px;*/
-    /*margin-bottom: 5px;*/
 }
 
-button.accordion:hover {
-    background-color: #6E7074;
-    border-radius: 15px;
+.fontSizeS {
+    font-size: 10px;
 }
 
-/*DETAILS*/
-
-.container_detail {
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
-    border: 3px solid wheat;
-    border-radius: 10px;
-    padding: 6px;
+.fontSizeM {
     font-size: 15px;
 }
 
-.container_detail {
-    margin-bottom: 5px;
+.fontSizeL {
+    font-size: 20px;
 }
 
-.container_items {
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
-    /*border: 3px solid wheat;*/
-    border-radius: 10px;
-    /*padding: 2px;*/
-    font-size: 15px;
+.dark_theme {
+    background-color: black;
+    color: wheat;
+    border: 5px solid wheat;
+    transition: all 0.25s ease-in-out;
+    padding: 10px;
+
 }
 
-
-
-.detail_image img {
-    width: 100%;
-    height: auto;
-    overflow: hidden;
-    border-radius: 5px;
-}
-
-.detail_options {
-    display: flex;
-    justify-content: space-between;
-    gap: 5px;
-}
-
-.detail_price,
-.detail_more,
-.detail_scheme {
-    width: 100%;
+.light_theme {
     background-color: wheat;
-    padding: 5px;
     color: black;
-    border-radius: 5px;
+    padding: 15px;
+    transition: all 0.25s ease-in-out;
 }
 
-.detail_info,
-.detail_manufacturer,
-.detail_code {
-    padding-bottom: 5px;
+#reset_settings {
+
+}
+
+#reset_settings:hover {
+    color: black;
+    background-color: wheat;
+    border-radius: 5px;
+    transition: all 0.25s ease;
+}
+
+#reset_settings:hover, label {
+    cursor: pointer;
 }
