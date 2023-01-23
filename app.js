@@ -342,3 +342,5 @@ function clearFontClasses() {
     setSettings.classList.remove('fontSizeM');
     setSettings.classList.remove('fontSizeL');
 }
+
+

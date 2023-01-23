@@ -517,6 +517,7 @@ button:disabled {
     background-color: rgba(0, 0, 0, .9);
     z-index: 20;
     transition: .3s all;
+
 }
 
 
@@ -529,9 +530,12 @@ button:disabled {
     visibility: hidden;
 
     /*  Установаем ширину окна  */
-    width: 100%;
-    max-width: 345px;
+    width: Calc(100% - 20px);
+    max-width: 748px;
+    /*margin: 10px;*/
+    /*max-width: 345px;*/
     border: 5px solid wheat;
+    /*box-sizing: border-box;*/
 
     /*  Центрируем и задаем z-index */
     position: fixed;
@@ -657,8 +661,18 @@ button:disabled {
 
 }
 
+.link_button:hover {
+    opacity: 0.9;
+}
+
 .link_button:active {
     /*opacity: 0.75;*/
 
     border-style: inset;
+}
+
+.contacts_links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
