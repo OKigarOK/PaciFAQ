@@ -1,7 +1,7 @@
 import {HEADERS} from "./data/maintenance.js";
 
 // MENU
-createContentMenu(HEADERS)
+createContentMenu(HEADERS);
 
 function createContentMenu(HEADERS) {
     const contentContainer = document.querySelector('.content_container');
@@ -308,6 +308,8 @@ Render()
 function Render() {
     setSettings.classList.add(currentTheme);
     document.getElementById(currentTheme).checked = true;
+
+    document.body.classList.add(currentFontSize);
     setSettings.classList.add(currentFontSize);
     document.getElementById(currentFontSize).checked = true;
 }
@@ -327,7 +329,10 @@ for (let elem of allInputs) {
         if (elem.name === 'fontSize') {
             clearFontClasses();
             setSettings.classList.add(`${elem.id}`);
+            document.body.classList.add(`${elem.id}`);
+            console.log(elem.id);
             localStorage.setItem('fontSize', `${elem.id}`);
+            // createContentMenu(HEADERS);
         }
     })
 }
@@ -341,6 +346,9 @@ function clearFontClasses() {
     setSettings.classList.remove('fontSizeS');
     setSettings.classList.remove('fontSizeM');
     setSettings.classList.remove('fontSizeL');
+    document.body.classList.remove('fontSizeS');
+    document.body.classList.remove('fontSizeM');
+    document.body.classList.remove('fontSizeL');
 }
 
 

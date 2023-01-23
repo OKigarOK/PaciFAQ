@@ -245,7 +245,7 @@ export const HEADERS = [
         subtitles: ELECTRICAL_EQUIPMENT_LIST,
     },
     {
-        title: 'Отопление/Кондиционирование',
+        title: 'Отопление / Кондиционирование',
         id: 'heating_conditioning',
         subtitles: HEATING_CONDITION_LIST,
     },
