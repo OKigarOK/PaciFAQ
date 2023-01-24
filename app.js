@@ -81,7 +81,7 @@ function createDetails(subTitleDetails, containerItems) {
         detailOptions.className = 'detail_options';
 
         const detailPrice = document.createElement('div');
-        detailPrice.className = 'detail_price';
+        detailPrice.className = 'detail_price detail_button';
         detailPrice.textContent = 'Стоимость';
 
 
@@ -102,14 +102,14 @@ function createDetails(subTitleDetails, containerItems) {
 
         if (detail.detail_more) {
             const detailMore = document.createElement('div');
-            detailMore.className = 'detail_more';
+            detailMore.className = 'detail_more detail_button';
             detailMore.textContent = 'Подробнее';
             detailOptions.append(detailMore);
         }
 
         if (detail.detail_scheme) {
             const detailScheme = document.createElement('div');
-            detailScheme.className = 'detail_scheme';
+            detailScheme.className = 'detail_scheme detail_button';
             detailScheme.textContent = 'На схеме';
             detailOptions.append(detailScheme);
         }
@@ -177,7 +177,7 @@ window.onclick = function(event) {
 
     switch (target.className) {
 
-        case 'detail_scheme':
+        case 'detail_scheme detail_button':
 
             const imageElement = target.parentElement.previousElementSibling.previousElementSibling;
 
@@ -199,12 +199,12 @@ window.onclick = function(event) {
 
             // break
 
-        case 'detail_price':
+        case 'detail_price detail_button':
             console.log('смотрим ЦЕНУ');
             console.log(targetElementId);
             break
 
-        case 'detail_more':
+        case 'detail_more detail_button':
             console.log('смотрим ПОДРОБНЕЕ');
             console.log(targetElementId);
             break
@@ -267,8 +267,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
             /* После того как нашли нужное модальное окно, добавим классы
                подложке и окну чтобы показать их. */
-            console.log(modalElem.classList.add('active'));;
-            console.log(overlay.classList.add('active'));;
+            console.log(modalElem.classList.add('active'));
+            console.log(overlay.classList.add('active'));
         }); // end click
 
     }); // end foreach

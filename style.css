@@ -673,24 +673,32 @@ button:disabled {
 }
 
 .link_button {
+    font: inherit;
     padding: 5px;
     margin-top: 5px;
     width: 100%;
     background-color: wheat;
     color: black;
-
-    /*font-size: 16px;*/
-    /*font-weight: bolder;*/
     border-radius: 5px;
     border: 5px outset wheat;
-
 }
 
-.link_button:hover {
+.detail_button {
+    padding: 2px;
+    width: 100%;
+    background-color: wheat;
+    color: black;
+    border-radius: 5px;
+    border: 3px outset wheat;
+}
+
+.link_button:hover,
+.detail_button:hover {
     opacity: 0.9;
 }
 
-.link_button:active {
+.link_button:active,
+.detail_button:active {
     /*opacity: 0.75;*/
 
     border-style: inset;
