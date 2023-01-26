@@ -2,27 +2,39 @@ const OIL_FILTERS = [
     {
         detail_info: 'Фильтр маслянный',
         detail_scheme: './images/details/oil_filters/77102.gif',
-
-        detail_options: [
-            {
-
-            },
-        ],
-
         detail_image: './images/details/oil_filters/oil-filter_mopar_05281090AB.jpg',
         detail_code: '5281090AB',
         detail_manufacturer: 'Mopar',
         detail_more: 'Какая-то дополнительная информация...',
-
+        detail_options: [{},],
     },
-    // {
-    //     detail_image: './images/details/oil_filters/oil-filter_fram_PH16.jpg',
-    //     detail_info: 'Фильтр маслянный',
-    //     detail_code: 'PH16',
-    //     detail_manufacturer: 'Fram',
-    //     detail_more: '',
-    //     detail_scheme: './images/details/oil_filters/77102.gif'
-    // },
+    {
+        detail_info: 'Фильтр маслянный',
+        // detail_scheme: './images/details/oil_filters/77102.gif',
+        detail_image: './images/details/oil_filters/oil-filter_fram_PH16.jpg',
+        detail_code: 'PH16',
+        detail_manufacturer: 'Fram',
+        detail_more: 'Что-то ещё...',
+        detail_options: [{},],
+    },
+    {
+        detail_info: 'Фильтр маслянный',
+        // detail_scheme: './images/details/oil_filters/77102.gif',
+        detail_image: './images/details/oil_filters/oil-filter_mahle_OC23.jpg',
+        detail_code: 'OC23',
+        detail_manufacturer: 'Mahle/Knecht',
+        detail_more: 'Что-то ещё...',
+        detail_options: [{},],
+    },
+    {
+        detail_info: 'Фильтр маслянный',
+        // detail_scheme: './images/details/oil_filters/77102.gif',
+        detail_image: './images/details/oil_filters/oil-filter_mahle_OC236.jpg',
+        detail_code: 'OC236',
+        detail_manufacturer: 'Mahle/Knecht',
+        detail_more: 'Что-то ещё...',
+        detail_options: [{},],
+    },
 ]
 
 const AIR_FILTERS = [

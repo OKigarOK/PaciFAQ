@@ -7,7 +7,6 @@ function createContentMenu(HEADERS) {
     const contentContainer = document.querySelector('.content_container');
     for (let headerInfo of HEADERS) {
         createHeaders(contentContainer, headerInfo);
-
     }
 }
 
@@ -32,7 +31,7 @@ function createHeaders(contentContainer, headerInfo) {
 function createSubtitles(headerSubtitles, panelElement) {
 
     for (let subTitle of headerSubtitles) {
-        // console.log(subTitle);
+
         const headerSubtitle = document.createElement('button');
         headerSubtitle.className = 'accordion title';
         headerSubtitle.innerHTML = subTitle.subtitle;
@@ -59,8 +58,8 @@ function createDetails(subTitleDetails, containerItems) {
 
         const containerDetail = document.createElement('div');
         containerDetail.className = 'container_detail';
-        containerDetail.setAttribute('id' , `${newId}` );
-        detail.detail_id = newId;
+        containerDetail.setAttribute('id' , `${detail.detail_code}` );
+        detail.detail_id = detail.detail_code;
 
         const detailImage = document.createElement('div');
         detailImage.className = 'detail_image';
@@ -84,11 +83,8 @@ function createDetails(subTitleDetails, containerItems) {
         detailPrice.className = 'detail_price detail_button';
         detailPrice.textContent = 'Стоимость';
 
-
-
         containerItems.append(containerDetail);
         containerDetail.append(detailCode);
-
 
         containerDetail.append(detailImage);
         containerDetail.append(detailInfo);
@@ -96,9 +92,6 @@ function createDetails(subTitleDetails, containerItems) {
         // containerDetail.append(detailInfo);
         containerDetail.append(detailOptions);
         detailOptions.append(detailPrice);
-
-
-
 
         if (detail.detail_more) {
             const detailMore = document.createElement('div');
@@ -110,10 +103,9 @@ function createDetails(subTitleDetails, containerItems) {
         if (detail.detail_scheme) {
             const detailScheme = document.createElement('div');
             detailScheme.className = 'detail_scheme detail_button';
-            detailScheme.textContent = 'На схеме';
+            detailScheme.textContent = 'Схема';
             detailOptions.append(detailScheme);
         }
-
     }
 }
 
@@ -128,14 +120,12 @@ for (let i = 0; i < acc.length; i++) {
         if (panel.style.maxHeight) {
             panel.style.maxHeight = null;
         } else {
-            panel.style.maxHeight = panel.scrollHeight + "px";
+            // panel.style.maxHeight = panel.scrollHeight + "px";
             // panel.style.maxHeight = '100%';
-
+            panel.style.maxHeight = '1500px';
         }
     });
 }
-
-
 
 
 // ОТДЕЛЬНЫЙ МАССИВ ДЕТАЛЕЙ ДЛЯ ПОИСКА
@@ -154,7 +144,7 @@ for (let subtitle of HEADERS) {
     }
 }
 
-console.log(newData);
+// console.log(newData);
 
 // ТЫЦ
 
@@ -163,17 +153,16 @@ console.log(newData);
 window.onclick = function(event) {
     let target = event.target; // где был клик?
 
-    // console.log(target.className);
-    console.log(target);
-    console.log(event);
-
-
     const targetElementId = target.parentElement.parentElement.id;
 
-    const clickElement = newData.find(elem => elem.detail_id === +targetElementId)
+    if (!targetElementId) return
+
+    console.log(targetElementId);
+
+    const clickElement = newData.find(elem => elem.detail_id === targetElementId)
+    console.log(clickElement);
+
     // ID - число при формировании
-
-
 
     switch (target.className) {
 
@@ -181,23 +170,15 @@ window.onclick = function(event) {
 
             const imageElement = target.parentElement.previousElementSibling.previousElementSibling;
 
-            if (target.textContent === 'На схеме') {
+            if (target.textContent === 'Схема') {
                 target.textContent = 'Деталь';
                 // console.log(target.parentElement.previousElementSibling.previousElementSibling);
-                imageElement.innerHTML = (`<img src="${clickElement.detail_scheme}">`)
+                console.log(imageElement.innerHTML = (`<img src="${clickElement.detail_scheme}">`));
             } else {
-                target.textContent = 'На схеме';
+                target.textContent = 'Схема';
                 imageElement.innerHTML = (`<img src="${clickElement.detail_image}">`)
             }
             break
-            // console.log('ура, СХЕМА');
-            // console.log(targetElementId);
-            // target.textContent = 'Деталь';
-            // console.log(clickElement);
-
-
-
-            // break
 
         case 'detail_price detail_button':
             console.log('смотрим ЦЕНУ');
@@ -332,7 +313,6 @@ for (let elem of allInputs) {
             document.body.classList.add(`${elem.id}`);
             console.log(elem.id);
             localStorage.setItem('fontSize', `${elem.id}`);
-            // createContentMenu(HEADERS);
         }
     })
 }

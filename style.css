@@ -11,35 +11,20 @@ html {
 
 html, body {
     height: 100vh;
-    /*font-family: "Roboto Thin", sans-serif;*/
-
-
     background-color: black;
 }
 
 body {
-    /*background: url("./images/main_bg.jpg") fixed center no-repeat;*/
-    /*background-size: contain;*/
     height: 90%;
-
     font-size: 10px;
     /*font-family: "Roboto Thin", sans-serif;*/
     font-family: "Monospace", sans-serif;
-    /*font-size: 20px;*/
 }
 
 .wrapper {
     background: url("./images/main_bg.jpg") fixed center no-repeat;
     background-size: contain;
 }
-
-/*.main_background {*/
-/*    width: 100%;*/
-/*    height: 100%;*/
-/*    background: url("./images/main_bg.jpg") center no-repeat;*/
-/*    background-size: contain;*/
-/*    padding: 10px;*/
-/*}*/
 
 .header {
     position: fixed;
@@ -117,12 +102,7 @@ body {
 .header_menu_link {
     color: #fff;
     text-transform: uppercase;
-    /*font-size: 20px;*/
     text-decoration: none;
-
-/* для молалки */
-
-
 }
 
 /*SEARCH*/
@@ -161,11 +141,8 @@ body {
     box-shadow: none;
     padding: 0 0 0 6px;
     background: transparent;
-
-    /*font: 13px Helvetica, Arial, sans-serif;*/
     font: inherit;
     font-size: 1em;
-
     color: #6E7074;
     text-shadow: 0 1px 0 #FFF;
     transition: all .2s ease-out;
@@ -174,14 +151,11 @@ body {
 }
 .form-search:focus-within input[type="search"],  /* изменение поля поиска при фокусе */
 .form-search input[type="search"]:focus {
-    /*width: 160px;*/
     width: 260px;
     color: #25464D;
     position: relative;
     z-index: 2;
 }
-
-
 
 .form-search input[type="image"] {  /* картинка лупы */
     padding: 0;
@@ -209,7 +183,6 @@ body {
     height: 100%;
     margin: 0 auto;
     color: wheat;
-    /*background-color: #FFFFFF;*/
     position: relative;
     top: 50px;
 }
@@ -220,32 +193,16 @@ body {
     border: 6px solid wheat;
     border-radius: 20px;
     background-color: #000000;
-
-    /*background-color: rgba(0,0,0,0.1);*/
-    /*opacity: 0.95;*/
     text-align: center;
     margin: 10px auto 10px;
-
-    /*font-size: 25px;*/
-    /*font-weight: bolder;*/
-
-
     color: #FFFFFF;
     padding: 6px 6px 6px 6px;
-    /*display: flex;*/
-    /*justify-content: center;*/
-    /*align-items: center;*/
     transition: all 0.5s ease;
-
     font-size: 1.2em;
 }
 
 .content_header:hover {
-    /*background-color: #9a9868;*/
-    /*color: #FFFFFF;*/
-    /*border-color: #FFFFFF;*/
     cursor: pointer;
-    /*transition: all 0.5s ease;*/
 }
 
 ._full_height {
@@ -262,13 +219,7 @@ body {
     border: none;
     text-align: center;
     outline: none;
-
-    /*font-family: "Roboto Thin", sans-serif;*/
-    /*font-size: 20px;*/
-    /*font-weight: bolder;*/
-
     font: inherit;
-
     transition: 0.5s;
 }
 
@@ -292,11 +243,8 @@ body {
     content: '\2713';
     /*content: '\2228';*/
     color: #FFFFFF;
-    /*font-weight: bold;*/
     float: right;
     margin-right: 5px;
-    /*margin-bottom: 5px;*/
-
 }
 
 .accordion.active:after {
@@ -306,8 +254,6 @@ body {
 }
 
 .panel {
-    /*padding: 0 5px;*/
-    /*background-color: white;*/
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s ease;
@@ -331,19 +277,13 @@ button:disabled {
 /*DETAILS*/
 
 .container_detail {
-    width: 100%;
-    height: 100%;
+    width: 50%;
+    /*height: 100%;*/
     box-sizing: border-box;
     border: 2px solid wheat;
     border-radius: 10px;
     padding: 6px;
-
-    /*font-size: 15px;*/
-
-
-    /*font: inherit;*/
     font-size: 0.75em;
-
 }
 
 .container_detail {
@@ -354,12 +294,10 @@ button:disabled {
     width: 100%;
     height: 100%;
     box-sizing: border-box;
-    /*border: 3px solid wheat;*/
     border-radius: 10px;
-    /*padding: 2px;*/
-    /*font-size: 15px;*/
 
-    /*display: flex;*/
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .detail_image img {
@@ -399,19 +337,13 @@ button:disabled {
 
 .slide {
     width: 100%;
-     /*height: 80vh;*/
-    /*border-radius: 20px;*/
-    /*margin: 5px 1px;*/
     cursor: pointer;
-    /*color: black;*/
     flex: 0;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
     transition: all 0.25s ease-in-out;
-    /*height: 300px;*/
-    /*width: 100%;*/
 }
 
 /*АДАПТИВ + БУРГЕР*/
@@ -451,7 +383,6 @@ button:disabled {
         height: 2px;
         left: 0;
         transition: all 0.25s ease-in-out;
-
     }
     .header_burger:before {
         top: 0;
@@ -518,9 +449,6 @@ button:disabled {
     .accordion.title {
         margin: 5px 0;
     }
-
-
-
 }
 
 /* МОДАЛКИ */
@@ -528,11 +456,9 @@ button:disabled {
 /* Стили для подложки */
 
 .overlay {
-
     /* Скрываем подложку  */
     opacity: 0;
     visibility: hidden;
-
     position: fixed;
     top: 0;
     left: 0;
@@ -541,56 +467,41 @@ button:disabled {
     background-color: rgba(0, 0, 0, .9);
     z-index: 20;
     transition: .3s all;
-
 }
 
-
 /* Стили для модальных окон */
-
 .modal {
-
     /* Скрываем окна  */
     opacity: 0;
     visibility: hidden;
-
     /*  Установаем ширину окна  */
     width: Calc(100% - 20px);
     max-width: 748px;
     /*margin: 10px;*/
     /*max-width: 345px;*/
     border: 5px solid wheat;
-    /*box-sizing: border-box;*/
-
     /*  Центрируем и задаем z-index */
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 30; /* Должен быть выше чем у подложки*/
-
     /*  Побочные стили   */
     box-shadow: 0 3px 10px -.5px rgba(0, 0, 0, .2);
-    /*text-align: center;*/
     padding: 30px 10px 10px;
     border-radius: 10px;
     background-color: #000000;
     color: whitesmoke;
     transition: 0.3s all;
-
-    /*font-size: 14px;*/
     text-align: justify;
-
 }
 
-
 /* Стили для активных классов подложки и окна */
-
 .modal.active,
 .overlay.active{
     opacity: 1;
     visibility: visible;
 }
-
 
 /* Стили для кнопки закрытия */
 
@@ -612,10 +523,6 @@ button:disabled {
     height: 500px;
     background-color: #FFFFFF;
     border-radius: 10px;
-    /*font-size: 14px;*/
-
-    /*margin: 10px;*/
-    /*box-sizing: border-box;*/
 }
 
 .fontSizeS {
@@ -636,7 +543,6 @@ button:disabled {
     border: 5px solid wheat;
     transition: all 0.25s ease-in-out;
     padding: 10px;
-
 }
 
 .light_theme {
@@ -699,9 +605,7 @@ button:disabled {
 
 .link_button:active,
 .detail_button:active {
-    /*opacity: 0.75;*/
-
-    border-style: inset;
+     border-style: inset;
 }
 
 .contacts_links {
