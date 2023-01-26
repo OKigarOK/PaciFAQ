@@ -133,7 +133,7 @@ body {
     z-index: 2;
 }
 .form-search input[type="search"] {  /* поле поиска */
-    width: 5em;
+    width: 6em;
     height: 32px;
     line-height: 32px;
     border: none;
@@ -277,13 +277,13 @@ button:disabled {
 /*DETAILS*/
 
 .container_detail {
-    width: 50%;
+    width: 49.5%;
     /*height: 100%;*/
     box-sizing: border-box;
     border: 2px solid wheat;
     border-radius: 10px;
     padding: 6px;
-    font-size: 0.75em;
+    font-size: 0.7em;
 }
 
 .container_detail {
@@ -298,6 +298,7 @@ button:disabled {
 
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .detail_image img {
@@ -314,6 +315,7 @@ button:disabled {
 .detail_options {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     gap: 5px;
 }
 
