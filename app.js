@@ -282,7 +282,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 const currentTheme = localStorage.getItem('theme') || 'dark_theme';
 const currentFontSize = localStorage.getItem('fontSize') || 'fontSizeM';
-const currentView = localStorage.getItem('view') || 'detail_table';
+const currentView = localStorage.getItem('view') || 'details_table';
 
 const setSettings = document.getElementById('setSettings');
 
