@@ -336,6 +336,7 @@ for (let elem of allInputs) {
                 for (let item of allDetails) {
                     item.classList.add('full_width');
                 }
+                removeDetailsWrapView()
             }
 
             // если S тогда ТОЛЬКО Таблица
@@ -349,6 +350,7 @@ for (let elem of allInputs) {
                 for (let item of allDetails) {
                     item.classList.remove('full_width');
                 }
+                addDetailsWrapView()
             }
 
             // если L тогда ДВА варианта
@@ -373,13 +375,19 @@ for (let elem of allInputs) {
                 for (let item of allDetails) {
                     item.classList.add('full_width');
                 }
+                removeDetailsWrapView()
+
             } else {
                 console.log('таблица');
                 for (let item of allDetails) {
                     item.classList.remove('full_width');
                 }
+                addDetailsWrapView()
+
             }
             localStorage.setItem('view', `${elem.id}`);
+
+
         }
     })
 }
@@ -396,6 +404,22 @@ function clearFontClasses() {
     document.body.classList.remove('fontSizeS');
     document.body.classList.remove('fontSizeM');
     document.body.classList.remove('fontSizeL');
+}
+
+function addDetailsWrapView() {
+    const allElements = document.querySelectorAll('.detail_options')
+    console.log(allElements);
+    for (let item of allElements) {
+        item.classList.add('detail_options_wrap')
+    }
+}
+
+function removeDetailsWrapView() {
+    const allElements = document.querySelectorAll('.detail_options')
+    console.log(allElements);
+    for (let item of allElements) {
+        item.classList.remove('detail_options_wrap')
+    }
 }
 
 

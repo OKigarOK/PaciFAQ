@@ -319,8 +319,10 @@ button:disabled {
 .detail_options {
     display: flex;
     justify-content: space-between;
-    /*flex-wrap: wrap;*/
-    /*gap: 5px;*/
+}
+
+.detail_options_wrap {
+    flex-wrap: wrap;
 }
 
 .detail_price,
