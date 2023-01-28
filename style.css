@@ -319,8 +319,8 @@ button:disabled {
 .detail_options {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 5px;
+    /*flex-wrap: wrap;*/
+    /*gap: 5px;*/
 }
 
 .detail_price,
@@ -607,7 +607,7 @@ button:disabled {
 
 .link_button:hover,
 .detail_button:hover {
-    opacity: 0.9;
+    /*opacity: 0.9;*/
 }
 
 .link_button:active,
