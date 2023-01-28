@@ -597,7 +597,7 @@ button:disabled {
 }
 
 .detail_button {
-    padding: 0 0 3px;
+    padding: 1px 1px 4px 1px;
     width: 100%;
     background-color: wheat;
     color: black;
