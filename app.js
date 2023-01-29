@@ -1,5 +1,30 @@
 import {HEADERS} from "./data/maintenance.js";
 
+// SETTINGS
+
+const currentTheme = localStorage.getItem('theme');
+const currentFontSize = localStorage.getItem('fontSize');
+const currentView = localStorage.getItem('view');
+
+const setSettings = document.getElementById('setSettings');
+
+const SETTINGS = {
+    THEME: currentTheme || 'dark_theme',
+    FONT_SIZE: currentFontSize || 'fontSizeL',
+    VIEW: currentView || 'details_list'
+}
+
+function saveSettingsToLocal() {
+    localStorage.setItem('theme', SETTINGS.THEME);
+    localStorage.setItem('fontSize', SETTINGS.FONT_SIZE);
+    localStorage.setItem('view', SETTINGS.VIEW);
+}
+
+console.log(SETTINGS);
+
+saveSettingsToLocal()
+Render()
+
 // MENU
 createContentMenu(HEADERS);
 
@@ -278,28 +303,22 @@ document.addEventListener('DOMContentLoaded', function() {
 }); // end ready
 
 
-// SETTINGS JS
 
-const currentTheme = localStorage.getItem('theme') || 'dark_theme';
-const currentFontSize = localStorage.getItem('fontSize') || 'fontSizeM';
-const currentView = localStorage.getItem('view') || 'details_table';
-
-const setSettings = document.getElementById('setSettings');
-
-Render()
 
 function Render() {
-    setSettings.classList.add(currentTheme);
-    document.getElementById(currentTheme).checked = true;
+    setSettings.classList.add(SETTINGS.THEME);
+    document.getElementById(SETTINGS.THEME).checked = true;
 
-    document.body.classList.add(currentFontSize);
-    setSettings.classList.add(currentFontSize);
-    document.getElementById(currentFontSize).checked = true;
+    document.body.classList.add(SETTINGS.FONT_SIZE);
+    setSettings.classList.add(SETTINGS.FONT_SIZE);
+    document.getElementById(SETTINGS.FONT_SIZE).checked = true;
 
-    // Добавить вид по умолчанию
-    setSettings.classList.add(currentView);
-    document.getElementById(currentView).checked = true;
+    setSettings.classList.add(SETTINGS.VIEW);
+    document.getElementById(SETTINGS.VIEW).checked = true;
 }
+
+
+// СМЕНА НАСТРОЕК
 
 const allInputs = document.querySelectorAll('input');
 
@@ -391,6 +410,7 @@ for (let elem of allInputs) {
         }
     })
 }
+
 
 function clearThemeClass() {
     setSettings.classList.remove('dark_theme');
