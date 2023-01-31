@@ -8,8 +8,10 @@ const currentView = localStorage.getItem('view');
 
 const setSettings = document.getElementById('setSettings');
 
+const setTheme = document.getElementById('wrapper')
+
 const SETTINGS = {
-    THEME: currentTheme || 'dark_theme',
+    THEME: currentTheme || 'original_theme',
     FONT_SIZE: currentFontSize || 'fontSizeS',
     VIEW: currentView || 'details_table'
 }
@@ -22,10 +24,8 @@ function saveSettingsToLocal(theme, font, view) {
     localStorage.setItem('theme', theme);
     localStorage.setItem('fontSize', font);
     localStorage.setItem('view', view);
+    setTheme.classList.add(theme);
 }
-
-console.log(localStorage);
-console.log(SETTINGS);
 
 // RENDER должен отрендерить по настройкам: тема, шрифт, вид
 
@@ -59,11 +59,11 @@ function createContentMenu(HEADERS) {
 function createHeaders(contentContainer, headerInfo) {
     const contentHeader = document.createElement('div');
     // contentHeader.className = 'content_header light_theme_colors';
-    contentHeader.className = 'content_header dark_theme_colors';
+    contentHeader.className = 'content_header';
 
     const headerTitle = document.createElement('button');
     // headerTitle.className = 'accordion light_theme_colors';
-    headerTitle.className = 'accordion dark_theme_colors';
+    headerTitle.className = 'accordion';
     headerTitle.innerHTML = headerInfo.title;
     const panelElement = document.createElement('div');
     panelElement.className = 'panel';
@@ -83,7 +83,7 @@ function createSubtitles(headerSubtitles, panelElement) {
 
         const headerSubtitle = document.createElement('button');
         // headerSubtitle.className = 'accordion title light_theme_colors';
-        headerSubtitle.className = 'accordion title dark_theme_colors';
+        headerSubtitle.className = 'accordion title';
 
         headerSubtitle.innerHTML = subTitle.subtitle;
         const newPanelElement = document.createElement('div');
@@ -109,7 +109,7 @@ function createDetails(subTitleDetails, containerItems) {
 
         const containerDetail = document.createElement('div');
         // containerDetail.className = 'container_detail light_theme_colors';
-        containerDetail.className = 'container_detail dark_theme_colors';
+        containerDetail.className = 'container_detail';
 
         containerDetail.setAttribute('id' , `${detail.detail_code}` );
         detail.detail_id = detail.detail_code;
@@ -134,7 +134,7 @@ function createDetails(subTitleDetails, containerItems) {
 
         const detailPrice = document.createElement('div');
         // detailPrice.className = 'detail_price detail_button light_theme_buttons';
-        detailPrice.className = 'detail_price detail_button dark_theme_buttons';
+        detailPrice.className = 'detail_price detail_button';
 
         detailPrice.textContent = 'Стоимость';
 
@@ -151,7 +151,7 @@ function createDetails(subTitleDetails, containerItems) {
         if (detail.detail_more) {
             const detailMore = document.createElement('div');
             // detailMore.className = 'detail_more detail_button light_theme_buttons';
-            detailMore.className = 'detail_more detail_button dark_theme_buttons';
+            detailMore.className = 'detail_more detail_button';
 
             detailMore.textContent = 'Подробнее';
             detailOptions.append(detailMore);
@@ -160,7 +160,7 @@ function createDetails(subTitleDetails, containerItems) {
         if (detail.detail_scheme) {
             const detailScheme = document.createElement('div');
             // detailScheme.className = 'detail_scheme detail_button light_theme_buttons';
-            detailScheme.className = 'detail_scheme detail_button dark_theme_buttons';
+            detailScheme.className = 'detail_scheme detail_button';
 
             detailScheme.textContent = 'Схема';
             detailOptions.append(detailScheme);
@@ -225,7 +225,7 @@ window.onclick = function(event) {
 
     switch (target.className) {
 
-        case 'detail_scheme detail_button dark_theme_buttons':
+        case 'detail_scheme detail_button':
 
             const imageElement = target.parentElement.previousElementSibling.previousElementSibling;
 
@@ -353,8 +353,9 @@ for (let elem of allInputs) {
         // console.log(elem.name);
         // СМЕНА ТЕМЫ //
         if (elem.name === 'theme') {
+            console.log(elem.id);
             clearThemeClass();
-            setSettings.classList.add(`${elem.id}`);
+            setTheme.classList.add(`${elem.id}`);
             localStorage.setItem('theme', `${elem.id}`);
         }
 
@@ -437,8 +438,9 @@ for (let elem of allInputs) {
 
 
 function clearThemeClass() {
-    setSettings.classList.remove('dark_theme');
-    setSettings.classList.remove('light_theme');
+    setTheme.classList.remove('dark_theme');
+    setTheme.classList.remove('light_theme');
+    setTheme.classList.remove('original_theme');
 }
 
 function clearFontClasses() {

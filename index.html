@@ -9,7 +9,10 @@
 </head>
 <body>
 
-<div class="wrapper">
+<!--<div class="wrapper dark_theme">-->
+<div class="wrapper" id="wrapper">
+<!--<div class="wrapper original_theme">-->
+
     <header class="header">
         <div class="container">
             <div class="header_body">
@@ -22,7 +25,7 @@
                 <nav class="header_menu" id="header_menu">
                     <ul class="header_menu_list">
                         <li>
-                            <a href="#" class="header_menu_link js-open-modal" data-modal="10">Блокнот (???)</a>
+                            <a href="#" class="header_menu_link js-open-modal" data-modal="10">мои заметки</a>
                         </li>
                         <li>
                             <a href="#" class="header_menu_link js-open-modal" data-modal="1">Полезное</a>
@@ -53,6 +56,10 @@
                         </li>
 
                     </ul>
+                </nav>
+
+                <nav class="search_menu" id="search_menu">
+<!--                ОКНО ПОИСКА -->
                 </nav>
 
                 <!-- Несколько модальных окон -->
@@ -89,34 +96,49 @@
                             <br>
                             <h3>Основная тема:</h3>
                             <div>
-                                <input type="radio" id="light_theme" name="theme" >
-                                <label for="light_theme">Светлая</label>
-
-                                <input type="radio" id="dark_theme" name="theme">
-                                <label for="dark_theme">Тёмная</label>
+                                <div>
+                                    <input type="radio" id="original_theme" name="theme">
+                                    <label for="original_theme">Оригинальная</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="light_theme" name="theme" >
+                                    <label for="light_theme">Светлая</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="dark_theme" name="theme">
+                                    <label for="dark_theme">Тёмная</label>
+                                </div>
                             </div>
                             <br>
                             <!--        <p>Обои (задний фон)</p>-->
 
                             <h3>Размер шрифта:</h3>
                             <div>
-                                <input type="radio" id="fontSizeS" name="fontSize">
-                                <label for="fontSizeS" class="fontSizeS">Мелкий</label>
-
-                                <input type="radio" id="fontSizeM" name="fontSize">
-                                <label for="fontSizeM" class="fontSizeM">Средний</label>
-
-                                <input type="radio" id="fontSizeL" name="fontSize">
-                                <label for="fontSizeL" class="fontSizeL">Крупный</label>
+                                <div>
+                                    <input type="radio" id="fontSizeS" name="fontSize">
+                                    <label for="fontSizeS" class="fontSizeS">Мелкий</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="fontSizeM" name="fontSize">
+                                    <label for="fontSizeM" class="fontSizeM">Средний</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="fontSizeL" name="fontSize">
+                                    <label for="fontSizeL" class="fontSizeL">Крупный</label>
+                                </div>
                             </div>
                             <br>
+
                             <h3>Отображение деталей:</h3>
                             <div>
-                                <input type="radio" id="details_list" name="view">
-                                <label for="details_list">Списком</label>
-
-                                <input type="radio" id="details_table" name="view" checked>
-                                <label for="details_table">Таблицей</label>
+                                <div>
+                                    <input type="radio" id="details_list" name="view">
+                                    <label for="details_list">Списком</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="details_table" name="view" checked>
+                                    <label for="details_table">Таблицей</label>
+                                </div>
                             </div>
                             <br>
 
@@ -231,7 +253,7 @@
 <!--                ПРОДОЛЖЕНИЕ -->
 
                 <div>
-                    <form class="form-search" action="/search/" target="_blank">
+                    <form id="form-search" class="form-search" action="/search/" target="_blank">
                         <input type="hidden" name="searchid" value="808327">
                         <input type="search" name="text" autocomplete="off" required placeholder="Поиск...">
                         <input type="image" src="http://3.bp.blogspot.com/-4w14hQHr5yQ/Tgm6u7KwUkI/AAAAAAAACAI/Hu2poBOPx3g/s1600/search.png"/>  <!-- вместо кнопки submit -->
