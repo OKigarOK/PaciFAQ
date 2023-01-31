@@ -9,6 +9,7 @@ html {
     box-sizing: border-box;
 }
 
+
 html, body {
     height: 100vh;
     background-color: black;
@@ -22,7 +23,10 @@ body {
 }
 
 .wrapper {
+    /* ВРЕМЕННО ОТКЛ */
     background: url("./images/main_bg.jpg") fixed center no-repeat;
+    /*background: url("./images/main_bg_light.jpg") fixed center no-repeat;*/
+
     background-size: contain;
 }
 
@@ -182,7 +186,7 @@ body {
     /*width: 108%;*/
     height: 100%;
     margin: 0 auto;
-    color: wheat;
+    /*color: white;*/
     position: relative;
     top: 50px;
 }
@@ -192,13 +196,17 @@ body {
     height: 100%;
 
     /*border: 6px solid wheat;*/
-    border: 3px solid wheat;
+    border: 3px solid;
 
     border-radius: 20px;
-    background-color: #000000;
+    /*background-color: #000000;*/
+
+    /* ВСТАВИТЬ ЦВЕТА СЮДА */
+    opacity: 0.9;
+
     text-align: center;
     margin: 10px auto 10px;
-    color: #FFFFFF;
+    /*color: white;*/
     padding: 6px 6px 6px 6px;
     transition: all 0.5s ease;
     font-size: 1.2em;
@@ -214,8 +222,12 @@ body {
 
 /*ACCORDION*/
 .accordion {
-    background-color: #000000;
-    color: #FFFFFF;
+    /*background-color: #000000;*/
+
+    /* ВСТАВИТЬ СЮДА ЦВЕТА */
+    /*color: #FFFFFF;*/
+
+    /*color: white;*/
     cursor: pointer;
     padding: 0;
     width: 100%;
@@ -231,7 +243,10 @@ body {
     margin: 10px 0;
 
     /*border: 4px solid wheat;*/
-    border: 2px solid wheat;
+    border: 2px solid;
+
+    /* КТО-ТО ПЕРЕБИВАЕТ ЦВЕТ РАМКИ*/
+    /* ВСТАВИТЬ ЦВЕТ РАМКИ */
 
     border-radius: 15px;
 }
@@ -248,7 +263,7 @@ body {
     /*content: '\002B';*/
     content: '\2713';
     /*content: '\2228';*/
-    color: #FFFFFF;
+    /*color: #FFFFFF;*/
     float: right;
     margin-right: 5px;
 }
@@ -338,9 +353,9 @@ button:disabled {
 .detail_more,
 .detail_scheme {
     width: 100%;
-    background-color: wheat;
+    /*background-color: wheat;*/
     padding: 5px;
-    color: black;
+    /*color: black;*/
     border-radius: 5px;
 }
 
@@ -384,7 +399,7 @@ button:disabled {
     }
     .header_burger span {
         position: absolute;
-        background-color: #ffffff;
+        background-color: #000000;
         left: 0;
         width: 100%;
         height: 2px;
@@ -394,7 +409,7 @@ button:disabled {
     .header_burger:before,
     .header_burger:after {
         content: '';
-        background-color: #ffffff;
+        background-color: #000000;
         position: absolute;
         width: 100%;
         height: 2px;
@@ -431,8 +446,22 @@ button:disabled {
         transition: all 0.25s ease-in-out;
         opacity: 0.95;
     }
-    .header_menu.active {
+    .header_menu.active,
+    .search_menu.active {
         top: 0;
+    }
+
+    .search_menu {
+        position: fixed;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: red;
+        padding: 70px 10px 20px 10px;
+        transition: all 0.25s ease-in-out;
+        opacity: 0.95;
     }
 
     .header_menu_list {
@@ -555,13 +584,45 @@ button:disabled {
     font-size: 20px;
 }
 
+ /*Т Е М Ы */
+
+/* Т Ё М Н А Я */
 .dark_theme {
     background-color: black;
     color: wheat;
-    border: 5px solid wheat;
+    /*border: 5px solid red;*/
     transition: all 0.25s ease-in-out;
     padding: 10px;
 }
+
+.dark_theme_colors {
+    background-color: black;
+    color: white;
+    border-color: white;
+}
+
+.dark_theme_buttons {
+    background-color: wheat;
+    color: black;
+}
+
+/* С В Е Т Л А Я */
+
+.light_theme_colors {
+    background-color: white;
+    color: black;
+    border-color: black;
+}
+
+.light_theme_buttons {
+    background-color: black;
+    color: wheat;
+}
+
+
+
+
+
 
 .light_theme {
     background-color: wheat;
@@ -610,10 +671,10 @@ button:disabled {
 .detail_button {
     padding: 1px 1px 4px 1px;
     width: 100%;
-    background-color: wheat;
-    color: black;
+    /*background-color: wheat;*/
+    /*color: black;*/
     border-radius: 5px;
-    border: 3px outset wheat;
+    border: 3px outset;
 }
 
 .link_button:hover,

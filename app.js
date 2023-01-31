@@ -10,22 +10,43 @@ const setSettings = document.getElementById('setSettings');
 
 const SETTINGS = {
     THEME: currentTheme || 'dark_theme',
-    FONT_SIZE: currentFontSize || 'fontSizeL',
-    VIEW: currentView || 'details_list'
+    FONT_SIZE: currentFontSize || 'fontSizeS',
+    VIEW: currentView || 'details_table'
 }
 
-function saveSettingsToLocal() {
-    localStorage.setItem('theme', SETTINGS.THEME);
-    localStorage.setItem('fontSize', SETTINGS.FONT_SIZE);
-    localStorage.setItem('view', SETTINGS.VIEW);
+saveSettingsToLocal(SETTINGS.THEME, SETTINGS.FONT_SIZE, SETTINGS.VIEW)
+
+render(SETTINGS.THEME, SETTINGS.FONT_SIZE, SETTINGS.VIEW)
+
+function saveSettingsToLocal(theme, font, view) {
+    localStorage.setItem('theme', theme);
+    localStorage.setItem('fontSize', font);
+    localStorage.setItem('view', view);
 }
 
+console.log(localStorage);
 console.log(SETTINGS);
 
-saveSettingsToLocal()
-Render()
+// RENDER должен отрендерить по настройкам: тема, шрифт, вид
 
-// MENU
+function render(theme, font, view) {
+    // Меняем тему
+    setSettings.classList.add(theme);
+    document.getElementById(theme).checked = true;
+
+    // Меняем шрифт
+    document.body.classList.add(font);
+    setSettings.classList.add(font);
+    document.getElementById(font).checked = true;
+
+    // Меняем вид
+    setSettings.classList.add(view);
+    document.getElementById(view).checked = true;
+}
+
+// Create MENU создаёт дерево элементов
+// Засунуть темы, шрифты, вид в СТИЛИ
+
 createContentMenu(HEADERS);
 
 function createContentMenu(HEADERS) {
@@ -37,9 +58,12 @@ function createContentMenu(HEADERS) {
 
 function createHeaders(contentContainer, headerInfo) {
     const contentHeader = document.createElement('div');
-    contentHeader.className = 'content_header';
+    // contentHeader.className = 'content_header light_theme_colors';
+    contentHeader.className = 'content_header dark_theme_colors';
+
     const headerTitle = document.createElement('button');
-    headerTitle.className = 'accordion';
+    // headerTitle.className = 'accordion light_theme_colors';
+    headerTitle.className = 'accordion dark_theme_colors';
     headerTitle.innerHTML = headerInfo.title;
     const panelElement = document.createElement('div');
     panelElement.className = 'panel';
@@ -58,7 +82,9 @@ function createSubtitles(headerSubtitles, panelElement) {
     for (let subTitle of headerSubtitles) {
 
         const headerSubtitle = document.createElement('button');
-        headerSubtitle.className = 'accordion title';
+        // headerSubtitle.className = 'accordion title light_theme_colors';
+        headerSubtitle.className = 'accordion title dark_theme_colors';
+
         headerSubtitle.innerHTML = subTitle.subtitle;
         const newPanelElement = document.createElement('div');
         newPanelElement.className = 'panel';
@@ -82,7 +108,9 @@ function createDetails(subTitleDetails, containerItems) {
         const newId = Date.now();
 
         const containerDetail = document.createElement('div');
-        containerDetail.className = 'container_detail';
+        // containerDetail.className = 'container_detail light_theme_colors';
+        containerDetail.className = 'container_detail dark_theme_colors';
+
         containerDetail.setAttribute('id' , `${detail.detail_code}` );
         detail.detail_id = detail.detail_code;
 
@@ -105,7 +133,9 @@ function createDetails(subTitleDetails, containerItems) {
         detailOptions.className = 'detail_options';
 
         const detailPrice = document.createElement('div');
-        detailPrice.className = 'detail_price detail_button';
+        // detailPrice.className = 'detail_price detail_button light_theme_buttons';
+        detailPrice.className = 'detail_price detail_button dark_theme_buttons';
+
         detailPrice.textContent = 'Стоимость';
 
         containerItems.append(containerDetail);
@@ -120,14 +150,18 @@ function createDetails(subTitleDetails, containerItems) {
 
         if (detail.detail_more) {
             const detailMore = document.createElement('div');
-            detailMore.className = 'detail_more detail_button';
+            // detailMore.className = 'detail_more detail_button light_theme_buttons';
+            detailMore.className = 'detail_more detail_button dark_theme_buttons';
+
             detailMore.textContent = 'Подробнее';
             detailOptions.append(detailMore);
         }
 
         if (detail.detail_scheme) {
             const detailScheme = document.createElement('div');
-            detailScheme.className = 'detail_scheme detail_button';
+            // detailScheme.className = 'detail_scheme detail_button light_theme_buttons';
+            detailScheme.className = 'detail_scheme detail_button dark_theme_buttons';
+
             detailScheme.textContent = 'Схема';
             detailOptions.append(detailScheme);
         }
@@ -182,16 +216,16 @@ window.onclick = function(event) {
 
     if (!targetElementId) return
 
-    console.log(targetElementId);
+    // console.log(targetElementId);
 
     const clickElement = newData.find(elem => elem.detail_id === targetElementId)
-    console.log(clickElement);
+    // console.log(clickElement);
 
     // ID - число при формировании
 
     switch (target.className) {
 
-        case 'detail_scheme detail_button':
+        case 'detail_scheme detail_button dark_theme_buttons':
 
             const imageElement = target.parentElement.previousElementSibling.previousElementSibling;
 
@@ -206,18 +240,18 @@ window.onclick = function(event) {
             break
 
         case 'detail_price detail_button':
-            console.log('смотрим ЦЕНУ');
-            console.log(targetElementId);
+            // console.log('смотрим ЦЕНУ');
+            // console.log(targetElementId);
             break
 
         case 'detail_more detail_button':
-            console.log('смотрим ПОДРОБНЕЕ');
-            console.log(targetElementId);
+            // console.log('смотрим ПОДРОБНЕЕ');
+            // console.log(targetElementId);
             break
 
         default:
-            console.log('что-то ДРУГОЕ');
-            console.log(targetElementId);
+            // console.log('что-то ДРУГОЕ');
+            // console.log(targetElementId);
             break
     }
 };
@@ -304,23 +338,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-
-function Render() {
-    setSettings.classList.add(SETTINGS.THEME);
-    document.getElementById(SETTINGS.THEME).checked = true;
-
-    document.body.classList.add(SETTINGS.FONT_SIZE);
-    setSettings.classList.add(SETTINGS.FONT_SIZE);
-    document.getElementById(SETTINGS.FONT_SIZE).checked = true;
-
-    setSettings.classList.add(SETTINGS.VIEW);
-    document.getElementById(SETTINGS.VIEW).checked = true;
-}
-
-
 // СМЕНА НАСТРОЕК
 
 const allInputs = document.querySelectorAll('input');
+
+console.log(SETTINGS);
 
 for (let elem of allInputs) {
     elem.addEventListener('click', () => {
@@ -328,7 +350,7 @@ for (let elem of allInputs) {
         const detailsListElement = document.getElementById('details_list');
         const detailsTableElement = document.getElementById('details_table');
 
-        console.log(elem.name);
+        // console.log(elem.name);
         // СМЕНА ТЕМЫ //
         if (elem.name === 'theme') {
             clearThemeClass();
@@ -337,50 +359,50 @@ for (let elem of allInputs) {
         }
 
         // СМЕНА ШРИФТА //
-        if (elem.name === 'fontSize') {
-            clearFontClasses();
-            setSettings.classList.add(`${elem.id}`);
-            document.body.classList.add(`${elem.id}`);
-            console.log(elem.id);
-            localStorage.setItem('fontSize', `${elem.id}`);
 
-            // если L тогда ТОЛЬКО Список
-            if (elem.id === 'fontSizeL') {
-                console.log('ТОЛЬКО СПИСОК');
-                detailsListElement.checked = true;
-                detailsListElement.disabled = false;
-                detailsTableElement.disabled = true;
-
-                const allDetails = document.querySelectorAll('.container_detail')
-                for (let item of allDetails) {
-                    item.classList.add('full_width');
-                }
-                removeDetailsWrapView()
-            }
+        // if (elem.name === 'fontSize') {
+        //     clearFontClasses();
+        //     setSettings.classList.add(`${elem.id}`);
+        //     document.body.classList.add(`${elem.id}`);
+        //     // console.log(elem.id);
+        //     localStorage.setItem('fontSize', `${elem.id}`);
+        //
+        //     // если L тогда ТОЛЬКО Список
+        //     if (elem.id === 'fontSizeL') {
+        //         // console.log('ТОЛЬКО СПИСОК');
+        //         detailsListElement.checked = true;
+        //         detailsListElement.disabled = false;
+        //         detailsTableElement.disabled = true;
+        //
+        //         const allDetails = document.querySelectorAll('.container_detail')
+        //         for (let item of allDetails) {
+        //             item.classList.add('full_width');
+        //         }
+        //         removeDetailsWrapView()
+        //     }
 
             // если S тогда ТОЛЬКО Таблица
-            if (elem.id === 'fontSizeS') {
-                console.log('ТОЛЬКО ТАБЛИЦА');
-                detailsTableElement.checked = true;
-                detailsTableElement.disabled = false;
-                detailsListElement.disabled = true;
-
-                const allDetails = document.querySelectorAll('.container_detail')
-                for (let item of allDetails) {
-                    item.classList.remove('full_width');
-                }
-                addDetailsWrapView()
-            }
+            // if (elem.id === 'fontSizeS') {
+            //     // console.log('ТОЛЬКО ТАБЛИЦА');
+            //     detailsTableElement.checked = true;
+            //     detailsTableElement.disabled = false;
+            //     detailsListElement.disabled = true;
+            //
+            //     const allDetails = document.querySelectorAll('.container_detail')
+            //     for (let item of allDetails) {
+            //         item.classList.remove('full_width');
+            //     }
+            //     addDetailsWrapView()
+            // }
 
             // если L тогда ДВА варианта
-            if (elem.id === 'fontSizeM') {
-                detailsTableElement.disabled = false;
-                detailsListElement.disabled = false;
-            }
-            localStorage.setItem('view', `${elem.id}`);
+            // if (elem.id === 'fontSizeM') {
+            //     detailsTableElement.disabled = false;
+            //     detailsListElement.disabled = false;
+            // }
+            // localStorage.setItem('view', `${elem.id}`);
 
-
-        }
+        // }
 
         // СМЕНА ВИДА //
         if (elem.name === 'view') {
@@ -388,8 +410,10 @@ for (let elem of allInputs) {
             // console.log(elem.id);
             const allDetails = document.querySelectorAll('.container_detail')
 
+            console.log(allDetails);
+
             if (elem.id === 'details_list') {
-                console.log('список');
+                // console.log('список');
                 // allDetails.forEach(el => item.classList.add('full_width'))
                 for (let item of allDetails) {
                     item.classList.add('full_width');
@@ -397,16 +421,16 @@ for (let elem of allInputs) {
                 removeDetailsWrapView()
 
             } else {
-                console.log('таблица');
+                // console.log('таблица');
                 for (let item of allDetails) {
                     item.classList.remove('full_width');
+                    console.log(item.lastElementChild);
+                    // item.lastElementChild.classList.add('detail_options_wrap')
                 }
                 addDetailsWrapView()
 
             }
             localStorage.setItem('view', `${elem.id}`);
-
-
         }
     })
 }
@@ -428,15 +452,15 @@ function clearFontClasses() {
 
 function addDetailsWrapView() {
     const allElements = document.querySelectorAll('.detail_options')
-    console.log(allElements);
+    // console.log(allElements);
     for (let item of allElements) {
-        item.classList.add('detail_options_wrap')
+        // item.classList.add('detail_options_wrap')
     }
 }
 
 function removeDetailsWrapView() {
     const allElements = document.querySelectorAll('.detail_options')
-    console.log(allElements);
+    // console.log(allElements);
     for (let item of allElements) {
         item.classList.remove('detail_options_wrap')
     }
