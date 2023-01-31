@@ -19,6 +19,8 @@ body {
     font-size: 10px;
     /*font-family: "Roboto Thin", sans-serif;*/
     font-family: "Monospace", sans-serif;
+    background-color: #F2F2F2;
+
 }
 
 .wrapper {
@@ -645,9 +647,7 @@ button:disabled {
 .light_theme .content_header {
     background-color: #EAE9F2;
     color: #FFFFFF;
-    /*border: 3px solid #333333;*/
-
-    border: 3px solid #6653D9;
+    border: 3px solid #333333;
 }
 
 .light_theme .accordion {
@@ -656,7 +656,7 @@ button:disabled {
 }
 
 .light_theme .title {
-    border-color: #6653D9;
+    border-color: #333333;
     background-color: #EAE9F2;
     color: #333333;
 }
@@ -668,7 +668,7 @@ button:disabled {
 .light_theme .container_detail {
     background-color: #FFFFFF;
     color: #333333;
-    border-color: #6653D9;
+    border-color: #333333;
 }
 
 .light_theme .detail_price,
@@ -734,9 +734,9 @@ button:disabled {
 .dark_theme .detail_price,
 .dark_theme .detail_more,
 .dark_theme .detail_scheme {
-    border-color: #9484F2;
-    background-color: #9484F2;
-    color: #2A2930;
+    border-color: #F2F2F2;
+    background-color: #17161A;
+    color: #F2F2F2;
 }
 
 

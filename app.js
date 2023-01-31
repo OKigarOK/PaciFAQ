@@ -8,7 +8,7 @@ const currentView = localStorage.getItem('view');
 
 const setSettings = document.getElementById('setSettings');
 
-const setTheme = document.getElementById('wrapper')
+const setTheme = document.getElementById('theme')
 
 const SETTINGS = {
     THEME: currentTheme || 'original_theme',
