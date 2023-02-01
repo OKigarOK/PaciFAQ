@@ -568,7 +568,7 @@ button:disabled {
 .theme_container {
     width: Calc(100% - 20px);
     max-width: 748px;
-    height: 500px;
+    /*height: 500px;*/
     background-color: #FFFFFF;
     border-radius: 10px;
 }
@@ -589,6 +589,8 @@ button:disabled {
 
 /* О Р И Г И Н А Л */
 .original_theme {
+    /*background: url("./images/main_bg.jpg") fixed center no-repeat;*/
+
     border-color: wheat;
     background-color: black;
     color: white;

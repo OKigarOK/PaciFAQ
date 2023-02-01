@@ -350,8 +350,6 @@ for (let elem of allInputs) {
         const detailsListElement = document.getElementById('details_list');
         const detailsTableElement = document.getElementById('details_table');
 
-        // console.log(elem.name);
-
         // СМЕНА ТЕМЫ //
         if (elem.name === 'theme') {
             // console.log(elem.id);
@@ -373,40 +371,38 @@ for (let elem of allInputs) {
             // console.log(elem.id);
             localStorage.setItem('fontSize', `${elem.id}`);
 
-            // если L тогда ТОЛЬКО Список
-            // if (elem.id === 'fontSizeL') {
-            //     // console.log('ТОЛЬКО СПИСОК');
-            //     detailsListElement.checked = true;
-            //     detailsListElement.disabled = false;
-            //     detailsTableElement.disabled = true;
-            //
-            //     const allDetails = document.querySelectorAll('.container_detail')
-            //     for (let item of allDetails) {
-            //         item.classList.add('full_width');
-            //     }
-            //     removeDetailsWrapView()
-            // }
+            // если S только ТАБЛИЦА
+            if (elem.id === 'fontSizeS') {
+                detailsListElement.checked = false;
+                detailsListElement.disabled = true;
+                detailsTableElement.checked = true;
+                detailsTableElement.disabled = false;
+                removeDetailsWrapView();
+                removeFullView();
+                localStorage.setItem('view', 'details_table');
+            }
 
-            // если S тогда ТОЛЬКО Таблица
-            // if (elem.id === 'fontSizeS') {
-            //     // console.log('ТОЛЬКО ТАБЛИЦА');
-            //     detailsTableElement.checked = true;
-            //     detailsTableElement.disabled = false;
-            //     detailsListElement.disabled = true;
-            //
-            //     const allDetails = document.querySelectorAll('.container_detail')
-            //     for (let item of allDetails) {
-            //         item.classList.remove('full_width');
-            //     }
-            //     addDetailsWrapView()
-            // }
+            // если M тогда ДВА варианта
+            if (elem.id === 'fontSizeM') {
+                detailsTableElement.disabled = false;
+                detailsListElement.disabled = false;
+                if (localStorage.getItem('view') === 'details_table') {
+                    addDetailsWrapView();
+                } else {
+                    removeDetailsWrapView();
+                }
+            }
 
-            // если L тогда ДВА варианта
-            // if (elem.id === 'fontSizeM') {
-            //     detailsTableElement.disabled = false;
-            //     detailsListElement.disabled = false;
-            // }
-            // localStorage.setItem('view', `${elem.id}`);
+            // если L только СПИСОК
+            if (elem.id === 'fontSizeL') {
+                detailsTableElement.checked = false;
+                detailsTableElement.disabled = true;
+                detailsListElement.checked = true;
+                detailsListElement.disabled = false;
+                removeDetailsWrapView();
+                addFullView();
+                localStorage.setItem('view', 'details_list');
+            }
 
         }
 
@@ -416,25 +412,13 @@ for (let elem of allInputs) {
             // console.log(elem.id);
             const allDetails = document.querySelectorAll('.container_detail')
 
-            // console.log(allDetails);
-
-            if (elem.id === 'details_list') {
-                // console.log('список');
-                // allDetails.forEach(el => item.classList.add('full_width'))
-                for (let item of allDetails) {
-                    item.classList.add('full_width');
-                }
-                removeDetailsWrapView()
-
-            } else {
-                // console.log('таблица');
-                for (let item of allDetails) {
-                    item.classList.remove('full_width');
-                    // console.log(item.lastElementChild);
-                    // item.lastElementChild.classList.add('detail_options_wrap')
-                }
+            // ВАРИАНТЫ РАСКЛАДА
+            if (elem.id === 'details_table') {
+                removeFullView();
                 addDetailsWrapView()
-
+            } else {
+                addFullView();
+                removeDetailsWrapView()
             }
             localStorage.setItem('view', `${elem.id}`);
         }
@@ -460,11 +444,25 @@ function clearFontClasses() {
     document.body.classList.remove('fontSizeL');
 }
 
+function addFullView() {
+    const allElements = document.querySelectorAll('.container_detail')
+    for (let item of allElements) {
+        item.classList.add('full_width');
+    }
+}
+
+function removeFullView() {
+    const allElements = document.querySelectorAll('.container_detail')
+    for (let item of allElements) {
+        item.classList.remove('full_width');
+    }
+}
+
 function addDetailsWrapView() {
     const allElements = document.querySelectorAll('.detail_options')
     // console.log(allElements);
     for (let item of allElements) {
-        // item.classList.add('detail_options_wrap')
+        item.classList.add('detail_options_wrap');
     }
 }
 
