@@ -526,7 +526,7 @@ button:disabled {
     max-width: 748px;
     /*margin: 10px;*/
     /*max-width: 345px;*/
-    border: 5px solid wheat;
+    border: 3px solid;
     /*  Центрируем и задаем z-index */
     position: fixed;
     top: 50%;
@@ -589,7 +589,15 @@ button:disabled {
 
 /* О Р И Г И Н А Л */
 .original_theme {
+    border-color: wheat;
     background-color: black;
+    color: white;
+}
+
+.settings_modal_colors {
+    border-color: red;
+    background-color: wheat;
+    color: white;
 }
 
 .original_theme .header:before {
@@ -631,7 +639,9 @@ button:disabled {
 
 /* С В Е Т Л А Я */
 .light_theme {
+    border-color:  #EAE6F2;
     background-color: #EAE6F2;
+    color: #333333;
 }
 
 .light_theme .header:before {
@@ -689,12 +699,18 @@ button:disabled {
 /*}*/
 
 .dark_theme {
+    border-color:  #F2F2F2;
     background-color: #17161A;
+    color: #F2F2F2;;
 }
 
 .dark_theme .header:before {
     /*background-color: #9484F2;*/
+    /*background-color: #2A2930;*/
+
+    border-color:  #F2F2F2;
     background-color: #2A2930;
+    color: #F2F2F2;
 
 }
 
@@ -726,7 +742,7 @@ button:disabled {
 }
 
 .dark_theme .container_detail {
-    background-color: #2A2930;
+    background-color: #17161A;
     color: #F2F2F2;
     border-color: #F2F2F2;
 }
@@ -735,7 +751,7 @@ button:disabled {
 .dark_theme .detail_more,
 .dark_theme .detail_scheme {
     border-color: #F2F2F2;
-    background-color: #17161A;
+    background-color: #2A2930;
     color: #F2F2F2;
 }
 

@@ -356,6 +356,11 @@ for (let elem of allInputs) {
             console.log(elem.id);
             clearThemeClass();
             setTheme.classList.add(`${elem.id}`);
+            setSettings.classList.add(`${elem.id}`);
+
+            console.log(setTheme);
+            console.log(setSettings);
+
             localStorage.setItem('theme', `${elem.id}`);
         }
 
@@ -441,6 +446,9 @@ function clearThemeClass() {
     setTheme.classList.remove('dark_theme');
     setTheme.classList.remove('light_theme');
     setTheme.classList.remove('original_theme');
+    setSettings.classList.remove('dark_theme');
+    setSettings.classList.remove('light_theme');
+    setSettings.classList.remove('original_theme');
 }
 
 function clearFontClasses() {
