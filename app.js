@@ -113,7 +113,12 @@ function createDetails(subTitleDetails, containerItems) {
 
         const containerDetail = document.createElement('div');
         // containerDetail.className = 'container_detail light_theme_colors';
-        containerDetail.className = 'container_detail';
+        if (SETTINGS.VIEW === 'details_table') {
+            containerDetail.className = 'container_detail';
+        } else {
+            containerDetail.className = 'container_detail full_width';
+        }
+
 
         containerDetail.setAttribute('id' , `${detail.detail_code}` );
         detail.detail_id = detail.detail_code;
@@ -134,7 +139,11 @@ function createDetails(subTitleDetails, containerItems) {
         detailCode.textContent = detail.detail_code + ` (${detail.detail_manufacturer})`;
 
         const detailOptions = document.createElement('div');
-        detailOptions.className = 'detail_options';
+        if ((SETTINGS.VIEW === 'details_table') && (SETTINGS.FONT_SIZE === 'fontSizeM')) {
+            detailOptions.className = 'detail_options detail_options_wrap';
+        } else {
+            detailOptions.className = 'detail_options';
+        }
 
         const detailPrice = document.createElement('div');
         // detailPrice.className = 'detail_price detail_button light_theme_buttons';
@@ -155,7 +164,8 @@ function createDetails(subTitleDetails, containerItems) {
         if (detail.detail_more) {
             const detailMore = document.createElement('div');
             // detailMore.className = 'detail_more detail_button light_theme_buttons';
-            detailMore.className = 'detail_more detail_button';
+            detailMore.className = 'detail_more detail_button js-open-modal';
+            detailMore.setAttribute('data-modal', '1');
 
             detailMore.textContent = 'Подробнее';
             detailOptions.append(detailMore);
@@ -209,9 +219,11 @@ for (let subtitle of HEADERS) {
 
 // console.log(newData);
 
-// ТЫЦ
+// ОБРАБОТКА КЛИКОВ
 
 // const click = document.getElementsByClassName('container_detail')
+
+
 
 window.onclick = function(event) {
     let target = event.target; // где был клик?
@@ -223,7 +235,10 @@ window.onclick = function(event) {
     // console.log(targetElementId);
 
     const clickElement = newData.find(elem => elem.detail_id === targetElementId)
+
     // console.log(clickElement);
+
+    // console.log(target.parentElement);
 
     // ID - число при формировании
 
@@ -236,25 +251,30 @@ window.onclick = function(event) {
             if (target.textContent === 'Схема') {
                 target.textContent = 'Деталь';
                 // console.log(target.parentElement.previousElementSibling.previousElementSibling);
-                imageElement.innerHTML = (`<img src="${clickElement.detail_scheme}">`);
+                imageElement.innerHTML = (`<img src="${clickElement.detail_scheme}" alt="image"> `);
             } else {
                 target.textContent = 'Схема';
-                imageElement.innerHTML = (`<img src="${clickElement.detail_image}">`)
+                imageElement.innerHTML = (`<img src="${clickElement.detail_image}" alt="image">`)
             }
             break
 
         case 'detail_price detail_button':
-            // console.log('смотрим ЦЕНУ');
+            console.log('смотрим ЦЕНУ');
             // console.log(targetElementId);
             break
 
         case 'detail_more detail_button':
-            // console.log('смотрим ПОДРОБНЕЕ');
+            console.log('смотрим ПОДРОБНЕЕ');
             // console.log(targetElementId);
             break
 
+        case 'detail_image':
+            console.log('ТЫЦ на картинку');
+            break
+
         default:
-            // console.log('что-то ДРУГОЕ');
+            console.log('что-то ДРУГОЕ');
+            console.log(target.className);
             // console.log(targetElementId);
             break
     }
@@ -292,6 +312,7 @@ document.addEventListener('DOMContentLoaded', function() {
         overlay      = document.querySelector('.js-overlay-modal'),
         closeButtons = document.querySelectorAll('.js-modal-close');
 
+    console.log(modalButtons);
     /* Перебираем массив кнопок */
     modalButtons.forEach(function(item){
 
