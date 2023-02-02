@@ -588,7 +588,8 @@ button:disabled {
  /* Т Е М Ы */
 
 /* О Р И Г И Н А Л */
-.original_theme {
+.original_theme,
+.original_theme .modal {
     /*background: url("./images/main_bg.jpg") fixed center no-repeat;*/
 
     border-color: wheat;
@@ -596,10 +597,11 @@ button:disabled {
     color: white;
 }
 
-.settings_modal_colors {
-    border-color: red;
+.original_theme .modal__cross {
+    padding: 2px;
     background-color: wheat;
-    color: white;
+    fill: black;
+    border-radius: 2px;
 }
 
 .original_theme .header:before {
@@ -640,10 +642,18 @@ button:disabled {
 }
 
 /* С В Е Т Л А Я */
-.light_theme {
+.light_theme,
+.light_theme .modal {
     border-color:  #EAE6F2;
     background-color: #EAE6F2;
     color: #333333;
+}
+
+.light_theme .modal__cross {
+    padding: 2px;
+    background-color: #6653D9;
+    fill: #EAE6F2;
+    border-radius: 2px;
 }
 
 .light_theme .header:before {
@@ -700,10 +710,18 @@ button:disabled {
 /*    padding: 10px;*/
 /*}*/
 
-.dark_theme {
+.dark_theme,
+.dark_theme .modal {
     border-color:  #F2F2F2;
     background-color: #17161A;
-    color: #F2F2F2;;
+    color: #F2F2F2;
+}
+
+.dark_theme .modal__cross {
+    padding: 2px;
+    background-color: #000000;
+    fill: #F2F2F2;
+    border-radius: 2px;
 }
 
 .dark_theme .header:before {

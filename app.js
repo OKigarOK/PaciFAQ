@@ -2,6 +2,8 @@ import {HEADERS} from "./data/maintenance.js";
 
 // SETTINGS
 
+// Отрендерить настройки в НАЧАЛЕ
+
 const currentTheme = localStorage.getItem('theme');
 const currentFontSize = localStorage.getItem('fontSize');
 const currentView = localStorage.getItem('view');
@@ -48,6 +50,8 @@ function render(theme, font, view) {
 // Засунуть темы, шрифты, вид в СТИЛИ
 
 createContentMenu(HEADERS);
+
+renderSettings();
 
 function createContentMenu(HEADERS) {
     const contentContainer = document.querySelector('.content_container');
@@ -340,90 +344,84 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // СМЕНА НАСТРОЕК
 
-const allInputs = document.querySelectorAll('input');
 
 // console.log(SETTINGS);
 
-for (let elem of allInputs) {
-    elem.addEventListener('click', () => {
+function renderSettings() {
+    const allInputs = document.querySelectorAll('input');
 
-        const detailsListElement = document.getElementById('details_list');
-        const detailsTableElement = document.getElementById('details_table');
+    for (let elem of allInputs) {
+        elem.addEventListener('click', () => {
 
-        // СМЕНА ТЕМЫ //
-        if (elem.name === 'theme') {
-            // console.log(elem.id);
-            clearThemeClass();
-            setTheme.classList.add(`${elem.id}`);
-            setSettings.classList.add(`${elem.id}`);
+            const detailsListElement = document.getElementById('details_list');
+            const detailsTableElement = document.getElementById('details_table');
 
-            // console.log(setTheme);
-            // console.log(setSettings);
-
-            localStorage.setItem('theme', `${elem.id}`);
-        }
-
-        // СМЕНА ШРИФТА //
-        if (elem.name === 'fontSize') {
-            clearFontClasses();
-            setSettings.classList.add(`${elem.id}`);
-            document.body.classList.add(`${elem.id}`);
-            // console.log(elem.id);
-            localStorage.setItem('fontSize', `${elem.id}`);
-
-            // если S только ТАБЛИЦА
-            if (elem.id === 'fontSizeS') {
-                detailsListElement.checked = false;
-                detailsListElement.disabled = true;
-                detailsTableElement.checked = true;
-                detailsTableElement.disabled = false;
-                removeDetailsWrapView();
-                removeFullView();
-                localStorage.setItem('view', 'details_table');
+            // СМЕНА ТЕМЫ //
+            if (elem.name === 'theme') {
+                clearThemeClass();
+                setTheme.classList.add(`${elem.id}`);
+                setSettings.classList.add(`${elem.id}`);
+                localStorage.setItem('theme', `${elem.id}`);
             }
 
-            // если M тогда ДВА варианта
-            if (elem.id === 'fontSizeM') {
-                detailsTableElement.disabled = false;
-                detailsListElement.disabled = false;
-                if (localStorage.getItem('view') === 'details_table') {
-                    addDetailsWrapView();
-                } else {
+            // СМЕНА ШРИФТА //
+            if (elem.name === 'fontSize') {
+                clearFontClasses();
+                setSettings.classList.add(`${elem.id}`);
+                document.body.classList.add(`${elem.id}`);
+                localStorage.setItem('fontSize', `${elem.id}`);
+
+                // если S только ТАБЛИЦА
+                if (elem.id === 'fontSizeS') {
+                    detailsListElement.checked = false;
+                    detailsListElement.disabled = true;
+                    detailsTableElement.checked = true;
+                    detailsTableElement.disabled = false;
                     removeDetailsWrapView();
+                    removeFullView();
+                    localStorage.setItem('view', 'details_table');
+                }
+
+                // если M тогда ДВА варианта
+                if (elem.id === 'fontSizeM') {
+                    detailsTableElement.disabled = false;
+                    detailsListElement.disabled = false;
+                    if (localStorage.getItem('view') === 'details_table') {
+                        addDetailsWrapView();
+                    } else {
+                        removeDetailsWrapView();
+                    }
+                }
+
+                // если L только СПИСОК
+                if (elem.id === 'fontSizeL') {
+                    detailsTableElement.checked = false;
+                    detailsTableElement.disabled = true;
+                    detailsListElement.checked = true;
+                    detailsListElement.disabled = false;
+                    removeDetailsWrapView();
+                    addFullView();
+                    localStorage.setItem('view', 'details_list');
                 }
             }
 
-            // если L только СПИСОК
-            if (elem.id === 'fontSizeL') {
-                detailsTableElement.checked = false;
-                detailsTableElement.disabled = true;
-                detailsListElement.checked = true;
-                detailsListElement.disabled = false;
-                removeDetailsWrapView();
-                addFullView();
-                localStorage.setItem('view', 'details_list');
+            // СМЕНА ВИДА //
+            if (elem.name === 'view') {
+
+                // ВАРИАНТЫ РАСКЛАДА
+                if (elem.id === 'details_table') {
+                    removeFullView();
+                    addDetailsWrapView()
+                } else {
+                    addFullView();
+                    removeDetailsWrapView()
+                }
+                localStorage.setItem('view', `${elem.id}`);
             }
-
-        }
-
-        // СМЕНА ВИДА //
-        if (elem.name === 'view') {
-            // clearViewClasses();
-            // console.log(elem.id);
-            const allDetails = document.querySelectorAll('.container_detail')
-
-            // ВАРИАНТЫ РАСКЛАДА
-            if (elem.id === 'details_table') {
-                removeFullView();
-                addDetailsWrapView()
-            } else {
-                addFullView();
-                removeDetailsWrapView()
-            }
-            localStorage.setItem('view', `${elem.id}`);
-        }
-    })
+        })
+    }
 }
+
 
 
 function clearThemeClass() {
