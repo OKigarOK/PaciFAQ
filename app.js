@@ -119,7 +119,6 @@ function createDetails(subTitleDetails, containerItems) {
             containerDetail.className = 'container_detail full_width';
         }
 
-
         containerDetail.setAttribute('id' , `${detail.detail_code}` );
         detail.detail_id = detail.detail_code;
 
@@ -165,7 +164,7 @@ function createDetails(subTitleDetails, containerItems) {
             const detailMore = document.createElement('div');
             // detailMore.className = 'detail_more detail_button light_theme_buttons';
             detailMore.className = 'detail_more detail_button js-open-modal';
-            detailMore.setAttribute('data-modal', '1');
+            detailMore.setAttribute('data-modal', '11');
 
             detailMore.textContent = 'Подробнее';
             detailOptions.append(detailMore);
@@ -236,7 +235,7 @@ window.onclick = function(event) {
 
     const clickElement = newData.find(elem => elem.detail_id === targetElementId)
 
-    // console.log(clickElement);
+    console.log(clickElement);
 
     // console.log(target.parentElement);
 
@@ -263,9 +262,105 @@ window.onclick = function(event) {
             // console.log(targetElementId);
             break
 
-        case 'detail_more detail_button':
+        case 'detail_more detail_button js-open-modal':
             console.log('смотрим ПОДРОБНЕЕ');
-            // console.log(targetElementId);
+
+            console.log(targetElementId); // ID элемента
+
+
+            const detail = newData.find(elem => elem.detail_id === targetElementId)
+            console.log(detail);  // Объект ЭЛЕМЕНТА
+
+            const elementContainer = document.querySelector('.modal.active')
+            console.log(elementContainer); // Вход в МОДАЛКУ
+
+            // ЗДЕСЬ ОБНУЛЕНИЕ
+            elementContainer.innerHTML = '';
+
+            // elementContainer.lastElementChild.innerHTML = detail.detail_more
+
+            // const elementToAppend = elementContainer.lastElementChild
+
+            // if (SETTINGS.VIEW === 'details_table') {
+            //     elementToAppend.classList.add('.full_width')
+            // }
+
+            // console.log(elementToAppend); // Контейнер Элемента
+
+            // ЗДЕСЬ МОЖНО СТРОИТЬ МОДАЛКУ ПОДРОБНЕЕ
+
+            const containerDetail = document.createElement('div');
+            // if (SETTINGS.VIEW === 'details_table') {
+            //     containerDetail.className = 'container_detail';
+            // } else {
+                containerDetail.className = `container_detail full_width more_modal_settings`;
+            // }
+
+            // console.log(containerDetail);
+            // containerDetail.innerHTML = '';
+
+            // containerDetail.setAttribute('id' , `${detail.detail_code}` );
+            // detail.detail_id = detail.detail_code;
+
+            const detailImage = document.createElement('div');
+            detailImage.className = 'detail_image';
+            detailImage.innerHTML = `<img src="${detail.detail_image}" alt="${detail.detail_manufacturer}">`;
+
+            // const detailNavContainer = document.createElement('div');
+            // detailNavContainer.className = 'QWERTY';
+
+            const detailInfo = document.createElement('div');
+            detailInfo.className = 'detail_info';
+            detailInfo.innerHTML = detail.detail_info;
+
+            const detailCode = document.createElement('div');
+            detailCode.className = 'detail_code';
+            detailCode.textContent = detail.detail_code + ` (${detail.detail_manufacturer})`;
+
+            const detailOptions = document.createElement('div');
+            if ((SETTINGS.VIEW === 'details_table') && (SETTINGS.FONT_SIZE === 'fontSizeM')) {
+                detailOptions.className = 'detail_options detail_options_wrap';
+            } else {
+                detailOptions.className = 'detail_options';
+            }
+
+            const detailPrice = document.createElement('div');
+            // detailPrice.className = 'detail_price detail_button light_theme_buttons';
+            detailPrice.className = 'detail_price detail_button';
+
+            detailPrice.textContent = 'Стоимость';
+
+            // containerItems.append(containerDetail);
+
+            elementContainer.append(containerDetail);
+
+            containerDetail.append(detailCode);
+            containerDetail.append(detailImage);
+            containerDetail.append(detailInfo);
+
+            // containerDetail.append(detailInfo);
+            containerDetail.append(detailOptions);
+            detailOptions.append(detailPrice);
+
+            if (detail.detail_more) {
+                const detailMore = document.createElement('div');
+                // detailMore.className = 'detail_more detail_button light_theme_buttons';
+                detailMore.className = 'detail_more detail_button js-open-modal';
+                detailMore.setAttribute('data-modal', '11');
+
+                // detailMore.textContent = 'Подробнее';
+                // detailOptions.append(detailMore);
+            }
+
+            if (detail.detail_scheme) {
+                const detailScheme = document.createElement('div');
+                // detailScheme.className = 'detail_scheme detail_button light_theme_buttons';
+                detailScheme.className = 'detail_scheme detail_button';
+
+                detailScheme.textContent = 'Схема';
+                detailOptions.append(detailScheme);
+            }
+
             break
 
         case 'detail_image':
@@ -274,7 +369,7 @@ window.onclick = function(event) {
 
         default:
             console.log('что-то ДРУГОЕ');
-            console.log(target.className);
+            // console.log(target.className);
             // console.log(targetElementId);
             break
     }

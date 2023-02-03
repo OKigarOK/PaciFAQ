@@ -310,15 +310,23 @@ button:disabled {
     border-radius: 10px;
     padding: 6px;
     font-size: 0.7em;
+
+    text-align: center;
 }
 
 .full_width {
     width: 100%;
 }
 
+.more_modal_settings {
+    font-size: 16px;
+}
+
 .container_detail {
     margin: 10px 0;
 }
+
+
 
 .container_items {
     width: 100%;
@@ -549,6 +557,8 @@ button:disabled {
     opacity: 1;
     visibility: visible;
 }
+
+
 
 /* Стили для кнопки закрытия */
 
