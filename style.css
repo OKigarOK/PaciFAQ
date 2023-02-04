@@ -251,6 +251,9 @@ body {
     /* ВСТАВИТЬ ЦВЕТ РАМКИ */
 
     border-radius: 15px;
+
+    text-align: left;
+    padding: 3px 0 0 0.5em;
 }
 
 .accordion:hover {

@@ -78,6 +78,8 @@ function createHeaders(contentContainer, headerInfo) {
 
     if (headerInfo.subtitles) {
         createSubtitles(headerInfo.subtitles, panelElement)
+    } else {
+        headerTitle.disabled = true;
     }
 }
 
@@ -100,7 +102,9 @@ function createSubtitles(headerSubtitles, panelElement) {
         newPanelElement.append(containerItems);
 
         if (subTitle.details) {
-            createDetails(subTitle.details, containerItems)
+            createDetails(subTitle.details, containerItems);
+        } else {
+            headerSubtitle.disabled = true;
         }
     }
 }
