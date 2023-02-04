@@ -10,7 +10,7 @@ const OIL_FILTERS = [
     },
     {
         detail_info: 'Фильтр маслянный',
-        // detail_scheme: './images/details/oil_filters/77102.gif',
+        detail_scheme: './images/details/oil_filters/77102.gif',
         detail_image: './images/details/oil_filters/oil-filter_fram_PH16.jpg',
         detail_code: 'PH16',
         detail_manufacturer: 'Fram',
@@ -19,7 +19,7 @@ const OIL_FILTERS = [
     },
     {
         detail_info: 'Фильтр маслянный',
-        // detail_scheme: './images/details/oil_filters/77102.gif',
+        detail_scheme: './images/details/oil_filters/77102.gif',
         detail_image: './images/details/oil_filters/oil-filter_mahle_OC23.jpg',
         detail_code: 'OC23',
         detail_manufacturer: 'Mahle/Knecht',
@@ -91,7 +91,7 @@ const MAINTENANCE_LIST = [
     },
     {
         subtitle: 'Воздушный фильтр',
-        id: 'air_filters',
+        // id: 'air_filters',
         details: AIR_FILTERS
     },
     {
@@ -148,18 +148,10 @@ const GASKETS = [
     },
 ]
 
+
+
 const ENGINE_LIST = [
-    {
-        subtitle: 'Прокладки',
-        id: 'gaskets',
-        details: GASKETS // МАССИВ ДЕТАЛЕЙ
-    },
-    {
-        subtitle: 'Воздушный фильтр',
-        id: 'air_filters',
-        details: AIR_FILTERS
-    },
-]
+    ]
 
 const FUEL_SYSTEM_LIST = [
     {},
@@ -208,68 +200,441 @@ const BODY_PARTS_LIST = [
 export const HEADERS = [
     {
         title: 'Детали ТО',
-        id: 'maintenance',
-        subtitles: MAINTENANCE_LIST, // МАССИВ ПОДЗАГОЛОВКОВ
+        // subtitles: MAINTENANCE_LIST, // МАССИВ ПОДЗАГОЛОВКОВ
+        subtitles: [
+            {
+                subtitle: 'Маслянный фильтр',
+                details: OIL_FILTERS // МАССИВ ДЕТАЛЕЙ
+            },
+            {
+                subtitle: 'Воздушный фильтр',
+                details: AIR_FILTERS
+            },
+            {
+                subtitle: 'Фильтр салона',
+                details: CABIN_FILTERS
+            },
+            {
+                subtitle: 'Фильтр АКПП',
+                details: TRANSMISSION_FILTERS
+            },
+            {
+                subtitle: 'Свечи зажигания',
+                details: SPARK_PLUGS
+            },
+            {
+                subtitle: 'Ремень поликлинковый',
+                details: ''
+            },
+            {
+                subtitle: 'Ремень ГРМ',
+                details: ''
+            },
+            {
+                subtitle: 'Колодки тормозные',
+                details: ''
+            },
+            {
+                subtitle: 'Пробка сливного отверстия',
+                details: ''
+            },
+            {
+                subtitle: 'Щетки стеклоочистителя',
+                details: ''
+            },
+        ]
     },
     {
         title: 'Двигатель',
-        id: 'engine',
-        subtitles: ENGINE_LIST,
+        subtitles: [
+            {
+                subtitle: 'Прокладки',
+                details: GASKETS // МАССИВ ДЕТАЛЕЙ
+            },
+            {
+                subtitle: 'Система подачи воздуха',
+                // details: AIR_SUPPLY_SYSTEM
+            },
+            {
+                subtitle: 'Механизм газораспределения ГРМ',
+                // details: GAS_DISTRIBUTION_MECHANISM
+            },
+            {
+                subtitle: 'Блок-картер',
+                // details: CRANKCASE_BLOCK
+            },
+            {
+                subtitle: 'Кривошипношатунный механизм',
+                // details: CRANK_MECHANISM
+            },
+            {
+                subtitle: 'Система смазки (насос)',
+                // details: LUBRICATION_MECHANISM
+            },
+            {
+                subtitle: 'Крепление двигателя (подушки)',
+                // details: MOUNTS
+            },
+            {
+                subtitle: 'Система очистки ОГ (ЕГР)',
+                // details: EXHAUST_GAS_CLEANING_SYSTEM
+            },
+            {
+                subtitle: 'Ременной привод',
+                // details: DRIVE_PULLEYS
+            },
+            {
+                subtitle: 'Приготовление смеси (форсунки)',
+                // details: FUEL_PREPARATION
+            },
+            {
+                subtitle: 'Головка цилиндра',
+                // details: CYLINDER_HEAD
+            },
+        ]
     },
     {
         title: 'Топливная система',
-        id: 'fuel_system',
-        subtitles: FUEL_SYSTEM_LIST,
+        subtitles: [
+            {
+                subtitle: 'Бак топливный',
+                // details: TANK_FUEL
+            },
+            {
+                subtitle: 'Клапан',
+                // details: LEAK_DETECTION_PUMP
+            },
+            {
+                subtitle: 'Датчик уровня топлива',
+                // details: FUEL_SENDING_UNIT
+            },
+            {
+                subtitle: 'Регулятор давления подачи топлива',
+                // details: REGULATOR_FUEL_PRESSURE
+            },
+            {
+                subtitle: 'Насос топливный, комплектующие',
+                // details: FUEL_PUMP
+            },
+        ],
     },
     {
         title: 'Система охлаждения',
-        id: 'cooling_system',
-        subtitles: COOLING_SYSTEM_LIST,
+        subtitles: [
+            {
+                subtitle: 'Термостат, прокладка',
+                // details: THERMOSTAT_PAD
+            },
+            {
+                subtitle: 'Расширительный бачок, крышка',
+                // details: EXPANSION_TANK
+            },
+            {
+                subtitle: 'Радиаторы: основной, масляннный (АКПП), кондиционера',
+                // details: COOLING_RADIATORS
+            },
+            {
+                subtitle: 'Патрубки системы охлаждения',
+                // details: PIPE_BRANCH
+            },
+            {
+                subtitle: 'Выключатель, датчик ОЖ',
+                // details: COOLANT_SENSOR
+            },
+            {
+                subtitle: 'Вентилятор охлаждения радиатора',
+                // details: RADIATOR_FANS
+            },
+            {
+                subtitle: 'Насос системы охлаждения (помпа)',
+                // details: WATER_PUMP
+            },
+        ],
     },
     {
         title: 'Система выпуска',
-        id: 'exhaust_system',
-        subtitles: EXHAUST_SYSTEM_LIST,
+        subtitles: [
+            {
+                subtitle: 'Нейтрализация ОГ (катализатор)',
+                // details: CATALYTIC_CONVERTER
+            },
+            {
+                subtitle: 'Глушитель в сборе/части',
+                // details: EXHAUST
+            },
+            {
+                subtitle: 'Датчик кислорода (лямбда-зонд)',
+                // details: OXYGEN
+            },
+            {
+                subtitle: 'Коллектор выпускной (прокладки)',
+                // details: EXHAUST_MANIFOLD
+            },
+            {
+                subtitle: 'Трубы (гофра)',
+                // details: MUFFLER_CORRUGATION
+            },
+            {
+                subtitle: 'Детали монтажа',
+                // details: ISOLATOR_EXHAUST
+            },
+        ],
     },
     {
         title: 'Трансмиссия',
-        id: 'transmission',
-        subtitles: TRANSMISSION_LIST,
+        subtitles: [
+            {
+                subtitle: 'Автоматическая коробка передач',
+                // details: AUTOMATIC_TRANSMISSION
+            },
+            {
+                subtitle: 'Привод колеса (полуоси)',
+                // details: WHEEL_DRIVE
+            },
+            {
+                subtitle: 'Раздатка и карданная передача (AWD)',
+                // details: CARDAN_SHAFT
+            },
+        ],
     },
     {
         title: 'Ходовая часть',
-        id: 'chassis',
-        subtitles: CHASSIS_LIST,
+        subtitles: [
+            {
+                subtitle: 'Пружина подвески',
+                // details: SPRINGS
+            },
+            {
+                subtitle: 'Опора амортизатора',
+                // details: SHOCK_ABSORBER_SUPPORT
+            },
+            {
+                subtitle: 'Амортизатор подвески',
+                // details: SHOCK_ABSORBER
+            },
+            {
+                subtitle: 'Рычаги и тяги подвески',
+                // details: LEVERS_AND_PULLS
+            },
+            {
+                subtitle: 'Стабилизатор, крепление',
+                // details: STABILIZER
+            },
+            {
+                subtitle: 'Ступица колеса, составляющие',
+                // details: HUB
+            },
+            {
+                subtitle: 'Крепление амортизатора подвески',
+                // details: SHOCK_ABSORBER_MOUNT
+            },
+            {
+                subtitle: 'Кулак поворотный, составляющие',
+                // details: ROUNDED_FIST
+            },
+            {
+                subtitle: 'Балка моста, подвеска оси',
+                // details: BRIDGE_BEAM
+            },
+            {
+                subtitle: 'Колесо, крепление колеса',
+                // details: WHEEL
+            },
+            {
+                subtitle: 'Система контроля давления в шинах',
+                // details: TPMS
+            },
+            {
+                subtitle: 'Колеса, шины',
+                // details: TIRES
+            },
+        ],
     },
     {
         title: 'Рулевое управление',
-        id: 'steering',
-        subtitles: STEERING_LIST,
+        subtitles: [
+            {
+                subtitle: 'Шарниры (рулевые наконечники)',
+                // details: END_TIE_ROD
+            },
+            {
+                subtitle: 'Рейка рулевая, насос ГУР',
+                // details: STEERING_RAIL
+            },
+            {
+                subtitle: 'Бачок ГУР',
+                // details: HYDRAULIC_RESERVOIR
+            },
+            {
+                subtitle: 'Тяга рулевая',
+                // details: TIE_ROD
+            },
+        ],
     },
     {
         title: 'Тормозная система',
-        id: 'brake_system',
-        subtitles: BRAKE_SYSTEM_LIST,
+        subtitles: [
+            {
+                subtitle: 'Дисковый тормоз',
+                // details: BRAKE_DISC
+            },
+            {
+                subtitle: 'Барабанный тормозной механизм',
+                // details: DRUM_BRAKE
+            },
+            {
+                subtitle: 'Тросы, тяги и рычаги тормозной системы',
+                // details: BRAKE_CABLES
+            },
+            {
+                subtitle: 'Стояночный тормоз',
+                // details: PARKING_BRAKE
+            },
+            {
+                subtitle: 'Шланги тормозные',
+                // details: BRAKE_HOSE
+            },
+            {
+                subtitle: 'Тормозной усилитель',
+                // details: BRAKE_BOOSTER
+            },
+            {
+                subtitle: 'Главный тормозной усилитель',
+                // details: MAIN_BRAKE_BOOSTER
+            },
+            {
+                subtitle: 'Регулировка динамики движения',
+                // details: DYNAMICS_CONTROL
+            },
+            {
+                subtitle: 'Выключатель фонаря сигнала торможения',
+                // details: BRAKE_LIGHT_SWITCH
+            },
+            {
+                subtitle: 'Суппорт тормозной',
+                // details: BRAKE_CALIPER
+            },
+        ],
     },
     {
         title: 'Электрооборудование',
-        id: 'electrical_equipment',
-        subtitles: ELECTRICAL_EQUIPMENT_LIST,
+        subtitles: [
+            {
+                subtitle: 'Система стартера',
+                // details: STARTER_SYSTEM
+            },
+            {
+                subtitle: 'Генератор, составляющие',
+                // details: GENERATOR
+            },
+            {
+                subtitle: 'Головной свет, составляющие',
+                // details: HEADLIGHT
+            },
+            {
+                subtitle: 'Дополнительное освещение',
+                // details: ADDITIONAL_LIGHTING
+            },
+            {
+                subtitle: 'Система освещения',
+                // details: LIGHTING_SYSTEM
+            },
+            {
+                subtitle: 'Выключатель, реле, блок управления освещения',
+                // details: LIGHTING_CONTROL_UNIT
+            },
+            {
+                subtitle: 'Датчики',
+                // details: SENSORS
+            },
+            {
+                subtitle: 'Контрольные приборы',
+                // details: CONTROL_DEVICES
+            },
+            {
+                subtitle: 'Система очистки окон',
+                // details: WINDOW_CLEANING_SYSTEM
+            },
+            {
+                subtitle: 'Дополнительные удобства',
+                // details: ADDITIONAL_AMENITIES
+            },
+        ],
     },
     {
         title: 'Отопление / Кондиционирование',
-        id: 'heating_conditioning',
-        subtitles: HEATING_CONDITION_LIST,
+        subtitles: [
+            {
+                subtitle: 'Отопление',
+                // details: HEATING
+            },
+            {
+                subtitle: 'Кондиционер',
+                // details: AIR_CONDITIONER
+            },
+        ],
     },
     {
         title: 'Детали салона',
-        id: 'interior_details',
-        subtitles: INTERIOR_DETAILS_LIST,
+        subtitles: [
+            {
+                subtitle: 'Подъемное устройство',
+                // details: LIFTING_DEVICE
+            },
+            {
+                subtitle: 'Ручки',
+                // details: PENS
+            },
+            {
+                subtitle: 'Багажник',
+                // details: TRUNK
+            },
+            {
+                subtitle: 'Замок',
+                // details: LOCK
+            },
+        ],
     },
     {
         title: 'Детали кузова',
-        id: 'body_parts',
-        subtitles: BODY_PARTS_LIST,
+        subtitles: [
+            {
+                subtitle: 'Автомобиль, передняя часть',
+                // details: FRONT_END
+            },
+            {
+                subtitle: 'Кабина пассажира',
+                // details: PASSENGER_CABIN
+            },
+            {
+                subtitle: 'Автомобиль, задняя часть',
+                // details: REAR_END
+            },
+            {
+                subtitle: 'Кузовные детали',
+                // details: BODY_PARTS
+            },
+            {
+                subtitle: 'Облицовка, защитные накладки, эмблемы',
+                // details: FACING
+            },
+            {
+                subtitle: 'Остекление, зеркала',
+                // details: GLAZING_MIRRORS
+            },
+            {
+                subtitle: 'Головной свет',
+                // details: HEADLIGHT
+            },
+            {
+                subtitle: 'Дополнительное освещение',
+                // details: ADDITIONAL_LIGHTING
+            },
+            {
+                subtitle: 'Освещение',
+                // details: LIGHTING
+            },
+        ],
     },
 ]
 
