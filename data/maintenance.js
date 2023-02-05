@@ -1,40 +1,42 @@
+// ДЕТАЛИ ТО
+
 const OIL_FILTERS = [
     {
         detail_info: 'Фильтр маслянный',
-        detail_scheme: './images/details/oil_filters/77102.gif',
+        detail_scheme: './images/details/oil_filters/oil-filter.gif',
         detail_image: './images/details/oil_filters/oil-filter_mopar_05281090AB.jpg',
         detail_code: '5281090AB',
         detail_manufacturer: 'Mopar',
         detail_more: 'Какая-то дополнительная информация...',
         detail_options: [{},],
     },
-    {
-        detail_info: 'Фильтр маслянный',
-        detail_scheme: './images/details/oil_filters/77102.gif',
-        detail_image: './images/details/oil_filters/oil-filter_fram_PH16.jpg',
-        detail_code: 'PH16',
-        detail_manufacturer: 'Fram',
-        detail_more: 'Что-то ещё...',
-        detail_options: [{},],
-    },
-    {
-        detail_info: 'Фильтр маслянный',
-        detail_scheme: './images/details/oil_filters/77102.gif',
-        detail_image: './images/details/oil_filters/oil-filter_mahle_OC23.jpg',
-        detail_code: 'OC23',
-        detail_manufacturer: 'Mahle/Knecht',
-        detail_more: 'Что-то ещё...',
-        detail_options: [{},],
-    },
-    {
-        detail_info: 'Фильтр маслянный',
-        // detail_scheme: './images/details/oil_filters/77102.gif',
-        detail_image: './images/details/oil_filters/oil-filter_mahle_OC236.jpg',
-        detail_code: 'OC236',
-        detail_manufacturer: 'Mahle/Knecht',
-        detail_more: 'Что-то ещё...',
-        detail_options: [{},],
-    },
+    // {
+    //     detail_info: 'Фильтр маслянный',
+    //     detail_scheme: './images/details/oil_filters/oil-filter.gif',
+    //     detail_image: './images/details/oil_filters/oil-filter_fram_PH16.jpg',
+    //     detail_code: 'PH16',
+    //     detail_manufacturer: 'Fram',
+    //     // detail_more: 'Что-то ещё...',
+    //     detail_options: [{},],
+    // },
+    // {
+    //     detail_info: 'Фильтр маслянный',
+    //     detail_scheme: './images/details/oil_filters/oil-filter.gif',
+    //     detail_image: './images/details/oil_filters/oil-filter_mahle_OC23.jpg',
+    //     detail_code: 'OC23',
+    //     detail_manufacturer: 'Mahle/Knecht',
+    //     detail_more: 'Что-то ещё...',
+    //     detail_options: [{},],
+    // },
+    // {
+    //     detail_info: 'Фильтр маслянный',
+    //     detail_scheme: './images/details/oil_filters/oil-filter.gif',
+    //     detail_image: './images/details/oil_filters/oil-filter_mahle_OC236.jpg',
+    //     detail_code: 'OC236',
+    //     detail_manufacturer: 'Mahle/Knecht',
+    //     detail_more: 'Что-то ещё...',
+    //     detail_options: [{},],
+    // },
 ]
 
 const AIR_FILTERS = [
@@ -44,7 +46,7 @@ const AIR_FILTERS = [
         detail_code: '5510026AA',
         detail_manufacturer: 'Mopar',
         detail_more: '',
-        detail_scheme: ''
+        detail_scheme: './images/details/air_filters/air-filter.gif'
     },
 ]
 
@@ -55,7 +57,7 @@ const CABIN_FILTERS = [
         detail_code: '82205905',
         detail_manufacturer: 'Mopar',
         detail_more: '',
-        detail_scheme: ''
+        detail_scheme: './images/details/cain_filters/cabin-filter.gif'
     },
 ]
 
@@ -66,7 +68,7 @@ const TRANSMISSION_FILTERS = [
         detail_code: '4864505AB',
         detail_manufacturer: 'Mopar',
         detail_more: '',
-        detail_scheme: ''
+        detail_scheme: './images/details/transmission_filters/transmission-filter.gif'
     },
 ]
 
@@ -77,62 +79,67 @@ const SPARK_PLUGS = [
         detail_code: 'SZFR5LP13G',
         detail_manufacturer: 'Mopar',
         detail_more: '',
-        detail_scheme: ''
+        detail_scheme: './images/details/spark_plugs/spark-plug.gif'
     },
 ]
 
-// export const DATA = [...OIL_FILTERS, ...OIL_FILTERS]
+const V_RIBBED_BELTS = [
+    {
+        detail_image: './images/details/v_ribbed_belts/v-ribbed-belts_mopar_4861850AA.jpg',
+        detail_info: 'Ремень поликлинковый',
+        detail_code: '4861850AA',
+        detail_manufacturer: 'Mopar',
+        detail_more: '',
+        detail_scheme: './images/details/v_ribbed_belts/v-ribbed-belt.gif'
+    }
+]
 
-const MAINTENANCE_LIST = [
+const TIMING_BELTS = [
     {
-        subtitle: 'Маслянный фильтр',
-        id: 'oil_filters',
-        details: OIL_FILTERS // МАССИВ ДЕТАЛЕЙ
+        detail_image: './images/details/timing_belts/timing-belt_mopar_4792353.jpg',
+        detail_info: 'Ремень ГРМ',
+        detail_code: '4792353',
+        detail_manufacturer: 'Mopar',
+        detail_more: '',
+        detail_scheme: './images/details/timing_belts/timing-belt.gif'
+    }
+]
+
+const BRAKE_PADS = [
+    {
+        detail_image: './images/details/brake_pads/front-brake-pad_patron_PBP7000.jpg',
+        detail_info: 'Передние тормозные колодки',
+        detail_code: 'PBP7000',
+        detail_manufacturer: 'Patron',
+        detail_more: '',
+        detail_scheme: './images/details/brake_pads/front-brake-pad.gif'
     },
     {
-        subtitle: 'Воздушный фильтр',
-        // id: 'air_filters',
-        details: AIR_FILTERS
+        detail_image: './images/details/brake_pads/rear_brake_pad_patron_PBP7001.jpg',
+        detail_info: 'Задние тормозные колодки',
+        detail_code: 'PBP7001',
+        detail_manufacturer: 'Patron',
+        detail_more: '',
+        detail_scheme: './images/details/brake_pads/rear-brake-pad.gif'
     },
     {
-        subtitle: 'Фильтр салона',
-        id: 'cabin_filters',
-        details: CABIN_FILTERS
+        detail_image: './images/details/brake_pads/parking-brake-pad_patron_PSP069.jpg',
+        detail_info: 'Колодки стояночного тормоза',
+        detail_code: 'PSP069',
+        detail_manufacturer: 'Patron',
+        detail_more: '',
+        detail_scheme: './images/details/brake_pads/parking-brake-pad.gif'
     },
+]
+
+const PLUG_OIL_DRAIN = [
     {
-        subtitle: 'Фильтр АКПП',
-        id: 'transmission_filters',
-        details: TRANSMISSION_FILTERS
-    },
-    {
-        subtitle: 'Свечи зажигания',
-        id: 'spark_plugs',
-        details: SPARK_PLUGS
-    },
-    {
-        subtitle: 'Ремень поликлинковый',
-        id: '',
-        details: ''
-    },
-    {
-        subtitle: 'Ремень ГРМ',
-        id: '',
-        details: ''
-    },
-    {
-        subtitle: 'Колодки тормозные',
-        id: '',
-        details: ''
-    },
-    {
-        subtitle: 'Пробка сливного отверстия',
-        id: '',
-        details: ''
-    },
-    {
-        subtitle: 'Щетки стеклоочистителя',
-        id: '',
-        details: ''
+        detail_image: './images/details/plug_oil_drain/plug-oil-drain_mopar_6507741AA.jpg',
+        detail_info: 'Пробка сливного отверстия',
+        detail_code: '6507741AA',
+        detail_manufacturer: 'Mopar',
+        detail_more: 'Стандартный болт имеет резьбу M14-1.5mm',
+        detail_scheme: './images/details/plug_oil_drain/plug-oil-drain.gif'
     },
 ]
 
@@ -150,57 +157,10 @@ const GASKETS = [
 
 
 
-const ENGINE_LIST = [
-    ]
-
-const FUEL_SYSTEM_LIST = [
-    {},
-]
-
-const COOLING_SYSTEM_LIST = [
-    {},
-]
-
-const EXHAUST_SYSTEM_LIST = [
-    {},
-]
-
-const TRANSMISSION_LIST = [
-    {},
-]
-
-const CHASSIS_LIST = [
-    {},
-]
-
-const STEERING_LIST = [
-    {},
-]
-
-const BRAKE_SYSTEM_LIST = [
-    {},
-]
-
-const ELECTRICAL_EQUIPMENT_LIST = [
-    {},
-]
-
-const HEATING_CONDITION_LIST = [
-    {},
-]
-
-const INTERIOR_DETAILS_LIST = [
-    {},
-]
-
-const BODY_PARTS_LIST = [
-    {},
-]
-
 export const HEADERS = [
     {
         title: 'Детали ТО',
-        // subtitles: MAINTENANCE_LIST, // МАССИВ ПОДЗАГОЛОВКОВ
+        // МАССИВ ПОДЗАГОЛОВКОВ
         subtitles: [
             {
                 subtitle: 'Маслянный фильтр',
@@ -224,19 +184,19 @@ export const HEADERS = [
             },
             {
                 subtitle: 'Ремень поликлинковый',
-                details: ''
+                details: V_RIBBED_BELTS
             },
             {
                 subtitle: 'Ремень ГРМ',
-                details: ''
+                details: TIMING_BELTS
             },
             {
                 subtitle: 'Колодки тормозные',
-                details: ''
+                details: BRAKE_PADS
             },
             {
                 subtitle: 'Пробка сливного отверстия',
-                details: ''
+                details: PLUG_OIL_DRAIN
             },
             {
                 subtitle: 'Щетки стеклоочистителя',
