@@ -1,5 +1,7 @@
 import {HEADERS} from "./data/maintenance.js";
 
+const NEW_DATA = [];
+
 // SETTINGS
 
 // Отрендерить настройки в НАЧАЛЕ
@@ -62,13 +64,12 @@ function createContentMenu(HEADERS) {
 
 function createHeaders(contentContainer, headerInfo) {
     const contentHeader = document.createElement('div');
-    // contentHeader.className = 'content_header light_theme_colors';
     contentHeader.className = 'content_header';
 
     const headerTitle = document.createElement('button');
-    // headerTitle.className = 'accordion light_theme_colors';
     headerTitle.className = 'accordion';
     headerTitle.innerHTML = headerInfo.title;
+
     const panelElement = document.createElement('div');
     panelElement.className = 'panel';
 
@@ -88,24 +89,62 @@ function createSubtitles(headerSubtitles, panelElement) {
     for (let subTitle of headerSubtitles) {
 
         const headerSubtitle = document.createElement('button');
-        // headerSubtitle.className = 'accordion title light_theme_colors';
-        headerSubtitle.className = 'accordion title';
-
+        headerSubtitle.className = 'accordion title'
         headerSubtitle.innerHTML = subTitle.subtitle;
+
         const newPanelElement = document.createElement('div');
         newPanelElement.className = 'panel';
+
         const containerItems = document.createElement('div');
         containerItems.className = 'container_items';
 
         panelElement.append(headerSubtitle);
         headerSubtitle.after(newPanelElement);
-        newPanelElement.append(containerItems);
 
         if (subTitle.details) {
+            newPanelElement.append(containerItems);
             createDetails(subTitle.details, containerItems);
-        } else {
+        }
+
+        if (!subTitle.details && !subTitle.sub_subtitles) {
             headerSubtitle.disabled = true;
         }
+
+        // Здесь ещё один АККОРДИОН подзаголовков
+        if (subTitle.sub_subtitles) {
+            createSubSubtitles(subTitle.sub_subtitles, newPanelElement);
+        }
+    }
+}
+
+function createSubSubtitles(headerSubtitles, panelElement) {
+
+    for (let subTitle of headerSubtitles) {
+
+        const headerSubSubtitle = document.createElement('button');
+        headerSubSubtitle.className = 'accordion title2'
+        headerSubSubtitle.innerHTML = subTitle.sub_subtitle;
+
+        const newPanelElement = document.createElement('div');
+        newPanelElement.className = 'panel';
+
+        const containerItems = document.createElement('div');
+        containerItems.className = 'container_items';
+
+        panelElement.append(headerSubSubtitle);
+        headerSubSubtitle.after(newPanelElement);
+        newPanelElement.append(containerItems);
+
+        // console.log(subTitle);
+
+        if (subTitle.details) {
+            // console.log('Выводим детали');
+            // console.log(subTitle.details);
+            createDetails(subTitle.details, containerItems);
+        } else {
+            headerSubSubtitle.disabled = true;
+        }
+
     }
 }
 
@@ -113,10 +152,10 @@ function createDetails(subTitleDetails, containerItems) {
 
     for (let detail of subTitleDetails) {
 
-        // const newId = Date.now();
+        // Новый массив с проверкой
+        addElementToDataArray(detail);
 
         const containerDetail = document.createElement('div');
-        // containerDetail.className = 'container_detail light_theme_colors';
         if (SETTINGS.VIEW === 'details_table') {
             containerDetail.className = 'container_detail';
         } else {
@@ -206,22 +245,6 @@ for (let i = 0; i < acc.length; i++) {
 
 // ОТДЕЛЬНЫЙ МАССИВ ДЕТАЛЕЙ ДЛЯ ПОИСКА
 
-const newData = []
-
-for (let subtitle of HEADERS) {
-    if (subtitle['subtitles']) {
-        for (let detail of subtitle['subtitles']) {
-            if (detail['details']) {
-                for (let item of detail['details']) {
-                    newData.push(item)
-                }
-            }
-        }
-    }
-}
-
-// console.log(newData);
-
 // ОБРАБОТКА КЛИКОВ
 
 // const click = document.getElementsByClassName('container_detail')
@@ -237,7 +260,7 @@ window.onclick = function(event) {
 
     // console.log(targetElementId);
 
-    const clickElement = newData.find(elem => elem.detail_id === targetElementId)
+    const clickElement = NEW_DATA.find(elem => elem.detail_id === targetElementId)
 
     console.log(clickElement);
 
@@ -272,7 +295,7 @@ window.onclick = function(event) {
             console.log(targetElementId); // ID элемента
 
 
-            const detail = newData.find(elem => elem.detail_id === targetElementId)
+            const detail = NEW_DATA.find(elem => elem.detail_id === targetElementId)
             console.log(detail);  // Объект ЭЛЕМЕНТА
 
             const elementContainer = document.querySelector('.modal.active')
@@ -360,7 +383,6 @@ window.onclick = function(event) {
                 const detailScheme = document.createElement('div');
                 // detailScheme.className = 'detail_scheme detail_button light_theme_buttons';
                 detailScheme.className = 'detail_scheme detail_button';
-
                 detailScheme.textContent = 'Схема';
                 detailOptions.append(detailScheme);
             }
@@ -411,7 +433,7 @@ document.addEventListener('DOMContentLoaded', function() {
         overlay      = document.querySelector('.js-overlay-modal'),
         closeButtons = document.querySelectorAll('.js-modal-close');
 
-    console.log(modalButtons);
+    // console.log(modalButtons);
     /* Перебираем массив кнопок */
     modalButtons.forEach(function(item){
 
@@ -542,8 +564,6 @@ function renderSettings() {
     }
 }
 
-
-
 function clearThemeClass() {
     setTheme.classList.remove('dark_theme');
     setTheme.classList.remove('light_theme');
@@ -592,4 +612,11 @@ function removeDetailsWrapView() {
     }
 }
 
+// console.log(NEW_DATA);
 
+function addElementToDataArray (item) {
+    // console.log(item.detail_code);
+    if (!NEW_DATA.some(e => e.detail_code === item.detail_code)) {
+        NEW_DATA.push(item)
+    }
+}
