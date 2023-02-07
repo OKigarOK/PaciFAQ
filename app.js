@@ -252,13 +252,15 @@ for (let i = 0; i < acc.length; i++) {
 
 
 window.onclick = function(event) {
-    let target = event.target; // где был клик?
+    const target = event.target; // где был клик?
+
+    // console.log(target);
 
     const targetElementId = target.parentElement.parentElement.id;
 
     if (!targetElementId) return
 
-    // console.log(targetElementId);
+    console.log(targetElementId);
 
     const clickElement = NEW_DATA.find(elem => elem.detail_id === targetElementId)
 
@@ -406,9 +408,63 @@ window.onclick = function(event) {
 
 // SEARCH
 
-// const inputText = document.getElementById('inner_text')
-// const result = document.getElementById('outer_text')
-//
+const inputText = document.getElementById('search')
+const searchElementsList = document.getElementById('search_menu')
+
+inputText.oninput = function () {
+    const substring = inputText.value.toLowerCase();
+    if (!substring) {
+        searchElementsList.innerHTML = '';
+        return
+    }
+
+    findObjectInArray(substring);
+}
+
+
+function findObjectInArray(item) {
+
+    const searchArray = []
+    searchElementsList.innerHTML = '';
+    // const searchElement = document.createElement('p')
+
+    for (let el of NEW_DATA) {
+
+        if (el.detail_info.includes(item)) {
+            searchArray.push(el);
+
+
+            const searchElement = document.createElement('div');
+            console.log(el.detail_info);
+            searchElementsList.append(searchElement);
+            searchElement.innerHTML = el.detail_info + ' ' + el.detail_code;
+
+        }
+
+
+    }
+    // ELEMENT.includes(item)
+    console.log(item);
+    console.log(searchArray);
+
+    if (!searchArray) {
+        searchElementsList.innerHTML = 'ПУСТО :(';
+
+    }
+
+    // вызываем и рендерим массив
+    function renderFindDetails () {
+        const searchElement = document.createElement('div');
+        searchElementsList.append(searchElement);
+        searchElement.innerHTML = el.detail_info + ' ' + el.detail_code + `(${el.detail_manufacturer})`;
+
+    }
+
+
+
+
+}
+
 // inputText.oninput = function() {
 //     if (inputText.value) {
 //         result.innerHTML = inputText.value;
@@ -418,9 +474,9 @@ window.onclick = function(event) {
 //     }
 //     // result.innerHTML = inputText.value;
 // };
-//
+
 // inputText.onfocus = function (e) {
-//     // document.body.style.background = 'red'
+//     document.body.style.background = 'red'
 // }
 
 // МНОГО МОДАЛОК
@@ -598,7 +654,6 @@ function removeFullView() {
 
 function addDetailsWrapView() {
     const allElements = document.querySelectorAll('.detail_options')
-    // console.log(allElements);
     for (let item of allElements) {
         item.classList.add('detail_options_wrap');
     }
@@ -606,17 +661,17 @@ function addDetailsWrapView() {
 
 function removeDetailsWrapView() {
     const allElements = document.querySelectorAll('.detail_options')
-    // console.log(allElements);
     for (let item of allElements) {
         item.classList.remove('detail_options_wrap')
     }
 }
 
-// console.log(NEW_DATA);
+console.log(NEW_DATA);
 
 function addElementToDataArray (item) {
-    // console.log(item.detail_code);
     if (!NEW_DATA.some(e => e.detail_code === item.detail_code)) {
-        NEW_DATA.push(item)
+        item.detail_info = item.detail_info.toLowerCase();
+        NEW_DATA.push(item);
     }
 }
+
