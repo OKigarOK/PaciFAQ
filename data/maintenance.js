@@ -16,7 +16,7 @@ const OIL_FILTERS = [
         detail_manufacturer: 'Fram',
         detail_image: './images/details/oil_filters/oil-filter_fram_PH16.jpg',
         detail_scheme: './images/details/oil_filters/oil-filter.gif',
-        // detail_more: 'Что-то ещё...',
+        detail_more: 'Что-то ещё...',
         // detail_options: [{},],
     },
     {
@@ -90,7 +90,7 @@ const V_RIBBED_BELTS = [
         detail_manufacturer: 'Mopar',
         detail_image: './images/details/v_ribbed_belts/v-ribbed-belts_mopar_4861850AA.jpg',
         detail_scheme: './images/details/v_ribbed_belts/v-ribbed-belt.gif',
-        detail_more: '',
+        detail_more: 'Можно любой ремень с размерами 6PK 2370-2380. Длинна в обходк компрессора кондиционера 2050-2100мм',
     }
 ]
 

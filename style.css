@@ -465,6 +465,7 @@ button:disabled {
         transition: all 0.25s ease-in-out;
         opacity: 0.95;
     }
+
     .header_menu.active,
     .search_menu.active {
         top: 0;
@@ -482,6 +483,22 @@ button:disabled {
         transition: all 0.25s ease-in-out;
         opacity: 0.95;
     }
+
+    /*.search_menu div {*/
+    /*    !*color: red;*!*/
+    /*    font-size: 0.9em;*/
+    /*    border: 2px solid wheat;*/
+    /*    padding: 3px 6px;*/
+    /*    margin-bottom: 10px;*/
+    /*    border-radius: 15px;*/
+    /*}*/
+
+    /*.search_menu div:hover {*/
+    /*    background-color: wheat;*/
+    /*    color: black;*/
+    /*    transition: all 0.5s ease;*/
+    /*}*/
+
 
     .header_menu_list {
         display: block;

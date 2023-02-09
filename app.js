@@ -1,6 +1,8 @@
 import {HEADERS} from "./data/maintenance.js";
+import {ERRORS} from "./data/errors_list.js";
 
 const NEW_DATA = [];
+console.log(ERRORS);
 
 // SETTINGS
 
@@ -54,6 +56,8 @@ function render(theme, font, view) {
 createContentMenu(HEADERS);
 
 renderSettings();
+
+callAccord();
 
 function createContentMenu(HEADERS) {
     const contentContainer = document.querySelector('.content_container');
@@ -224,23 +228,203 @@ function createDetails(subTitleDetails, containerItems) {
     }
 }
 
+// КОДЫ ОШИБОК
+
+function createCodeInSearch (item, containerItem) {
+
+    const headerSubtitle = document.createElement('button');
+    headerSubtitle.className = 'accordion title'
+    headerSubtitle.innerHTML = 'Ошибка ' + item.error_code;
+
+    const newPanelElement = document.createElement('div');
+    newPanelElement.className = 'panel';
+
+    const containerItems = document.createElement('div');
+    containerItems.className = 'container_items';
+
+
+    containerItem.append(headerSubtitle);
+    headerSubtitle.after(newPanelElement);
+    //
+    newPanelElement.append(containerItems);
+    // setElement(detail, containerItems);
+
+    // // РИСУЕМ ДЕТАЛЬ
+    //
+    // function setElement (detail, elementContainer) {
+        const containerDetail = document.createElement('div');
+        containerDetail.className = `container_detail full_width more_modal_settings`;
+
+        //
+    //     const detailImage = document.createElement('div');
+    //     detailImage.className = 'detail_image';
+    //     detailImage.innerHTML = `<img src="${detail.detail_image}" alt="${detail.detail_manufacturer}">`;
+    //
+        const detailInfo = document.createElement('div');
+        detailInfo.className = 'detail_info';
+        if (item.error_info) {
+            detailInfo.innerHTML = item.error_info;
+        } else {
+            detailInfo.innerHTML = '(!) Информация отсутствует';
+        }
+    //
+    //     const detailCode = document.createElement('div');
+    //     detailCode.className = 'detail_code';
+    //     detailCode.textContent = detail.detail_code + ` (${detail.detail_manufacturer})`;
+    //
+    //     const detailOptions = document.createElement('div');
+    //     if ((SETTINGS.VIEW === 'details_table') && (SETTINGS.FONT_SIZE === 'fontSizeM')) {
+    //         detailOptions.className = 'detail_options detail_options_wrap';
+    //     } else {
+    //         detailOptions.className = 'detail_options';
+    //     }
+    //
+    //     const detailPrice = document.createElement('div');
+    //     // detailPrice.className = 'detail_price detail_button light_theme_buttons';
+    //     detailPrice.className = 'detail_price detail_button';
+    //
+    //     detailPrice.textContent = 'Стоимость';
+    //
+        containerItems.append(containerDetail);
+
+    //     elementContainer.append(containerDetail);
+    //
+    //     // containerDetail.append(detailCode);
+    //     containerDetail.append(detailImage);
+        containerDetail.append(detailInfo);
+    //
+    //     containerDetail.append(detailInfo);
+    //     containerDetail.append(detailOptions);
+    //     detailOptions.append(detailPrice);
+    //
+    //     // ДОБАВИТЬ ПОДРОБНОСТИ....
+    // }
+
+}
+
+// ДЕТАЛЬ В ПОИСКЕ
+
+function createDetailInSearch (detail, containerItem) {
+    console.log(detail);
+    // function createSubtitles(headerSubtitles, panelElement) {
+
+        // for (let subTitle of headerSubtitles) {
+
+            const headerSubtitle = document.createElement('button');
+            headerSubtitle.className = 'accordion title'
+            headerSubtitle.innerHTML = detail.detail_info +' '+ detail.detail_code;
+
+            const newPanelElement = document.createElement('div');
+            newPanelElement.className = 'panel';
+
+            const containerItems = document.createElement('div');
+            containerItems.className = 'container_items';
+            containerItem.append(headerSubtitle);
+            headerSubtitle.after(newPanelElement);
+
+            newPanelElement.append(containerItems);
+            setElement(detail, containerItems);
+
+            // РИСУЕМ ДЕТАЛЬ
+
+    function setElement (detail, elementContainer) {
+        const containerDetail = document.createElement('div');
+        containerDetail.className = `container_detail full_width more_modal_settings`;
+
+        const detailImage = document.createElement('div');
+        detailImage.className = 'detail_image';
+        detailImage.innerHTML = `<img src="${detail.detail_image}" alt="${detail.detail_manufacturer}">`;
+
+        const detailInfo = document.createElement('div');
+        detailInfo.className = 'detail_info';
+        detailInfo.innerHTML = detail.detail_more;
+
+        const detailCode = document.createElement('div');
+        detailCode.className = 'detail_code';
+        detailCode.textContent = detail.detail_code + ` (${detail.detail_manufacturer})`;
+
+        const detailOptions = document.createElement('div');
+        if ((SETTINGS.VIEW === 'details_table') && (SETTINGS.FONT_SIZE === 'fontSizeM')) {
+            detailOptions.className = 'detail_options detail_options_wrap';
+        } else {
+            detailOptions.className = 'detail_options';
+        }
+
+        const detailPrice = document.createElement('div');
+        // detailPrice.className = 'detail_price detail_button light_theme_buttons';
+        detailPrice.className = 'detail_price detail_button';
+
+        detailPrice.textContent = 'Стоимость';
+
+        // containerItems.append(containerDetail);
+
+        elementContainer.append(containerDetail);
+
+        // containerDetail.append(detailCode);
+        containerDetail.append(detailImage);
+        // containerDetail.append(detailInfo);
+
+        containerDetail.append(detailInfo);
+        containerDetail.append(detailOptions);
+        detailOptions.append(detailPrice);
+
+        // ДОБАВИТЬ ПОДРОБНОСТИ....
+    }
+
+
+            // if (detail.details) {
+            //     newPanelElement.append(containerItems);
+            //     createDetails(detail.details, containerItems);
+            // }
+            //
+            // if (!detail.details && !detail.sub_subtitles) {
+            //     headerSubtitle.disabled = true;
+            // }
+
+            // Здесь ещё один АККОРДИОН подзаголовков
+            // if (subTitle.sub_subtitles) {
+            //     createSubSubtitles(subTitle.sub_subtitles, newPanelElement);
+            // }
+        // }
+    // }
+}
+
+
+
 // АККОРДИОН
 
-const acc = document.getElementsByClassName("accordion");
+function callAccord() {
+    const acc = document.getElementsByClassName("accordion");
 
-for (let i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function () {
-        this.classList.toggle("active");
-        const panel = this.nextElementSibling;
-        if (panel.style.maxHeight) {
-            panel.style.maxHeight = null;
-        } else {
-            // panel.style.maxHeight = panel.scrollHeight + "px";
-            // panel.style.maxHeight = '100%';
-            panel.style.maxHeight = '1500px';
-        }
-    });
+    for (let i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            const panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else {
+                // panel.style.maxHeight = panel.scrollHeight + "px";
+                // panel.style.maxHeight = '100%';
+                panel.style.maxHeight = '1500px';
+            }
+        });
+    }
 }
+// const acc = document.getElementsByClassName("accordion");
+//
+// for (let i = 0; i < acc.length; i++) {
+//     acc[i].addEventListener("click", function () {
+//         this.classList.toggle("active");
+//         const panel = this.nextElementSibling;
+//         if (panel.style.maxHeight) {
+//             panel.style.maxHeight = null;
+//         } else {
+//             // panel.style.maxHeight = panel.scrollHeight + "px";
+//             // panel.style.maxHeight = '100%';
+//             panel.style.maxHeight = '1500px';
+//         }
+//     });
+// }
 
 
 // ОТДЕЛЬНЫЙ МАССИВ ДЕТАЛЕЙ ДЛЯ ПОИСКА
@@ -306,41 +490,20 @@ window.onclick = function(event) {
             // ЗДЕСЬ ОБНУЛЕНИЕ
             elementContainer.innerHTML = '';
 
-            // elementContainer.lastElementChild.innerHTML = detail.detail_more
-
-            // const elementToAppend = elementContainer.lastElementChild
-
-            // if (SETTINGS.VIEW === 'details_table') {
-            //     elementToAppend.classList.add('.full_width')
-            // }
-
-            // console.log(elementToAppend); // Контейнер Элемента
-
             // ЗДЕСЬ МОЖНО СТРОИТЬ МОДАЛКУ ПОДРОБНЕЕ
 
             const containerDetail = document.createElement('div');
-            // if (SETTINGS.VIEW === 'details_table') {
-            //     containerDetail.className = 'container_detail';
-            // } else {
-                containerDetail.className = `container_detail full_width more_modal_settings`;
-            // }
-
-            // console.log(containerDetail);
-            // containerDetail.innerHTML = '';
-
-            // containerDetail.setAttribute('id' , `${detail.detail_code}` );
-            // detail.detail_id = detail.detail_code;
+            containerDetail.className = `container_detail full_width more_modal_settings`;
 
             const detailImage = document.createElement('div');
             detailImage.className = 'detail_image';
             detailImage.innerHTML = `<img src="${detail.detail_image}" alt="${detail.detail_manufacturer}">`;
 
-            // const detailNavContainer = document.createElement('div');
-            // detailNavContainer.className = 'QWERTY';
-
             const detailInfo = document.createElement('div');
             detailInfo.className = 'detail_info';
-            detailInfo.innerHTML = detail.detail_info;
+            // detailInfo.innerHTML = detail.detail_info;
+            detailInfo.innerHTML = detail.detail_more;
+
 
             const detailCode = document.createElement('div');
             detailCode.className = 'detail_code';
@@ -415,69 +578,98 @@ inputText.oninput = function () {
     const substring = inputText.value.toLowerCase();
     if (!substring) {
         searchElementsList.innerHTML = '';
+        callAccord();
         return
     }
 
     findObjectInArray(substring);
+    // findErrorCode(substring);
+    callAccord();
+
 }
 
+function findErrorCode(item) {
+    const errorsArray = []
+    searchElementsList.innerHTML = '';
+    // const searchElement = document.createElement('p')
+
+    for (let el of ERRORS) {
+
+        if (el.id.includes(item)) {
+            errorsArray.push(el);
+
+            // createDetailInSearch(el, searchElementsList)
+            // console.log(el);
+            // console.log(searchElementsList);
+        }
+    }
+
+    console.log(errorsArray);
+    // if (!errorsArray) {
+    //     searchElementsList.innerHTML = 'ПУСТО :(';
+    //
+    // }
+
+}
 
 function findObjectInArray(item) {
 
-    const searchArray = []
+    // const searchArray = []
     searchElementsList.innerHTML = '';
     // const searchElement = document.createElement('p')
+
+    console.log(searchElementsList);
 
     for (let el of NEW_DATA) {
 
         if (el.detail_info.includes(item)) {
-            searchArray.push(el);
+            // searchArray.push(el);
+            // const searchElement = document.createElement('div');
+            // searchElement.classList.add('search_item')
+            // console.log(el.detail_info);
+            // searchElementsList.append(searchElement);
+            // searchElement.innerHTML = el.detail_info + ' ' + el.detail_code  + `(${el.detail_manufacturer})`;
 
-
-            const searchElement = document.createElement('div');
-            console.log(el.detail_info);
-            searchElementsList.append(searchElement);
-            searchElement.innerHTML = el.detail_info + ' ' + el.detail_code;
-
+            createDetailInSearch(el, searchElementsList)
+            console.log(el);
+            // console.log(searchElementsList);
         }
-
-
     }
+
+    console.log(searchElementsList);
+
+
+    for (let el of ERRORS) {
+
+        if (el.error_code.includes(item)) {
+
+            createCodeInSearch(el, searchElementsList)
+
+
+
+            // console.log(el);
+        }
+    }
+
+    console.log(searchElementsList);
+
+
     // ELEMENT.includes(item)
     console.log(item);
-    console.log(searchArray);
+    // console.log(searchArray);
 
-    if (!searchArray) {
-        searchElementsList.innerHTML = 'ПУСТО :(';
-
-    }
+    // if (!searchArray) {
+    //     searchElementsList.innerHTML = 'ПУСТО :(';
+    //
+    // }
 
     // вызываем и рендерим массив
-    function renderFindDetails () {
-        const searchElement = document.createElement('div');
-        searchElementsList.append(searchElement);
-        searchElement.innerHTML = el.detail_info + ' ' + el.detail_code + `(${el.detail_manufacturer})`;
-
-    }
-
-
-
-
+    // function renderFindDetails () {
+    //     const searchElement = document.createElement('div');
+    //     searchElementsList.append(searchElement);
+    //     searchElement.innerHTML = el.detail_info + ' ' + el.detail_code + `(${el.detail_manufacturer})`;
+    // }
 }
-
-// inputText.oninput = function() {
-//     if (inputText.value) {
-//         result.innerHTML = inputText.value;
-//         console.log(result.classList.add('show_search'));
-//     } else {
-//         result.classList.remove('show_search');
-//     }
-//     // result.innerHTML = inputText.value;
-// };
-
-// inputText.onfocus = function (e) {
-//     document.body.style.background = 'red'
-// }
 
 // МНОГО МОДАЛОК
 
