@@ -350,11 +350,18 @@ function createDetailInSearch (detail, containerItem) {
             detailOptions.className = 'detail_options';
         }
 
+
+
         const detailPrice = document.createElement('div');
         // detailPrice.className = 'detail_price detail_button light_theme_buttons';
         detailPrice.className = 'detail_price detail_button';
 
         detailPrice.textContent = 'Стоимость';
+
+
+
+
+
 
         // containerItems.append(containerDetail);
 
@@ -368,25 +375,17 @@ function createDetailInSearch (detail, containerItem) {
         containerDetail.append(detailOptions);
         detailOptions.append(detailPrice);
 
+        if (detail.detail_scheme) {
+            const detailScheme = document.createElement('div');
+            // detailScheme.className = 'detail_scheme detail_button light_theme_buttons';
+            detailScheme.className = 'detail_scheme detail_button';
+
+            detailScheme.textContent = 'Схема';
+            detailOptions.append(detailScheme);
+        }
         // ДОБАВИТЬ ПОДРОБНОСТИ....
     }
 
-
-            // if (detail.details) {
-            //     newPanelElement.append(containerItems);
-            //     createDetails(detail.details, containerItems);
-            // }
-            //
-            // if (!detail.details && !detail.sub_subtitles) {
-            //     headerSubtitle.disabled = true;
-            // }
-
-            // Здесь ещё один АККОРДИОН подзаголовков
-            // if (subTitle.sub_subtitles) {
-            //     createSubSubtitles(subTitle.sub_subtitles, newPanelElement);
-            // }
-        // }
-    // }
 }
 
 
@@ -510,11 +509,14 @@ window.onclick = function(event) {
             detailCode.textContent = detail.detail_code + ` (${detail.detail_manufacturer})`;
 
             const detailOptions = document.createElement('div');
-            if ((SETTINGS.VIEW === 'details_table') && (SETTINGS.FONT_SIZE === 'fontSizeM')) {
-                detailOptions.className = 'detail_options detail_options_wrap';
-            } else {
-                detailOptions.className = 'detail_options';
-            }
+            // if ((SETTINGS.VIEW === 'details_table') && (SETTINGS.FONT_SIZE === 'fontSizeM')) {
+            //     detailOptions.className = 'detail_options detail_options_wrap';
+            // } else {
+            //     detailOptions.className = 'detail_options';
+            // }
+
+            detailOptions.className = 'detail_options';
+
 
             const detailPrice = document.createElement('div');
             // detailPrice.className = 'detail_price detail_button light_theme_buttons';
@@ -646,9 +648,6 @@ function findObjectInArray(item) {
         if (el.error_code.includes(item)) {
 
             createCodeInSearch(el, searchElementsList)
-
-
-
             // console.log(el);
         }
     }

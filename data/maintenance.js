@@ -7,7 +7,7 @@ const OIL_FILTERS = [
         detail_manufacturer: 'Mopar',
         detail_image: './images/details/oil_filters/oil-filter_mopar_05281090AB.jpg',
         detail_scheme: './images/details/oil_filters/oil-filter.gif',
-        detail_more: 'Какая-то дополнительная информация...',
+        detail_more: 'У многих на этом фильтре появляется стук',
         // detail_options: [{},],
     },
     {
@@ -16,7 +16,7 @@ const OIL_FILTERS = [
         detail_manufacturer: 'Fram',
         detail_image: './images/details/oil_filters/oil-filter_fram_PH16.jpg',
         detail_scheme: './images/details/oil_filters/oil-filter.gif',
-        detail_more: 'Что-то ещё...',
+        detail_more: 'Нормальный фильтр, но после 5000 пробега превращается в г..но',
         // detail_options: [{},],
     },
     {
@@ -25,7 +25,7 @@ const OIL_FILTERS = [
         detail_manufacturer: 'Mahle/Knecht',
         detail_image: './images/details/oil_filters/oil-filter_mahle_OC23.jpg',
         detail_scheme: './images/details/oil_filters/oil-filter.gif',
-        detail_more: 'Что-то ещё...',
+        detail_more: 'Норм фильтр',
         // detail_options: [{},],
     },
     {
@@ -34,7 +34,7 @@ const OIL_FILTERS = [
         detail_manufacturer: 'Mahle/Knecht',
         detail_image: './images/details/oil_filters/oil-filter_mahle_OC236.jpg',
         detail_scheme: './images/details/oil_filters/oil-filter.gif',
-        detail_more: 'Что-то ещё...',
+        detail_more: 'Тоже норм фильтр',
         // detail_options: [{},],
     },
 ]
@@ -79,7 +79,7 @@ const SPARK_PLUGS = [
         detail_manufacturer: 'Mopar',
         detail_image: './images/details/spark_plugs/spark-plug_mopar_SZFR5LP13G.jpg',
         detail_scheme: './images/details/spark_plugs/spark-plug.gif',
-        detail_more: '',
+        detail_more: 'отличные свечи, выхаживают по 100тык',
     },
 ]
 
@@ -90,7 +90,7 @@ const V_RIBBED_BELTS = [
         detail_manufacturer: 'Mopar',
         detail_image: './images/details/v_ribbed_belts/v-ribbed-belts_mopar_4861850AA.jpg',
         detail_scheme: './images/details/v_ribbed_belts/v-ribbed-belt.gif',
-        detail_more: 'Можно любой ремень с размерами 6PK 2370-2380. Длинна в обходк компрессора кондиционера 2050-2100мм',
+        detail_more: 'можно любой ремень с размерами 6PK2370-2380. Длина в обход компрессора кондиционера 2050-2100мм',
     }
 ]
 
@@ -112,7 +112,7 @@ const FRONT_BRAKE_PADS = [
         detail_manufacturer: 'Patron',
         detail_image: './images/details/brake_pads/front-brake-pad_patron_PBP7000.jpg',
         detail_scheme: './images/details/brake_pads/front-brake-pad.gif',
-        detail_more: '',
+        detail_more: 'нормальные колодки цена/качество',
     },
 ]
 
@@ -145,7 +145,7 @@ const PLUG_OIL_DRAIN = [
         detail_manufacturer: 'Mopar',
         detail_image: './images/details/plug_oil_drain/plug-oil-drain_mopar_6507741AA.jpg',
         detail_scheme: './images/details/plug_oil_drain/plug-oil-drain.gif',
-        detail_more: 'Стандартный болт имеет резьбу M14-1.5mm',
+        detail_more: 'стандартный болт имеет резьбу M14-1.5mm. В случае слизывания резьбы, обычно "перерезают" на М16-1.5мм',
     },
 ]
 

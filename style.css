@@ -568,7 +568,9 @@ button:disabled {
     z-index: 30; /* Должен быть выше чем у подложки*/
     /*  Побочные стили   */
     box-shadow: 0 3px 10px -.5px rgba(0, 0, 0, .2);
-    padding: 30px 6px 10px;
+    /*padding: 30px 6px 10px;*/
+    padding: 30px 6px 25px;
+
     border-radius: 10px;
     background-color: #000000;
     color: whitesmoke;
@@ -585,19 +587,20 @@ button:disabled {
     visibility: visible;
 }
 
-
-
 /* Стили для кнопки закрытия */
 
 .modal__cross {
-    width: 15px;
-    height: 15px;
+    width: 25px;
+    height: 25px;
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 5px;
+    right: 5px;
     /*fill: #444;*/
     fill: wheat;
     cursor: pointer;
+    border-radius: 50%;
+    padding: 2px;
+
 }
 
 /* SETTINGS MODAL */
@@ -625,6 +628,7 @@ button:disabled {
  /* Т Е М Ы */
 
 /* О Р И Г И Н А Л */
+
 .original_theme,
 .original_theme .modal {
     /*background: url("./images/main_bg.jpg") fixed center no-repeat;*/
@@ -635,10 +639,8 @@ button:disabled {
 }
 
 .original_theme .modal__cross {
-    padding: 2px;
     background-color: wheat;
     fill: black;
-    border-radius: 2px;
 }
 
 .original_theme .header:before {
@@ -679,6 +681,7 @@ button:disabled {
 }
 
 /* С В Е Т Л А Я */
+
 .light_theme,
 .light_theme .modal {
     border-color:  #EAE6F2;
@@ -687,10 +690,8 @@ button:disabled {
 }
 
 .light_theme .modal__cross {
-    padding: 2px;
     background-color: #6653D9;
     fill: #EAE6F2;
-    border-radius: 2px;
 }
 
 .light_theme .header:before {
@@ -739,13 +740,6 @@ button:disabled {
 }
 
 /* Т Ё М Н А Я */
-/*.dark_theme {*/
-/*    background-color: black;*/
-/*    color: wheat;*/
-/*    border: 5px solid red;*/
-/*    transition: all 0.25s ease-in-out;*/
-/*    padding: 10px;*/
-/*}*/
 
 .dark_theme,
 .dark_theme .modal {
@@ -755,10 +749,8 @@ button:disabled {
 }
 
 .dark_theme .modal__cross {
-    padding: 2px;
     background-color: #000000;
     fill: #F2F2F2;
-    border-radius: 2px;
 }
 
 .dark_theme .header:before {
@@ -812,20 +804,6 @@ button:disabled {
     color: #F2F2F2;
 }
 
-
-
-
-
-
-
-
-
-/*.light_theme {*/
-/*    background-color: wheat;*/
-/*    color: black;*/
-/*    padding: 15px;*/
-/*    transition: all 0.25s ease-in-out;*/
-/*}*/
 
 #reset_settings {
 
