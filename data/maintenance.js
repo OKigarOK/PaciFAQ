@@ -279,22 +279,114 @@ export const HEADERS = [
             {
                 subtitle: 'Система подачи воздуха',
                 // details: AIR_SUPPLY_SYSTEM
+                sub_subtitles: [
+                    {
+                      sub_subtitle: 'Корпус воздушного фильтра',
+                      details: ''
+                    },
+                    {
+                        sub_subtitle: 'Коллектор впускной',
+                        details: ''
+                    },
+                    {
+                        sub_subtitle: 'Заслонка дроссельная',
+                        details: ''
+                    },
+                    {
+                        sub_subtitle: 'Регулирование, управление',
+                        details: ''
+                    },
+                ]
             },
             {
                 subtitle: 'Механизм газораспределения ГРМ',
                 // details: GAS_DISTRIBUTION_MECHANISM
+                sub_subtitles: [
+                    {
+                        sub_subtitle: 'Шестерни',
+                        details: ''
+                    },
+                    {
+                        sub_subtitle: 'Шестерня коленвала',
+                        details: ''
+                    },
+                    {
+                        sub_subtitle: 'Распредвал',
+                        details: ''
+                    },
+                    {
+                        sub_subtitle: 'Коромысло, балансир',
+                        details: ''
+                    },
+                    {
+                        sub_subtitle: 'Комплект ГРМ',
+                        details: ''
+                    },
+                    {
+                        sub_subtitle: 'Клапан, регулировка',
+                        details: ''
+                    },
+                ]
             },
             {
                 subtitle: 'Блок-картер',
                 // details: CRANKCASE_BLOCK
             },
             {
+                subtitle: 'Электроника двигателя',
+                // details: CRANKCASE_BLOCK
+            },
+            {
                 subtitle: 'Кривошипношатунный механизм',
                 // details: CRANK_MECHANISM
+                sub_subtitles: [
+                    {
+                        sub_subtitle: 'Коленчатый вал, вкладыши',
+                        details: ''
+                    },
+                    {
+                        sub_subtitle: 'Шатун',
+                        details: ''
+                    },
+                    {
+                        sub_subtitle: 'Поршень',
+                        details: ''
+                    },
+                    {
+                        sub_subtitle: 'Сальник, комплекты уплотнений',
+                        details: ''
+                    },
+                ]
             },
             {
                 subtitle: 'Система смазки (насос)',
                 // details: LUBRICATION_MECHANISM
+                sub_subtitles: [
+                    {
+                        sub_subtitle: 'Фильтр маслянный',
+                        details: OIL_FILTERS
+                    },
+                    {
+                        sub_subtitle: 'Корпус и прокладка маслянного фильтра',
+                        details: ''
+                    },
+                    {
+                        sub_subtitle: 'Поддон маслянный',
+                        details: ''
+                    },
+                    {
+                        sub_subtitle: 'Датчик давления масла',
+                        details: ''
+                    },
+                    {
+                        sub_subtitle: 'Указатель уровня масла',
+                        details: ''
+                    },
+                    {
+                        sub_subtitle: 'Насос маслянный, комплекующие',
+                        details: ''
+                    },
+                ]
             },
             {
                 subtitle: 'Крепление двигателя (подушки)',
@@ -307,14 +399,80 @@ export const HEADERS = [
             {
                 subtitle: 'Ременной привод',
                 // details: DRIVE_PULLEYS
+                sub_subtitles: [
+                    {
+                        sub_subtitle: 'Шкив',
+                        details: ''
+                    },
+                    {
+                        sub_subtitle: 'Механизм свободного хода генератора',
+                        details: ''
+                    },
+                    {
+                        sub_subtitle: 'Ремень поликлинковый, ролики',
+                        details: ''
+                    },
+                    {
+                        sub_subtitle: 'Комплект ГРМ',
+                        details: ''
+                    },
+                ]
             },
             {
                 subtitle: 'Приготовление смеси (форсунки)',
                 // details: FUEL_PREPARATION
+                sub_subtitles: [
+                    {
+                        sub_subtitle: 'Прокладка',
+                        details: ''
+                    },
+                    {
+                        sub_subtitle: 'Заслонка дроссельная',
+                        details: ''
+                    },
+                    {
+                        sub_subtitle: 'Форсунка',
+                        details: ''
+                    },
+                    {
+                        sub_subtitle: 'Управление холостам ходом',
+                        details: ''
+                    },
+                    {
+                        sub_subtitle: 'Датчик кислорода',
+                        details: ''
+                    },
+                ]
             },
             {
                 subtitle: 'Головка цилиндра',
                 // details: CYLINDER_HEAD
+                sub_subtitles: [
+                    {
+                        sub_subtitle: 'Прокладка головки цилиндра',
+                        details: ''
+                    },
+                    {
+                        sub_subtitle: 'Крышка клапанная',
+                        details: ''
+                    },
+                    {
+                        sub_subtitle: 'Прокладка впускного, выпускного коллектора',
+                        details: ''
+                    },
+                    {
+                        sub_subtitle: 'Болт головки блока цилиндра',
+                        details: ''
+                    },
+                    {
+                        sub_subtitle: 'Крышка маслозаливной горловины',
+                        details: ''
+                    },
+                    {
+                        sub_subtitle: 'Головка цилиндра',
+                        details: ''
+                    },
+                ]
             },
         ]
     },
@@ -355,8 +513,22 @@ export const HEADERS = [
                 // details: EXPANSION_TANK
             },
             {
-                subtitle: 'Радиаторы: основной, масляннный (АКПП), кондиционера',
+                subtitle: 'Радиатор маслянный, водяной',
                 // details: COOLING_RADIATORS
+                sub_subtitles: [
+                    {
+                        sub_subtitle: 'Радиатор системы охлаждения',
+                        details: ''
+                    },
+                    {
+                        sub_subtitle: 'Радиатор печки',
+                        details: ''
+                    },
+                    {
+                        sub_subtitle: 'Расширительный бачок',
+                        details: ''
+                    },
+                ]
             },
             {
                 subtitle: 'Патрубки системы охлаждения',
@@ -417,7 +589,7 @@ export const HEADERS = [
                 // details: WHEEL_DRIVE
             },
             {
-                subtitle: 'Раздатка и карданная передача (AWD)',
+                subtitle: 'Главная передача: раздатка, кардан (AWD)',
                 // details: CARDAN_SHAFT
             },
         ],
@@ -502,10 +674,34 @@ export const HEADERS = [
             {
                 subtitle: 'Дисковый тормоз',
                 // details: BRAKE_DISC
+                sub_subtitles: [
+                    {
+                        sub_subtitle: 'Диск тормозной',
+                        details: ''
+                    },
+                    {
+                        sub_subtitle: 'Колодки тормозные',
+                        details: ''
+                    },
+                    {
+                        sub_subtitle: 'Детали тормозной системы',
+                        details: ''
+                    },
+                ]
             },
             {
                 subtitle: 'Барабанный тормозной механизм',
                 // details: DRUM_BRAKE
+                sub_subtitles: [
+                    {
+                        sub_subtitle: 'Колодки тормозные',
+                        details: ''
+                    },
+                    {
+                        sub_subtitle: 'Стояночный тормоз',
+                        details: ''
+                    },
+                ]
             },
             {
                 subtitle: 'Тросы, тяги и рычаги тормозной системы',

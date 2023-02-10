@@ -402,13 +402,16 @@ button:disabled {
     body.lock {
         overflow: hidden;
     }
+
     .header_body {
         height: 50px;
     }
+
     .header_logo {
         /*height: 40px;*/
         flex: 0 0 40px;
     }
+
     .header_burger {
         display: block;
         position: relative;
@@ -416,6 +419,7 @@ button:disabled {
         height: 20px;
         z-index: 3;
     }
+
     .header_burger span {
         position: absolute;
         /*background-color: #000000;*/
@@ -425,6 +429,7 @@ button:disabled {
         top: 9px;
         transition: all 0.25s ease-in-out;
     }
+
     .header_burger:before,
     .header_burger:after {
         content: '';
@@ -435,20 +440,25 @@ button:disabled {
         left: 0;
         transition: all 0.25s ease-in-out;
     }
+
     .header_burger:before {
         top: 0;
     }
+
     .header_burger:after {
         bottom: 0;
     }
+
     .header_burger.active:before {
         transform: rotate(45deg);
         top: 9px;
     }
+
     .header_burger.active:after {
         transform: rotate(-45deg);
         bottom: 9px;
     }
+
     .header_burger.active span {
         transform: scale(0);
     }
@@ -467,7 +477,8 @@ button:disabled {
     }
 
     .header_menu.active,
-    .search_menu.active {
+    .search_menu.active
+    {
         top: 0;
     }
 
@@ -484,25 +495,10 @@ button:disabled {
         opacity: 0.95;
     }
 
-    /*.search_menu div {*/
-    /*    !*color: red;*!*/
-    /*    font-size: 0.9em;*/
-    /*    border: 2px solid wheat;*/
-    /*    padding: 3px 6px;*/
-    /*    margin-bottom: 10px;*/
-    /*    border-radius: 15px;*/
-    /*}*/
-
-    /*.search_menu div:hover {*/
-    /*    background-color: wheat;*/
-    /*    color: black;*/
-    /*    transition: all 0.5s ease;*/
-    /*}*/
-
-
     .header_menu_list {
         display: block;
     }
+
     .header_menu_list li {
         margin: 0 0 20px 0;
     }
@@ -523,6 +519,7 @@ button:disabled {
     .detail_image {
         display: block;
     }
+
     .detail_code,
     .detail_info {
         padding-bottom: 2px;
@@ -531,6 +528,7 @@ button:disabled {
     .accordion.title {
         margin: 5px 0;
     }
+
 }
 
 /* МОДАЛКИ */

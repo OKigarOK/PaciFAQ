@@ -578,10 +578,12 @@ inputText.oninput = function () {
     const substring = inputText.value.toLowerCase();
     if (!substring) {
         searchElementsList.innerHTML = '';
+        searchElementsList.classList.remove('active')
         callAccord();
         return
     }
 
+    searchElementsList.classList.add('active')
     findObjectInArray(substring);
     // findErrorCode(substring);
     callAccord();
