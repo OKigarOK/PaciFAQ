@@ -235,7 +235,10 @@ body {
 
 .accordion:after {
     /*content: '\2611';*/
-    content: '\271A';
+    /*content: '\271A';*/
+    content: '\2716';
+    transform: rotate(45deg);
+
     float: right;
     margin-right: 5px;
     transition: all ease 0.5s;
@@ -244,7 +247,7 @@ body {
 .accordion.active:after {
     /*content: "\2612";*/
     /*content: '\2716';*/
-    transform: rotate(135deg);
+    transform: rotate(270deg);
     transition: all ease 0.5s;
 
 }
