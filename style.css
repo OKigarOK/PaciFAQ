@@ -247,7 +247,7 @@ body {
 .accordion.active:after {
     /*content: "\2612";*/
     /*content: '\2716';*/
-    transform: rotate(270deg);
+    transform: rotate(90deg);
     transition: all ease 0.5s;
 
 }
