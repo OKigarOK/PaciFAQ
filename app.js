@@ -489,6 +489,8 @@ window.onclick = function(event) {
             // ЗДЕСЬ ОБНУЛЕНИЕ
             elementContainer.innerHTML = '';
 
+            console.log(elementContainer); // Вход в МОДАЛКУ
+
             // ЗДЕСЬ МОЖНО СТРОИТЬ МОДАЛКУ ПОДРОБНЕЕ
 
             const containerDetail = document.createElement('div');
@@ -502,7 +504,6 @@ window.onclick = function(event) {
             detailInfo.className = 'detail_info';
             // detailInfo.innerHTML = detail.detail_info;
             detailInfo.innerHTML = detail.detail_more;
-
 
             const detailCode = document.createElement('div');
             detailCode.className = 'detail_code';
@@ -568,7 +569,6 @@ window.onclick = function(event) {
     }
 };
 
-
 // !function(e){"function"!=typeof e.matches&&(e.matches=e.msMatchesSelector||e.mozMatchesSelector||e.webkitMatchesSelector||function(e){for(var t=this,o=(t.document||t.ownerDocument).querySelectorAll(e),n=0;o[n]&&o[n]!==t;)++n;return Boolean(o[n])}),"function"!=typeof e.closest&&(e.closest=function(e){for(var t=this;t&&1===t.nodeType;){if(t.matches(e))return t;t=t.parentNode}return null})}(window.Element.prototype);
 
 // SEARCH
@@ -587,34 +587,10 @@ inputText.oninput = function () {
 
     searchElementsList.classList.add('active')
     findObjectInArray(substring);
-    // findErrorCode(substring);
     callAccord();
 
 }
 
-function findErrorCode(item) {
-    const errorsArray = []
-    searchElementsList.innerHTML = '';
-    // const searchElement = document.createElement('p')
-
-    for (let el of ERRORS) {
-
-        if (el.id.includes(item)) {
-            errorsArray.push(el);
-
-            // createDetailInSearch(el, searchElementsList)
-            // console.log(el);
-            // console.log(searchElementsList);
-        }
-    }
-
-    console.log(errorsArray);
-    // if (!errorsArray) {
-    //     searchElementsList.innerHTML = 'ПУСТО :(';
-    //
-    // }
-
-}
 
 function findObjectInArray(item) {
 
@@ -627,12 +603,6 @@ function findObjectInArray(item) {
     for (let el of NEW_DATA) {
 
         if (el.detail_info.includes(item)) {
-            // searchArray.push(el);
-            // const searchElement = document.createElement('div');
-            // searchElement.classList.add('search_item')
-            // console.log(el.detail_info);
-            // searchElementsList.append(searchElement);
-            // searchElement.innerHTML = el.detail_info + ' ' + el.detail_code  + `(${el.detail_manufacturer})`;
 
             createDetailInSearch(el, searchElementsList)
             console.log(el);
@@ -641,7 +611,6 @@ function findObjectInArray(item) {
     }
 
     console.log(searchElementsList);
-
 
     for (let el of ERRORS) {
 
@@ -654,22 +623,8 @@ function findObjectInArray(item) {
 
     console.log(searchElementsList);
 
-
-    // ELEMENT.includes(item)
     console.log(item);
-    // console.log(searchArray);
 
-    // if (!searchArray) {
-    //     searchElementsList.innerHTML = 'ПУСТО :(';
-    //
-    // }
-
-    // вызываем и рендерим массив
-    // function renderFindDetails () {
-    //     const searchElement = document.createElement('div');
-    //     searchElementsList.append(searchElement);
-    //     searchElement.innerHTML = el.detail_info + ' ' + el.detail_code + `(${el.detail_manufacturer})`;
-    // }
 }
 
 // МНОГО МОДАЛОК
@@ -734,7 +689,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // СМЕНА НАСТРОЕК
-
 
 // console.log(SETTINGS);
 
