@@ -516,6 +516,22 @@ button:disabled {
     font-size: 14px;
 }
 
+/*.modal:before {*/
+/*    position: absolute;*/
+/*    top: 5px;*/
+/*    left: 5px;*/
+/*    font-size: 20px;*/
+/*    content: '\2716';*/
+/*    !*transform: rotate(45deg);*!*/
+/*    !*float: right;*!*/
+/*    !*margin: 6px;*!*/
+/*    transition: all ease 0.5s;*/
+/*    background-color: wheat;*/
+/*    padding: 0 4px;*/
+/*    color: black;*/
+/*    border-radius: 50%;*/
+/*}*/
+
 /* Стили для активных классов подложки и окна */
 .modal.active,
 .overlay.active {
@@ -528,7 +544,7 @@ button:disabled {
     width: 25px;
     height: 25px;
     position: absolute;
-    top: 5px;
+    top: 3px;
     right: 5px;
     fill: wheat;
     cursor: pointer;

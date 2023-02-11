@@ -68,16 +68,12 @@
 
                 <!-- Несколько модальных окон -->
 
-                <div class="modal" data-modal="0">
-                    <!--   Svg иконка для закрытия окна  -->
-                    <svg class="modal__cross js-modal-close" xmlns="http://www.w3.org/2000/svg"               viewBox="0 0 24 24"><path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/></svg>
-                    <h3 class="modal__title">ПОДРОБНЕЕ</h3>
-                    <p></p>
-                </div>
 
                 <div class="modal" data-modal="1">
                     <!--   Svg иконка для закрытия окна  -->
-                    <svg class="modal__cross js-modal-close" xmlns="http://www.w3.org/2000/svg"               viewBox="0 0 24 24"><path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/></svg>
+                    <svg class="modal__cross js-modal-close" xmlns="http://www.w3.org/2000/svg"
+                         viewBox="0 0 24 24"><path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/></svg>
+
                     <h3 class="modal__title">ПОЛЕЗНОЕ</h3>
                     <p>Всякие схемы, ёмкости, моменты затяжки и т.д....</p>
                 </div>
@@ -259,9 +255,12 @@
                     <p>Наверное можно что-то сюда добавлять...</p>
                 </div>
 
-                <div class="modal" data-modal="11">
-                    <svg class="modal__cross js-modal-close" xmlns="http://www.w3.org/2000/svg"               viewBox="0 0 24 24"><path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/></svg>
-<!--                    <div class="container_detail full_width"></div>-->
+                <div class="modal" id="QW" data-modal="11">
+                    <svg class="modal__cross js-modal-close"
+                         xmlns="http://www.w3.org/2000/svg"
+                         viewBox="0 0 24 24">
+                        <path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/>
+                    </svg>
                 </div>
 
                 <!-- Подложка под модальным окном -->
@@ -271,7 +270,7 @@
 
                 <div>
                     <form id="form-search" class="form-search" action="/search/" target="_blank">
-                        <input type="hidden" name="searchid" value="808327">
+<!--                        <input type="hidden" name="searchid" value="808327">-->
                         <input id="search" type="search" name="text" autocomplete="off" required placeholder="Поиск...">
                         <input type="image" src="http://3.bp.blogspot.com/-4w14hQHr5yQ/Tgm6u7KwUkI/AAAAAAAACAI/Hu2poBOPx3g/s1600/search.png"/>  <!-- вместо кнопки submit -->
 
