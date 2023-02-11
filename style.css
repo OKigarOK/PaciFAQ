@@ -240,7 +240,7 @@ body {
     transform: rotate(45deg);
 
     float: right;
-    margin-right: 5px;
+    margin: 0 6px;
     transition: all ease 0.5s;
 }
 
