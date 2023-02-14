@@ -105,6 +105,36 @@ const TIMING_BELTS = [
     }
 ]
 
+const THERMOSTATS = [
+    {
+        detail_info: 'Термостат',
+        detail_code: '68210217AA',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/thermostats/thermostat_mopar_68210217AA.jpg',
+        detail_scheme: './images/details/thermostats/thermostat.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Термостат',
+        detail_code: '465-195',
+        detail_manufacturer: 'Motorad',
+        detail_image: './images/details/thermostats/thermostat_motorad_465-195.jpg',
+        detail_scheme: './images/details/thermostats/thermostat.gif',
+        detail_more: 'термостат на 91 градус',
+    }
+]
+
+const WATER_PUMPS = [
+    {
+        detail_info: 'Водяной насос (малая помпа)',
+        detail_code: 'V9900085',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/water_pumps/water_pump_mopar_V9900085.jpg',
+        detail_scheme: './images/details/water_pumps/water_pump.gif',
+        detail_more: 'малая помпа, на автомобили 2003-2004 годов выпуска',
+    }
+]
+
 const FRONT_BRAKE_PADS = [
     {
         detail_info: 'Передние тормозные колодки',
@@ -154,8 +184,197 @@ const WIPERS = [
         detail_info: '',
         detail_code: '',
         detail_manufacturer: '',
-        detail_image: './images/details/',
+        detail_image: './images/menu/like.png',
         detail_scheme: './images/details/',
+        detail_more: '',
+    },
+]
+
+// ДВИГАТЕЛЬ
+
+// ПРОКЛАДКИ
+
+const VALVE_COVER_GASKETS = [
+    {
+        detail_info: 'Прокладка клапанной крышки',
+        detail_code: 'VS50248',
+        detail_manufacturer: 'Mahle',
+        detail_image: './images/details/gaskets/valve_cover_gaskets/valve_cover_gasket_mahle_VS50248.jpg',
+        detail_scheme: './images/details/gaskets/valve_cover_gaskets/valve_cover_gasket.gif',
+        detail_more: 'комплект на две головы с кольцами под свечные колодцы',
+    },
+]
+
+const OIL_PAN_GASKETS = [
+    {
+        detail_info: 'Прокладка маслянного поддона 03-04',
+        detail_code: '04792663AA',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/gaskets/oil_pan_gaskets/oil_pan_gasket_mopar_04792663AA.jpg',
+        detail_scheme: './images/details/gaskets/oil_pan_gaskets/oil_pan_gasket.gif',
+        detail_more: 'на машины 2003-2004 года выпуска',
+    },
+    {
+        detail_info: 'Прокладка маслянного поддона 04-06',
+        detail_code: '04892072AA',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/gaskets/oil_pan_gaskets/oil_pan_gasket_mopar_04892072AA.jpg',
+        detail_scheme: './images/details/gaskets/oil_pan_gaskets/oil_pan_gasket.gif',
+        detail_more: 'на машины 2004-2006 года выпуска',
+    },
+]
+
+const INTAKE_MANIFOLD_GASKETS = [
+    {
+        detail_info: 'Прокладка впускного коллектора',
+        detail_code: 'MS19537',
+        detail_manufacturer: 'Mahle',
+        detail_image: './images/details/gaskets/intake_manifold_gaskets/gasket_intake_plenum_mahle_MS19537.jpg',
+        detail_scheme: './images/details/gaskets/intake_manifold_gaskets/gasket_intake_plenum.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Прокладка впускного коллектора',
+        detail_code: '4663852AB',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/gaskets/intake_manifold_gaskets/intake_manifold_gasket_mopar_04663852AB.jpg',
+        detail_scheme: './images/details/gaskets/intake_manifold_gaskets/intake_manifold_gasket.gif',
+        detail_more: 'комплект из 2-х прокладок, очень часто именно из-за них уходит антифриз из системы',
+    },
+]
+
+const EXHAUST_MANIFOLD_GASKETS = [
+    {
+        detail_info: 'Прокладка выпускного коллектора',
+        detail_code: '04648913AA',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/gaskets/exhaust_manifold_gaskets/exhaust_manifold_gasket_mopar_04648913AA.jpg',
+        detail_scheme: './images/details/gaskets/exhaust_manifold_gaskets/exhaust_manifold_gasket.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Прокладка выпускного коллектора',
+        detail_code: '04648915AA',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/gaskets/exhaust_manifold_gaskets/exhaust_manifold_gasket_mopar_04648915AA.jpg',
+        detail_scheme: './images/details/gaskets/exhaust_manifold_gaskets/exhaust_manifold_gasket_2.gif',
+        detail_more: '',
+    },
+]
+
+const CYLINDER_HEAD_GASKETS = [
+    {
+        detail_info: 'Прокладка головки цилиндров (правая)',
+        detail_code: '26208PT',
+        detail_manufacturer: 'Fel-Pro',
+        detail_image: './images/details/gaskets/cylinder_head_gaskets/cylinder_head_gasket_R_fel-pro_26208PT.jpg',
+        detail_scheme: './images/details/gaskets/cylinder_head_gaskets/cylinder_head_gasket.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Прокладка головки цилиндров (левая)',
+        detail_code: '26209PT',
+        detail_manufacturer: 'Fel-Pro',
+        detail_image: './images/details/gaskets/cylinder_head_gaskets/cylinder_head_gasket_L_fel-pro_26209PT.jpg',
+        detail_scheme: './images/details/gaskets/cylinder_head_gaskets/cylinder_head_gasket.gif',
+        detail_more: '',
+    },
+]
+
+const SEAL_VALVE_GUIDE = [
+    {
+        detail_info: 'Колпачек маслосъемный',
+        detail_code: 'SS45832',
+        detail_manufacturer: 'Mahle',
+        detail_image: './images/details/gaskets/seal_valve_guide/seal_valve_guide_mahle_SS45832.jpg',
+        detail_scheme: './images/details/gaskets/seal_valve_guide/seal_valve_guide.gif',
+        detail_more: 'комплект маслосъемных колпачков 12шт',
+    },
+]
+
+const FUEL_SYSTEM_SEALING = [
+    {
+        detail_info: 'Уплотнительные кольца форсунок',
+        detail_code: 'SK9',
+        detail_manufacturer: 'Standard',
+        detail_image: './images/details/gaskets/fuel_system_sealing/fuel_system_sealing_standard_SK9.jpg',
+        detail_scheme: './images/details/gaskets/fuel_system_sealing/fuel_system_sealing.gif',
+        detail_more: 'устанавливается по 2 кольца на форсунку',
+    },
+]
+
+const COOLANT_SEALING = [
+    {
+        detail_info: 'Прокладка водяного насоса (помпы)',
+        detail_code: '04659430AB',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/gaskets/coolant_sealing/water_pump_gasket_mopar_04659430AB.jpg',
+        detail_scheme: './images/details/gaskets/coolant_sealing/water_pump_gasket.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Прокладка верхнего патрубка радиатора (термостата)',
+        detail_code: '04781674AA',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/gaskets/coolant_sealing/upper_radiator_hose_gasket_mopar_04781674AA.jpg',
+        detail_scheme: './images/details/gaskets/coolant_sealing/upper_radiator_hose_gasket.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Прокладка нижнего ратрубка радиатора',
+        detail_code: '04792239AB',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/gaskets/coolant_sealing/lower_radiator_hose_gasket_mopar_04792239AB.jpg',
+        detail_scheme: './images/details/gaskets/coolant_sealing/lower_radiator_hose_gasket.gif',
+        detail_more: '',
+    },
+]
+
+const SEALING_OIL_CIRCULATION_SYSTEM = [
+    {
+        detail_info: 'Прокладка маслянного насоса',
+        detail_code: '04648938AC',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/gaskets/sealing_oil_circulation_system/oil_pump_gasket_mopar_04648938AC.jpg',
+        detail_scheme: './images/details/gaskets/sealing_oil_circulation_system/oil_pump_gasket.gif',
+        detail_more: '',
+    },
+]
+
+const OIL_SEALS = [
+    {
+        detail_info: 'Передний сальник распредвала',
+        detail_code: '15058700',
+        detail_manufacturer: 'Ajusa',
+        detail_image: './images/details/gaskets/oil_seals/front_camshaft_oil_seal_ajusa_15058700.jpg',
+        detail_scheme: './images/details/gaskets/oil_seals/front_camshaft_oil_seal.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Передний сальник коленвала',
+        detail_code: '04792317AB',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/gaskets/oil_seals/front_crankshaft_oil_seal_mopar_04792317AB.jpg',
+        detail_scheme: './images/details/gaskets/oil_seals/front_crankshaft_oil_seal.gif',
+        detail_more: 'сюда ставим ТОЛЬКО ОРИГИНАЛ, остальные текут',
+    },
+    {
+        detail_info: 'Задний сальник коленвала',
+        detail_code: 'JV1642',
+        detail_manufacturer: 'Mahle',
+        detail_image: './images/details/gaskets/oil_seals/rear_crankshaft_oil_seal_mahle_JV1642.jpg',
+        detail_scheme: './images/details/gaskets/oil_seals/rear_crankshaft_oil_seal.gif',
+        detail_more: '',
+    },
+]
+
+const THROTTLE_VALVE = [
+    {
+        detail_info: 'Прокладка дроссельной заслонки',
+        detail_code: 'G31666',
+        detail_manufacturer: 'Mahle',
+        detail_image: './images/details/air_supply_system/throttle_valve_gasket_mahle_G31666.jpg',
+        detail_scheme: './images/details/air_supply_system/throttle_valve_gasket.gif',
         detail_more: '',
     },
 ]
@@ -194,7 +413,7 @@ export const HEADERS = [
             },
             {
                 subtitle: 'Термостат',
-                // details: THERMOSTAT
+                details: THERMOSTATS
             },
             {
                 subtitle: 'Пробка сливного отверстия',
@@ -202,15 +421,14 @@ export const HEADERS = [
             },
             {
                 subtitle: 'Щетки стеклоочистителя',
-                // details: WIPERS
+                details: WIPERS
             },
             {
                 subtitle: 'Насос системы охлаждения (помпа)',
-                // details: WATER_PUMPS
+                details: WATER_PUMPS
             },
             {
                 subtitle: 'Колодки тормозные',
-                // details: BRAKE_PADS,
                 sub_subtitles:  [
                     {
                         sub_subtitle: 'Передние тормозные колодки',
@@ -236,43 +454,43 @@ export const HEADERS = [
                 sub_subtitles: [
                     {
                         sub_subtitle: 'Прокладка головки цилиндра',
-                        // details: CYLINDER_HEAD_GASKETS
+                        details: CYLINDER_HEAD_GASKETS
                     },
                     {
                         sub_subtitle: 'Прокладка клапанной крышки',
-                        // details: VALVE_COVER_GASKETS
+                        details: VALVE_COVER_GASKETS
                     },
                     {
                         sub_subtitle: 'Колпачёк маслоотражающий',
-                        // details: OIL_REFLECTING_CAP
+                        details: SEAL_VALVE_GUIDE
                     },
                     {
                         sub_subtitle: 'Прокладка впускного коллектора',
-                        // details: INTAKE_MANIFOLD_GASKETS
+                        details: INTAKE_MANIFOLD_GASKETS
                     },
                     {
                         sub_subtitle: 'Прокладка выпускного коллектора',
-                        // details: EXHAUST_MANIFOLD_GASKETS
+                        details: EXHAUST_MANIFOLD_GASKETS
                     },
                     {
                         sub_subtitle: 'Прокладка маслянного поддона',
-                        // details: OIL_PAN_GASKETS
+                        details: OIL_PAN_GASKETS
                     },
                     {
                         sub_subtitle: 'Герметизация топливной системы',
-                        // details: FUEL_SYSTEM_SEALING
+                        details: FUEL_SYSTEM_SEALING
                     },
                     {
                         sub_subtitle: 'Герметизация охлаждающей жидкости',
-                        // details: COOLANT_SEALING
+                        details: COOLANT_SEALING
                     },
                     {
                         sub_subtitle: 'Герметизация в системе циркуляции масла',
-                        // details: SEALING_OIL_CIRCULATION_SYSTEM
+                        details: SEALING_OIL_CIRCULATION_SYSTEM
                     },
                     {
                         sub_subtitle: 'Сальники, комплект уплотнений',
-                        // details: OIL_SEALS
+                        details: OIL_SEALS
                     },
                 ]
             },
@@ -290,7 +508,7 @@ export const HEADERS = [
                     },
                     {
                         sub_subtitle: 'Заслонка дроссельная',
-                        details: ''
+                        details: THROTTLE_VALVE
                     },
                     {
                         sub_subtitle: 'Регулирование, управление',

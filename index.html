@@ -9,19 +9,16 @@
 </head>
 <body id="theme">
 
-<!--<div class="wrapper dark_theme">-->
 <div class="wrapper">
-<!--<div class="wrapper original_theme">-->
 
     <header class="header">
         <div class="container">
             <div class="header_body">
-<!--                <a href="#" class="header_logo">-->
-<!--                    <img src="./images/my_logo.jpg">-->
-<!--                </a>-->
+
                 <div class="header_burger" id="header_burger">
                     <span></span>
                 </div>
+
                 <nav class="header_menu" id="header_menu">
                     <ul class="header_menu_list">
                         <li>
@@ -57,8 +54,6 @@
                         <li>
                             <a href="#" class="header_menu_link js-open-modal" data-modal="12">словарь "чатланина"</a>
                         </li>
-
-
                     </ul>
                 </nav>
 
@@ -67,38 +62,48 @@
                 </nav>
 
                 <!-- Несколько модальных окон -->
-
-
                 <div class="modal" data-modal="1">
-                    <!--   Svg иконка для закрытия окна  -->
-                    <svg class="modal__cross js-modal-close" xmlns="http://www.w3.org/2000/svg"
-                         viewBox="0 0 24 24"><path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/></svg>
+                    <svg class="modal__cross js-modal-close"
+                         xmlns="http://www.w3.org/2000/svg"
+                         viewBox="0 0 24 24">
+                        <path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/>
+                    </svg>
 
                     <h3 class="modal__title">ПОЛЕЗНОЕ</h3>
                     <p>Всякие схемы, ёмкости, моменты затяжки и т.д....</p>
                 </div>
 
                 <div class="modal" data-modal="12">
-                    <!--   Svg иконка для закрытия окна  -->
-                    <svg class="modal__cross js-modal-close" xmlns="http://www.w3.org/2000/svg"               viewBox="0 0 24 24"><path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/></svg>
+                    <svg class="modal__cross js-modal-close"
+                         xmlns="http://www.w3.org/2000/svg"
+                         viewBox="0 0 24 24">
+                        <path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/>
+                    </svg>
+
                     <h3 class="modal__title">Словарь Чатланина</h3>
                     <p>устойчивые фразеологизмы...</p>
+                    <img class="add" src="./images/menu/like.png" alt="">
                 </div>
 
                 <div class="modal" data-modal="2">
-                    <svg class="modal__cross js-modal-close" xmlns="http://www.w3.org/2000/svg"               viewBox="0 0 24 24"><path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/></svg>
+                    <svg class="modal__cross js-modal-close"
+                         xmlns="http://www.w3.org/2000/svg"
+                         viewBox="0 0 24 24">
+                        <path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/>
+                    </svg>
+
                     <h3 class="modal__title">СОБЫТИЯ</h3>
                     <p>Здесь наверное ДР и прочие праздники )))</p>
                     <p>Может сделать календарь...</p>
                     <p>Возмсожно сделать висящее уведомление</p>
                 </div>
 
-<!--                <div class="modal" data-modal="3">-->
-                    <!--   Svg иконка для закрытия окна  -->
-<!--                    <svg class="modal__cross js-modal-close" xmlns="http://www.w3.org/2000/svg"               viewBox="0 0 24 24"><path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/></svg>-->
-
                     <div class="modal theme_container" id="setSettings" data-modal="3">
-                        <svg class="modal__cross js-modal-close" xmlns="http://www.w3.org/2000/svg"               viewBox="0 0 24 24"><path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/></svg>
+                        <svg class="modal__cross js-modal-close"
+                             xmlns="http://www.w3.org/2000/svg"
+                             viewBox="0 0 24 24">
+                            <path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/>
+                        </svg>
 
                         <div class="theme_body">
                             <h1>Настройки</h1>
@@ -162,11 +167,12 @@
                         </div>
                     </div>
 
-<!--                </div>-->
-
                 <div class="modal" data-modal="4">
-                    <svg class="modal__cross js-modal-close" xmlns="http://www.w3.org/2000/svg"               viewBox="0 0 24 24"><path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/></svg>
-<!--                    <h3 class="modal__title">ПОДДЕРЖАТЬ</h3>-->
+                    <svg class="modal__cross js-modal-close"
+                         xmlns="http://www.w3.org/2000/svg"
+                         viewBox="0 0 24 24">
+                        <path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/>
+                    </svg>
 
                     <div class="menu_image">
                         <img src="./images/menu/for_beer.jpg" alt="">
@@ -186,8 +192,12 @@
                 </div>
 
                 <div class="modal" data-modal="5">
-                    <svg class="modal__cross js-modal-close" xmlns="http://www.w3.org/2000/svg"               viewBox="0 0 24 24"><path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/></svg>
-<!--                    <h3 class="modal__title">КОНТАКТЫ</h3>-->
+                    <svg class="modal__cross js-modal-close"
+                         xmlns="http://www.w3.org/2000/svg"
+                         viewBox="0 0 24 24">
+                        <path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/>
+                    </svg>
+
                     <div class="menu_image">
                         <img src="images/menu/contact_image.jpg" alt="">
                     </div>
@@ -213,7 +223,12 @@
                 </div>
 
                 <div class="modal" data-modal="6">
-                    <svg class="modal__cross js-modal-close" xmlns="http://www.w3.org/2000/svg"               viewBox="0 0 24 24"><path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/></svg>
+                    <svg class="modal__cross js-modal-close"
+                         xmlns="http://www.w3.org/2000/svg"
+                         viewBox="0 0 24 24">
+                        <path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/>
+                    </svg>
+
                     <div class="menu_image">
                         <img src="./images/menu/about_image.jpg" alt="">
                     </div>
@@ -226,31 +241,49 @@
                         касающимся ремонта автомобиля.
                     </p>
                     <br>
-                    <p><strong>Обновление базы: 10-02-2023</strong></p>
-<!--                    <p><strong>Version: 3.0</strong></p>-->
-
+                    <p><strong>Обновление базы: 14-02-2023</strong></p>
                 </div>
 
                 <div class="modal" data-modal="7">
-                    <svg class="modal__cross js-modal-close" xmlns="http://www.w3.org/2000/svg"               viewBox="0 0 24 24"><path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/></svg>
+                    <svg class="modal__cross js-modal-close"
+                         xmlns="http://www.w3.org/2000/svg"
+                         viewBox="0 0 24 24">
+                        <path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/>
+                    </svg>
+
                     <h3 class="modal__title">КАЧАЛКА</h3>
                     <p>Ссылки на скачивание программ, PDF и прочего</p>
                 </div>
 
                 <div class="modal" data-modal="8">
-                    <svg class="modal__cross js-modal-close" xmlns="http://www.w3.org/2000/svg"               viewBox="0 0 24 24"><path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/></svg>
+                    <svg class="modal__cross js-modal-close"
+                         xmlns="http://www.w3.org/2000/svg"
+                         viewBox="0 0 24 24">
+                        <path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/>
+                    </svg>
+
                     <h3 class="modal__title">ПЛЮШКИ С "АЛИКА"</h3>
                     <p>Ссылки на детали с Алиэкспресс: муфты, лампочки, замки и т.д.</p>
                 </div>
 
                 <div class="modal" data-modal="9">
-                    <svg class="modal__cross js-modal-close" xmlns="http://www.w3.org/2000/svg"               viewBox="0 0 24 24"><path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/></svg>
+                    <svg class="modal__cross js-modal-close"
+                         xmlns="http://www.w3.org/2000/svg"
+                         viewBox="0 0 24 24">
+                        <path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/>
+                    </svg>
+
                     <h3 class="modal__title">ЗАПЦАЦКИ БУ</h3>
                     <p>Адреса, явки и пароли разборок...</p>
                 </div>
 
                 <div class="modal" data-modal="10">
-                    <svg class="modal__cross js-modal-close" xmlns="http://www.w3.org/2000/svg"               viewBox="0 0 24 24"><path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/></svg>
+                    <svg class="modal__cross js-modal-close"
+                         xmlns="http://www.w3.org/2000/svg"
+                         viewBox="0 0 24 24">
+                        <path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/>
+                    </svg>
+
                     <h3 class="modal__title">БЛОКНОТ</h3>
                     <p>Наверное можно что-то сюда добавлять...</p>
                 </div>
@@ -261,6 +294,7 @@
                          viewBox="0 0 24 24">
                         <path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/>
                     </svg>
+
                 </div>
 
                 <!-- Подложка под модальным окном -->
@@ -273,38 +307,25 @@
 <!--                        <input type="hidden" name="searchid" value="808327">-->
                         <input id="search" type="search" name="text" autocomplete="off" required placeholder="Поиск...">
                         <input type="image" src="http://3.bp.blogspot.com/-4w14hQHr5yQ/Tgm6u7KwUkI/AAAAAAAACAI/Hu2poBOPx3g/s1600/search.png"/>  <!-- вместо кнопки submit -->
-
                     </form>
                 </div>
-
             </div>
         </div>
 
         <!--                SEARCH WINDOW-->
         <div class="add_class"></div>
-
-
     </header>
 
-
-
     <div class="content">
-        <div class="content_container">
-<!--            <div>Обновлено</div>-->
-<!--            <div class="content_header">-->
-        </div>
+        <div class="content_container"></div>
     </div>
 
 </div>
 
-
 <!--<script src="./data/maintenance.js"></script>-->
 <script type="module" src="app.js"></script>
-
 <script src="burger.js"></script>
-
-<script src="accordion.js"></script>
-
+<!--<script src="accordion.js"></script>-->
 
 </body>
 </html>

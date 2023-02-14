@@ -99,6 +99,15 @@ body {
     text-decoration: none;
 }
 
+.header_menu_link:before {
+    width: 5px;
+    height: 5px;
+    color: wheat;
+    font-weight: bolder;
+    content: ' (!) ';
+}
+
+
 /*SEARCH*/
 .form-search {  /* форма с boxtuffs.com */
     position: relative;
@@ -472,6 +481,12 @@ button:disabled {
     .accordion.title {
         margin: 5px 0;
     }
+
+    .error_info {
+        padding: 0 0.5em;
+        font-size: 1em;
+        text-align: left;
+    }
 }
 
 /* МОДАЛКИ */
@@ -796,4 +811,10 @@ button:disabled {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.add {
+    width: 100px;
+    color: red;
+    background-color: wheat;
 }
