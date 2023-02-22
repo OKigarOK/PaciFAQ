@@ -313,7 +313,7 @@ const COOLANT_SEALING = [
         detail_more: '',
     },
     {
-        detail_info: 'Прокладка верхнего патрубка радиатора (термостата)',
+        detail_info: 'Прокладка верхнего патрубка (термостата) радиатора ',
         detail_code: '04781674AA',
         detail_manufacturer: 'Mopar',
         detail_image: './images/details/gaskets/coolant_sealing/upper_radiator_hose_gasket_mopar_04781674AA.jpg',
@@ -321,7 +321,7 @@ const COOLANT_SEALING = [
         detail_more: '',
     },
     {
-        detail_info: 'Прокладка нижнего ратрубка радиатора',
+        detail_info: 'Прокладка нижнего патрубка радиатора',
         detail_code: '04792239AB',
         detail_manufacturer: 'Mopar',
         detail_image: './images/details/gaskets/coolant_sealing/lower_radiator_hose_gasket_mopar_04792239AB.jpg',
@@ -378,6 +378,28 @@ const THROTTLE_VALVE = [
         detail_more: '',
     },
 ]
+
+// ТОРМОЗНАЯ СИСТЕМА
+
+const BRAKE_DISCS = [
+    {
+        detail_info: 'Диск тормозной передний',
+        detail_code: 'PBD53019',
+        detail_manufacturer: 'Patron',
+        detail_image: './images/details/brake_discs/front_brake_disc_patron_PBD53019.jpg',
+        detail_scheme: './images/details/brake_discs/front_brake_disc.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Диск тормозной задний',
+        detail_code: 'PBD7002',
+        detail_manufacturer: 'Patron',
+        detail_image: './images/details/brake_discs/rear_brake_disc_PBD7002.jpg',
+        detail_scheme: './images/details/brake_discs/rear_brake_disc.gif',
+        detail_more: '',
+    },
+]
+
 
 export const HEADERS = [
     {
@@ -895,11 +917,11 @@ export const HEADERS = [
                 sub_subtitles: [
                     {
                         sub_subtitle: 'Диск тормозной',
-                        details: ''
+                        details: BRAKE_DISCS
                     },
                     {
                         sub_subtitle: 'Колодки тормозные',
-                        details: ''
+                        details: FRONT_BRAKE_PADS.concat(REAR_BRAKE_PADS)
                     },
                     {
                         sub_subtitle: 'Детали тормозной системы',
@@ -913,7 +935,7 @@ export const HEADERS = [
                 sub_subtitles: [
                     {
                         sub_subtitle: 'Колодки тормозные',
-                        details: ''
+                        details: PARKING_BRAKE_PADS
                     },
                     {
                         sub_subtitle: 'Стояночный тормоз',

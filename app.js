@@ -100,7 +100,12 @@ function createSubtitles(headerSubtitles, panelElement) {
         newPanelElement.className = 'panel';
 
         const containerItems = document.createElement('div');
-        containerItems.className = 'container_items';
+        // containerItems.className = 'container_items_swipe gallery js-flickity';
+        containerItems.className = 'gallery js-flickity';
+
+
+        containerItems.setAttribute('data-flickity-options', '{ "wrapAround": true }');
+
 
         panelElement.append(headerSubtitle);
         headerSubtitle.after(newPanelElement);
@@ -133,7 +138,8 @@ function createSubSubtitles(headerSubtitles, panelElement) {
         newPanelElement.className = 'panel';
 
         const containerItems = document.createElement('div');
-        containerItems.className = 'container_items';
+        containerItems.className = 'container_items_swipe QWE';
+
 
         panelElement.append(headerSubSubtitle);
         headerSubSubtitle.after(newPanelElement);
@@ -163,7 +169,7 @@ function createDetails(subTitleDetails, containerItems) {
         if (SETTINGS.VIEW === 'details_table') {
             containerDetail.className = 'container_detail';
         } else {
-            containerDetail.className = 'container_detail full_width';
+            containerDetail.className = 'container_detail full_width gallery-cell';
         }
 
         containerDetail.setAttribute('id' , `${detail.detail_code}` );
@@ -171,7 +177,18 @@ function createDetails(subTitleDetails, containerItems) {
 
         const detailImage = document.createElement('div');
         detailImage.className = 'detail_image';
-        detailImage.innerHTML = `<img src="${detail.detail_image}" alt="${detail.detail_manufacturer}">`;
+
+        const imageElement = document.createElement('img');
+        imageElement.src = detail.detail_image;
+        detailImage.append(imageElement);
+
+        const schemeElement = document.createElement('img');
+        schemeElement.src = detail.detail_scheme;
+        schemeElement.hidden = true;
+        detailImage.append(schemeElement);
+
+
+        // detailImage.innerHTML = `<img src="${detail.detail_image}" alt="${detail.detail_manufacturer}">`;
 
         const detailNavContainer = document.createElement('div');
         detailNavContainer.className = 'QWERTY';
@@ -240,7 +257,7 @@ function createCodeInSearch (item, containerItem) {
     newPanelElement.className = 'panel';
 
     const containerItems = document.createElement('div');
-    containerItems.className = 'container_items';
+    containerItems.className = 'container_items_swipe';
 
 
     containerItem.append(headerSubtitle);
@@ -292,7 +309,7 @@ function createDetailInSearch (detail, containerItem) {
             newPanelElement.className = 'panel';
 
             const containerItems = document.createElement('div');
-            containerItems.className = 'container_items';
+            containerItems.className = 'container_items_swipe';
             containerItem.append(headerSubtitle);
             headerSubtitle.after(newPanelElement);
 
@@ -363,7 +380,9 @@ function callAccord() {
     const acc = document.getElementsByClassName("accordion");
 
     for (let i = 0; i < acc.length; i++) {
+
         acc[i].addEventListener("click", function () {
+
             this.classList.toggle("active");
             const panel = this.nextElementSibling;
             if (panel.style.maxHeight) {
@@ -430,11 +449,13 @@ window.onclick = function(event) {
 
             if (target.textContent === 'Схема') {
                 target.textContent = 'Деталь';
-                // console.log(target.parentElement.previousElementSibling.previousElementSibling);
-                imageElement.innerHTML = (`<img src="${clickElement.detail_scheme}" alt="image"> `);
+                imageElement.firstElementChild.hidden = true;
+                imageElement.lastElementChild.hidden = false;
+
             } else {
                 target.textContent = 'Схема';
-                imageElement.innerHTML = (`<img src="${clickElement.detail_image}" alt="image">`)
+                imageElement.firstElementChild.hidden = false;
+                imageElement.lastElementChild.hidden = true;
             }
             break
 
@@ -648,7 +669,7 @@ function checkClick() {
 
         closeButtons.forEach(function(item){
 
-            console.log(item.parentElement.dataset);
+            // console.log(item.parentElement.dataset);
 
             item.addEventListener('click', function(e) {
 
@@ -813,3 +834,5 @@ function addElementToDataArray (item) {
     }
 }
 
+const QWERTY = document.querySelector('.panel')
+console.log(QWERTY.clientWidth);

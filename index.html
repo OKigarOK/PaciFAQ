@@ -6,7 +6,22 @@
     <title>Burger</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="accordion.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
 </head>
+
+<style>
+    .gallery-cell {
+        width: 95%;
+        /*height: 50vh;*/
+        height: 89vw;
+        margin: 0 2px;
+        /*background: #8C8;*/
+        counter-increment: gallery-cell;
+    }
+</style>
+
 <body id="theme">
 
 <div class="wrapper">
@@ -82,7 +97,7 @@
 
                     <h3 class="modal__title">Словарь Чатланина</h3>
                     <p>устойчивые фразеологизмы...</p>
-                    <img class="add" src="./images/menu/like.png" alt="">
+                    <img class="add" src="./images/menu/arrow.png" alt="">
                 </div>
 
                 <div class="modal" data-modal="2">
@@ -186,7 +201,7 @@
 <!--                    <a href="#">-->
 
                         <button class="link_button">
-                            Бабе на цветы, дитЯм на мороженное :)
+                            Бабе на цветы, дитЯм на мороженное
                     </button>
                     </a>
                 </div>
@@ -323,6 +338,8 @@
 </div>
 
 <!--<script src="./data/maintenance.js"></script>-->
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
 <script type="module" src="app.js"></script>
 <script src="burger.js"></script>
 <!--<script src="accordion.js"></script>-->
