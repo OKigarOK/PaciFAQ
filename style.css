@@ -104,7 +104,7 @@ body {
     height: 5px;
     color: wheat;
     font-weight: bolder;
-    content: ' (!) ';
+    content: '';
 }
 
 

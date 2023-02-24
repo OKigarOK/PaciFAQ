@@ -13,13 +13,12 @@ const currentFontSize = localStorage.getItem('fontSize');
 const currentView = localStorage.getItem('view');
 
 const setSettings = document.getElementById('setSettings');
-
 const setTheme = document.getElementById('theme')
 
 const SETTINGS = {
     THEME: currentTheme || 'original_theme',
-    FONT_SIZE: currentFontSize || 'fontSizeS',
-    VIEW: currentView || 'details_table'
+    FONT_SIZE: currentFontSize || 'fontSizeM',
+    VIEW: currentView || 'details_list'
 }
 
 saveSettingsToLocal(SETTINGS.THEME, SETTINGS.FONT_SIZE, SETTINGS.VIEW)
@@ -103,8 +102,7 @@ function createSubtitles(headerSubtitles, panelElement) {
         // containerItems.className = 'container_items_swipe gallery js-flickity';
         containerItems.className = 'gallery js-flickity';
 
-
-        containerItems.setAttribute('data-flickity-options', '{ "wrapAround": true }');
+        containerItems.setAttribute('data-flickity-options', '{ "Parallax": true, "prevNextButtons": true, "pageDots": false }');
 
 
         panelElement.append(headerSubtitle);
@@ -138,7 +136,10 @@ function createSubSubtitles(headerSubtitles, panelElement) {
         newPanelElement.className = 'panel';
 
         const containerItems = document.createElement('div');
-        containerItems.className = 'container_items_swipe QWE';
+        // containerItems.className = 'container_items_swipe QWE';
+
+        containerItems.className = 'gallery js-flickity';
+        containerItems.setAttribute('data-flickity-options', '{ "Parallax": true, "prevNextButtons": true, "pageDots": false }');
 
 
         panelElement.append(headerSubSubtitle);
