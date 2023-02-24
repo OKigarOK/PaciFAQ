@@ -138,7 +138,7 @@ body {
     z-index: 2;
 }
 
-.form-search input[type="search"] {  /* поле поиска */
+.form-search input[type="text"] {  /* поле поиска */
     width: 6em;
     height: 32px;
     line-height: 32px;
@@ -156,8 +156,8 @@ body {
     z-index: 2;
 }
 
-.form-search:focus-within input[type="search"],  /* изменение поля поиска при фокусе */
-.form-search input[type="search"]:focus {
+.form-search:focus-within input[type="text"],  /* изменение поля поиска при фокусе */
+.form-search input[type="text"]:focus {
     width: 260px;
     color: #25464D;
     position: relative;
@@ -229,7 +229,7 @@ body {
     border: 2px solid;
     border-radius: 15px;
     text-align: left;
-    padding: 3px 0 0 0.5em;
+    padding: 3px 0.5em 0 0.5em;
 }
 
 .accordion.title2 {
@@ -246,10 +246,14 @@ body {
     /*content: '\2611';*/
     /*content: '\271A';*/
     content: '\2716';
+    /*width: 25px;*/
+    /*color: wheat;*/
+    /*background-color: red;*/
+    /*content: url("./images/menu/plusaddmoredetail.png");*/
     transform: rotate(45deg);
 
     float: right;
-    margin: 0 6px;
+    /*margin: 0 6px;*/
     transition: all ease 0.5s;
 }
 

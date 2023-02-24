@@ -2,7 +2,7 @@ import {HEADERS} from "./data/maintenance.js";
 import {ERRORS} from "./data/errors_list.js";
 
 const NEW_DATA = [];
-console.log(ERRORS);
+// console.log(ERRORS);
 
 // SETTINGS
 
@@ -13,7 +13,7 @@ const currentFontSize = localStorage.getItem('fontSize');
 const currentView = localStorage.getItem('view');
 
 const setSettings = document.getElementById('setSettings');
-const setTheme = document.getElementById('theme')
+const setTheme = document.getElementById('theme');
 
 const SETTINGS = {
     THEME: currentTheme || 'original_theme',
@@ -23,8 +23,6 @@ const SETTINGS = {
 
 saveSettingsToLocal(SETTINGS.THEME, SETTINGS.FONT_SIZE, SETTINGS.VIEW)
 
-render(SETTINGS.THEME, SETTINGS.FONT_SIZE, SETTINGS.VIEW)
-
 function saveSettingsToLocal(theme, font, view) {
     localStorage.setItem('theme', theme);
     localStorage.setItem('fontSize', font);
@@ -32,7 +30,7 @@ function saveSettingsToLocal(theme, font, view) {
     setTheme.classList.add(theme);
 }
 
-// RENDER должен отрендерить по настройкам: тема, шрифт, вид
+render(SETTINGS.THEME, SETTINGS.FONT_SIZE, SETTINGS.VIEW)
 
 function render(theme, font, view) {
     // Меняем тему
@@ -104,7 +102,6 @@ function createSubtitles(headerSubtitles, panelElement) {
 
         containerItems.setAttribute('data-flickity-options', '{ "Parallax": true, "prevNextButtons": true, "pageDots": false }');
 
-
         panelElement.append(headerSubtitle);
         headerSubtitle.after(newPanelElement);
 
@@ -141,21 +138,15 @@ function createSubSubtitles(headerSubtitles, panelElement) {
         containerItems.className = 'gallery js-flickity';
         containerItems.setAttribute('data-flickity-options', '{ "Parallax": true, "prevNextButtons": true, "pageDots": false }');
 
-
         panelElement.append(headerSubSubtitle);
         headerSubSubtitle.after(newPanelElement);
         newPanelElement.append(containerItems);
 
-        // console.log(subTitle);
-
         if (subTitle.details) {
-            // console.log('Выводим детали');
-            // console.log(subTitle.details);
             createDetails(subTitle.details, containerItems);
         } else {
             headerSubSubtitle.disabled = true;
         }
-
     }
 }
 
@@ -188,11 +179,8 @@ function createDetails(subTitleDetails, containerItems) {
         schemeElement.hidden = true;
         detailImage.append(schemeElement);
 
-
-        // detailImage.innerHTML = `<img src="${detail.detail_image}" alt="${detail.detail_manufacturer}">`;
-
-        const detailNavContainer = document.createElement('div');
-        detailNavContainer.className = 'QWERTY';
+        // const detailNavContainer = document.createElement('div');
+        // detailNavContainer.className = 'QWERTY';
 
         const detailInfo = document.createElement('div');
         detailInfo.className = 'detail_info';
@@ -225,7 +213,7 @@ function createDetails(subTitleDetails, containerItems) {
         containerDetail.append(detailOptions);
         detailOptions.append(detailPrice);
 
-        if (detail.detail_more) {
+        // if (detail.detail_more) {
             const detailMore = document.createElement('div');
             // detailMore.className = 'detail_more detail_button light_theme_buttons';
             detailMore.className = 'detail_more detail_button js-open-modal';
@@ -233,7 +221,7 @@ function createDetails(subTitleDetails, containerItems) {
 
             detailMore.textContent = 'Подробнее';
             detailOptions.append(detailMore);
-        }
+        // }
 
         if (detail.detail_scheme) {
             const detailScheme = document.createElement('div');
