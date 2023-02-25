@@ -403,6 +403,48 @@ window.onclick = function(event) {
     const target = event.target; // где был клик?
 
 
+
+    // СБРОС НАСТРОЕК
+
+    if (target.id === 'reset_settings') {
+        SETTINGS.VIEW = 'details_list';
+        SETTINGS.THEME = 'original_theme';
+        SETTINGS.FONT_SIZE = 'fontSizeL';
+
+        const originalTheme = document.getElementById('original_theme');
+        const lightTheme = document.getElementById('light_theme');
+        const darkTheme = document.getElementById('dark_theme');
+        originalTheme.checked = true;
+        lightTheme.checked = false;
+        darkTheme.checked = false;
+        clearThemeClass();
+        setTheme.classList.add(SETTINGS.THEME);
+        setSettings.classList.add(SETTINGS.THEME);
+        localStorage.setItem('theme', SETTINGS.THEME);
+
+        const fontSizeS = document.getElementById('fontSizeS');
+        const fontSizeM = document.getElementById('fontSizeM');
+        const fontSizeL = document.getElementById('fontSizeL');
+        fontSizeS.checked = false;
+        fontSizeM.checked = false;
+        fontSizeL.checked = true;
+        clearFontClasses();
+        setSettings.classList.add(SETTINGS.FONT_SIZE);
+        document.body.classList.add(SETTINGS.FONT_SIZE);
+        localStorage.setItem('fontSize', SETTINGS.FONT_SIZE);
+
+        const detailsListElement = document.getElementById('details_list');
+        const detailsTableElement = document.getElementById('details_table');
+        detailsTableElement.checked = false;
+        detailsTableElement.disabled = true;
+        detailsListElement.checked = true;
+        detailsListElement.disabled = false;
+        removeDetailsWrapView();
+        addFullView();
+        localStorage.setItem('view', SETTINGS.VIEW);
+
+    }
+
     // МОДАЛКА ПОДРОБНЕЕ
 
     console.log(target.parentElement);
