@@ -1,7 +1,14 @@
 import {HEADERS} from "./data/maintenance.js";
 import {ERRORS} from "./data/errors_list.js";
 
+const FAVORITES = [];
+
 const NEW_DATA = [];
+
+const myFavorites = document.getElementById('favorites');
+
+console.log(myFavorites);
+
 // console.log(ERRORS);
 
 // SETTINGS
@@ -11,13 +18,14 @@ const NEW_DATA = [];
 const currentTheme = localStorage.getItem('theme');
 const currentFontSize = localStorage.getItem('fontSize');
 const currentView = localStorage.getItem('view');
+const isFavorites = localStorage.getItem('favorites');
 
 const setSettings = document.getElementById('setSettings');
 const setTheme = document.getElementById('theme');
 
 const SETTINGS = {
     THEME: currentTheme || 'original_theme',
-    FONT_SIZE: currentFontSize || 'fontSizeM',
+    FONT_SIZE: currentFontSize || 'fontSizeL',
     VIEW: currentView || 'details_list'
 }
 
@@ -450,6 +458,25 @@ window.onclick = function(event) {
 
         case 'detail_price detail_button':
             console.log('смотрим ЦЕНУ');
+            console.log(targetElementId);
+
+            // ДОБАВЛЯЕМ В ИЗБРАННОЕ
+
+            if (FAVORITES.includes(targetElementId)) {
+                console.log('такое уже есть )');
+            } else {
+
+                // FAVORITES.push(targetElementId);
+                localStorage.setItem('favorites', FAVORITES.push(targetElementId.toString()));
+                const divElem = document.createElement('h3');
+                divElem.innerText = targetElementId;
+
+                myFavorites.append(divElem)
+            }
+
+            console.log(FAVORITES);
+            // addDetailToFavorites()
+
             // console.log(targetElementId);
             break
 
