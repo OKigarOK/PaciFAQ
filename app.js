@@ -247,7 +247,7 @@ function createDetails(subTitleDetails, containerItems) {
 function createCodeInSearch (item, containerItem) {
 
     const headerSubtitle = document.createElement('button');
-    headerSubtitle.className = 'accordion'
+    headerSubtitle.className = 'accordion title'
     headerSubtitle.innerHTML = 'Ошибка ' + item.error_code;
 
     const newPanelElement = document.createElement('div');

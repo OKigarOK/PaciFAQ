@@ -200,7 +200,7 @@ body {
     margin: 10px auto 10px;
     padding: 6px 6px 6px 6px;
     transition: all 0.5s ease;
-    font-size: 1.2em;
+    font-size: 1em;
 }
 
 .content_header:hover {
@@ -224,7 +224,7 @@ body {
 }
 
 .accordion.title {
-    font-size: 0.75em;
+    font-size: 0.85em;
     margin: 10px 0;
     border: 2px solid;
     border-radius: 15px;
@@ -237,7 +237,7 @@ body {
     margin: 5px 0;
     border-radius: 15px;
     text-align: left;
-    padding: 3px 0 0 0.5em;
+    padding: 3px 1em 0 0.5em;
 }
 
 .accordion:hover {}
@@ -288,7 +288,7 @@ button:disabled {
     border: 1px solid;
     border-radius: 10px;
     padding: 6px;
-    font-size: 0.7em;
+    font-size: 0.75em;
     text-align: center;
 }
 
@@ -301,7 +301,7 @@ button:disabled {
 }
 
 .more_modal_settings {
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .container_detail {
@@ -604,15 +604,15 @@ button:disabled {
 }
 
 .fontSizeS {
-    font-size: 10px;
+    font-size: 12px;
 }
 
 .fontSizeM {
-    font-size: 15px;
+    font-size: 18px;
 }
 
 .fontSizeL {
-    font-size: 20px;
+    font-size: 24px;
 }
 
  /* Т Е М Ы */
@@ -956,7 +956,7 @@ button:disabled {
 .gallery-cell {
     /*width: 95%;*/
     /*height: 50vh;*/
-    height: 89vw;
+    height: 100vw;
     margin: 0 5px;
     /*background: #8C8;*/
     counter-increment: gallery-cell;
