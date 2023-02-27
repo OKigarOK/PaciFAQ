@@ -141,10 +141,10 @@ function createSubSubtitles(headerSubtitles, panelElement) {
         newPanelElement.className = 'panel';
 
         const containerItems = document.createElement('div');
-        // containerItems.className = 'container_items_swipe QWE';
+        containerItems.className = 'container_items_swipe';
 
-        containerItems.className = 'gallery js-flickity';
-        containerItems.setAttribute('data-flickity-options', '{ "Parallax": true, "prevNextButtons": true, "pageDots": false }');
+        // containerItems.className = 'gallery js-flickity';
+        // containerItems.setAttribute('data-flickity-options', '{ "Parallax": true, "prevNextButtons": true, "pageDots": false }');
 
         panelElement.append(headerSubSubtitle);
         headerSubSubtitle.after(newPanelElement);
