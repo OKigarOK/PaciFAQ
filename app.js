@@ -58,9 +58,21 @@ function render(theme, font, view) {
 // Create MENU создаёт дерево элементов
 // Засунуть темы, шрифты, вид в СТИЛИ
 
-createContentMenu(HEADERS);
+
+function renderContentMenu() {
+    const contentContainer = document.querySelector('.content_container');
+    contentContainer.innerHTML = '';
+    saveSettingsToLocal(SETTINGS.THEME, SETTINGS.FONT_SIZE, SETTINGS.VIEW)
+    render(SETTINGS.THEME, SETTINGS.FONT_SIZE, SETTINGS.VIEW)
+    createContentMenu(HEADERS);
+    renderSettings();
+    callAccord();
+
+}
+
 
 renderSettings();
+createContentMenu(HEADERS);
 
 callAccord();
 
@@ -105,10 +117,15 @@ function createSubtitles(headerSubtitles, panelElement) {
         newPanelElement.className = 'panel';
 
         const containerItems = document.createElement('div');
-        // containerItems.className = 'container_items_swipe gallery js-flickity';
-        containerItems.className = 'gallery js-flickity';
 
-        containerItems.setAttribute('data-flickity-options', '{ "Parallax": true, "prevNextButtons": true, "pageDots": false }');
+        if (SETTINGS.VIEW === 'details_list') {
+            containerItems.className = 'gallery js-flickity';
+            containerItems.setAttribute('data-flickity-options', '{ "Parallax": true, "prevNextButtons": true, "pageDots": false }');
+        } else {
+            // ВЫВОДИМ ТАБЛИЦЕЙ
+        }
+
+        // containerItems.className = 'container_items_swipe gallery js-flickity';
 
         panelElement.append(headerSubtitle);
         headerSubtitle.after(newPanelElement);
@@ -140,11 +157,14 @@ function createSubSubtitles(headerSubtitles, panelElement) {
         const newPanelElement = document.createElement('div');
         newPanelElement.className = 'panel';
 
+        // ВИД В ЗАВИСИМОСТИ ОТ НАСТРОЕК
         const containerItems = document.createElement('div');
-        containerItems.className = 'container_items_swipe';
-
-        // containerItems.className = 'gallery js-flickity';
-        // containerItems.setAttribute('data-flickity-options', '{ "Parallax": true, "prevNextButtons": true, "pageDots": false }');
+        if (SETTINGS.VIEW === 'details_table') {
+            containerItems.className = 'container_items_table';
+        } else {
+            containerItems.className = 'gallery js-flickity';
+            containerItems.setAttribute('data-flickity-options', '{ "Parallax": true, "prevNextButtons": true, "pageDots": false }');
+        }
 
         panelElement.append(headerSubSubtitle);
         headerSubSubtitle.after(newPanelElement);
@@ -167,9 +187,9 @@ function createDetails(subTitleDetails, containerItems) {
 
         const containerDetail = document.createElement('div');
         if (SETTINGS.VIEW === 'details_table') {
-            containerDetail.className = 'container_detail';
+            containerDetail.className = 'container_detail_table';
         } else {
-            containerDetail.className = 'container_detail full_width gallery-cell';
+            containerDetail.className = 'container_detail gallery-cell';
         }
 
         containerDetail.setAttribute('id' , `${detail.detail_code}` );
@@ -832,6 +852,8 @@ function renderSettings() {
                     removeDetailsWrapView()
                 }
                 localStorage.setItem('view', `${elem.id}`);
+
+                // renderContentMenu()
             }
         })
     }
