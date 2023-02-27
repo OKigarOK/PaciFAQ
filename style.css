@@ -540,8 +540,8 @@ button:disabled {
     }
 
     .detail_options {
-        gap: 2px;
-        padding: 0 2px;
+        gap: 0.25em;
+        /*padding: 0 2px;*/
     }
 
     .detail_image {
@@ -869,10 +869,11 @@ button:disabled {
 
 .detail_button {
     box-sizing: border-box;
-    padding: 1px 0.5em 4px 0.5em;
+    padding: 1px 0.25em 4px 0.25em;
     width: 100%;
     border-radius: 10px;
     border: 3px outset;
+
 }
 
 .link_button:hover,
