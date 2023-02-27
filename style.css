@@ -541,7 +541,7 @@ button:disabled {
 
     .detail_options {
         gap: 0.25em;
-        /*padding: 0 2px;*/
+        padding: 0 .25em;
     }
 
     .detail_image {
