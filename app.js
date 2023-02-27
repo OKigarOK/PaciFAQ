@@ -118,11 +118,18 @@ function createSubtitles(headerSubtitles, panelElement) {
 
         const containerItems = document.createElement('div');
 
-        if (SETTINGS.VIEW === 'details_list') {
+        // if (SETTINGS.VIEW === 'details_list') {
+        //     containerItems.className = 'gallery js-flickity';
+        //     containerItems.setAttribute('data-flickity-options', '{ "Parallax": true, "prevNextButtons": true, "pageDots": false }');
+        // } else {
+        //     // ВЫВОДИМ ТАБЛИЦЕЙ
+        // }
+
+        if (SETTINGS.VIEW === 'details_table') {
+            containerItems.className = 'container_items_table';
+        } else {
             containerItems.className = 'gallery js-flickity';
             containerItems.setAttribute('data-flickity-options', '{ "Parallax": true, "prevNextButtons": true, "pageDots": false }');
-        } else {
-            // ВЫВОДИМ ТАБЛИЦЕЙ
         }
 
         // containerItems.className = 'container_items_swipe gallery js-flickity';

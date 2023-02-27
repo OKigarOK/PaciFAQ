@@ -296,17 +296,19 @@ button:disabled {
     border-radius: 10px;
     display: flex;
     flex-wrap: wrap;
+    gap: 5px 5px;
     justify-content: space-between;
 }
 
 .container_detail_table {
-    width: 50%;
+    width: 49%;
     box-sizing: border-box;
     border: 1px solid;
     border-radius: 10px;
     padding: 6px;
     font-size: 0.75em;
     text-align: center;
+
 }
 
 .container_items {
@@ -541,7 +543,7 @@ button:disabled {
 
     .detail_options {
         gap: 0.25em;
-        padding: 0 .25em;
+        /*padding: 0 .25em;*/
     }
 
     .detail_image {
