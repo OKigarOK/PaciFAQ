@@ -313,7 +313,7 @@ button:disabled {
     box-sizing: border-box;
     border: 1px solid;
     border-radius: 10px;
-    padding: 6px;
+    padding: 2px;
     font-size: 0.75em;
     text-align: center;
 
@@ -1023,3 +1023,10 @@ button:disabled {
     counter-increment: gallery-cell;
 }
 
+.height_M {
+    height: 86vw;
+}
+
+.height_L {
+    height: 99vw;
+}
