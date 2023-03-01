@@ -670,16 +670,19 @@ button:disabled {
 
 /* О Р И Г И Н А Л */
 .original_theme,
-.original_theme .modal {
+.original_theme .modal,
+.original_theme .container_detail_table {
     /*background: url("./images/main_bg.jpg") fixed center no-repeat;*/
     border-color: wheat;
     background-color: black;
     color: white;
 }
 
-.original_theme .modal__cross {
+.original_theme .modal__cross,
+.original_theme .link_button {
     background-color: wheat;
     fill: black;
+    border-color: wheat;
 }
 
 .original_theme .header:before {
@@ -703,10 +706,7 @@ button:disabled {
     color: #FFFFFF;
 }
 
-.original_theme .title {
-    border-color: wheat;
-}
-
+.original_theme .title,
 .original_theme .container_detail {
     border-color: wheat;
 }
@@ -721,15 +721,20 @@ button:disabled {
 
 /* С В Е Т Л А Я */
 .light_theme,
-.light_theme .modal {
-    border-color:  #EAE6F2;
+.light_theme .modal,
+.light_theme .container_detail_table {
+    /*border-color:  #333333;*/
+    border-color: #6653D9;
     background-color: #EAE6F2;
     color: #333333;
 }
 
-.light_theme .modal__cross {
+.light_theme .modal__cross,
+.light_theme .link_button {
     background-color: #6653D9;
     fill: #EAE6F2;
+    border-color: #6653D9;
+    color: #EAE6F2;
 }
 
 .light_theme .header:before {
@@ -779,15 +784,19 @@ button:disabled {
 
 /* Т Ё М Н А Я */
 .dark_theme,
-.dark_theme .modal {
+.dark_theme .modal,
+.dark_theme .container_detail_table {
     border-color:  #F2F2F2;
     background-color: #17161A;
     color: #F2F2F2;
 }
 
 .dark_theme .modal__cross {
-    background-color: #000000;
-    fill: #F2F2F2;
+    background-color: #EFEFEF;
+    fill: #000000;
+
+    /*background-color: #000000;*/
+    /*fill: #F2F2F2;*/
 }
 
 .dark_theme .header:before {
@@ -862,13 +871,14 @@ button:disabled {
 
 .link_button {
     font: inherit;
+    /*font-weight: bolder;*/
     padding: 5px;
     margin-top: 5px;
     width: 100%;
-    background-color: wheat;
-    color: black;
+    /*background-color: wheat;*/
+    /*color: black;*/
     border-radius: 5px;
-    border: 5px outset wheat;
+    border: 5px outset;
 }
 
 .detail_button {
