@@ -607,7 +607,7 @@ button:disabled {
     color: whitesmoke;
     transition: 0.3s all;
     text-align: justify;
-    font-size: 14px;
+    font-size: 0.85em;
 }
 
 /*.modal:before {*/
@@ -750,7 +750,7 @@ button:disabled {
 .light_theme .content_header {
     background-color: #EAE9F2;
     color: #FFFFFF;
-    border: 3px solid #333333;
+    border: 3px solid #6653D9;
 }
 
 .light_theme .accordion {
@@ -759,7 +759,7 @@ button:disabled {
 }
 
 .light_theme .title {
-    border-color: #333333;
+    border-color: #6653D9;
     background-color: #EAE9F2;
     color: #333333;
 }
