@@ -2,9 +2,7 @@ import {HEADERS} from "./data/maintenance.js";
 import {ERRORS} from "./data/errors_list.js";
 
 const FAVORITES = [];
-
 const NEW_DATA = [];
-
 const myFavorites = document.getElementById('favorites');
 
 console.log(myFavorites);
@@ -58,7 +56,6 @@ function render(theme, font, view) {
 // Create MENU создаёт дерево элементов
 // Засунуть темы, шрифты, вид в СТИЛИ
 
-
 function renderContentMenu() {
     const contentContainer = document.querySelector('.content_container');
     contentContainer.innerHTML = '';
@@ -73,8 +70,6 @@ function renderContentMenu() {
 createContentMenu(HEADERS)
 
 renderSettings();
-
-createContentMenu(HEADERS);
 
 callAccord();
 
@@ -395,10 +390,7 @@ function createDetailInSearch (detail, containerItem) {
         }
         // ДОБАВИТЬ ПОДРОБНОСТИ....
     }
-
 }
-
-
 
 // АККОРДИОН
 
@@ -480,10 +472,8 @@ window.onclick = function(event) {
     console.log(target.parentElement);
     console.log(target.parentElement.classList.value);
 
-
     if (target.parentElement.classList.value === 'modal__cross js-modal-close') {
         console.log('ЗАКРЫВАЕМ МОДАЛКУ ПОДРОБНЕЕ');
-
 
         const modalButtons = document.getElementById('QW'),
             overlay      = document.querySelector('.js-overlay-modal'),
@@ -535,12 +525,10 @@ window.onclick = function(event) {
             if (FAVORITES.includes(targetElementId)) {
                 console.log('такое уже есть )');
             } else {
-
                 // FAVORITES.push(targetElementId);
                 localStorage.setItem('favorites', FAVORITES.push(targetElementId.toString()));
                 const divElem = document.createElement('h3');
                 divElem.innerText = targetElementId;
-
                 myFavorites.append(divElem)
             }
 
@@ -552,13 +540,9 @@ window.onclick = function(event) {
 
         case 'detail_more detail_button js-open-modal':
             console.log('смотрим ПОДРОБНЕЕ');
-
             console.log(targetElementId); // ID элемента
-
-
             const detail = NEW_DATA.find(elem => elem.detail_id === targetElementId)
             console.log(detail);  // Объект ЭЛЕМЕНТА
-
             const elementContainer = document.querySelector('.modal.active')
             console.log(elementContainer); // Вход в МОДАЛКУ
 
@@ -636,7 +620,6 @@ window.onclick = function(event) {
             }
 
             checkClick();
-
             break
 
         case 'detail_image':
