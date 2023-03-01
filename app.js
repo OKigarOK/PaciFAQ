@@ -271,7 +271,7 @@ function createDetails(subTitleDetails, containerItems) {
 function createCodeInSearch (item, containerItem) {
 
     const headerSubtitle = document.createElement('button');
-    headerSubtitle.className = 'accordion title'
+    headerSubtitle.className = 'accordion search_title'
     headerSubtitle.innerHTML = 'Ошибка ' + item.error_code;
 
     const newPanelElement = document.createElement('div');
@@ -323,7 +323,7 @@ function createDetailInSearch (detail, containerItem) {
         // for (let subTitle of headerSubtitles) {
 
             const headerSubtitle = document.createElement('button');
-            headerSubtitle.className = 'accordion title'
+            headerSubtitle.className = 'accordion search_title'
             headerSubtitle.innerHTML = detail.detail_info +' '+ detail.detail_code;
 
             const newPanelElement = document.createElement('div');

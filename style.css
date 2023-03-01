@@ -237,6 +237,15 @@ body {
     text-overflow: ellipsis; /* Добавляем многоточие */
 }
 
+.accordion.search_title {
+    font-size: 0.85em;
+    margin: 5px 0;
+    border: 2px solid;
+    border-radius: 15px;
+    text-align: left;
+    padding: 3px 0.5em 3px 0.5em;
+}
+
 .accordion.title2 {
     font-size: 0.75em;
     margin: 5px 0;
@@ -360,7 +369,7 @@ button:disabled {
 /*}*/
 
 .more_modal_settings {
-    font-size: 18px;
+    font-size: 0.85em;
 }
 
 /*ПОД СВАЙПЕР*/
@@ -416,7 +425,8 @@ button:disabled {
     padding-bottom: 5px;
 }
 
-.detail_info:first-letter {
+.detail_info:first-letter,
+.search_title:first-letter {
     text-transform: uppercase;
 }
 
@@ -563,7 +573,7 @@ button:disabled {
 
     .error_info {
         padding: 0 0.5em;
-        font-size: 1em;
+        font-size: 0.85em;
         text-align: left;
     }
 }
