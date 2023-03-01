@@ -18,15 +18,15 @@ console.log(myFavorites);
 const currentTheme = localStorage.getItem('theme');
 const currentFontSize = localStorage.getItem('fontSize');
 const currentView = localStorage.getItem('view');
-const isFavorites = localStorage.getItem('favorites');
+// const isFavorites = localStorage.getItem('favorites');
 
 const setSettings = document.getElementById('setSettings');
 const setTheme = document.getElementById('theme');
 
 const SETTINGS = {
     THEME: currentTheme || 'original_theme',
-    FONT_SIZE: currentFontSize || 'fontSizeL',
-    VIEW: currentView || 'details_list'
+    FONT_SIZE: currentFontSize || 'fontSizeM',
+    VIEW: currentView || 'details_table'
 }
 
 saveSettingsToLocal(SETTINGS.THEME, SETTINGS.FONT_SIZE, SETTINGS.VIEW)
@@ -70,8 +70,10 @@ function renderContentMenu() {
 
 }
 
+createContentMenu(HEADERS)
 
 renderSettings();
+
 createContentMenu(HEADERS);
 
 callAccord();
@@ -429,14 +431,12 @@ function callAccord() {
 window.onclick = function(event) {
     const target = event.target; // где был клик?
 
-
-
     // СБРОС НАСТРОЕК
 
     if (target.id === 'reset_settings') {
         SETTINGS.VIEW = 'details_list';
         SETTINGS.THEME = 'original_theme';
-        SETTINGS.FONT_SIZE = 'fontSizeL';
+        SETTINGS.FONT_SIZE = 'fontSizeM';
 
         const originalTheme = document.getElementById('original_theme');
         const lightTheme = document.getElementById('light_theme');
@@ -453,8 +453,8 @@ window.onclick = function(event) {
         const fontSizeM = document.getElementById('fontSizeM');
         const fontSizeL = document.getElementById('fontSizeL');
         fontSizeS.checked = false;
-        fontSizeM.checked = false;
-        fontSizeL.checked = true;
+        fontSizeM.checked = true;
+        fontSizeL.checked = false;
         clearFontClasses();
         setSettings.classList.add(SETTINGS.FONT_SIZE);
         document.body.classList.add(SETTINGS.FONT_SIZE);
@@ -463,11 +463,14 @@ window.onclick = function(event) {
         const detailsListElement = document.getElementById('details_list');
         const detailsTableElement = document.getElementById('details_table');
         detailsTableElement.checked = false;
-        detailsTableElement.disabled = true;
+        // detailsTableElement.disabled = true;
+
         detailsListElement.checked = true;
-        detailsListElement.disabled = false;
-        removeDetailsWrapView();
-        addFullView();
+        // detailsListElement.disabled = false;
+
+        location.reload();
+        // removeDetailsWrapView();
+        // addFullView();
         localStorage.setItem('view', SETTINGS.VIEW);
 
     }
@@ -495,7 +498,6 @@ window.onclick = function(event) {
 
     const targetElementId = target.parentElement.parentElement.id;
 
-
     if (!targetElementId) return
 
     console.log(targetElementId);
@@ -505,7 +507,6 @@ window.onclick = function(event) {
     // console.log(target.parentElement);
 
     // ID - число при формировании
-
 
     switch (target.className) {
 
@@ -672,7 +673,6 @@ inputText.oninput = function () {
 
 }
 
-
 function findObjectInArray(item) {
 
     // const searchArray = []
@@ -781,10 +781,6 @@ function checkClick() {
     }); // end ready
 }
 
-
-
-
-
 // СМЕНА НАСТРОЕК
 
 // console.log(SETTINGS);
@@ -849,17 +845,21 @@ function renderSettings() {
 
             // СМЕНА ВИДА //
             if (elem.name === 'view') {
+                localStorage.setItem('view', `${elem.id}`);
+                location.reload();
 
                 // ВАРИАНТЫ РАСКЛАДА
-                if (elem.id === 'details_table') {
-                    removeFullView();
-                    addDetailsWrapView()
-                } else {
-                    addFullView();
-                    removeDetailsWrapView()
-                }
-                localStorage.setItem('view', `${elem.id}`);
-
+                // if (elem.id === 'details_table') {
+                //     localStorage.setItem('view', `${elem.id}`);
+                //     removeFullView();
+                //     addDetailsWrapView()
+                // } else {
+                //
+                //     addFullView();
+                //     removeDetailsWrapView()
+                // }
+                // localStorage.setItem('view', `${elem.id}`);
+                // location.reload();
                 // renderContentMenu()
             }
         })
