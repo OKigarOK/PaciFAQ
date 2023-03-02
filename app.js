@@ -425,6 +425,8 @@ function callAccord() {
 window.onclick = function(event) {
     const target = event.target; // где был клик?
 
+    console.log(target);
+
     const isClick = target.className;
 
     if (isClick === 'detail_scheme detail_button') {
@@ -441,12 +443,14 @@ window.onclick = function(event) {
             imageElement.firstElementChild.hidden = false;
             imageElement.lastElementChild.hidden = true;
         }
-
     }
     if (isClick === 'detail_price detail_button') {
         console.log('СТОИМОСТЬ В МОДАЛКЕ');
     }
 
+    if (isClick === 'modal__cross js-modal-close') {
+        console.log('ЗАКРЫТЬ ПОДРОБНЕЕ');
+    }
     // СБРОС НАСТРОЕК
 
     if (target.id === 'reset_settings') {
@@ -554,13 +558,20 @@ window.onclick = function(event) {
             // console.log(elementContainer); // Вход в МОДАЛКУ
 
             // ЗДЕСЬ ОБНУЛЕНИЕ
-            elementContainer.innerHTML = '<svg class="modal__cross js-modal-close"\n' +
-                '                         xmlns="http://www.w3.org/2000/svg"\n' +
-                '                         viewBox="0 0 24 24">\n' +
-                '                        <path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/>\n' +
-                '                    </svg>';
+            // elementContainer.innerHTML = '<svg class="modal__cross js-modal-close"\n' +
+            //     '                         xmlns="http://www.w3.org/2000/svg"\n' +
+            //     '                         viewBox="0 0 24 24">\n' +
+            //     '                        <path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/>\n' +
+            //     '                    </svg>';
 
             // console.log(elementContainer); // Вход в МОДАЛКУ
+
+            console.log(elementContainer.firstChild);
+            console.log(elementContainer.lastChild.remove());
+
+            document.body.classList.add('lock');
+
+            // console.log(elementContainer.lastElementChild);
 
             // ЗДЕСЬ МОЖНО СТРОИТЬ МОДАЛКУ ПОДРОБНЕЕ
 
@@ -719,6 +730,7 @@ function checkClick() {
             overlay      = document.querySelector('.js-overlay-modal'),
             closeButtons = document.querySelectorAll('.js-modal-close');
 
+
         // console.log(closeButtons);
         // console.log(closeButtons);
         // closeButtons = document.querySelectorAll('.modal:before');
@@ -757,8 +769,11 @@ function checkClick() {
                 // console.log(item.parentElement.dataset);
 
                 var parentModal = this.closest('.modal');
+                console.log(parentModal);
                 parentModal.classList.remove('active');
                 overlay.classList.remove('active');
+                document.body.classList.remove('lock');
+
             });
         }); // end foreach
 
