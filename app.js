@@ -5,7 +5,7 @@ const FAVORITES = [];
 const NEW_DATA = [];
 const myFavorites = document.getElementById('favorites');
 
-console.log(myFavorites);
+// console.log(myFavorites);
 
 // console.log(ERRORS);
 
@@ -202,17 +202,15 @@ function createDetails(subTitleDetails, containerItems) {
         const detailImage = document.createElement('div');
         detailImage.className = 'detail_image';
 
-        const imageElement = document.createElement('img');
-        imageElement.src = detail.detail_image;
-        detailImage.append(imageElement);
+        const schemeImage = document.createElement('img');
+        schemeImage.src = detail.detail_image;
+        detailImage.append(schemeImage);
 
         const schemeElement = document.createElement('img');
         schemeElement.src = detail.detail_scheme;
+
         schemeElement.hidden = true;
         detailImage.append(schemeElement);
-
-        // const detailNavContainer = document.createElement('div');
-        // detailNavContainer.className = 'QWERTY';
 
         const detailInfo = document.createElement('div');
         detailInfo.className = 'detail_info';
@@ -260,7 +258,7 @@ function createDetails(subTitleDetails, containerItems) {
             // detailScheme.className = 'detail_scheme detail_button light_theme_buttons';
             detailScheme.className = 'detail_scheme detail_button';
 
-            detailScheme.textContent = 'Схема';
+            detailScheme.textContent = 'На схеме';
             detailOptions.append(detailScheme);
         }
     }
@@ -317,7 +315,7 @@ function createCodeInSearch (item, containerItem) {
 // ДЕТАЛЬ В ПОИСКЕ
 
 function createDetailInSearch (detail, containerItem) {
-    console.log(detail);
+    // console.log(detail);
     // function createSubtitles(headerSubtitles, panelElement) {
 
         // for (let subTitle of headerSubtitles) {
@@ -347,6 +345,11 @@ function createDetailInSearch (detail, containerItem) {
         detailImage.className = 'detail_image';
         detailImage.innerHTML = `<img src="${detail.detail_image}" alt="${detail.detail_manufacturer}">`;
 
+        // МЕНЯЕМ КАРТИНКИ МОДАЛКИ
+
+
+
+
         const detailInfo = document.createElement('div');
         detailInfo.className = 'detail_info';
         detailInfo.innerHTML = detail.detail_more;
@@ -374,6 +377,7 @@ function createDetailInSearch (detail, containerItem) {
 
         // containerDetail.append(detailCode);
         containerDetail.append(detailImage);
+
         // containerDetail.append(detailInfo);
 
         containerDetail.append(detailInfo);
@@ -415,13 +419,33 @@ function callAccord() {
 }
 
 // ОТДЕЛЬНЫЙ МАССИВ ДЕТАЛЕЙ ДЛЯ ПОИСКА
-
 // ОБРАБОТКА КЛИКОВ
-
 // const click = document.getElementsByClassName('container_detail')
 
 window.onclick = function(event) {
     const target = event.target; // где был клик?
+
+    const isClick = target.className;
+
+    if (isClick === 'detail_scheme detail_button') {
+        // console.log('СХЕМА В МОДАЛКЕ');
+        const imageElement = target.parentElement.previousElementSibling.previousElementSibling;
+
+        if (target.textContent === 'На схеме') {
+            target.textContent = 'Деталь';
+            imageElement.firstElementChild.hidden = true;
+            imageElement.lastElementChild.hidden = false;
+
+        } else {
+            target.textContent = 'На схеме';
+            imageElement.firstElementChild.hidden = false;
+            imageElement.lastElementChild.hidden = true;
+        }
+
+    }
+    if (isClick === 'detail_price detail_button') {
+        console.log('СТОИМОСТЬ В МОДАЛКЕ');
+    }
 
     // СБРОС НАСТРОЕК
 
@@ -469,28 +493,11 @@ window.onclick = function(event) {
 
     // МОДАЛКА ПОДРОБНЕЕ
 
-    console.log(target.parentElement);
-    console.log(target.parentElement.classList.value);
-
-    if (target.parentElement.classList.value === 'modal__cross js-modal-close') {
-        console.log('ЗАКРЫВАЕМ МОДАЛКУ ПОДРОБНЕЕ');
-
-        const modalButtons = document.getElementById('QW'),
-            overlay      = document.querySelector('.js-overlay-modal'),
-            closeButtons = document.querySelectorAll('.js-modal-close');
-
-        console.log(overlay);
-
-        overlay.classList.remove('active');
-        modalButtons.classList.remove('active');
-
-    }
-
     const targetElementId = target.parentElement.parentElement.id;
 
     if (!targetElementId) return
 
-    console.log(targetElementId);
+    // console.log(targetElementId);
 
     const clickElement = NEW_DATA.find(elem => elem.detail_id === targetElementId)
 
@@ -500,30 +507,30 @@ window.onclick = function(event) {
 
     switch (target.className) {
 
-        case 'detail_scheme detail_button':
-
-            const imageElement = target.parentElement.previousElementSibling.previousElementSibling;
-
-            if (target.textContent === 'Схема') {
-                target.textContent = 'Деталь';
-                imageElement.firstElementChild.hidden = true;
-                imageElement.lastElementChild.hidden = false;
-
-            } else {
-                target.textContent = 'Схема';
-                imageElement.firstElementChild.hidden = false;
-                imageElement.lastElementChild.hidden = true;
-            }
-            break
+        // case 'detail_scheme detail_button':
+        //
+        //     const imageElement = target.parentElement.previousElementSibling.previousElementSibling;
+        //
+        //     if (target.textContent === 'На схеме') {
+        //         target.textContent = 'Деталь';
+        //         imageElement.firstElementChild.hidden = true;
+        //         imageElement.lastElementChild.hidden = false;
+        //
+        //     } else {
+        //         target.textContent = 'На схеме';
+        //         imageElement.firstElementChild.hidden = false;
+        //         imageElement.lastElementChild.hidden = true;
+        //     }
+        //     break
 
         case 'detail_price detail_button':
-            console.log('смотрим ЦЕНУ');
-            console.log(targetElementId);
+            // console.log('смотрим ЦЕНУ');
+            // console.log(targetElementId);
 
             // ДОБАВЛЯЕМ В ИЗБРАННОЕ
 
             if (FAVORITES.includes(targetElementId)) {
-                console.log('такое уже есть )');
+                // console.log('такое уже есть )');
             } else {
                 // FAVORITES.push(targetElementId);
                 localStorage.setItem('favorites', FAVORITES.push(targetElementId.toString()));
@@ -532,19 +539,19 @@ window.onclick = function(event) {
                 myFavorites.append(divElem)
             }
 
-            console.log(FAVORITES);
+            // console.log(FAVORITES);
             // addDetailToFavorites()
 
             // console.log(targetElementId);
             break
 
         case 'detail_more detail_button js-open-modal':
-            console.log('смотрим ПОДРОБНЕЕ');
-            console.log(targetElementId); // ID элемента
+            // console.log('смотрим ПОДРОБНЕЕ');
+            // console.log(targetElementId); // ID элемента
             const detail = NEW_DATA.find(elem => elem.detail_id === targetElementId)
-            console.log(detail);  // Объект ЭЛЕМЕНТА
+            // console.log(detail);  // Объект ЭЛЕМЕНТА
             const elementContainer = document.querySelector('.modal.active')
-            console.log(elementContainer); // Вход в МОДАЛКУ
+            // console.log(elementContainer); // Вход в МОДАЛКУ
 
             // ЗДЕСЬ ОБНУЛЕНИЕ
             elementContainer.innerHTML = '<svg class="modal__cross js-modal-close"\n' +
@@ -553,7 +560,7 @@ window.onclick = function(event) {
                 '                        <path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/>\n' +
                 '                    </svg>';
 
-            console.log(elementContainer); // Вход в МОДАЛКУ
+            // console.log(elementContainer); // Вход в МОДАЛКУ
 
             // ЗДЕСЬ МОЖНО СТРОИТЬ МОДАЛКУ ПОДРОБНЕЕ
 
@@ -562,7 +569,16 @@ window.onclick = function(event) {
 
             const detailImage = document.createElement('div');
             detailImage.className = 'detail_image';
-            detailImage.innerHTML = `<img src="${detail.detail_image}" alt="${detail.detail_manufacturer}">`;
+
+            const schemeImage = document.createElement('img');
+            schemeImage.src = detail.detail_image;
+            detailImage.append(schemeImage);
+
+            const schemeElement = document.createElement('img');
+            schemeElement.src = detail.detail_scheme;
+
+            schemeElement.hidden = true;
+            detailImage.append(schemeElement);
 
             const detailInfo = document.createElement('div');
             detailInfo.className = 'detail_info';
@@ -615,7 +631,7 @@ window.onclick = function(event) {
                 const detailScheme = document.createElement('div');
                 // detailScheme.className = 'detail_scheme detail_button light_theme_buttons';
                 detailScheme.className = 'detail_scheme detail_button';
-                detailScheme.textContent = 'Схема';
+                detailScheme.textContent = 'На схеме';
                 detailOptions.append(detailScheme);
             }
 
@@ -623,11 +639,11 @@ window.onclick = function(event) {
             break
 
         case 'detail_image':
-            console.log('ТЫЦ на картинку');
+            // console.log('ТЫЦ на картинку');
             break
 
         default:
-            console.log('что-то ДРУГОЕ');
+            // console.log('что-то ДРУГОЕ');
             // console.log(target.className);
             // console.log(targetElementId);
             break
@@ -662,19 +678,19 @@ function findObjectInArray(item) {
     searchElementsList.innerHTML = '';
     // const searchElement = document.createElement('p')
 
-    console.log(searchElementsList);
+    // console.log(searchElementsList);
 
     for (let el of NEW_DATA) {
 
         if (el.detail_info.includes(item)) {
 
             createDetailInSearch(el, searchElementsList)
-            console.log(el);
+            // console.log(el);
             // console.log(searchElementsList);
         }
     }
 
-    console.log(searchElementsList);
+    // console.log(searchElementsList);
 
     for (let el of ERRORS) {
 
@@ -685,9 +701,8 @@ function findObjectInArray(item) {
         }
     }
 
-    console.log(searchElementsList);
-
-    console.log(item);
+    // console.log(searchElementsList);
+    // console.log(item);
 
 }
 
@@ -705,10 +720,8 @@ function checkClick() {
             closeButtons = document.querySelectorAll('.js-modal-close');
 
         // console.log(closeButtons);
+        // console.log(closeButtons);
         // closeButtons = document.querySelectorAll('.modal:before');
-
-
-
         // console.log(modalButtons);
         /* Перебираем массив кнопок */
         modalButtons.forEach(function(item){
@@ -741,7 +754,7 @@ function checkClick() {
 
             item.addEventListener('click', function(e) {
 
-                console.log(item.parentElement.dataset);
+                // console.log(item.parentElement.dataset);
 
                 var parentModal = this.closest('.modal');
                 parentModal.classList.remove('active');
@@ -831,19 +844,6 @@ function renderSettings() {
                 localStorage.setItem('view', `${elem.id}`);
                 location.reload();
 
-                // ВАРИАНТЫ РАСКЛАДА
-                // if (elem.id === 'details_table') {
-                //     localStorage.setItem('view', `${elem.id}`);
-                //     removeFullView();
-                //     addDetailsWrapView()
-                // } else {
-                //
-                //     addFullView();
-                //     removeDetailsWrapView()
-                // }
-                // localStorage.setItem('view', `${elem.id}`);
-                // location.reload();
-                // renderContentMenu()
             }
         })
     }
@@ -895,7 +895,7 @@ function removeDetailsWrapView() {
     }
 }
 
-console.log(NEW_DATA);
+// console.log(NEW_DATA);
 
 function addElementToDataArray (item) {
     if (!NEW_DATA.some(e => e.detail_code === item.detail_code)) {
@@ -905,4 +905,4 @@ function addElementToDataArray (item) {
 }
 
 const QWERTY = document.querySelector('.panel')
-console.log(QWERTY.clientWidth);
+// console.log(QWERTY.clientWidth);
