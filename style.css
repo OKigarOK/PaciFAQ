@@ -533,7 +533,7 @@ button:disabled {
         background-color: black;
         padding: 70px 10px 20px 10px;
         transition: all 0.25s ease-in-out;
-        opacity: 0.95;
+        /*opacity: 0.95;*/
     }
 
     .header_menu_list {
@@ -681,7 +681,8 @@ button:disabled {
 /* О Р И Г И Н А Л */
 .original_theme,
 .original_theme .modal,
-.original_theme .container_detail_table {
+.original_theme .container_detail_table,
+.original_theme .search_title {
     /*background: url("./images/main_bg.jpg") fixed center no-repeat;*/
     border-color: wheat;
     background-color: black;
@@ -732,7 +733,8 @@ button:disabled {
 /* С В Е Т Л А Я */
 .light_theme,
 .light_theme .modal,
-.light_theme .container_detail_table {
+.light_theme .container_detail_table,
+.light_theme .search_title {
     /*border-color:  #333333;*/
     border-color: #6653D9;
     background-color: #EAE6F2;
@@ -795,7 +797,8 @@ button:disabled {
 /* Т Ё М Н А Я */
 .dark_theme,
 .dark_theme .modal,
-.dark_theme .container_detail_table {
+.dark_theme .container_detail_table,
+.dark_theme .search_title {
     border-color:  #F2F2F2;
     background-color: #17161A;
     color: #F2F2F2;

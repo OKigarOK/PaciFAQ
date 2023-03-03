@@ -5,7 +5,11 @@ const menuElement = document.getElementById('header_menu')
 burgerElement.addEventListener('click', () => {
     burgerElement.classList.toggle('active')
     menuElement.classList.toggle('active')
-    document.body.classList.toggle('lock')
+    if (menuElement.classList.contains('active')) {
+        document.body.classList.add('lock')
+    } else {
+        document.body.classList.remove('lock')
+    }
 })
 
 const searchElement = document.getElementById('form-search')

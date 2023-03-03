@@ -668,7 +668,16 @@ window.onclick = function(event) {
 const inputText = document.getElementById('search')
 const searchElementsList = document.getElementById('search_menu')
 
+
+
 inputText.oninput = function () {
+
+    // if (searchElementsList.classList.contains('active')) {
+    //     document.body.classList.add('lock');
+    // } else {
+    //     document.body.classList.remove('lock');
+    // }
+
     const substring = inputText.value.toLowerCase();
     if (!substring) {
         searchElementsList.innerHTML = '';
