@@ -4,15 +4,6 @@ import {ERRORS} from "./data/errors_list.js";
 const FAVORITES = [];
 const NEW_DATA = [];
 const myFavorites = document.getElementById('favorites');
-
-// console.log(myFavorites);
-
-// console.log(ERRORS);
-
-// SETTINGS
-
-// Отрендерить настройки в НАЧАЛЕ
-
 const currentTheme = localStorage.getItem('theme');
 const currentFontSize = localStorage.getItem('fontSize');
 const currentView = localStorage.getItem('view');
@@ -53,24 +44,18 @@ function render(theme, font, view) {
     document.getElementById(view).checked = true;
 }
 
-// Create MENU создаёт дерево элементов
-// Засунуть темы, шрифты, вид в СТИЛИ
-
-function renderContentMenu() {
-    const contentContainer = document.querySelector('.content_container');
-    contentContainer.innerHTML = '';
-    saveSettingsToLocal(SETTINGS.THEME, SETTINGS.FONT_SIZE, SETTINGS.VIEW)
-    render(SETTINGS.THEME, SETTINGS.FONT_SIZE, SETTINGS.VIEW)
-    createContentMenu(HEADERS);
-    renderSettings();
-    callAccord();
-
-}
+// function renderContentMenu() {
+//     const contentContainer = document.querySelector('.content_container');
+//     contentContainer.innerHTML = '';
+//     saveSettingsToLocal(SETTINGS.THEME, SETTINGS.FONT_SIZE, SETTINGS.VIEW)
+//     render(SETTINGS.THEME, SETTINGS.FONT_SIZE, SETTINGS.VIEW)
+//     createContentMenu(HEADERS);
+//     renderSettings();
+//     callAccord();
+// }
 
 createContentMenu(HEADERS)
-
 renderSettings();
-
 callAccord();
 
 function createContentMenu(HEADERS) {
@@ -115,21 +100,12 @@ function createSubtitles(headerSubtitles, panelElement) {
 
         const containerItems = document.createElement('div');
 
-        // if (SETTINGS.VIEW === 'details_list') {
-        //     containerItems.className = 'gallery js-flickity';
-        //     containerItems.setAttribute('data-flickity-options', '{ "Parallax": true, "prevNextButtons": true, "pageDots": false }');
-        // } else {
-        //     // ВЫВОДИМ ТАБЛИЦЕЙ
-        // }
-
         if (SETTINGS.VIEW === 'details_table') {
             containerItems.className = 'container_items_table';
         } else {
             containerItems.className = 'gallery js-flickity';
             containerItems.setAttribute('data-flickity-options', '{ "Parallax": true, "prevNextButtons": true, "pageDots": false }');
         }
-
-        // containerItems.className = 'container_items_swipe gallery js-flickity';
 
         panelElement.append(headerSubtitle);
         headerSubtitle.after(newPanelElement);
@@ -143,7 +119,6 @@ function createSubtitles(headerSubtitles, panelElement) {
             headerSubtitle.disabled = true;
         }
 
-        // Здесь ещё один АККОРДИОН подзаголовков
         if (subTitle.sub_subtitles) {
             createSubSubtitles(subTitle.sub_subtitles, newPanelElement);
         }
@@ -228,36 +203,25 @@ function createDetails(subTitleDetails, containerItems) {
         }
 
         const detailPrice = document.createElement('div');
-        // detailPrice.className = 'detail_price detail_button light_theme_buttons';
         detailPrice.className = 'detail_price detail_button';
-
         detailPrice.textContent = 'Стоимость';
 
         containerItems.append(containerDetail);
         containerDetail.append(detailCode);
-
         containerDetail.append(detailImage);
         containerDetail.append(detailInfo);
-
-        // containerDetail.append(detailInfo);
         containerDetail.append(detailOptions);
         detailOptions.append(detailPrice);
 
-        // if (detail.detail_more) {
             const detailMore = document.createElement('div');
-            // detailMore.className = 'detail_more detail_button light_theme_buttons';
             detailMore.className = 'detail_more detail_button js-open-modal';
             detailMore.setAttribute('data-modal', '11');
-
             detailMore.textContent = 'Подробнее';
             detailOptions.append(detailMore);
-        // }
 
-        if (detail.detail_scheme) {
+        if (detail.detail_scheme && (SETTINGS.VIEW === 'details_list')) {
             const detailScheme = document.createElement('div');
-            // detailScheme.className = 'detail_scheme detail_button light_theme_buttons';
             detailScheme.className = 'detail_scheme detail_button';
-
             detailScheme.textContent = 'На схеме';
             detailOptions.append(detailScheme);
         }
@@ -278,27 +242,15 @@ function createCodeInSearch (item, containerItem) {
     const containerItems = document.createElement('div');
     containerItems.className = 'container_items_swipe';
 
-
     containerItem.append(headerSubtitle);
     headerSubtitle.after(newPanelElement);
-    //
     newPanelElement.append(containerItems);
-    // setElement(detail, containerItems);
+    // РИСУЕМ ДЕТАЛЬ
 
-    // // РИСУЕМ ДЕТАЛЬ
-    //
-    // function setElement (detail, elementContainer) {
         const containerDetail = document.createElement('div');
         containerDetail.className = `container_detail full_width more_modal_settings`;
-
-        //
-    //     const detailImage = document.createElement('div');
-    //     detailImage.className = 'detail_image';
-    //     detailImage.innerHTML = `<img src="${detail.detail_image}" alt="${detail.detail_manufacturer}">`;
-    //
         const detailInfo = document.createElement('div');
-        // detailInfo.className = 'detail_info';
-    detailInfo.className = 'error_info';
+        detailInfo.className = 'error_info';
 
     if (item.error_info) {
             detailInfo.innerHTML = item.error_info;
@@ -307,19 +259,12 @@ function createCodeInSearch (item, containerItem) {
         }
 
         containerItems.append(containerDetail);
-
         containerDetail.append(detailInfo);
-
 }
 
 // ДЕТАЛЬ В ПОИСКЕ
 
 function createDetailInSearch (detail, containerItem) {
-    // console.log(detail);
-    // function createSubtitles(headerSubtitles, panelElement) {
-
-        // for (let subTitle of headerSubtitles) {
-
             const headerSubtitle = document.createElement('button');
             headerSubtitle.className = 'accordion search_title'
             headerSubtitle.innerHTML = detail.detail_info +' '+ detail.detail_code;
@@ -331,7 +276,6 @@ function createDetailInSearch (detail, containerItem) {
             containerItems.className = 'container_items_swipe';
             containerItem.append(headerSubtitle);
             headerSubtitle.after(newPanelElement);
-
             newPanelElement.append(containerItems);
             setElement(detail, containerItems);
 
@@ -368,87 +312,27 @@ function createDetailInSearch (detail, containerItem) {
         detailOptions.className = 'detail_options';
 
         const detailPrice = document.createElement('div');
-        // detailPrice.className = 'detail_price detail_button light_theme_buttons';
         detailPrice.className = 'detail_price detail_button';
-
         detailPrice.textContent = 'Стоимость';
-
         elementContainer.append(containerDetail);
-
         containerDetail.append(detailCode);
         containerDetail.append(detailImage);
         containerDetail.append(detailInfo);
-
-        // containerDetail.append(detailInfo);
         containerDetail.append(detailOptions);
         detailOptions.append(detailPrice);
 
         if (detail.detail_more) {
             const detailMore = document.createElement('div');
-            // detailMore.className = 'detail_more detail_button light_theme_buttons';
             detailMore.className = 'detail_more detail_button js-open-modal';
             detailMore.setAttribute('data-modal', '11');
-
-            // detailMore.textContent = 'Подробнее';
-            // detailOptions.append(detailMore);
         }
 
         if (detail.detail_scheme) {
             const detailScheme = document.createElement('div');
-            // detailScheme.className = 'detail_scheme detail_button light_theme_buttons';
             detailScheme.className = 'detail_scheme detail_button';
             detailScheme.textContent = 'На схеме';
             detailOptions.append(detailScheme);
         }
-
-
-        // detailImage.innerHTML = `<img src="${detail.detail_image}" alt="${detail.detail_manufacturer}">`;
-
-        // МЕНЯЕМ КАРТИНКИ МОДАЛКИ
-
-        // const detailInfo = document.createElement('div');
-        // detailInfo.className = 'detail_info';
-        // detailInfo.innerHTML = detail.detail_more;
-        //
-        // const detailCode = document.createElement('div');
-        // detailCode.className = 'detail_code';
-        // detailCode.textContent = detail.detail_code + ` (${detail.detail_manufacturer})`;
-        //
-        // const detailOptions = document.createElement('div');
-        // if ((SETTINGS.VIEW === 'details_table') && (SETTINGS.FONT_SIZE === 'fontSizeM')) {
-        //     detailOptions.className = 'detail_options detail_options_wrap';
-        // } else {
-        //     detailOptions.className = 'detail_options';
-        // }
-        //
-        // const detailPrice = document.createElement('div');
-        // // detailPrice.className = 'detail_price detail_button light_theme_buttons';
-        // detailPrice.className = 'detail_price detail_button';
-        //
-        // detailPrice.textContent = 'Стоимость';
-        //
-        // // containerItems.append(containerDetail);
-        //
-        // elementContainer.append(containerDetail);
-        //
-        // // containerDetail.append(detailCode);
-        // containerDetail.append(detailImage);
-        //
-        // // containerDetail.append(detailInfo);
-        //
-        // containerDetail.append(detailInfo);
-        // containerDetail.append(detailOptions);
-        // detailOptions.append(detailPrice);
-        //
-        // if (detail.detail_scheme) {
-        //     const detailScheme = document.createElement('div');
-        //     // detailScheme.className = 'detail_scheme detail_button light_theme_buttons';
-        //     detailScheme.className = 'detail_scheme detail_button';
-        //
-        //     detailScheme.textContent = 'Схема';
-        //     detailOptions.append(detailScheme);
-        // }
-        // ДОБАВИТЬ ПОДРОБНОСТИ....
     }
 }
 
@@ -474,19 +358,14 @@ function callAccord() {
     }
 }
 
-// ОТДЕЛЬНЫЙ МАССИВ ДЕТАЛЕЙ ДЛЯ ПОИСКА
 // ОБРАБОТКА КЛИКОВ
-// const click = document.getElementsByClassName('container_detail')
 
 window.onclick = function(event) {
     const target = event.target; // где был клик?
-
-    console.log(target);
-
+    // console.log(target);
     const isClick = target.className;
 
     if (isClick === 'detail_scheme detail_button') {
-        // console.log('СХЕМА В МОДАЛКЕ');
         const imageElement = target.parentElement.previousElementSibling.previousElementSibling;
 
         if (target.textContent === 'На схеме') {
@@ -507,6 +386,7 @@ window.onclick = function(event) {
     if (isClick === 'modal__cross js-modal-close') {
         console.log('ЗАКРЫТЬ ПОДРОБНЕЕ');
     }
+
     // СБРОС НАСТРОЕК
 
     if (target.id === 'reset_settings') {
@@ -545,10 +425,7 @@ window.onclick = function(event) {
         // detailsListElement.disabled = false;
 
         location.reload();
-        // removeDetailsWrapView();
-        // addFullView();
         localStorage.setItem('view', SETTINGS.VIEW);
-
     }
 
     // МОДАЛКА ПОДРОБНЕЕ
@@ -557,31 +434,11 @@ window.onclick = function(event) {
 
     if (!targetElementId) return
 
-    // console.log(targetElementId);
-
-    const clickElement = NEW_DATA.find(elem => elem.detail_id === targetElementId)
-
-    // console.log(target.parentElement);
+    // const clickElement = NEW_DATA.find(elem => elem.detail_id === targetElementId)
 
     // ID - число при формировании
 
     switch (target.className) {
-
-        // case 'detail_scheme detail_button':
-        //
-        //     const imageElement = target.parentElement.previousElementSibling.previousElementSibling;
-        //
-        //     if (target.textContent === 'На схеме') {
-        //         target.textContent = 'Деталь';
-        //         imageElement.firstElementChild.hidden = true;
-        //         imageElement.lastElementChild.hidden = false;
-        //
-        //     } else {
-        //         target.textContent = 'На схеме';
-        //         imageElement.firstElementChild.hidden = false;
-        //         imageElement.lastElementChild.hidden = true;
-        //     }
-        //     break
 
         case 'detail_price detail_button':
             // console.log('смотрим ЦЕНУ');
@@ -611,23 +468,11 @@ window.onclick = function(event) {
             const detail = NEW_DATA.find(elem => elem.detail_id === targetElementId)
             // console.log(detail);  // Объект ЭЛЕМЕНТА
             const elementContainer = document.querySelector('.modal.active')
-            // console.log(elementContainer); // Вход в МОДАЛКУ
-
-            // ЗДЕСЬ ОБНУЛЕНИЕ
-            // elementContainer.innerHTML = '<svg class="modal__cross js-modal-close"\n' +
-            //     '                         xmlns="http://www.w3.org/2000/svg"\n' +
-            //     '                         viewBox="0 0 24 24">\n' +
-            //     '                        <path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/>\n' +
-            //     '                    </svg>';
 
             // console.log(elementContainer); // Вход в МОДАЛКУ
 
-            console.log(elementContainer.firstChild);
-            console.log(elementContainer.lastChild.remove());
-
+            elementContainer.lastChild.remove();
             document.body.classList.add('lock');
-
-            // console.log(elementContainer.lastElementChild);
 
             // ЗДЕСЬ МОЖНО СТРОИТЬ МОДАЛКУ ПОДРОБНЕЕ
 
@@ -659,34 +504,23 @@ window.onclick = function(event) {
             detailOptions.className = 'detail_options';
 
             const detailPrice = document.createElement('div');
-            // detailPrice.className = 'detail_price detail_button light_theme_buttons';
             detailPrice.className = 'detail_price detail_button';
-
             detailPrice.textContent = 'Стоимость';
-
             elementContainer.append(containerDetail);
-
             containerDetail.append(detailCode);
             containerDetail.append(detailImage);
             containerDetail.append(detailInfo);
-
-            // containerDetail.append(detailInfo);
             containerDetail.append(detailOptions);
             detailOptions.append(detailPrice);
 
             if (detail.detail_more) {
                 const detailMore = document.createElement('div');
-                // detailMore.className = 'detail_more detail_button light_theme_buttons';
                 detailMore.className = 'detail_more detail_button js-open-modal';
                 detailMore.setAttribute('data-modal', '11');
-
-                // detailMore.textContent = 'Подробнее';
-                // detailOptions.append(detailMore);
             }
 
             if (detail.detail_scheme) {
                 const detailScheme = document.createElement('div');
-                // detailScheme.className = 'detail_scheme detail_button light_theme_buttons';
                 detailScheme.className = 'detail_scheme detail_button';
                 detailScheme.textContent = 'На схеме';
                 detailOptions.append(detailScheme);
@@ -714,8 +548,6 @@ window.onclick = function(event) {
 const inputText = document.getElementById('search')
 const searchElementsList = document.getElementById('search_menu')
 
-
-
 inputText.oninput = function () {
 
     // if (searchElementsList.classList.contains('active')) {
@@ -725,6 +557,7 @@ inputText.oninput = function () {
     // }
 
     const substring = inputText.value.toLowerCase();
+
     if (!substring) {
         searchElementsList.innerHTML = '';
         searchElementsList.classList.remove('active')
@@ -735,41 +568,25 @@ inputText.oninput = function () {
     searchElementsList.classList.add('active')
     findObjectInArray(substring);
     callAccord();
-
 }
 
 function findObjectInArray(item) {
 
-    // const searchArray = []
     searchElementsList.innerHTML = '';
-    // const searchElement = document.createElement('p')
-
-    // console.log(searchElementsList);
 
     for (let el of NEW_DATA) {
 
         if (el.detail_info.includes(item)) {
-
             createDetailInSearch(el, searchElementsList)
-            // console.log(el);
-            // console.log(searchElementsList);
         }
     }
-
-    // console.log(searchElementsList);
 
     for (let el of ERRORS) {
 
         if (el.error_code.includes(item)) {
-
             createCodeInSearch(el, searchElementsList)
-            // console.log(el);
         }
     }
-
-    // console.log(searchElementsList);
-    // console.log(item);
-
 }
 
 // МНОГО МОДАЛОК
@@ -781,15 +598,10 @@ function checkClick() {
 
         /* Записываем в переменные массив элементов-кнопок и подложку.
            Подложке зададим id, чтобы не влиять на другие элементы с классом overlay*/
-        var modalButtons = document.querySelectorAll('.js-open-modal'),
+        const modalButtons = document.querySelectorAll('.js-open-modal'),
             overlay      = document.querySelector('.js-overlay-modal'),
             closeButtons = document.querySelectorAll('.js-modal-close');
 
-
-        // console.log(closeButtons);
-        // console.log(closeButtons);
-        // closeButtons = document.querySelectorAll('.modal:before');
-        // console.log(modalButtons);
         /* Перебираем массив кнопок */
         modalButtons.forEach(function(item){
 
@@ -803,9 +615,8 @@ function checkClick() {
 
                 /* При каждом клике на кнопку мы будем забирать содержимое атрибута data-modal
                    и будем искать модальное окно с таким же атрибутом. */
-                var modalId = this.getAttribute('data-modal'),
+                const modalId = this.getAttribute('data-modal'),
                     modalElem = document.querySelector('.modal[data-modal="' + modalId + '"]');
-
 
                 /* После того как нашли нужное модальное окно, добавим классы
                    подложке и окну чтобы показать их. */
@@ -817,23 +628,18 @@ function checkClick() {
 
         closeButtons.forEach(function(item){
 
-            // console.log(item.parentElement.dataset);
+            item.addEventListener('click', function(event) {
 
-            item.addEventListener('click', function(e) {
-
-                // console.log(item.parentElement.dataset);
-
-                var parentModal = this.closest('.modal');
+                const parentModal = this.closest('.modal');
                 console.log(parentModal);
                 parentModal.classList.remove('active');
                 overlay.classList.remove('active');
                 document.body.classList.remove('lock');
-
             });
         }); // end foreach
 
         document.body.addEventListener('keyup', function (e) {
-            var key = e.keyCode;
+            const key = e.keyCode;
             if (key === 27) {
                 document.querySelector('.modal.active').classList.remove('active');
                 document.querySelector('.overlay').classList.remove('active');
@@ -848,8 +654,6 @@ function checkClick() {
 }
 
 // СМЕНА НАСТРОЕК
-
-// console.log(SETTINGS);
 
 function renderSettings() {
     const allInputs = document.querySelectorAll('input');
@@ -913,7 +717,6 @@ function renderSettings() {
             if (elem.name === 'view') {
                 localStorage.setItem('view', `${elem.id}`);
                 location.reload();
-
             }
         })
     }
@@ -965,14 +768,9 @@ function removeDetailsWrapView() {
     }
 }
 
-// console.log(NEW_DATA);
-
 function addElementToDataArray (item) {
     if (!NEW_DATA.some(e => e.detail_code === item.detail_code)) {
         item.detail_info = item.detail_info.toLowerCase();
         NEW_DATA.push(item);
     }
 }
-
-const QWERTY = document.querySelector('.panel')
-// console.log(QWERTY.clientWidth);
