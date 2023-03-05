@@ -1,5 +1,7 @@
 // ДЕТАЛИ ТО
 
+// DETAIL_IMAGE - основная картинка
+
 const OIL_FILTERS = [
     {
         detail_info: 'Фильтр маслянный',
@@ -35,6 +37,15 @@ const OIL_FILTERS = [
         detail_image: './images/details/oil_filters/oil-filter_mahle_OC236.jpg',
         detail_scheme: './images/details/oil_filters/oil-filter.gif',
         detail_more: 'Тоже норм фильтр',
+        // detail_options: [{},],
+    },
+    {
+        detail_info: 'Ремень в обход кондиционера',
+        detail_code: 'TEST',
+        detail_manufacturer: '',
+        detail_image: './images/details/oil_filters/oil-filter_fram_PH16.jpg',
+        // detail_scheme: './images/details/oil_filters/oil-filter.gif',
+        detail_more: 'Нормальный фильтр, но после 5000 пробега превращается в г..но',
         // detail_options: [{},],
     },
 ]
@@ -179,16 +190,16 @@ const PLUG_OIL_DRAIN = [
     },
 ]
 
-const WIPERS = [
-    {
-        detail_info: '',
-        detail_code: '',
-        detail_manufacturer: '',
-        detail_image: './images/menu/like.png',
-        detail_scheme: './images/details/',
-        detail_more: '',
-    },
-]
+// const WIPERS = [
+//     // {
+//     //     detail_info: '',
+//     //     detail_code: '',
+//     //     detail_manufacturer: '',
+//     //     detail_image: './images/menu/like.png',
+//     //     detail_scheme: './images/details/',
+//     //     detail_more: '',
+//     // },
+// ]
 
 // ДВИГАТЕЛЬ
 
@@ -368,6 +379,19 @@ const OIL_SEALS = [
     },
 ]
 
+// СИСТЕМА ПОДАЧИ ВОЗДУХА
+
+const AIR_TEMPERATURE_SENSOR = [
+    {
+        detail_info: 'Датчик, температура впускаемого воздуха',
+        detail_code: '04606487AB',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/air_supply_system/air_temperature_sensor_mopar_04606487AB.jpg',
+        detail_scheme: './images/details/air_supply_system/air_temperature_sensor.gif',
+        detail_more: '',
+    },
+]
+
 const THROTTLE_VALVE = [
     {
         detail_info: 'Прокладка дроссельной заслонки',
@@ -375,6 +399,78 @@ const THROTTLE_VALVE = [
         detail_manufacturer: 'Mahle',
         detail_image: './images/details/air_supply_system/throttle_valve_gasket_mahle_G31666.jpg',
         detail_scheme: './images/details/air_supply_system/throttle_valve_gasket.gif',
+        detail_more: '',
+    },
+]
+
+// Система ГРМ
+
+const CRANKSHAFT_GEAR = [
+    {
+        detail_info: 'Шестерня коленчатого вала',
+        detail_code: '04536479',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/gas_distribution_mechanism/crankshaft_gear_mopar_04536479.jpg',
+        detail_scheme: './images/details/gas_distribution_mechanism/crankshaft_gear.gif',
+        detail_more: '',
+    },
+]
+
+const ROCKERS = [
+    {
+        detail_info: 'Рокер, коромысло выпускного клапана (с гидрокомпенсатором)',
+        detail_code: '04663996',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/gas_distribution_mechanism/rocker_arm_exhaust_mopar_04663996.jpg',
+        detail_scheme: './images/details/gas_distribution_mechanism/rocker_arm_exhaust.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Рокер левый, коромысло впускного клапана переднее (с гидрокомпенсатором)',
+        detail_code: '04573459',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/gas_distribution_mechanism/rocker_arm_intake_left_mopar_04573459.jpg',
+        detail_scheme: './images/details/gas_distribution_mechanism/rocker_arm_intake_left.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Рокер правый, коромысло впускного клапана заднее (с гидрокомпенсатором)',
+        detail_code: '04573460',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/gas_distribution_mechanism/rocker_arm_intake_right_mopar_04573460.jpg',
+        detail_scheme: './images/details/gas_distribution_mechanism/rocker_arm_intake_right.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Рокер, коромысло выпускного клапана (с гидрокомпенсатором)',
+        detail_code: 'ER909',
+        detail_manufacturer: 'Enginetech',
+        detail_image: './images/details/gas_distribution_mechanism/rocker_arm_exhaust_enginetech_ER909.jpg',
+        detail_scheme: './images/details/gas_distribution_mechanism/rocker_arm_exhaust.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Рокер левый, коромысло впускного клапана переднее (с гидрокомпенсатором)',
+        detail_code: 'ER910',
+        detail_manufacturer: 'Enginetech',
+        detail_image: './images/details/gas_distribution_mechanism/rocker_arm_intake_left_enginetech_ER910.jpg',
+        detail_scheme: './images/details/gas_distribution_mechanism/rocker_arm_intake_left.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Рокер правый, коромысло впускного клапана заднее (с гидрокомпенсатором)',
+        detail_code: 'ER911',
+        detail_manufacturer: 'Enginetech',
+        detail_image: './images/details/gas_distribution_mechanism/rocker_arm_intake_right_enginetech_ER911.jpg',
+        detail_scheme: './images/details/gas_distribution_mechanism/rocker_arm_intake_right.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Гидрокомпенсатор',
+        detail_code: 'L0096',
+        detail_manufacturer: 'Enginetech',
+        detail_image: './images/details/gas_distribution_mechanism/valve_lifter_enginetech_L0096.jpg',
+        detail_scheme: '',
         detail_more: '',
     },
 ]
@@ -399,7 +495,6 @@ const BRAKE_DISCS = [
         detail_more: '',
     },
 ]
-
 
 export const HEADERS = [
     {
@@ -443,7 +538,7 @@ export const HEADERS = [
             },
             {
                 subtitle: 'Щетки стеклоочистителя',
-                details: WIPERS
+                // details: WIPERS
             },
             {
                 subtitle: 'Насос системы охлаждения (помпа)',
@@ -518,11 +613,10 @@ export const HEADERS = [
             },
             {
                 subtitle: 'Система подачи воздуха',
-                // details: AIR_SUPPLY_SYSTEM
                 sub_subtitles: [
                     {
                       sub_subtitle: 'Корпус воздушного фильтра',
-                      details: ''
+                      details: AIR_TEMPERATURE_SENSOR
                     },
                     {
                         sub_subtitle: 'Коллектор впускной',
@@ -548,7 +642,7 @@ export const HEADERS = [
                     },
                     {
                         sub_subtitle: 'Шестерня коленвала',
-                        details: ''
+                        details: CRANKSHAFT_GEAR
                     },
                     {
                         sub_subtitle: 'Распредвал',
@@ -556,7 +650,7 @@ export const HEADERS = [
                     },
                     {
                         sub_subtitle: 'Коромысло, балансир',
-                        details: ''
+                        details: ROCKERS
                     },
                     {
                         sub_subtitle: 'Комплект ГРМ',
@@ -1098,7 +1192,6 @@ export const HEADERS = [
         ],
     },
 ]
-
 // console.log(HEADERS);
 
 

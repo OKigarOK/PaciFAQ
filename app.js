@@ -390,7 +390,7 @@ window.onclick = function(event) {
     // СБРОС НАСТРОЕК
 
     if (target.id === 'reset_settings') {
-        SETTINGS.VIEW = 'details_list';
+        SETTINGS.VIEW = 'details_table';
         SETTINGS.THEME = 'original_theme';
         SETTINGS.FONT_SIZE = 'fontSizeM';
 

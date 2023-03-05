@@ -1017,12 +1017,14 @@ button:disabled {
 
 /* СВАЙПЕР */
 .gallery-cell {
-    height: 86vw;
+    /*height: 86vw;*/
+    height: 90vw;
+
     margin: 0 5px;
     counter-increment: gallery-cell;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) or (orientation:landscape) {
     html {
         background-color: black;
     }
