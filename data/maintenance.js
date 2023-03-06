@@ -324,19 +324,19 @@ const COOLANT_SEALING = [
         detail_more: '',
     },
     {
-        detail_info: 'Прокладка верхнего патрубка (термостата) радиатора ',
-        detail_code: '04781674AA',
-        detail_manufacturer: 'Mopar',
-        detail_image: './images/details/gaskets/coolant_sealing/upper_radiator_hose_gasket_mopar_04781674AA.jpg',
-        detail_scheme: './images/details/gaskets/coolant_sealing/upper_radiator_hose_gasket.gif',
-        detail_more: '',
-    },
-    {
         detail_info: 'Прокладка нижнего патрубка радиатора',
         detail_code: '04792239AB',
         detail_manufacturer: 'Mopar',
         detail_image: './images/details/gaskets/coolant_sealing/lower_radiator_hose_gasket_mopar_04792239AB.jpg',
         detail_scheme: './images/details/gaskets/coolant_sealing/lower_radiator_hose_gasket.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Прокладка верхнего патрубка (термостата) радиатора ',
+        detail_code: '04781674AA',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/gaskets/coolant_sealing/upper_radiator_hose_gasket_mopar_04781674AA.jpg',
+        detail_scheme: './images/details/gaskets/coolant_sealing/upper_radiator_hose_gasket.gif',
         detail_more: '',
     },
 ]
@@ -418,14 +418,6 @@ const CRANKSHAFT_GEAR = [
 
 const ROCKERS = [
     {
-        detail_info: 'Рокер, коромысло выпускного клапана (с гидрокомпенсатором)',
-        detail_code: '04663996',
-        detail_manufacturer: 'Mopar',
-        detail_image: './images/details/gas_distribution_mechanism/rocker_arm_exhaust_mopar_04663996.jpg',
-        detail_scheme: './images/details/gas_distribution_mechanism/rocker_arm_exhaust.gif',
-        detail_more: '',
-    },
-    {
         detail_info: 'Рокер левый, коромысло впускного клапана переднее (с гидрокомпенсатором)',
         detail_code: '04573459',
         detail_manufacturer: 'Mopar',
@@ -439,6 +431,14 @@ const ROCKERS = [
         detail_manufacturer: 'Mopar',
         detail_image: './images/details/gas_distribution_mechanism/rocker_arm_intake_right_mopar_04573460.jpg',
         detail_scheme: './images/details/gas_distribution_mechanism/rocker_arm_intake_right.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Рокер, коромысло выпускного клапана (с гидрокомпенсатором)',
+        detail_code: '04663996',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/gas_distribution_mechanism/rocker_arm_exhaust_mopar_04663996.jpg',
+        detail_scheme: './images/details/gas_distribution_mechanism/rocker_arm_exhaust.gif',
         detail_more: '',
     },
     {
@@ -475,6 +475,48 @@ const ROCKERS = [
     },
 ]
 
+const TIMING_KIT = [
+    {
+        detail_info: 'Натяжной ролик ремня ГРМ',
+        detail_code: '04663515AD',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/timing_kit/tension_roller_mopar_04663515AD.jpg',
+        detail_scheme: './images/details/timing_kit/tension_roller.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Гидронатяжитель ролика ремня ГРМ',
+        detail_code: '04892109AA',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/timing_kit/timing_belt_tensioner_mopar_04892109AA.jpg',
+        detail_scheme: './images/details/timing_kit/timing_belt_tensioner.gif',
+        detail_more: '',
+    },
+
+]
+
+const CRANKCASE_BLOCK = [
+    {
+        detail_info: 'Клапан PCV системы вентиляции картера',
+        detail_code: '04792962AA',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/pcv_valve/pcv_valve_mopar_04792962AA.jpg',
+        detail_scheme: './images/details/pcv_valve/pcv_valve.gif',
+        detail_more: '',
+    },
+]
+
+const ENGINE_ELECTRONICS = [
+    {
+        detail_info: 'Датчик температуры охлаждающей жидкости',
+        detail_code: '05269870AB',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/engine_electronics/sensor_coolant_temperature_mopar_05269870AB.jpg',
+        detail_scheme: './images/details/engine_electronics/sensor_coolant_temperature.gif',
+        detail_more: '',
+    },
+]
+
 // ТОРМОЗНАЯ СИСТЕМА
 
 const BRAKE_DISCS = [
@@ -493,6 +535,43 @@ const BRAKE_DISCS = [
         detail_image: './images/details/brake_discs/rear_brake_disc_PBD7002.jpg',
         detail_scheme: './images/details/brake_discs/rear_brake_disc.gif',
         detail_more: '',
+    },
+]
+
+
+
+const OXYGEN_SENSORS = [
+    {
+        detail_info: 'Лямбда-зонд №1, 03-04 модельный год',
+        detail_code: '04727446AD',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/oxygen_sensors/oxygen_sensor_mopar_04727446AD.jpg',
+        // detail_scheme: './images/details/oxygen_sensors/',
+        detail_more: '1-я лямбда, перед катализатором, 03-04 модельный год, ставим сюда ТОЛЬКО ОРИГИНАЛ!!!',
+    },
+    {
+        detail_info: 'Лямбда-зонд №2, 03-04 модельный год',
+        detail_code: '04727936AD',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/oxygen_sensors/oxygen_sensor_mopar_04727936AD.jpg',
+        // detail_scheme: './images/details/oxygen_sensors/',
+        detail_more: '2-я лямбда, после катализатором, 03-04 модельный год',
+    },
+    {
+        detail_info: 'Лямбда-зонд №1, 05-06 модельный год',
+        detail_code: '56028998AB',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/oxygen_sensors/oxygen_sensor_mopar_56028998AB.jpg',
+        // detail_scheme: './images/details/oxygen_sensors/',
+        detail_more: '1-я лямбда, перед катализатором, 03-04 модельный год, ставим сюда ТОЛЬКО ОРИГИНАЛ!!!',
+    },
+    {
+        detail_info: 'Лямбда-зонд №2, 05-06 модельный год',
+        detail_code: '56028999AB',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/oxygen_sensors/oxygen_sensor_mopar_56028999AB.jpg',
+        // detail_scheme: './images/details/oxygen_sensors/',
+        detail_more: '2-я лямбда, после катализатором, 05-06 модельный год',
     },
 ]
 
@@ -654,7 +733,7 @@ export const HEADERS = [
                     },
                     {
                         sub_subtitle: 'Комплект ГРМ',
-                        details: ''
+                        details: TIMING_KIT.concat(TIMING_BELTS)
                     },
                     {
                         sub_subtitle: 'Клапан, регулировка',
@@ -664,11 +743,11 @@ export const HEADERS = [
             },
             {
                 subtitle: 'Блок-картер',
-                // details: CRANKCASE_BLOCK
+                details: CRANKCASE_BLOCK
             },
             {
                 subtitle: 'Электроника двигателя',
-                // details: CRANKCASE_BLOCK
+                details: ENGINE_ELECTRONICS
             },
             {
                 subtitle: 'Кривошипношатунный механизм',
@@ -774,7 +853,7 @@ export const HEADERS = [
                     },
                     {
                         sub_subtitle: 'Датчик кислорода',
-                        details: ''
+                        details: OXYGEN_SENSORS
                     },
                 ]
             },
@@ -895,7 +974,7 @@ export const HEADERS = [
             },
             {
                 subtitle: 'Датчик кислорода (лямбда-зонд)',
-                // details: OXYGEN
+                details: OXYGEN_SENSORS
             },
             {
                 subtitle: 'Коллектор выпускной (прокладки)',
