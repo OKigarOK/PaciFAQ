@@ -517,6 +517,161 @@ const ENGINE_ELECTRONICS = [
     },
 ]
 
+// РЕМЕННОЙ ПРИВОД
+
+const PULLEYS = [
+    {
+        detail_info: 'Шкив коленвала',
+        detail_code: '04792989AA',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/pulleys/crankshaft_damper_mopar_04792989AA.jpg',
+        detail_scheme: './images/details/pulleys/crankshaft_damper.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Шкив коленвала',
+        detail_code: '594-439',
+        detail_manufacturer: 'Dorman',
+        detail_image: './images/details/pulleys/crankshaft_damper_dorman_594-439.jpg',
+        detail_scheme: './images/details/pulleys/crankshaft_damper.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Шкив насоса ГУР',
+        detail_code: '04861582AA',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/pulleys/power_steering_pump_pulley_mopar_04861582AA.jpg',
+        detail_scheme: './images/details/pulleys/power_steering_pump_pulley.gif',
+        detail_more: '',
+    },
+]
+
+const PULLEY_ALTERNATOR = [
+    {
+        detail_info: 'Обгонная муфта генератора',
+        detail_code: '535020810',
+        detail_manufacturer: 'INA',
+        detail_image: './images/details/pulley_alternator/alternator_pulley_ina_535020810.jpg',
+        detail_scheme: './images/details/pulley_alternator/alternator_pulley.gif',
+        detail_more: '',
+    },
+]
+
+const BYPASS_ROLLERS = [
+    {
+        detail_info: 'Обводной ролик гладкий',
+        detail_code: '89007',
+        detail_manufacturer: 'Dayco',
+        detail_image: './images/details/bypass_rollers/bypass_roller_dayco_89007.jpg',
+        detail_scheme: './images/details/bypass_rollers/bypass_roller_1.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Обводной ролик гладкий',
+        detail_code: '36600',
+        detail_manufacturer: 'Gates',
+        detail_image: './images/details/bypass_rollers/bypass_roller_gates_36600.jpg',
+        detail_scheme: './images/details/bypass_rollers/bypass_roller_1.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Обводной ролик ручейковый',
+        detail_code: '89009',
+        detail_manufacturer: 'Dayco',
+        detail_image: './images/details/bypass_rollers/bypass_roller_dayco_89009.jpg',
+        detail_scheme: './images/details/bypass_rollers/bypass_roller_2.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Обводной ролик ручейковый',
+        detail_code: '89051',
+        detail_manufacturer: 'Dayco',
+        detail_image: './images/details/bypass_rollers/bypass_roller_dayco_89051.jpg',
+        detail_scheme: './images/details/bypass_rollers/bypass_roller_2.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Обводной ролик ручейковый',
+        detail_code: '36100',
+        detail_manufacturer: 'Gates',
+        detail_image: './images/details/bypass_rollers/bypass_roller_gates_36100.jpg',
+        detail_scheme: './images/details/bypass_rollers/bypass_roller_2.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Обводной ролик ручейковый',
+        detail_code: '38009',
+        detail_manufacturer: 'Gates',
+        detail_image: './images/details/bypass_rollers/bypass_roller_gates_38009.jpg',
+        detail_scheme: './images/details/bypass_rollers/bypass_roller_2.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Обводной ролик ручейковый',
+        detail_code: 'T38009',
+        detail_manufacturer: 'Gates',
+        detail_image: './images/details/bypass_rollers/bypass_roller_gates_T38009.jpg',
+        detail_scheme: './images/details/bypass_rollers/bypass_roller_2.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Ролик натяжителя',
+        detail_code: '89017',
+        detail_manufacturer: 'Dayco',
+        detail_image: './images/details/bypass_rollers/bypass_roller_dayco_89017.jpg',
+        detail_scheme: './images/details/bypass_rollers/bypass_roller_3.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Ролик натяжителя',
+        detail_code: '89144',
+        detail_manufacturer: 'Dayco',
+        detail_image: './images/details/bypass_rollers/bypass_roller_dayco_89144.jpg',
+        detail_scheme: './images/details/bypass_rollers/bypass_roller_3.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Ролик натяжителя',
+        detail_code: '38015',
+        detail_manufacturer: 'Gates',
+        detail_image: './images/details/bypass_rollers/bypass_roller_gates_38015.jpg',
+        detail_scheme: './images/details/bypass_rollers/bypass_roller_3.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Ролик натяжителя',
+        detail_code: 'T38018',
+        detail_manufacturer: 'Gates',
+        detail_image: './images/details/bypass_rollers/bypass_roller_gates_T38018.jpg',
+        detail_scheme: './images/details/bypass_rollers/bypass_roller_3.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Натяжитель обводного ремня',
+        detail_code: '04861660AA',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/bypass_rollers/bypass_roller_mopar_04861660AA.jpg',
+        detail_scheme: './images/details/bypass_rollers/bypass_roller_0.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Натяжитель обводного ремня',
+        detail_code: '38323',
+        detail_manufacturer: 'Gates',
+        detail_image: './images/details/bypass_rollers/bypass_roller_gates_38323.jpg',
+        detail_scheme: './images/details/bypass_rollers/bypass_roller_0.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Натяжитель обводного ремня',
+        detail_code: '419006',
+        detail_manufacturer: 'Dorman',
+        detail_image: './images/details/bypass_rollers/bypass_roller_dorman_419-006.jpg',
+        detail_scheme: './images/details/bypass_rollers/bypass_roller_0.gif',
+        detail_more: '',
+    },
+]
+
 // ТОРМОЗНАЯ СИСТЕМА
 
 const BRAKE_DISCS = [
@@ -815,15 +970,15 @@ export const HEADERS = [
                 sub_subtitles: [
                     {
                         sub_subtitle: 'Шкив',
-                        details: ''
+                        details: PULLEYS
                     },
                     {
                         sub_subtitle: 'Механизм свободного хода генератора',
-                        details: ''
+                        details: PULLEY_ALTERNATOR
                     },
                     {
                         sub_subtitle: 'Ремень поликлинковый, ролики',
-                        details: ''
+                        details: V_RIBBED_BELTS.concat(BYPASS_ROLLERS)
                     },
                     {
                         sub_subtitle: 'Комплект ГРМ',
