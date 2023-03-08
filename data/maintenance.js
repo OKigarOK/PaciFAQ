@@ -693,7 +693,109 @@ const BRAKE_DISCS = [
     },
 ]
 
+// СИСТЕМА ВЫПУСКА
 
+const EXHAUST_GAS_NEUTRALIZATION = [
+    {
+        detail_info: 'Клапан ЕГР',
+        detail_code: '04861579AH',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/exhaust_gas_neutralization/mopar_04861579AH.jpg',
+        // detail_scheme: './images/details/exhaust_gas_neutralization/',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Клапан ЕГР',
+        detail_code: '04861635AG',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/exhaust_gas_neutralization/mopar_04861635AG.jpg',
+        // detail_scheme: './images/details/exhaust_gas_neutralization/',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Прокладка фланца трубки ЕГР',
+        detail_code: '05277928',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/exhaust_gas_neutralization/mopar_05277928.jpg',
+        detail_scheme: './images/details/exhaust_gas_neutralization/gasket_egr_tube_flange.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Прокладка фланца трубки ЕГР',
+        detail_code: 'VG14',
+        detail_manufacturer: 'Standard',
+        detail_image: './images/details/exhaust_gas_neutralization/standard_VG14.jpg',
+        detail_scheme: './images/details/exhaust_gas_neutralization/gasket_egr_tube_flange.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Уплотнительное кольцо трубки ЕГР',
+        detail_code: '04667431',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/exhaust_gas_neutralization/mopar_04667431.jpg',
+        // detail_scheme: './images/details/exhaust_gas_neutralization/',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Уплотнительное кольцо трубки ЕГР',
+        detail_code: '70696',
+        detail_manufacturer: 'Fel-Pro',
+        detail_image: './images/details/exhaust_gas_neutralization/fel-pro_70696.jpg',
+        // detail_scheme: './images/details/exhaust_gas_neutralization/',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Прокладка клапана ЕГР',
+        detail_code: '04891068AB',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/exhaust_gas_neutralization/mopar_04891068AB.jpg',
+        detail_scheme: './images/details/exhaust_gas_neutralization/gasket_egr_valve.gif',
+        detail_more: '',
+    },
+]
+
+const EXHAUST = [
+    {
+        detail_info: 'Глушитель 1-я часть',
+        detail_code: '4514',
+        detail_manufacturer: 'Edex',
+        detail_image: './images/details/muffler_assembly/muffler_exhaust_edex-4514.jpg',
+        detail_scheme: './images/details/muffler_assembly/muffler_exhaust.gif',
+        detail_more: '1-я банка глушителя с гофрой',
+    },
+    {
+        detail_info: 'Глушитель 2-я часть',
+        detail_code: '4515',
+        detail_manufacturer: 'Edex',
+        detail_image: './images/details/muffler_assembly/muffler_resonator_exhaust_edex-4515.jpg',
+        detail_scheme: './images/details/muffler_assembly/muffler_resonator_exhaust.gif',
+        detail_more: 'Задняя часть глушителя, состоит из 2-х частей',
+    },
+    {
+        detail_info: 'Глушитель, задняя банка',
+        detail_code: '16.202',
+        detail_manufacturer: 'Ferroz',
+        detail_image: './images/details/muffler_assembly/muffler_resonator_exhaust_ferroz-16.202.jpg',
+        detail_scheme: './images/details/muffler_assembly/muffler_resonator_exhaust.gif',
+        detail_more: 'Задняя банка от Пыжа, нужно рукожопить с креплениями',
+    },
+    {
+        detail_info: 'Глушитель, задняя банка',
+        detail_code: '19.218',
+        detail_manufacturer: 'Polmostrow',
+        detail_image: './images/details/muffler_assembly/muffler_resonator_exhaust_polmostrow_19.218.jpg',
+        detail_scheme: './images/details/muffler_assembly/muffler_resonator_exhaust.gif',
+        detail_more: 'Задняя банка от Пыжа, нужно рукожопить с креплениями',
+    },
+    {
+        detail_info: 'Универсальный катализатор',
+        detail_code: '99354HM',
+        detail_manufacturer: 'Magnaflow',
+        detail_image: './images/details/muffler_assembly/converter_catalytic_universal_catalytic_converter_magnaflow_99354HM.jpg',
+        detail_scheme: './images/details/muffler_assembly/converter_catalytic.gif',
+        detail_more: '',
+    },
+]
 
 const OXYGEN_SENSORS = [
     {
@@ -727,6 +829,41 @@ const OXYGEN_SENSORS = [
         detail_image: './images/details/oxygen_sensors/oxygen_sensor_mopar_56028999AB.jpg',
         // detail_scheme: './images/details/oxygen_sensors/',
         detail_more: '2-я лямбда, после катализатором, 05-06 модельный год',
+    },
+]
+
+const EXHAUST_MANIFOLD = [
+    {
+        detail_info: 'Прокладки выпускного коллектора',
+        detail_code: '04648913AA',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/exhaust_manifold/mopar_04648913AA.jpg',
+        detail_scheme: './images/details/exhaust_manifold/gasket_exhaust_manifold_1.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Прокладка выпускного коллектора',
+        detail_code: '04648915AA',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/exhaust_manifold/mopar_04648915AA.jpg',
+        detail_scheme: './images/details/exhaust_manifold/gasket_exhaust_manifold_2.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Прокладка выпускного коллектора',
+        detail_code: '711366800',
+        detail_manufacturer: 'Victor Reinz',
+        detail_image: './images/details/exhaust_manifold/victor-reinz_71-13668-00.jpg',
+        detail_scheme: './images/details/exhaust_manifold/gasket_exhaust_manifold_2.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Прокладка выпускного коллектора, катализатора',
+        detail_code: '04809696AA',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/exhaust_manifold/mopar_04809696AA.jpg',
+        detail_scheme: './images/details/exhaust_manifold/gasket_exhaust_manifold_3.gif',
+        detail_more: '',
     },
 ]
 
@@ -982,7 +1119,7 @@ export const HEADERS = [
                     },
                     {
                         sub_subtitle: 'Комплект ГРМ',
-                        details: ''
+                        details: TIMING_KIT.concat(TIMING_BELTS)
                     },
                 ]
             },
@@ -1120,12 +1257,12 @@ export const HEADERS = [
         title: 'Система выпуска',
         subtitles: [
             {
-                subtitle: 'Нейтрализация ОГ (катализатор)',
-                // details: CATALYTIC_CONVERTER
+                subtitle: 'Нейтрализация ОГ',
+                details: EXHAUST_GAS_NEUTRALIZATION
             },
             {
                 subtitle: 'Глушитель в сборе/части',
-                // details: EXHAUST
+                details: EXHAUST
             },
             {
                 subtitle: 'Датчик кислорода (лямбда-зонд)',
@@ -1133,7 +1270,7 @@ export const HEADERS = [
             },
             {
                 subtitle: 'Коллектор выпускной (прокладки)',
-                // details: EXHAUST_MANIFOLD
+                details: EXHAUST_MANIFOLD
             },
             {
                 subtitle: 'Трубы (гофра)',

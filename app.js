@@ -352,7 +352,7 @@ function callAccord() {
             } else {
                 // panel.style.maxHeight = panel.scrollHeight + "px";
                 // panel.style.maxHeight = '100%';
-                panel.style.maxHeight = '1500px';
+                panel.style.maxHeight = '2000px';
             }
         });
     }
