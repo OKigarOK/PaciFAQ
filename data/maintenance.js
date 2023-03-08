@@ -867,6 +867,121 @@ const EXHAUST_MANIFOLD = [
     },
 ]
 
+// ХОДОВАЯ ЧАСТЬ
+
+const SPRINGS = [
+    {
+        detail_info: 'Передняя пружина подвески',
+        detail_code: 'C4T61532H',
+        detail_manufacturer: 'OBK',
+        detail_image: './images/details/springs/front_spring_obk_C4T61562H.jpg',
+        detail_scheme: './images/details/springs/front_spring.gif',
+        detail_more: 'Весьма сомнительное занятие по замене))) Нужно греть, гнуть, подгонять. Почитать можно на Д2',
+    },
+    {
+        detail_info: 'Передняя пружина подвески',
+        detail_code: '4063492',
+        detail_manufacturer: 'Lesjofors',
+        detail_image: './images/details/springs/front_spring_lesjofors_4063492.jpeg',
+        detail_scheme: './images/details/springs/front_spring.gif',
+        detail_more: 'Хороший производитель, пружины подбирались по параметрам оригинала, но ещё не устанавливались',
+    },
+    {
+        detail_info: 'Задняя пружина подвески',
+        detail_code: 'C4T61881H',
+        detail_manufacturer: 'OBK',
+        detail_image: './images/details/springs/rear_spring_obk_C4T61881H.jpg',
+        detail_scheme: './images/details/springs/rear_spring.gif',
+        detail_more: 'Пружина от "Прадика", желательно подпилить, но кто-то гоняет и так',
+    },
+    {
+        detail_info: 'Задняя пружина подвески',
+        detail_code: '4014219',
+        detail_manufacturer: 'Lesjofors',
+        detail_image: './images/details/springs/rear_spring_lesjofors_4014219.jpeg',
+        detail_scheme: './images/details/springs/rear_spring.gif',
+        detail_more: 'Хороший производитель, пружины подбирались по параметрам оригинала, но ещё не устанавливались',
+    },
+]
+
+const SHOCK_ABSORBER_SUPPORTS = [
+    {
+        detail_info: 'Опора переднего амортизатора',
+        detail_code: '04862027AB',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/strut_mounts/strut_mount_mopar_04862027AB.jpg',
+        detail_scheme: './images/details/strut_mounts/strut_mount.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Опора переднего амортизатора',
+        detail_code: 'SM5266',
+        detail_manufacturer: 'Kayaba',
+        detail_image: './images/details/strut_mounts/strut_mount_kyb_SM5266.jpg',
+        detail_scheme: './images/details/strut_mounts/strut_mount.gif',
+        detail_more: 'Опорный подшипник в комплекте',
+    },
+    {
+        detail_info: 'Опора переднего амортизатора',
+        detail_code: '3327001',
+        detail_manufacturer: 'Lemforder',
+        detail_image: './images/details/strut_mounts/strut_mount_lemforder_3327001.jpg',
+        detail_scheme: './images/details/strut_mounts/strut_mount.gif',
+        detail_more: 'Опорный подшипник в комплекте',
+    },
+    {
+        detail_info: 'Опора переднего амортизатора',
+        detail_code: 'MK278',
+        detail_manufacturer: 'Monroe',
+        detail_image: './images/details/strut_mounts/strut_mount_monroe_MK278.jpg',
+        detail_scheme: './images/details/strut_mounts/strut_mount.gif',
+        detail_more: 'Опорный подшипник в комплекте',
+    },
+    {
+        detail_info: 'Опорный подшипник',
+        detail_code: '4743044AA',
+        detail_manufacturer: 'Crown',
+        detail_image: './images/details/strut_mounts/crown_4743044AA.jpg',
+        detail_scheme: './images/details/strut_mounts/strut_bearing.gif',
+        detail_more: '',
+    },
+]
+
+const SHOCK_ABSORBERS = [
+    {
+        detail_info: 'Передний амортизатор подвески',
+        detail_code: '339088',
+        detail_manufacturer: 'Kayaba',
+        detail_image: './images/details/shock_absorbers/front_shock_absorber_kyb_339088.jpg',
+        detail_scheme: './images/details/shock_absorbers/front_shock_absorber.gif',
+        detail_more: 'Для тех, кто любит по жестче :)',
+    },
+    {
+        detail_info: 'Передний амортизатор подвески',
+        detail_code: '72130',
+        detail_manufacturer: 'Monroe',
+        detail_image: './images/details/shock_absorbers/front_shock_absorber_monroe_72130.jpg',
+        detail_scheme: './images/details/shock_absorbers/front_shock_absorber.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Передний амортизатор подвески',
+        detail_code: '802130',
+        detail_manufacturer: 'Monroe',
+        detail_image: './images/details/shock_absorbers/front_shock_absorber_monroe_802130.jpg',
+        detail_scheme: './images/details/shock_absorbers/front_shock_absorber.gif',
+        detail_more: 'Говорят что это более продвинутая модель 72130',
+    },
+    {
+        detail_info: 'Передний амортизатор подвески',
+        detail_code: 'PSA339088',
+        detail_manufacturer: 'Patron',
+        detail_image: './images/details/shock_absorbers/front_shock_absorber_patron_PSA339088.jpg',
+        detail_scheme: './images/details/shock_absorbers/front_shock_absorber.gif',
+        detail_more: '',
+    },
+]
+
 export const HEADERS = [
     {
         title: 'Детали ТО',
@@ -1304,15 +1419,15 @@ export const HEADERS = [
         subtitles: [
             {
                 subtitle: 'Пружина подвески',
-                // details: SPRINGS
+                details: SPRINGS
             },
             {
                 subtitle: 'Опора амортизатора',
-                // details: SHOCK_ABSORBER_SUPPORT
+                details: SHOCK_ABSORBER_SUPPORTS
             },
             {
                 subtitle: 'Амортизатор подвески',
-                // details: SHOCK_ABSORBER
+                details: SHOCK_ABSORBERS
             },
             {
                 subtitle: 'Рычаги и тяги подвески',
