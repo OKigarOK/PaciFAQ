@@ -25,7 +25,9 @@ body {
     /*background: url("./images/main_bg.jpg") fixed center no-repeat;*/
     /*background: url("./images/main_bg_light.jpg") fixed center no-repeat;*/
     background-size: contain;
-    height: 100vh;
+    height: Calc(100vh - 10px);
+
+    /*height: 100%;*/
 }
 
 .header {
@@ -184,7 +186,7 @@ body {
 
 /* MENU LIST */
 .content {
-    height: 100%;
+    height: Calc(100% - 50px);
     margin: 0 auto;
     position: relative;
     top: 50px;
