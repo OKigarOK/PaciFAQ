@@ -1032,9 +1032,15 @@ button:disabled {
 @media (min-width: 768px) or (orientation:landscape) {
     html {
         background-color: black;
+        height: 100vh;
     }
     body {
-        background: url("./images/work.webp") no-repeat center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: url("./images/work.png") no-repeat center;
+        background-size: contain;
+        height: 100vh;
     }
     .wrapper {
         display: none;

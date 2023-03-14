@@ -39,15 +39,6 @@ const OIL_FILTERS = [
         detail_more: 'Тоже норм фильтр',
         // detail_options: [{},],
     },
-    {
-        detail_info: 'Ремень в обход кондиционера',
-        detail_code: 'TEST',
-        detail_manufacturer: '',
-        detail_image: './images/details/oil_filters/oil-filter_fram_PH16.jpg',
-        // detail_scheme: './images/details/oil_filters/oil-filter.gif',
-        detail_more: 'Нормальный фильтр, но после 5000 пробега превращается в г..но',
-        // detail_options: [{},],
-    },
 ]
 
 const AIR_FILTERS = [
@@ -59,6 +50,30 @@ const AIR_FILTERS = [
         detail_scheme: './images/details/air_filters/air-filter.gif',
         detail_more: '',
     },
+    {
+        detail_info: 'Фильтр воздушный',
+        detail_code: 'ADA102256',
+        detail_manufacturer: 'Blue Print',
+        detail_image: './images/details/air_filters/air_filter_blue-print_ADA102256.jpeg',
+        detail_scheme: './images/details/air_filters/air-filter.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Фильтр воздушный',
+        detail_code: 'PF1534',
+        detail_manufacturer: 'Patron',
+        detail_image: './images/details/air_filters/air_filter_patron_PF1534.jpg',
+        detail_scheme: './images/details/air_filters/air-filter.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Фильтр воздушный',
+        detail_code: '7101933SX',
+        detail_manufacturer: 'Stellox',
+        detail_image: './images/details/air_filters/air_filter_stellox_7101933SX.jpg',
+        detail_scheme: './images/details/air_filters/air-filter.gif',
+        detail_more: '',
+    },
 ]
 
 const CABIN_FILTERS = [
@@ -66,8 +81,32 @@ const CABIN_FILTERS = [
         detail_info: 'Фильтр салона',
         detail_code: '82205905',
         detail_manufacturer: 'Mopar',
-        detail_image: './images/details/cain_filters/cabin-filter_mopar_82205905.jpg',
-        detail_scheme: './images/details/cain_filters/cabin-filter.gif',
+        detail_image: './images/details/cabin_filters/cabin-filter_mopar_82205905.jpg',
+        detail_scheme: './images/details/cabin_filters/cabin-filter.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Фильтр салона',
+        detail_code: 'ADA102503',
+        detail_manufacturer: 'Blue Print',
+        detail_image: './images/details/cabin_filters/cabin-filter_blue-print_ADA102503.jpg',
+        detail_scheme: './images/details/cabin_filters/cabin-filter.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Фильтр салона',
+        detail_code: 'PF2250',
+        detail_manufacturer: 'Patron',
+        detail_image: './images/details/cabin_filters/cabin-filter_patron_PF2250.JPG',
+        detail_scheme: './images/details/cabin_filters/cabin-filter.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Фильтр салона',
+        detail_code: '7110470SX',
+        detail_manufacturer: 'Stellox',
+        detail_image: './images/details/cabin_filters/cabin-filter_stellox_7110470SX.jpg',
+        detail_scheme: './images/details/cabin_filters/cabin-filter.gif',
         detail_more: '',
     },
 ]
@@ -78,6 +117,30 @@ const TRANSMISSION_FILTERS = [
         detail_code: '4864505AB',
         detail_manufacturer: 'Mopar',
         detail_image: './images/details/transmission_filters/transmission-filter_mopar_4864505AB.jpg',
+        detail_scheme: './images/details/transmission_filters/transmission-filter.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Фильтр АКПП',
+        detail_code: 'FT1122A',
+        detail_manufacturer: 'Fram',
+        detail_image: './images/details/transmission_filters/transmission-filter_fram_FT1122A.jpg',
+        detail_scheme: './images/details/transmission_filters/transmission-filter.gif',
+        detail_more: 'В комплекте идёт пробковая прокладка, но обычно народ сажает на гермет. По заводу, кстати, стоит на герметике',
+    },
+    {
+        detail_info: 'Фильтр АКПП',
+        detail_code: 'JT398K',
+        detail_manufacturer: 'JSAsakashi',
+        detail_image: './images/details/transmission_filters/transmission-filter_JS-Asakashi_JT398K.jpg',
+        detail_scheme: './images/details/transmission_filters/transmission-filter.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Фильтр АКПП',
+        detail_code: 'PF5001',
+        detail_manufacturer: 'Patron',
+        detail_image: './images/details/transmission_filters/transmission-filter_patron_PF5001.jpg',
         detail_scheme: './images/details/transmission_filters/transmission-filter.gif',
         detail_more: '',
     },
@@ -92,6 +155,22 @@ const SPARK_PLUGS = [
         detail_scheme: './images/details/spark_plugs/spark-plug.gif',
         detail_more: 'отличные свечи, выхаживают по 100тык',
     },
+    {
+        detail_info: 'Свечи зажигания',
+        detail_code: '7034',
+        detail_manufacturer: 'Champion',
+        detail_image: './images/details/spark_plugs/spark-plug_champion_7034.jpg',
+        detail_scheme: './images/details/spark_plugs/spark-plug.gif',
+        detail_more: 'нормальные бюджетные свечи, тыш 30+ выхаживают',
+    },
+    {
+        detail_info: 'Свечи зажигания',
+        detail_code: '7781',
+        detail_manufacturer: 'NGK',
+        detail_image: './images/details/spark_plugs/spark-plug_ngk_7781.jpg',
+        detail_scheme: './images/details/spark_plugs/spark-plug.gif',
+        detail_more: 'эти же свечи лежат в оригинале',
+    },
 ]
 
 const V_RIBBED_BELTS = [
@@ -101,8 +180,16 @@ const V_RIBBED_BELTS = [
         detail_manufacturer: 'Mopar',
         detail_image: './images/details/v_ribbed_belts/v-ribbed-belts_mopar_4861850AA.jpg',
         detail_scheme: './images/details/v_ribbed_belts/v-ribbed-belt.gif',
-        detail_more: 'можно любой ремень с размерами 6PK2370-2380. Длина в обход компрессора кондиционера 2050-2100мм',
-    }
+        detail_more: 'можно любой ремень с размерами 6PK2370-2380, натяжитель компенсирует длину',
+    },
+    {
+        detail_info: 'Ремень поликлинковый в обход кондиционера',
+        detail_code: '6PK2050...2100',
+        detail_manufacturer: '',
+        detail_image: './images/details/v_ribbed_belts/v-ribbed-belt_bypass.jpg',
+        detail_scheme: './images/details/v_ribbed_belts/v-ribbed-belt.gif',
+        detail_more: 'Длина в обход компрессора кондиционера 2050-2100мм, можно любой ремень, натяжитель компенсирует длину.',
+    },
 ]
 
 const TIMING_BELTS = [
@@ -113,7 +200,15 @@ const TIMING_BELTS = [
         detail_image: './images/details/timing_belts/timing-belt_mopar_4792353.jpg',
         detail_scheme: './images/details/timing_belts/timing-belt.gif',
         detail_more: '',
-    }
+    },
+    {
+        detail_info: 'Ремень ГРМ',
+        detail_code: '5674XS',
+        detail_manufacturer: 'Gates',
+        detail_image: './images/details/timing_belts/timing-belt_gates_5674XS.jpg',
+        detail_scheme: './images/details/timing_belts/timing-belt.gif',
+        detail_more: 'Отличный ремень, ставим только его',
+    },
 ]
 
 const THERMOSTATS = [
@@ -142,8 +237,64 @@ const WATER_PUMPS = [
         detail_manufacturer: 'Mopar',
         detail_image: './images/details/water_pumps/water_pump_mopar_V9900085.jpg',
         detail_scheme: './images/details/water_pumps/water_pump.gif',
-        detail_more: 'малая помпа, на автомобили 2003-2004 годов выпуска',
-    }
+        detail_more: 'малая помпа, на 03-04 модельный год',
+    },
+    {
+        detail_info: 'Водяной насос (малая помпа)',
+        detail_code: '7162',
+        detail_manufacturer: 'Airtex',
+        detail_image: './images/details/water_pumps/water_pump_airtex_7162.jpg',
+        detail_scheme: './images/details/water_pumps/water_pump.gif',
+        detail_more: 'малая помпа, на 03-04 модельный год. Бюджетный вариант, лучше не ставить, но некоторые ставят'
+    },
+    {
+        detail_info: 'Водяной насос (малая помпа)',
+        detail_code: 'GWCR35A',
+        detail_manufacturer: 'GMB',
+        detail_image: './images/details/water_pumps/water_pump_gmb_GWCR35A.jpeg',
+        detail_scheme: './images/details/water_pumps/water_pump.gif',
+        detail_more: 'малая помпа, на 03-04 модельный год. Наверное лучшее из цена/качество',
+    },
+    {
+        detail_info: 'Водяной насос (малая помпа)',
+        detail_code: 'PWP1018',
+        detail_manufacturer: 'Patron',
+        detail_image: './images/details/water_pumps/water_pump_patron_PWP1018.jpg',
+        detail_scheme: './images/details/water_pumps/water_pump.gif',
+        detail_more: 'малая помпа, на 03-04 модельный год',
+    },
+    {
+        detail_info: 'Водяной насос (большая помпа)',
+        detail_code: '04792968AD',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/water_pumps/water_pump_mopar_04792968AD.jpg',
+        detail_scheme: './images/details/water_pumps/water_pump.gif',
+        detail_more: 'большая помпа, на 05-06 модельный год',
+    },
+    {
+        detail_info: 'Водяной насос (большая помпа)',
+        detail_code: '1835',
+        detail_manufacturer: 'Airtex',
+        detail_image: './images/details/water_pumps/water_pump_airtex_1835.jpeg',
+        detail_scheme: './images/details/water_pumps/water_pump.gif',
+        detail_more: 'большая помпа, на 05-06 модельный год. Бюджетный вариант, лучше не ставить, но некоторые ставят',
+    },
+    {
+        detail_info: 'Водяной насос (большая помпа)',
+        detail_code: 'GWCR43A',
+        detail_manufacturer: 'GMB',
+        detail_image: './images/details/water_pumps/water_pump_gmb_GWCR43A.jpg',
+        detail_scheme: './images/details/water_pumps/water_pump.gif',
+        detail_more: 'большая помпа, на 05-06 модельный год. Наверное лучшее из цена/качество',
+    },
+    {
+        detail_info: 'Водяной насос (большая помпа)',
+        detail_code: 'PWP1217',
+        detail_manufacturer: 'Patron',
+        detail_image: './images/details/water_pumps/water_pump_patron_PWP1217.jpg',
+        detail_scheme: './images/details/water_pumps/water_pump.gif',
+        detail_more: 'большая помпа, на 05-06 модельный год',
+    },
 ]
 
 const FRONT_BRAKE_PADS = [
@@ -155,6 +306,14 @@ const FRONT_BRAKE_PADS = [
         detail_scheme: './images/details/brake_pads/front-brake-pad.gif',
         detail_more: 'нормальные колодки цена/качество',
     },
+    {
+        detail_info: 'Передние тормозные колодки',
+        detail_code: 'EHT997H',
+        detail_manufacturer: 'Raybestos',
+        detail_image: './images/details/brake_pads/front-brake-pad_raybestos_EHT997H.jpg',
+        detail_scheme: './images/details/brake_pads/front-brake-pad.gif',
+        detail_more: 'Гибридные колодки для мажоров, но говорят ничего',
+    },
 ]
 
 const REAR_BRAKE_PADS = [
@@ -165,6 +324,14 @@ const REAR_BRAKE_PADS = [
         detail_image: './images/details/brake_pads/rear_brake_pad_patron_PBP7001.jpg',
         detail_scheme: './images/details/brake_pads/rear-brake-pad.gif',
         detail_more: '',
+    },
+    {
+        detail_info: 'Задние тормозные колодки',
+        detail_code: 'EHT998H',
+        detail_manufacturer: 'Raybestos',
+        detail_image: './images/details/brake_pads/rear-brake-pad_raybestos_EHT998H.jpg',
+        detail_scheme: './images/details/brake_pads/rear-brake-pad.gif',
+        detail_more: 'Гибридные колодки для мажоров, но говорят ничего',
     },
 ]
 
@@ -190,16 +357,24 @@ const PLUG_OIL_DRAIN = [
     },
 ]
 
-// const WIPERS = [
-//     // {
-//     //     detail_info: '',
-//     //     detail_code: '',
-//     //     detail_manufacturer: '',
-//     //     detail_image: './images/menu/like.png',
-//     //     detail_scheme: './images/details/',
-//     //     detail_more: '',
-//     // },
-// ]
+const WIPERS = [
+    {
+        detail_info: 'Передние дворники',
+        detail_code: '22"',
+        detail_manufacturer: '55см',
+        detail_image: './images/details/blade_wipers/front_wiper.jpg',
+        detail_scheme: './images/details/blade_wipers/front_blade_wipers.gif',
+        detail_more: 'Стоковый размер 22" (55см, специально для Сирожы). Максимум 24"',
+    },
+    {
+        detail_info: 'Задний дворник',
+        detail_code: '14"',
+        detail_manufacturer: '35см',
+        detail_image: './images/details/blade_wipers/rear_wiper.jpg',
+        detail_scheme: './images/details/blade_wipers/rear_blade_wipers.gif',
+        detail_more: 'Стоковый размер 14" (35см, специально для Сирожы). Максимум 15"',
+    },
+]
 
 // ДВИГАТЕЛЬ
 
@@ -331,6 +506,10 @@ const COOLANT_SEALING = [
         detail_scheme: './images/details/gaskets/coolant_sealing/lower_radiator_hose_gasket.gif',
         detail_more: '',
     },
+
+]
+
+const THERMOSTAT_HOUSING_GASKETS = [
     {
         detail_info: 'Прокладка верхнего патрубка (термостата) радиатора ',
         detail_code: '04781674AA',
@@ -507,12 +686,122 @@ const CRANKCASE_BLOCK = [
 ]
 
 const ENGINE_ELECTRONICS = [
+
+]
+
+// ПОДУШКИ ДВС
+
+const MOUNTS = [
     {
-        detail_info: 'Датчик температуры охлаждающей жидкости',
-        detail_code: '05269870AB',
+        detail_info: 'Нижняя опора двигателя, подушка',
+        detail_code: '05510007AD',
         detail_manufacturer: 'Mopar',
-        detail_image: './images/details/engine_electronics/sensor_coolant_temperature_mopar_05269870AB.jpg',
-        detail_scheme: './images/details/engine_electronics/sensor_coolant_temperature.gif',
+        detail_image: './images/details/cushion_engine_supports/cushion_engine_support_mopar_05510007AD.jpg',
+        detail_scheme: './images/details/cushion_engine_supports/cushion_engine_support.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Нижняя опора двигателя, подушка',
+        detail_code: '3084',
+        detail_manufacturer: 'Anchor',
+        detail_image: './images/details/cushion_engine_supports/cushion_engine_support_anchor_3084.jpg',
+        detail_scheme: './images/details/cushion_engine_supports/cushion_engine_support.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Нижняя опора двигателя, подушка',
+        detail_code: 'A5299',
+        detail_manufacturer: 'DEA',
+        detail_image: './images/details/cushion_engine_supports/cushion_engine_support_dea_A5299.jpg',
+        detail_scheme: './images/details/cushion_engine_supports/cushion_engine_support.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Нижняя опора двигателя, подушка',
+        detail_code: 'CRM-PACFR',
+        detail_manufacturer: 'Febest',
+        detail_image: './images/details/cushion_engine_supports/cushion_engine_support_febest_CRM-PACFR.jpg',
+        detail_scheme: './images/details/cushion_engine_supports/cushion_engine_support.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Нижняя опора двигателя, подушка',
+        detail_code: 'EM3084',
+        detail_manufacturer: 'Westar',
+        detail_image: './images/details/cushion_engine_supports/cushion_engine_support_westar_EM3084.jpg',
+        detail_scheme: './images/details/cushion_engine_supports/cushion_engine_support.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Нижняя опора двигателя, подушка',
+        detail_code: 'PSE3273',
+        detail_manufacturer: 'Patron',
+        detail_image: './images/details/cushion_engine_supports/cushion_engine_support_patron_PSE3273.jpg',
+        detail_scheme: './images/details/cushion_engine_supports/cushion_engine_support.gif',
+        detail_more: 'Подушка двигателя от Мерса. Крекление болтом, нужно будет докупить',
+    },
+    {
+        detail_info: 'Боковая опора двигателя, подушка',
+        detail_code: '04881050AC',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/support_engine_mounts/support_engine_mount_mopar_04881050AC.jpg',
+        detail_scheme: './images/details/support_engine_mounts/support_engine_mount.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Боковая опора двигателя, подушка',
+        detail_code: '3181',
+        detail_manufacturer: 'Anchor',
+        detail_image: './images/details/support_engine_mounts/support_engine_mount_anchor_3181.jpg',
+        detail_scheme: './images/details/support_engine_mounts/support_engine_mount.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Боковая опора двигателя, подушка',
+        detail_code: 'A5305',
+        detail_manufacturer: 'DEA',
+        detail_image: './images/details/support_engine_mounts/support_engine_mount_dea_A5305.jpg',
+        detail_scheme: './images/details/support_engine_mounts/support_engine_mount.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Боковая опора двигателя, подушка',
+        detail_code: 'CRM-PACRH',
+        detail_manufacturer: 'Febest',
+        detail_image: './images/details/support_engine_mounts/support_engine_mount_febest_CRM-PACRH.jpg',
+        detail_scheme: './images/details/support_engine_mounts/support_engine_mount.gif',
+        detail_more: 'Только сам картридж боковой подушки',
+    },
+    {
+        detail_info: 'Боковая опора двигателя, подушка',
+        detail_code: 'EM5085',
+        detail_manufacturer: 'Westar',
+        detail_image: './images/details/support_engine_mounts/support_engine_mount_westar_EM5085.jpg',
+        detail_scheme: './images/details/support_engine_mounts/support_engine_mount.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Боковая опора, подушка АКПП',
+        detail_code: '3095',
+        detail_manufacturer: 'Anchor',
+        detail_image: './images/details/strut_engine/strut_engine_anchor_3095.jpg',
+        detail_scheme: './images/details/strut_engine/strut_engine.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Боковая опора, подушка АКПП',
+        detail_code: 'A5306',
+        detail_manufacturer: 'DEA',
+        detail_image: './images/details/strut_engine/strut_engine_dea_A5306.jpg',
+        detail_scheme: './images/details/strut_engine/strut_engine.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Боковая опора, подушка АКПП',
+        detail_code: 'EM3095',
+        detail_manufacturer: 'Westar',
+        detail_image: './images/details/strut_engine/strut_engine_westar_EM3095.jpg',
+        detail_scheme: './images/details/strut_engine/strut_engine.gif',
         detail_more: '',
     },
 ]
@@ -668,6 +957,306 @@ const BYPASS_ROLLERS = [
         detail_manufacturer: 'Dorman',
         detail_image: './images/details/bypass_rollers/bypass_roller_dorman_419-006.jpg',
         detail_scheme: './images/details/bypass_rollers/bypass_roller_0.gif',
+        detail_more: '',
+    },
+]
+
+// СИСТЕМА ОХЛАЖДЕНИЯ
+
+const RADIATOR_ENGINE_COOLING = [
+    {
+        detail_info: 'Основной радиатор охлаждения',
+        detail_code: 'DRM06001',
+        detail_manufacturer: 'Denso',
+        detail_image: './images/details/radiator_engine_cooling/radiator_engine_cooling_denso_DRM06001.jpg',
+        detail_scheme: './images/details/radiator_engine_cooling/radiator_engine_cooling.gif',
+        detail_more: 'Отличный радиатор',
+    },
+    {
+        detail_info: 'Основной радиатор охлаждения',
+        detail_code: '61028',
+        detail_manufacturer: 'Nissens',
+        detail_image: './images/details/radiator_engine_cooling/radiator_engine_cooling_nissens_61028.jpg',
+        detail_scheme: './images/details/radiator_engine_cooling/radiator_engine_cooling.gif',
+        detail_more: 'Отличный радиатор',
+    },
+    {
+        detail_info: 'Основной радиатор охлаждения',
+        detail_code: '2460081',
+        detail_manufacturer: 'Polcar',
+        detail_image: './images/details/radiator_engine_cooling/radiator_engine_cooling_polcar_2460081.jpg',
+        detail_scheme: './images/details/radiator_engine_cooling/radiator_engine_cooling.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Основной радиатор охлаждения',
+        detail_code: 'CR0009',
+        detail_manufacturer: 'Sat',
+        detail_image: './images/details/radiator_engine_cooling/radiator_engine_cooling_sat_CR0009.jpg',
+        detail_scheme: './images/details/radiator_engine_cooling/radiator_engine_cooling.gif',
+        detail_more: 'Редкостное гавно, но народ упорно ставит)))',
+    },
+    {
+        detail_info: 'Основной радиатор охлаждения',
+        detail_code: '1026824SX',
+        detail_manufacturer: 'Stellox',
+        detail_image: './images/details/radiator_engine_cooling/radiator_engine_cooling_stellox_1026824SX.jpg',
+        detail_scheme: './images/details/radiator_engine_cooling/radiator_engine_cooling.gif',
+        detail_more: 'С качеством как повезёт. Крышку на расширительный бачок ОБЯЗАТЕЛЬНО ставим на 16psi',
+    },
+    {
+        detail_info: 'Основной радиатор охлаждения',
+        detail_code: '1026890SX',
+        detail_manufacturer: 'Stellox',
+        detail_image: './images/details/radiator_engine_cooling/radiator_engine_cooling_stellox_1026890SX.jpeg',
+        detail_scheme: './images/details/radiator_engine_cooling/radiator_engine_cooling.gif',
+        detail_more: 'С качеством как повезёт. Крышку на расширительный бачок ОБЯЗАТЕЛЬНО ставим на 16psi',
+    },
+    {
+        detail_info: 'Основной радиатор охлаждения',
+        detail_code: '310993',
+        detail_manufacturer: 'Termal',
+        detail_image: './images/details/radiator_engine_cooling/radiator_engine_cooling_termal_310993.jpg',
+        detail_scheme: './images/details/radiator_engine_cooling/radiator_engine_cooling.gif',
+        detail_more: 'Вроде ходит ничего. Стоил бы ещё подешевле ))))',
+    },
+]
+
+const EXPANSION_TANK = [
+    {
+        detail_info: 'Расширительный бачок',
+        detail_code: '4880498AC',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/expansion_tank/expansion_tank_mopar_4880498AC.jpg',
+        detail_scheme: './images/details/expansion_tank/expansion_tank.gif',
+        detail_more: 'Крышка на 18psi идёт в комплекте',
+    },
+    {
+        detail_info: 'Расширительный бачок',
+        detail_code: '2460ZB2',
+        detail_manufacturer: 'Polcar',
+        detail_image: './images/details/expansion_tank/expansion_tank_polcar_2460ZB2.jpg',
+        detail_scheme: './images/details/expansion_tank/expansion_tank.gif',
+        detail_more: 'Крышки в комплекте нет, нужно приобретать дополнительно',
+    },
+    {
+        detail_info: 'Крышка расширительного бачка (18psi)',
+        detail_code: '31525',
+        detail_manufacturer: 'Gates',
+        detail_image: './images/details/expansion_tank/radiator_cap_gates_31525.jpg',
+        detail_scheme: './images/details/expansion_tank/radiator_cap.gif',
+        detail_more: 'Крышка с номинальным давлением 18psi. Ставить желательно только на хорошие радиаторы: Denso, Nissens',
+    },
+    {
+        detail_info: 'Крышка расширительного бачка (16psi)',
+        detail_code: 'RC135',
+        detail_manufacturer: 'Gates',
+        detail_image: './images/details/expansion_tank/radiator_cap_gates_RC135.jpg',
+        detail_scheme: './images/details/expansion_tank/radiator_cap.gif',
+        detail_more: 'Крышка с пониженным давлением на 16psi. Такое ставим на польско-китайские радиаторы или на "уставшие"',
+    },
+    {
+        detail_info: 'Крышка расширительного бачка (16psi)',
+        detail_code: 'LL0301',
+        detail_manufacturer: 'Luzar',
+        detail_image: './images/details/expansion_tank/radiator_cap_luzar_LL0301.jpg',
+        detail_scheme: './images/details/expansion_tank/radiator_cap.gif',
+        detail_more: 'Крышка с пониженным давлением на 16psi. Такое ставим на польско-китайские радиаторы или на "уставшие"',
+    },
+    {
+        detail_info: 'Крышка расширительного бачка (18psi)',
+        detail_code: 'T18',
+        detail_manufacturer: 'Motorad',
+        detail_image: './images/details/expansion_tank/radiator_cap_motorad_T18.jpg',
+        detail_scheme: './images/details/expansion_tank/radiator_cap.gif',
+        detail_more: 'Крышка с номинальным давлением 18psi. Ставить желательно только на хорошие радиаторы: Denso, Nissens',
+    },
+    {
+        detail_info: 'Крышка расширительного бачка (16psi)',
+        detail_code: '10234',
+        detail_manufacturer: 'Stant',
+        detail_image: './images/details/expansion_tank/radiator_cap_stant_10234.jpg',
+        detail_scheme: './images/details/expansion_tank/radiator_cap.gif',
+        detail_more: 'Крышка с пониженным давлением на 16psi. Такое ставим на польско-китайские радиаторы или на "уставшие"',
+    },
+    {
+        detail_info: 'Крышка расширительного бачка (13psi)',
+        detail_code: '10329',
+        detail_manufacturer: 'Stant',
+        detail_image: './images/details/expansion_tank/radiator_cap_stant_10329.jpg',
+        detail_scheme: './images/details/expansion_tank/radiator_cap.gif',
+        detail_more: 'Крышка с пониженным давлением на 13psi. Для совсем "уставших" и слабеньких радиаторов',
+    },
+]
+
+const RADIATOR_HOSES = [
+    {
+        detail_info: 'Верхний патрубок радиатора',
+        detail_code: '72215',
+        detail_manufacturer: 'Dayco',
+        detail_image: './images/details/radiator_hoses/hose_radiator_inlet_dayco_72215.jpg',
+        detail_scheme: './images/details/radiator_hoses/hose_radiator_inlet.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Верхний патрубок радиатора',
+        detail_code: '22851',
+        detail_manufacturer: 'Gates',
+        detail_image: './images/details/radiator_hoses/hose_radiator_inlet_gates_22851.jpg',
+        detail_scheme: './images/details/radiator_hoses/hose_radiator_inlet.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Нижний патрубок радиатора',
+        detail_code: '72216',
+        detail_manufacturer: 'Dayco',
+        detail_image: './images/details/radiator_hoses/hose_radiator_outlet_dayco_72216.jpg',
+        detail_scheme: './images/details/radiator_hoses/hose_radiator_outlet.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Нижний патрубок радиатора',
+        detail_code: '22852',
+        detail_manufacturer: 'Gates',
+        detail_image: './images/details/radiator_hoses/hose_radiator_outlet_gates_22852.jpg',
+        detail_scheme: './images/details/radiator_hoses/hose_radiator_outlet.gif',
+        detail_more: '',
+    },
+]
+
+const THERMOSTAT_HOUSING = [
+    {
+        detail_info: 'Верхний патрубок термостата',
+        detail_code: '04781387AA',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/thermostat_housing/thermostat_housing_mopar_04781387AA.jpg',
+        detail_scheme: './images/details/thermostat_housing/thermostat_housing_inlet.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Верхний патрубок термостата',
+        detail_code: '902698',
+        detail_manufacturer: 'Dorman',
+        detail_image: './images/details/thermostat_housing/thermostat_housing_dorman_902-698.jpg',
+        detail_scheme: './images/details/thermostat_housing/thermostat_housing_inlet.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Нижний патрубок',
+        detail_code: 'Mopar',
+        detail_manufacturer: '4781685AA',
+        detail_image: './images/details/thermostat_housing/thermostat_housing_mopar_4781685AA.jpg',
+        detail_scheme: './images/details/thermostat_housing/thermostat_housing_outlet.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Нижний патрубок',
+        detail_code: '9023037',
+        detail_manufacturer: 'Dorman',
+        detail_image: './images/details/thermostat_housing/thermostat_housing_dorman_902-3037.jpg',
+        detail_scheme: './images/details/thermostat_housing/thermostat_housing_outlet.gif',
+        detail_more: '',
+    },
+]
+
+const COOLANT_SENSORS = [
+    {
+        detail_info: 'Датчик температуры охлаждающей жидкости',
+        detail_code: '05269870AB',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/engine_electronics/sensor_coolant_temperature_mopar_05269870AB.jpg',
+        detail_scheme: './images/details/engine_electronics/sensor_coolant_temperature.gif',
+        detail_more: '',
+    },
+]
+
+const RADIATOR_FANS = [
+    {
+        detail_info: 'Большой вентилятор радиатора охлаждения',
+        detail_code: 'LCF0118',
+        detail_manufacturer: 'Luzar',
+        detail_image: './images/details/radiator_fans/big_radiator_fan_luzar_LFC0118.jpg',
+        detail_scheme: './images/details/radiator_fans/big_radiator_fan.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Большой вентилятор радиатора охлаждения',
+        detail_code: 'PFN259',
+        detail_manufacturer: 'Patron',
+        detail_image: './images/details/radiator_fans/big_radiator_fan_patron_PFN259.jpg',
+        detail_scheme: './images/details/radiator_fans/big_radiator_fan.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Малый вентилятор радиатора охлаждения',
+        detail_code: 'LCF0103',
+        detail_manufacturer: 'Luzar',
+        detail_image: './images/details/radiator_fans/small_radiator_fan_luzar_LFC0103.jpg',
+        detail_scheme: './images/details/radiator_fans/small_radiator_fan.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Малый вентилятор радиатора охлаждения',
+        detail_code: 'PFN179',
+        detail_manufacturer: 'Patron',
+        detail_image: './images/details/radiator_fans/small_radiator_fan_patron_PFN179.jpg',
+        detail_scheme: './images/details/radiator_fans/small_radiator_fan.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Вентиляторы радиатора в сборе',
+        detail_code: '620031',
+        detail_manufacturer: 'Dorman',
+        detail_image: './images/details/radiator_fans/radiator_fans_dorman_620-031.jpg',
+        detail_scheme: './images/details/radiator_fans/radiator_fans.gif',
+        detail_more: '',
+    },
+]
+
+// ТРАНСМИССИЯ
+
+const TRANSMISSION_PANS = [
+    {
+        detail_info: 'Маслянный поддон АКПП',
+        detail_code: '48800210AA',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/transmission_pans/transmission_pan_mopar_04800210AA.jpg',
+        detail_scheme: './images/details/transmission_pans/transmission_pan.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Маслянный поддон АКПП',
+        detail_code: 'BMO-CH-031',
+        detail_manufacturer: 'NTY',
+        detail_image: './images/details/transmission_pans/transmission_pan_nty_BMO-CH-031.JPG',
+        detail_scheme: './images/details/transmission_pans/transmission_pan.gif',
+        detail_more: '',
+    },
+]
+
+const CARDAN_SHAFT = [
+    {
+        detail_info: 'Муфта кардана',
+        detail_code: '00735',
+        detail_manufacturer: 'Metalcaucho',
+        detail_image: './images/details/cardan_shaft/cardan_coupling_metalcaucho_00735.jpg',
+        detail_scheme: './images/details/cardan_shaft/cardan_coupling.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Подвесной подшипник кардана',
+        detail_code: 'TCB-024',
+        detail_manufacturer: 'Febest',
+        detail_image: './images/details/cardan_shaft/outboard_bearing_febest_TCB-024.jpg',
+        detail_scheme: './images/details/cardan_shaft/outboard_bearing.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Подвесной подшипник кардана',
+        detail_code: 'VW6001R',
+        detail_manufacturer: 'VTR',
+        detail_image: './images/details/cardan_shaft/outboard_bearing_vtr_VW6001R.jpg',
+        detail_scheme: './images/details/cardan_shaft/outboard_bearing.gif',
         detail_more: '',
     },
 ]
@@ -879,20 +1468,20 @@ const SPRINGS = [
         detail_more: 'Весьма сомнительное занятие по замене))) Нужно греть, гнуть, подгонять. Почитать можно на Д2',
     },
     {
-        detail_info: 'Передняя пружина подвески',
-        detail_code: '4063492',
-        detail_manufacturer: 'Lesjofors',
-        detail_image: './images/details/springs/front_spring_lesjofors_4063492.jpeg',
-        detail_scheme: './images/details/springs/front_spring.gif',
-        detail_more: 'Хороший производитель, пружины подбирались по параметрам оригинала, но ещё не устанавливались',
-    },
-    {
         detail_info: 'Задняя пружина подвески',
         detail_code: 'C4T61881H',
         detail_manufacturer: 'OBK',
         detail_image: './images/details/springs/rear_spring_obk_C4T61881H.jpg',
         detail_scheme: './images/details/springs/rear_spring.gif',
         detail_more: 'Пружина от "Прадика", желательно подпилить, но кто-то гоняет и так',
+    },
+    {
+        detail_info: 'Передняя пружина подвески',
+        detail_code: '4063492',
+        detail_manufacturer: 'Lesjofors',
+        detail_image: './images/details/springs/front_spring_lesjofors_4063492.jpeg',
+        detail_scheme: './images/details/springs/front_spring.gif',
+        detail_more: 'Хороший производитель, пружины подбирались по параметрам оригинала, но ещё не устанавливались',
     },
     {
         detail_info: 'Задняя пружина подвески',
@@ -1247,6 +1836,17 @@ const LEVERS_AND_PULLS = [
     },
 ]
 
+const QWERTY = [
+    {
+        detail_info: '',
+        detail_code: '',
+        detail_manufacturer: '',
+        detail_image: './images/details/',
+        detail_scheme: './images/details/',
+        detail_more: '',
+    },
+]
+
 export const HEADERS = [
     {
         title: 'Детали ТО',
@@ -1289,7 +1889,7 @@ export const HEADERS = [
             },
             {
                 subtitle: 'Щетки стеклоочистителя',
-                // details: WIPERS
+                details: WIPERS
             },
             {
                 subtitle: 'Насос системы охлаждения (помпа)',
@@ -1350,7 +1950,7 @@ export const HEADERS = [
                     },
                     {
                         sub_subtitle: 'Герметизация охлаждающей жидкости',
-                        details: COOLANT_SEALING
+                        details: COOLANT_SEALING.concat(THERMOSTAT_HOUSING_GASKETS)
                     },
                     {
                         sub_subtitle: 'Герметизация в системе циркуляции масла',
@@ -1419,7 +2019,7 @@ export const HEADERS = [
             },
             {
                 subtitle: 'Электроника двигателя',
-                details: ENGINE_ELECTRONICS
+                details: COOLANT_SENSORS
             },
             {
                 subtitle: 'Кривошипношатунный механизм',
@@ -1475,11 +2075,11 @@ export const HEADERS = [
             },
             {
                 subtitle: 'Крепление двигателя (подушки)',
-                // details: MOUNTS
+                details: MOUNTS
             },
             {
                 subtitle: 'Система очистки ОГ (ЕГР)',
-                // details: EXHAUST_GAS_CLEANING_SYSTEM
+                details: EXHAUST_GAS_NEUTRALIZATION
             },
             {
                 subtitle: 'Ременной привод',
@@ -1591,11 +2191,11 @@ export const HEADERS = [
         subtitles: [
             {
                 subtitle: 'Термостат, прокладка',
-                // details: THERMOSTAT_PAD
+                details: THERMOSTATS.concat(THERMOSTAT_HOUSING_GASKETS)
             },
             {
                 subtitle: 'Расширительный бачок, крышка',
-                // details: EXPANSION_TANK
+                details: EXPANSION_TANK
             },
             {
                 subtitle: 'Радиатор маслянный, водяной',
@@ -1603,7 +2203,7 @@ export const HEADERS = [
                 sub_subtitles: [
                     {
                         sub_subtitle: 'Радиатор системы охлаждения',
-                        details: ''
+                        details: RADIATOR_ENGINE_COOLING
                     },
                     {
                         sub_subtitle: 'Радиатор печки',
@@ -1611,25 +2211,25 @@ export const HEADERS = [
                     },
                     {
                         sub_subtitle: 'Расширительный бачок',
-                        details: ''
+                        details: EXPANSION_TANK
                     },
                 ]
             },
             {
                 subtitle: 'Патрубки системы охлаждения',
-                // details: PIPE_BRANCH
+                details: RADIATOR_HOSES.concat(THERMOSTAT_HOUSING)
             },
             {
                 subtitle: 'Выключатель, датчик ОЖ',
-                // details: COOLANT_SENSOR
+                details: COOLANT_SENSORS
             },
             {
                 subtitle: 'Вентилятор охлаждения радиатора',
-                // details: RADIATOR_FANS
+                details: RADIATOR_FANS
             },
             {
                 subtitle: 'Насос системы охлаждения (помпа)',
-                // details: WATER_PUMP
+                details: WATER_PUMPS
             },
         ],
     },
@@ -1668,6 +2268,7 @@ export const HEADERS = [
             {
                 subtitle: 'Автоматическая коробка передач',
                 // details: AUTOMATIC_TRANSMISSION
+                details: TRANSMISSION_PANS.concat(TRANSMISSION_FILTERS)
             },
             {
                 subtitle: 'Привод колеса (полуоси)',
@@ -1675,7 +2276,7 @@ export const HEADERS = [
             },
             {
                 subtitle: 'Главная передача: раздатка, кардан (AWD)',
-                // details: CARDAN_SHAFT
+                details: CARDAN_SHAFT
             },
         ],
     },

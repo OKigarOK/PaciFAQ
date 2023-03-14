@@ -182,7 +182,9 @@ function createDetails(subTitleDetails, containerItems) {
         detailImage.append(schemeImage);
 
         const schemeElement = document.createElement('img');
-        schemeElement.src = detail.detail_scheme;
+        if (detail.detail_scheme) {
+            schemeElement.src = detail.detail_scheme;
+        }
 
         schemeElement.hidden = true;
         detailImage.append(schemeElement);
@@ -193,7 +195,12 @@ function createDetails(subTitleDetails, containerItems) {
 
         const detailCode = document.createElement('div');
         detailCode.className = 'detail_code';
-        detailCode.textContent = detail.detail_code + ` (${detail.detail_manufacturer})`;
+        // detailCode.textContent = detail.detail_code + ` (${detail.detail_manufacturer})`;
+
+        detailCode.textContent = detail.detail_code;
+        if (detail.detail_manufacturer) {
+            detailCode.textContent += ` (${detail.detail_manufacturer})`
+        }
 
         const detailOptions = document.createElement('div');
         if ((SETTINGS.VIEW === 'details_table') && (SETTINGS.FONT_SIZE === 'fontSizeM')) {
@@ -293,7 +300,9 @@ function createDetailInSearch (detail, containerItem) {
         detailImage.append(schemeImage);
 
         const schemeElement = document.createElement('img');
-        schemeElement.src = detail.detail_scheme;
+        if (detail.detail_scheme) {
+            schemeElement.src = detail.detail_scheme;
+        }
 
         schemeElement.hidden = true;
         detailImage.append(schemeElement);
@@ -306,7 +315,12 @@ function createDetailInSearch (detail, containerItem) {
 
         const detailCode = document.createElement('div');
         detailCode.className = 'detail_code';
-        detailCode.textContent = detail.detail_code + ` (${detail.detail_manufacturer})`;
+        // detailCode.textContent = detail.detail_code + ` (${detail.detail_manufacturer})`;
+
+        detailCode.textContent = detail.detail_code;
+        if (detail.detail_manufacturer) {
+            detailCode.textContent += ` (${detail.detail_manufacturer})`
+        }
 
         const detailOptions = document.createElement('div');
         detailOptions.className = 'detail_options';
@@ -381,6 +395,14 @@ window.onclick = function(event) {
     }
     if (isClick === 'detail_price detail_button') {
         console.log('СТОИМОСТЬ В МОДАЛКЕ');
+
+        const idElement = target.parentElement.parentElement.id;
+        console.log(target.parentElement.parentElement.id);
+
+        if (!FAVORITES.includes(idElement)) FAVORITES.push(idElement)
+
+        console.log(FAVORITES);
+
     }
 
     if (isClick === 'modal__cross js-modal-close') {
@@ -498,7 +520,12 @@ window.onclick = function(event) {
 
             const detailCode = document.createElement('div');
             detailCode.className = 'detail_code';
-            detailCode.textContent = detail.detail_code + ` (${detail.detail_manufacturer})`;
+            // detailCode.textContent = detail.detail_code + ` (${detail.detail_manufacturer})`;
+
+            detailCode.textContent = detail.detail_code;
+            if (detail.detail_manufacturer) {
+                detailCode.textContent += ` (${detail.detail_manufacturer})`
+            }
 
             const detailOptions = document.createElement('div');
             detailOptions.className = 'detail_options';
@@ -549,6 +576,12 @@ const inputText = document.getElementById('search')
 const searchElementsList = document.getElementById('search_menu')
 
 inputText.oninput = function () {
+
+    // УБИРАЕМ БУРГЕР
+    // if (menuElement.classList.contains('active')) {
+    //     menuElement.classList.remove('active');
+    //     burgerElement.classList.remove('active');
+    // }
 
     // if (searchElementsList.classList.contains('active')) {
     //     document.body.classList.add('lock');
