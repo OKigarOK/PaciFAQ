@@ -52,17 +52,17 @@ const AIR_FILTERS = [
     },
     {
         detail_info: 'Фильтр воздушный',
-        detail_code: 'ADA102256',
-        detail_manufacturer: 'Blue Print',
-        detail_image: './images/details/air_filters/air_filter_blue-print_ADA102256.jpeg',
+        detail_code: 'PF1534',
+        detail_manufacturer: 'Patron',
+        detail_image: './images/details/air_filters/air_filter_patron_PF1534.jpg',
         detail_scheme: './images/details/air_filters/air-filter.gif',
         detail_more: '',
     },
     {
         detail_info: 'Фильтр воздушный',
-        detail_code: 'PF1534',
-        detail_manufacturer: 'Patron',
-        detail_image: './images/details/air_filters/air_filter_patron_PF1534.jpg',
+        detail_code: 'ADA102256',
+        detail_manufacturer: 'Blue Print',
+        detail_image: './images/details/air_filters/air_filter_blue-print_ADA102256.jpeg',
         detail_scheme: './images/details/air_filters/air-filter.gif',
         detail_more: '',
     },
@@ -87,17 +87,17 @@ const CABIN_FILTERS = [
     },
     {
         detail_info: 'Фильтр салона',
-        detail_code: 'ADA102503',
-        detail_manufacturer: 'Blue Print',
-        detail_image: './images/details/cabin_filters/cabin-filter_blue-print_ADA102503.jpg',
+        detail_code: 'PF2250',
+        detail_manufacturer: 'Patron',
+        detail_image: './images/details/cabin_filters/cabin-filter_patron_PF2250.JPG',
         detail_scheme: './images/details/cabin_filters/cabin-filter.gif',
         detail_more: '',
     },
     {
         detail_info: 'Фильтр салона',
-        detail_code: 'PF2250',
-        detail_manufacturer: 'Patron',
-        detail_image: './images/details/cabin_filters/cabin-filter_patron_PF2250.JPG',
+        detail_code: 'ADA102503',
+        detail_manufacturer: 'Blue Print',
+        detail_image: './images/details/cabin_filters/cabin-filter_blue-print_ADA102503.jpg',
         detail_scheme: './images/details/cabin_filters/cabin-filter.gif',
         detail_more: '',
     },
@@ -1235,15 +1235,7 @@ const TRANSMISSION_PANS = [
 ]
 
 const CARDAN_SHAFT = [
-    {
-        detail_info: 'Муфта кардана',
-        detail_code: '00735',
-        detail_manufacturer: 'Metalcaucho',
-        detail_image: './images/details/cardan_shaft/cardan_coupling_metalcaucho_00735.jpg',
-        detail_scheme: './images/details/cardan_shaft/cardan_coupling.gif',
-        detail_more: '',
-    },
-    {
+        {
         detail_info: 'Подвесной подшипник кардана',
         detail_code: 'TCB-024',
         detail_manufacturer: 'Febest',
@@ -1257,6 +1249,14 @@ const CARDAN_SHAFT = [
         detail_manufacturer: 'VTR',
         detail_image: './images/details/cardan_shaft/outboard_bearing_vtr_VW6001R.jpg',
         detail_scheme: './images/details/cardan_shaft/outboard_bearing.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Муфта кардана',
+        detail_code: '00735',
+        detail_manufacturer: 'Metalcaucho',
+        detail_image: './images/details/cardan_shaft/cardan_coupling_metalcaucho_00735.jpg',
+        detail_scheme: './images/details/cardan_shaft/cardan_coupling.gif',
         detail_more: '',
     },
 ]
