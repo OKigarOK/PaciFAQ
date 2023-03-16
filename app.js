@@ -193,6 +193,9 @@ function createDetails(subTitleDetails, containerItems) {
         detailInfo.className = 'detail_info';
         detailInfo.innerHTML = detail.detail_info;
 
+        // detailInfo.innerHTML = detail.detail_more;
+
+
         const detailCode = document.createElement('div');
         detailCode.className = 'detail_code';
         // detailCode.textContent = detail.detail_code + ` (${detail.detail_manufacturer})`;
@@ -375,6 +378,7 @@ function callAccord() {
 // ОБРАБОТКА КЛИКОВ
 
 window.onclick = function(event) {
+    event.preventDefault();
     const target = event.target; // где был клик?
     // console.log(target);
     const isClick = target.className;
@@ -399,10 +403,20 @@ window.onclick = function(event) {
         const idElement = target.parentElement.parentElement.id;
         console.log(target.parentElement.parentElement.id);
 
-        if (!FAVORITES.includes(idElement)) FAVORITES.push(idElement)
+        if (!FAVORITES.includes(idElement)) {
+            // ПУШИМ ЭЛЕМЕНТ
+            FAVORITES.push(idElement);
 
-        console.log(FAVORITES);
+            // ДОБАВЛЯЕМ В ДОМ
+            console.log(FAVORITES);
+            const divElem = document.createElement('h3');
+            divElem.innerText = idElement;
+            // myFavorites.append(divElem);
 
+            const myFavorites = document.getElementById('my_favorites');
+
+
+        }
     }
 
     if (isClick === 'modal__cross js-modal-close') {
@@ -471,6 +485,7 @@ window.onclick = function(event) {
             if (FAVORITES.includes(targetElementId)) {
                 // console.log('такое уже есть )');
             } else {
+                console.log('ТЫЦ');
                 // FAVORITES.push(targetElementId);
                 localStorage.setItem('favorites', FAVORITES.push(targetElementId.toString()));
                 const divElem = document.createElement('h3');

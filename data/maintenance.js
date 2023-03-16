@@ -685,9 +685,7 @@ const CRANKCASE_BLOCK = [
     },
 ]
 
-const ENGINE_ELECTRONICS = [
-
-]
+const ENGINE_ELECTRONICS = []
 
 // ПОДУШКИ ДВС
 
@@ -1039,6 +1037,9 @@ const EXPANSION_TANK = [
         detail_scheme: './images/details/expansion_tank/expansion_tank.gif',
         detail_more: 'Крышки в комплекте нет, нужно приобретать дополнительно',
     },
+]
+
+const EXPANSION_TANK_CAP = [
     {
         detail_info: 'Крышка расширительного бачка (18psi)',
         detail_code: '31525',
@@ -1257,6 +1258,33 @@ const CARDAN_SHAFT = [
         detail_manufacturer: 'Metalcaucho',
         detail_image: './images/details/cardan_shaft/cardan_coupling_metalcaucho_00735.jpg',
         detail_scheme: './images/details/cardan_shaft/cardan_coupling.gif',
+        detail_more: '',
+    },
+]
+
+const WHEEL_DRIVE = [
+    {
+        detail_info: 'Наружный ШРУС',
+        detail_code: 'NJ165NY',
+        detail_manufacturer: 'Nakayama',
+        detail_image: './images/details/wheel_drive/outer_CV_joint_nakayama_NJ165NY.jpg',
+        detail_scheme: './images/details/wheel_drive/outer_CV_joint.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Наружный ШРУС',
+        detail_code: 'PCV6751',
+        detail_manufacturer: 'Patron',
+        detail_image: './images/details/wheel_drive/outer_CV_joint_patron_PCV6751.jpg',
+        detail_scheme: './images/details/wheel_drive/outer_CV_joint.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Наружный или Внутренний ШРУС ???',
+        detail_code: 'PCV9535',
+        detail_manufacturer: 'Patron',
+        detail_image: './images/details/wheel_drive/outer_CV_joint_patron_PCV9538.jpg',
+        detail_scheme: './images/details/wheel_drive/outer_CV_joint.gif',
         detail_more: '',
     },
 ]
@@ -1609,6 +1637,14 @@ const SHOCK_ABSORBERS = [
         detail_scheme: './images/details/shock_absorbers/rear_shock_absorber.gif',
         detail_more: '',
     },
+    {
+        detail_info: 'Задний амортизатор',
+        detail_code: '271.01.111',
+        detail_manufacturer: 'Doka',
+        detail_image: './images/details/shock_absorbers/rear_shock_absorber_doka_27101111.jpg',
+        detail_scheme: './images/details/shock_absorbers/rear_shock_absorber.gif',
+        detail_more: 'Нужны доработки: втулки внизу, в место крепление болта и сверху на штоке втулку заменить',
+    },
 ]
 
 const SHOCK_ABSORBER_MOUNT = [
@@ -1836,6 +1872,84 @@ const LEVERS_AND_PULLS = [
     },
 ]
 
+const STABILIZER = [
+    {
+        detail_info: 'Втулки переднего стабилизатора',
+        detail_code: '928526',
+        detail_manufacturer: 'Dorman',
+        detail_image: './images/details/stabilizer/front_stabilizer_bushing_dorman_928-526.jpg',
+        detail_scheme: './images/details/stabilizer/front_stabilizer_bushing.gif',
+        detail_more: 'Комплект втулок переднего стабилизатора с креплениями',
+    },
+    {
+        detail_info: 'Втулки переднего стабилизатора',
+        detail_code: 'CR1403R',
+        detail_manufacturer: 'VTR',
+        detail_image: './images/details/stabilizer/front_stabilizer_bushing_vtr_CR1403R.jpg',
+        detail_scheme: './images/details/stabilizer/front_stabilizer_bushing.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Втулки переднего стабилизатора',
+        detail_code: 'CR1403RP',
+        detail_manufacturer: 'VTR',
+        detail_image: './images/details/stabilizer/front_stabilizer_bushing_vtr_CR1403RP.jpg',
+        detail_scheme: './images/details/stabilizer/front_stabilizer_bushing.gif',
+        detail_more: 'Материал - полиурентан',
+    },
+    {
+        detail_info: 'Втулки заднего стабилизатора',
+        detail_code: '0476687AC',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/stabilizer/rear_stabilizer_bushing_mopar_04766876AC.jpg',
+        detail_scheme: './images/details/stabilizer/rear_stabilizer_bushing.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Втулки заднего стабилизатора',
+        detail_code: '928542',
+        detail_manufacturer: 'Dorman',
+        detail_image: './images/details/stabilizer/rear_stabilizer_bushing_dorman_928-542.jpg',
+        detail_scheme: './images/details/stabilizer/rear_stabilizer_bushing.gif',
+        detail_more: 'Комплект втулок заднего стабилизатора с креплениями',
+    },
+    {
+        detail_info: 'Передние стойки стабилизатора',
+        detail_code: '26OP1005',
+        detail_manufacturer: 'As Metal',
+        detail_image: './images/details/stabilizer/front_link_stabilizer_bar_as-metall_26OP1005.jpg',
+        detail_scheme: './images/details/stabilizer/front_link_stabilizer_bar.gif',
+        detail_more: 'Лучший вариант стоек по цене и как ходят, а ходят отлично',
+    },
+    {
+        detail_info: 'Задние стойки стабилизатора',
+        detail_code: '5600059SX',
+        detail_manufacturer: 'Stellox',
+        detail_image: './images/details/stabilizer/rear_link_stabilizer_bar_stellox_5600059SX.jpg',
+        detail_scheme: './images/details/stabilizer/rear_link_stabilizer_bar.gif',
+        detail_more: 'Мало кто их меняет. Что нашёл, то и всунул',
+    },
+]
+
+const BRIDGE_BEAM = [
+    {
+        detail_info: 'Передний сайлентблок задней балки',
+        detail_code: '04766744AA',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/rear_beam/beam_front_silent_block_mopar_04766744AA.jpg',
+        detail_scheme: './images/details/rear_beam/beam_front_silent_block.gif',
+        detail_more: 'Деталь для мажоров, народ обычно точит болванки',
+    },
+    {
+        detail_info: 'Задний сайлентблок задней балки',
+        detail_code: '04766746AA',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/rear_beam/beam_rear_silent_block_mopar_04766746AA.jpg',
+        detail_scheme: './images/details/rear_beam/beam_rear_silent_block.gif',
+        detail_more: 'Деталь для мажоров, народ обычно точит болванки',
+    },
+]
+
 const QWERTY = [
     {
         detail_info: '',
@@ -1971,7 +2085,7 @@ export const HEADERS = [
                     },
                     {
                         sub_subtitle: 'Коллектор впускной',
-                        details: ''
+                        details: INTAKE_MANIFOLD_GASKETS
                     },
                     {
                         sub_subtitle: 'Заслонка дроссельная',
@@ -2057,7 +2171,7 @@ export const HEADERS = [
                     },
                     {
                         sub_subtitle: 'Поддон маслянный',
-                        details: ''
+                        details: OIL_PAN_GASKETS.concat(PLUG_OIL_DRAIN)
                     },
                     {
                         sub_subtitle: 'Датчик давления масла',
@@ -2195,7 +2309,7 @@ export const HEADERS = [
             },
             {
                 subtitle: 'Расширительный бачок, крышка',
-                details: EXPANSION_TANK
+                details: EXPANSION_TANK.concat(EXPANSION_TANK_CAP)
             },
             {
                 subtitle: 'Радиатор маслянный, водяной',
@@ -2272,7 +2386,7 @@ export const HEADERS = [
             },
             {
                 subtitle: 'Привод колеса (полуоси)',
-                // details: WHEEL_DRIVE
+                details: WHEEL_DRIVE
             },
             {
                 subtitle: 'Главная передача: раздатка, кардан (AWD)',
@@ -2301,7 +2415,7 @@ export const HEADERS = [
             },
             {
                 subtitle: 'Стабилизатор, крепление',
-                // details: STABILIZER
+                details: STABILIZER
             },
             {
                 subtitle: 'Ступица колеса, составляющие',
@@ -2317,7 +2431,7 @@ export const HEADERS = [
             },
             {
                 subtitle: 'Балка моста, подвеска оси',
-                // details: BRIDGE_BEAM
+                details: BRIDGE_BEAM
             },
             {
                 subtitle: 'Колесо, крепление колеса',

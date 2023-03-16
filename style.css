@@ -1023,7 +1023,7 @@ button:disabled {
 /* СВАЙПЕР */
 .gallery-cell {
     /*height: 86vw;*/
-    height: 90vw;
+    height: 100vw;
 
     margin: 0 5px;
     counter-increment: gallery-cell;
