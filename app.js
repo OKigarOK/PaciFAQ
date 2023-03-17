@@ -378,7 +378,7 @@ function callAccord() {
 // ОБРАБОТКА КЛИКОВ
 
 window.onclick = function(event) {
-    event.preventDefault();
+    // event.preventDefault();
     const target = event.target; // где был клик?
     // console.log(target);
     const isClick = target.className;
@@ -609,9 +609,14 @@ inputText.oninput = function () {
     if (!substring) {
         searchElementsList.innerHTML = '';
         searchElementsList.classList.remove('active')
+
+        burgerElement.classList.remove('active')
+
         callAccord();
         return
     }
+
+    burgerElement.classList.add('active')
 
     searchElementsList.classList.add('active')
     findObjectInArray(substring);
