@@ -424,6 +424,10 @@ button:disabled {
     border-radius: 5px;
 }
 
+.detail_info {
+    width: 100%;
+}
+
 .detail_info,
 .detail_manufacturer,
 .detail_code {

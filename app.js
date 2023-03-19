@@ -2,6 +2,8 @@ import {HEADERS} from "./data/maintenance.js";
 import {ERRORS} from "./data/errors_list.js";
 
 const FAVORITES = [];
+const NEW_FAVORITES = [];
+
 const NEW_DATA = [];
 const myFavorites = document.getElementById('favorites');
 const currentTheme = localStorage.getItem('theme');
@@ -193,9 +195,6 @@ function createDetails(subTitleDetails, containerItems) {
         detailInfo.className = 'detail_info';
         detailInfo.innerHTML = detail.detail_info;
 
-        // detailInfo.innerHTML = detail.detail_more;
-
-
         const detailCode = document.createElement('div');
         detailCode.className = 'detail_code';
         // detailCode.textContent = detail.detail_code + ` (${detail.detail_manufacturer})`;
@@ -220,14 +219,24 @@ function createDetails(subTitleDetails, containerItems) {
         containerDetail.append(detailCode);
         containerDetail.append(detailImage);
         containerDetail.append(detailInfo);
+
+        if (SETTINGS.VIEW === 'details_list') {
+            const detailAbout = document.createElement('div');
+            detailAbout.className = 'detail_info';
+            detailAbout.innerHTML = detail.detail_more;
+            containerDetail.append(detailAbout);
+        }
+
         containerDetail.append(detailOptions);
         detailOptions.append(detailPrice);
 
+        if (SETTINGS.VIEW === 'details_table') {
             const detailMore = document.createElement('div');
             detailMore.className = 'detail_more detail_button js-open-modal';
             detailMore.setAttribute('data-modal', '11');
             detailMore.textContent = 'Подробнее';
             detailOptions.append(detailMore);
+        }
 
         if (detail.detail_scheme && (SETTINGS.VIEW === 'details_list')) {
             const detailScheme = document.createElement('div');
@@ -384,7 +393,16 @@ window.onclick = function(event) {
     const isClick = target.className;
 
     if (isClick === 'detail_scheme detail_button') {
-        const imageElement = target.parentElement.previousElementSibling.previousElementSibling;
+
+        // let imageElement;
+        // if (SETTINGS.VIEW === 'details_table') {
+        //     imageElement = target.parentElement.previousElementSibling.previousElementSibling;
+        // } else {
+        //     imageElement = target.parentElement.previousElementSibling.previousElementSibling.previousElementSibling;
+        // }
+
+        const imageElement = target.parentElement.previousElementSibling.previousElementSibling.previousElementSibling;
+
 
         if (target.textContent === 'На схеме') {
             target.textContent = 'Деталь';
@@ -405,10 +423,13 @@ window.onclick = function(event) {
 
         if (!FAVORITES.includes(idElement)) {
             // ПУШИМ ЭЛЕМЕНТ
-            FAVORITES.push(idElement);
+
+            findDetailInArray(idElement);
+
+            // FAVORITES.push(idElement);
 
             // ДОБАВЛЯЕМ В ДОМ
-            console.log(FAVORITES);
+            // console.log(FAVORITES);
             const divElem = document.createElement('h3');
             divElem.innerText = idElement;
             // myFavorites.append(divElem);
@@ -531,7 +552,11 @@ window.onclick = function(event) {
 
             const detailInfo = document.createElement('div');
             detailInfo.className = 'detail_info';
-            detailInfo.innerHTML = detail.detail_more;
+            detailInfo.innerHTML = detail.detail_info;
+
+            const detailAbout = document.createElement('div');
+            detailAbout.className = 'detail_info';
+            detailAbout.innerHTML = detail.detail_more;
 
             const detailCode = document.createElement('div');
             detailCode.className = 'detail_code';
@@ -552,6 +577,8 @@ window.onclick = function(event) {
             containerDetail.append(detailCode);
             containerDetail.append(detailImage);
             containerDetail.append(detailInfo);
+            containerDetail.append(detailAbout);
+
             containerDetail.append(detailOptions);
             detailOptions.append(detailPrice);
 
@@ -618,7 +645,9 @@ inputText.oninput = function () {
 
     burgerElement.classList.add('active')
 
-    searchElementsList.classList.add('active')
+    searchElementsList.classList.add('active');
+    menuElement.classList.remove('active');
+
     findObjectInArray(substring);
     callAccord();
 }
@@ -826,4 +855,91 @@ function addElementToDataArray (item) {
         item.detail_info = item.detail_info.toLowerCase();
         NEW_DATA.push(item);
     }
+}
+
+// РИСУЕМ ДЕТАЛЬ В МОИ ЗАПЧАСТИ
+
+function createDetailsInMyDetails(subTitleDetails, containerItems) {
+
+    for (let detail of NEW_FAVORITES) {
+
+        // Новый массив с проверкой
+
+        const containerDetail = document.createElement('div');
+        containerDetail.className = 'container_detail_table';
+
+        // containerDetail.setAttribute('id' , `${detail.detail_code}` );
+        // detail.detail_id = detail.detail_code;
+
+        const detailImage = document.createElement('div');
+        detailImage.className = 'detail_image';
+
+        const schemeImage = document.createElement('img');
+        schemeImage.src = detail.detail_image;
+        detailImage.append(schemeImage);
+
+        const schemeElement = document.createElement('img');
+        if (detail.detail_scheme) {
+            schemeElement.src = detail.detail_scheme;
+        }
+
+        schemeElement.hidden = true;
+        detailImage.append(schemeElement);
+
+        const detailInfo = document.createElement('div');
+        detailInfo.className = 'detail_info';
+        detailInfo.innerHTML = detail.detail_info;
+
+        // detailInfo.innerHTML = detail.detail_more;
+
+        const detailCode = document.createElement('div');
+        detailCode.className = 'detail_code';
+        // detailCode.textContent = detail.detail_code + ` (${detail.detail_manufacturer})`;
+
+        detailCode.textContent = detail.detail_code;
+        if (detail.detail_manufacturer) {
+            detailCode.textContent += ` (${detail.detail_manufacturer})`
+        }
+
+        const detailOptions = document.createElement('div');
+        detailOptions.className = 'detail_options detail_options_wrap';
+
+        const detailPrice = document.createElement('div');
+        detailPrice.className = 'detail_price detail_button';
+        detailPrice.textContent = 'Стоимость';
+
+        myFavorites.append(containerDetail);
+        containerDetail.append(detailCode);
+        containerDetail.append(detailImage);
+        containerDetail.append(detailInfo);
+        containerDetail.append(detailOptions);
+        detailOptions.append(detailPrice);
+
+        const detailMore = document.createElement('div');
+        detailMore.className = 'detail_more detail_button js-open-modal';
+        detailMore.setAttribute('data-modal', '11');
+        detailMore.textContent = 'Подробнее';
+        detailOptions.append(detailMore);
+
+        if (detail.detail_scheme && (SETTINGS.VIEW === 'details_list')) {
+            const detailScheme = document.createElement('div');
+            detailScheme.className = 'detail_scheme detail_button';
+            detailScheme.textContent = 'На схеме';
+            detailOptions.append(detailScheme);
+        }
+    }
+}
+
+// console.log(NEW_DATA);
+
+function findDetailInArray(item) {
+    for (let el of NEW_DATA) {
+        if (el.detail_code.includes(item)) {
+            NEW_FAVORITES.push(el)
+        }
+    }
+
+    createDetailsInMyDetails()
+
+    console.log(NEW_FAVORITES);
 }
