@@ -1280,12 +1280,12 @@ const WHEEL_DRIVE = [
         detail_more: '',
     },
     {
-        detail_info: 'Наружный или Внутренний ШРУС ???',
+        detail_info: 'Внутренний ШРУС, передний правый AWD',
         detail_code: 'PCV9535',
         detail_manufacturer: 'Patron',
         detail_image: './images/details/wheel_drive/outer_CV_joint_patron_PCV9538.jpg',
-        detail_scheme: './images/details/wheel_drive/outer_CV_joint.gif',
-        detail_more: '',
+        detail_scheme: './images/details/wheel_drive/inner_CV_joint.gif',
+        detail_more: 'берём отсюда трипоид для внутреннего ШРУСа правой передней полуоси AWD',
     },
 ]
 
@@ -2659,5 +2659,3 @@ export const HEADERS = [
     },
 ]
 // console.log(HEADERS);
-
-
