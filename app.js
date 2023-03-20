@@ -321,9 +321,9 @@ function createDetailInSearch (detail, containerItem) {
 
         // НОВЬЁ
 
-        const detailInfo = document.createElement('div');
-        detailInfo.className = 'detail_info';
-        detailInfo.innerHTML = detail.detail_more;
+        // const detailInfo = document.createElement('div');
+        // detailInfo.className = 'detail_info';
+        // detailInfo.innerHTML = detail.detail_more;
 
         const detailCode = document.createElement('div');
         detailCode.className = 'detail_code';
@@ -333,6 +333,14 @@ function createDetailInSearch (detail, containerItem) {
         if (detail.detail_manufacturer) {
             detailCode.textContent += ` (${detail.detail_manufacturer})`
         }
+
+        const detailInfo = document.createElement('div');
+        detailInfo.className = 'detail_info';
+        detailInfo.innerHTML = detail.detail_info;
+
+        const detailAbout = document.createElement('div');
+        detailAbout.className = 'detail_info';
+        detailAbout.innerHTML = detail.detail_more;
 
         const detailOptions = document.createElement('div');
         detailOptions.className = 'detail_options';
@@ -344,6 +352,7 @@ function createDetailInSearch (detail, containerItem) {
         containerDetail.append(detailCode);
         containerDetail.append(detailImage);
         containerDetail.append(detailInfo);
+        containerDetail.append(detailAbout);
         containerDetail.append(detailOptions);
         detailOptions.append(detailPrice);
 

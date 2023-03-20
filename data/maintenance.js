@@ -183,7 +183,7 @@ const V_RIBBED_BELTS = [
         detail_more: 'можно любой ремень с размерами 6PK2370-2380, натяжитель компенсирует длину',
     },
     {
-        detail_info: 'Ремень поликлинковый в обход кондиционера',
+        detail_info: 'Ремень в обход кондиционера',
         detail_code: '6PK2050...2100',
         detail_manufacturer: '',
         detail_image: './images/details/v_ribbed_belts/v-ribbed-belt_bypass.jpg',
