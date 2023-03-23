@@ -427,26 +427,22 @@ window.onclick = function(event) {
     if (isClick === 'detail_price detail_button') {
         console.log('СТОИМОСТЬ В МОДАЛКЕ');
 
-        const idElement = target.parentElement.parentElement.id;
-        console.log(target.parentElement.parentElement.id);
-
-        if (!FAVORITES.includes(idElement)) {
-            // ПУШИМ ЭЛЕМЕНТ
-
-            findDetailInArray(idElement);
-
-            // FAVORITES.push(idElement);
-
-            // ДОБАВЛЯЕМ В ДОМ
-            // console.log(FAVORITES);
-            const divElem = document.createElement('h3');
-            divElem.innerText = idElement;
-            // myFavorites.append(divElem);
-
-            const myFavorites = document.getElementById('my_favorites');
-
-
-        }
+        // const idElement = target.parentElement.parentElement.id;
+        // console.log(target.parentElement.parentElement.id);
+        //
+        // if (!FAVORITES.includes(idElement)) {
+        //     // ПУШИМ ЭЛЕМЕНТ
+        //     findDetailInArray(idElement);
+        //     // FAVORITES.push(idElement);
+        //     // ДОБАВЛЯЕМ В ДОМ
+        //     // console.log(FAVORITES);
+        //     const divElem = document.createElement('h3');
+        //     divElem.innerText = idElement;
+        //     // myFavorites.append(divElem);
+        //
+        //     const myFavorites = document.getElementById('my_favorites');
+        //
+        // }
     }
 
     if (isClick === 'modal__cross js-modal-close') {
@@ -517,10 +513,10 @@ window.onclick = function(event) {
             } else {
                 console.log('ТЫЦ');
                 // FAVORITES.push(targetElementId);
-                localStorage.setItem('favorites', FAVORITES.push(targetElementId.toString()));
-                const divElem = document.createElement('h3');
-                divElem.innerText = targetElementId;
-                myFavorites.append(divElem)
+                // localStorage.setItem('favorites', FAVORITES.push(targetElementId.toString()));
+                // const divElem = document.createElement('h3');
+                // divElem.innerText = targetElementId;
+                // myFavorites.append(divElem)
             }
 
             // console.log(FAVORITES);
