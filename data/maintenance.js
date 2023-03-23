@@ -383,12 +383,28 @@ const WIPERS = [
 const VALVE_COVER_GASKETS = [
     {
         detail_info: 'Прокладка клапанной крышки',
+        detail_code: 'VS50501R',
+        detail_manufacturer: 'Fel-Pro',
+        detail_image: './images/details/gaskets/valve_cover_gaskets/valve_cover_gasket_fel-pro_VS50501R.jpg',
+        detail_scheme: './images/details/gaskets/valve_cover_gaskets/valve_cover_gasket.gif',
+        detail_more: 'комплект на две головы с кольцами под свечные колодцы',
+    },
+    {
+        detail_info: 'Прокладка клапанной крышки',
         detail_code: 'VS50248',
         detail_manufacturer: 'Mahle',
         detail_image: './images/details/gaskets/valve_cover_gaskets/valve_cover_gasket_mahle_VS50248.jpg',
         detail_scheme: './images/details/gaskets/valve_cover_gaskets/valve_cover_gasket.gif',
         detail_more: 'комплект на две головы с кольцами под свечные колодцы',
     },
+    // {
+    //     detail_info: 'Прокладка клапанной крышки',
+    //     detail_code: 'VS50501R',
+    //     detail_manufacturer: 'Ultra-Power',
+    //     detail_image: './images/details/gaskets/valve_cover_gaskets/valve_cover_gasket_ultra-power_VS50501R.jpg',
+    //     detail_scheme: './images/details/gaskets/valve_cover_gaskets/valve_cover_gasket.gif',
+    //     detail_more: 'комплект на две головы с кольцами под свечные колодцы',
+    // },
 ]
 
 const OIL_PAN_GASKETS = [
@@ -470,6 +486,14 @@ const CYLINDER_HEAD_GASKETS = [
 const SEAL_VALVE_GUIDE = [
     {
         detail_info: 'Колпачек маслосъемный',
+        detail_code: 'SS72842',
+        detail_manufacturer: 'Fel-Pro',
+        detail_image: './images/details/gaskets/seal_valve_guide/seal_valve_guide_fel-pro_SS72842.jpg',
+        detail_scheme: './images/details/gaskets/seal_valve_guide/seal_valve_guide.gif',
+        detail_more: 'комплект маслосъемных колпачков 12шт',
+    },
+    {
+        detail_info: 'Колпачек маслосъемный',
         detail_code: 'SS45832',
         detail_manufacturer: 'Mahle',
         detail_image: './images/details/gaskets/seal_valve_guide/seal_valve_guide_mahle_SS45832.jpg',
@@ -491,14 +515,6 @@ const FUEL_SYSTEM_SEALING = [
 
 const COOLANT_SEALING = [
     {
-        detail_info: 'Прокладка водяного насоса (помпы)',
-        detail_code: '04659430AB',
-        detail_manufacturer: 'Mopar',
-        detail_image: './images/details/gaskets/coolant_sealing/water_pump_gasket_mopar_04659430AB.jpg',
-        detail_scheme: './images/details/gaskets/coolant_sealing/water_pump_gasket.gif',
-        detail_more: '',
-    },
-    {
         detail_info: 'Прокладка нижнего патрубка радиатора',
         detail_code: '04792239AB',
         detail_manufacturer: 'Mopar',
@@ -506,7 +522,22 @@ const COOLANT_SEALING = [
         detail_scheme: './images/details/gaskets/coolant_sealing/lower_radiator_hose_gasket.gif',
         detail_more: '',
     },
-
+    {
+        detail_info: 'Прокладка нижнего патрубка радиатора',
+        detail_code: '35631',
+        detail_manufacturer: 'Fel-Pro',
+        detail_image: './images/details/gaskets/coolant_sealing/lower_radiator_hose_gasket_fel-pro_35631.jpg',
+        detail_scheme: './images/details/gaskets/coolant_sealing/lower_radiator_hose_gasket.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Прокладка водяного насоса (помпы)',
+        detail_code: '04659430AB',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/gaskets/coolant_sealing/water_pump_gasket_mopar_04659430AB.jpg',
+        detail_scheme: './images/details/gaskets/coolant_sealing/water_pump_gasket.gif',
+        detail_more: '',
+    },
 ]
 
 const THERMOSTAT_HOUSING_GASKETS = [
@@ -515,6 +546,14 @@ const THERMOSTAT_HOUSING_GASKETS = [
         detail_code: '04781674AA',
         detail_manufacturer: 'Mopar',
         detail_image: './images/details/gaskets/coolant_sealing/upper_radiator_hose_gasket_mopar_04781674AA.jpg',
+        detail_scheme: './images/details/gaskets/coolant_sealing/upper_radiator_hose_gasket.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Прокладка верхнего патрубка (термостата) радиатора ',
+        detail_code: '35651',
+        detail_manufacturer: 'Fel-Pro',
+        detail_image: './images/details/gaskets/coolant_sealing/upper_radiator_hose_gasket_fel-pro_35651.jpg',
         detail_scheme: './images/details/gaskets/coolant_sealing/upper_radiator_hose_gasket.gif',
         detail_more: '',
     },
@@ -686,6 +725,73 @@ const CRANKCASE_BLOCK = [
 ]
 
 const ENGINE_ELECTRONICS = []
+
+// КШМ
+
+const LINERS = [
+    {
+        detail_info: 'Вкладыши шатунные',
+        detail_code: '04626657AD',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/liners/connecting_rod_bearings_mopar_04626657AD.jpg',
+        detail_scheme: './images/details/liners/connecting_rod_bearings.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Вкладыши шатунные',
+        detail_code: 'RB143',
+        detail_manufacturer: 'DNJ',
+        detail_image: './images/details/liners/connecting_rod_bearings_dnj_RB143.jpg',
+        detail_scheme: './images/details/liners/connecting_rod_bearings.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Вкладыши шатунные',
+        detail_code: 'BB103JSTD',
+        detail_manufacturer: 'Enginetech',
+        detail_image: './images/details/liners/connecting_rod_bearings_enginetech_BB103J.jpg',
+        detail_scheme: './images/details/liners/connecting_rod_bearings.gif',
+        detail_more: '',
+    },
+]
+
+const OIL_PRESSURE_SWITCH = [
+    {
+        detail_info: 'Датчик давления масла',
+        detail_code: '05149098AA',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/oil_pressure_switch/oil_pressure_switch_mopar_05149098AA.jpg',
+        detail_scheme: './images/details/oil_pressure_switch/oil_pressure_switch.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Датчик давления масла',
+        detail_code: '12617513068',
+        detail_manufacturer: 'BMW',
+        detail_image: './images/details/oil_pressure_switch/oil_pressure_switch_bmw_12617513068.jpg',
+        detail_scheme: './images/details/oil_pressure_switch/oil_pressure_switch.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Датчик давления масла',
+        detail_code: 'PS287T',
+        detail_manufacturer: 'Standard',
+        detail_image: './images/details/oil_pressure_switch/oil_pressure_switch_standard_PS287T.jpg',
+        detail_scheme: './images/details/oil_pressure_switch/oil_pressure_switch.gif',
+        detail_more: '',
+    },
+]
+
+const OIL_DIPSTICK = [
+    {
+        detail_info: 'Щуп маслянный',
+        detail_code: '04792670AB',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/oil_dipstick/oil_dipstick_mopar_04792670AB.jpg',
+        detail_scheme: './images/details/oil_dipstick/oil_dipstick.gif',
+        detail_more: '',
+    },
+]
 
 // ПОДУШКИ ДВС
 
@@ -2064,7 +2170,8 @@ export const HEADERS = [
                     },
                     {
                         sub_subtitle: 'Герметизация охлаждающей жидкости',
-                        details: COOLANT_SEALING.concat(THERMOSTAT_HOUSING_GASKETS)
+                        details: THERMOSTAT_HOUSING_GASKETS.concat(COOLANT_SEALING)
+                        // details: COOLANT_SEALING.concat(THERMOSTAT_HOUSING_GASKETS)
                     },
                     {
                         sub_subtitle: 'Герметизация в системе циркуляции масла',
@@ -2141,7 +2248,7 @@ export const HEADERS = [
                 sub_subtitles: [
                     {
                         sub_subtitle: 'Коленчатый вал, вкладыши',
-                        details: ''
+                        details: LINERS
                     },
                     {
                         sub_subtitle: 'Шатун',
@@ -2175,11 +2282,11 @@ export const HEADERS = [
                     },
                     {
                         sub_subtitle: 'Датчик давления масла',
-                        details: ''
+                        details: OIL_PRESSURE_SWITCH
                     },
                     {
                         sub_subtitle: 'Указатель уровня масла',
-                        details: ''
+                        details: OIL_DIPSTICK
                     },
                     {
                         sub_subtitle: 'Насос маслянный, комплекующие',
@@ -2249,15 +2356,15 @@ export const HEADERS = [
                 sub_subtitles: [
                     {
                         sub_subtitle: 'Прокладка головки цилиндра',
-                        details: ''
+                        details: CYLINDER_HEAD_GASKETS
                     },
                     {
                         sub_subtitle: 'Крышка клапанная',
-                        details: ''
+                        details: VALVE_COVER_GASKETS
                     },
                     {
                         sub_subtitle: 'Прокладка впускного, выпускного коллектора',
-                        details: ''
+                        details: INTAKE_MANIFOLD_GASKETS.concat(EXHAUST_MANIFOLD_GASKETS)
                     },
                     {
                         sub_subtitle: 'Болт головки блока цилиндра',
