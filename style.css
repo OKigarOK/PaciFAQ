@@ -718,8 +718,7 @@ button:disabled {
 }
 
 .original_theme .modal__cross,
-.original_theme .link_button,
-.original_theme .link_button a {
+.original_theme .link_button {
     background-color: wheat;
     fill: black;
     border-color: wheat;
@@ -759,20 +758,20 @@ button:disabled {
     border-color: wheat;
 }
 
-.original_theme .detail_favorite_add {
-    border-color: wheat;
-    background-color: wheat;
+/*.original_theme .detail_favorite_add {*/
+/*    border-color: wheat;*/
+/*    background-color: wheat;*/
 
-    /*border-color: #00ff00;*/
-    /*background-color: #00ff7f;*/
+/*    !*border-color: #00ff00;*!*/
+/*    !*background-color: #00ff7f;*!*/
 
-    /*border-color: #ff0087;*/
-    /*background-color: #ff0087;*/
+/*    !*border-color: #ff0087;*!*/
+/*    !*background-color: #ff0087;*!*/
 
-    color: #000000;
-}
+/*    color: #000000;*/
+/*}*/
 
-.original_theme .detail_favorite_delete {
+.detail_favorite_delete {
     /*border-color: wheat;*/
     /*background-color: wheat;*/
 
@@ -790,7 +789,8 @@ button:disabled {
 
 .original_theme .detail_price,
 .original_theme .detail_more,
-.original_theme .detail_scheme {
+.original_theme .detail_scheme,
+.original_theme .detail_favorite_add {
     border-color: wheat;
     background-color: wheat;
     color: #000000;
@@ -860,7 +860,8 @@ button:disabled {
 
 .light_theme .detail_price,
 .light_theme .detail_more,
-.light_theme .detail_scheme {
+.light_theme .detail_scheme,
+.light_theme .detail_favorite_add {
     border-color: #6653D9;
     background-color: #6653D9;
     color: #FFFFFF;
@@ -932,7 +933,8 @@ button:disabled {
 
 .dark_theme .detail_price,
 .dark_theme .detail_more,
-.dark_theme .detail_scheme {
+.dark_theme .detail_scheme,
+.dark_theme .detail_favorite_add {
     border-color: #F2F2F2;
     background-color: #2A2930;
     color: #F2F2F2;
