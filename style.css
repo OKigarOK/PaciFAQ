@@ -725,7 +725,7 @@ button:disabled {
     border-color: wheat;
 }
 
-.original_theme .link_button a {
+.original_theme a .link_button {
     background-color: wheat;
     color: black;
     border-color: wheat;
