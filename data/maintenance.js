@@ -10,7 +10,7 @@ const OIL_FILTERS = [
         detail_image: './images/details/oil_filters/oil-filter_mopar_05281090AB.jpg',
         detail_scheme: './images/details/oil_filters/oil-filter.gif',
         detail_more: 'У многих на этом фильтре появляется стук',
-        // detail_options: [{},],
+        detail_favorite: false,
     },
     {
         detail_info: 'Фильтр маслянный',

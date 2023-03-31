@@ -24,9 +24,8 @@ body {
     /* ВРЕМЕННО ОТКЛ */
     /*background: url("./images/main_bg.jpg") fixed center no-repeat;*/
     /*background: url("./images/main_bg_light.jpg") fixed center no-repeat;*/
-    background-size: contain;
+    /*background-size: contain;*/
     height: Calc(100vh - 10px);
-
     /*height: 100%;*/
 }
 
@@ -708,10 +707,14 @@ button:disabled {
 .original_theme .modal,
 .original_theme .container_detail_table,
 .original_theme .search_title {
-    /*background: url("./images/main_bg.jpg") fixed center no-repeat;*/
     border-color: wheat;
     background-color: black;
     color: white;
+}
+
+.original_theme .wrapper {
+    /*background: url("./images/main_bg.jpg") fixed center no-repeat;*/
+    /*background-size: contain;*/
 }
 
 .original_theme .modal__cross,
@@ -756,6 +759,35 @@ button:disabled {
     border-color: wheat;
 }
 
+.original_theme .detail_favorite_add {
+    border-color: wheat;
+    background-color: wheat;
+
+    /*border-color: #00ff00;*/
+    /*background-color: #00ff7f;*/
+
+    /*border-color: #ff0087;*/
+    /*background-color: #ff0087;*/
+
+    color: #000000;
+}
+
+.original_theme .detail_favorite_delete {
+    /*border-color: wheat;*/
+    /*background-color: wheat;*/
+
+    /*border-color: #00ff00;*/
+    /*background-color: #00ff00;*/
+
+    /*border-color: #ff0087;*/
+    /*background-color: #ff0087;*/
+    border-color: #E34234;
+    background-color: #E34234;
+
+    /*color: #000000;*/
+    color: #FFFFFF;
+}
+
 .original_theme .detail_price,
 .original_theme .detail_more,
 .original_theme .detail_scheme {
@@ -771,8 +803,14 @@ button:disabled {
 .light_theme .search_title {
     /*border-color:  #333333;*/
     border-color: #6653D9;
-    background-color: #EAE6F2;
+    background-color: #FFFFFF;
     color: #333333;
+}
+
+.light_theme .wrapper {
+    /*background: url("./images/main_bg_light.jpg") fixed center no-repeat;*/
+    /*background-size: contain;*/
+    /*height: Calc(100vh - 10px);*/
 }
 
 .light_theme .modal__cross,
@@ -837,6 +875,13 @@ button:disabled {
     background-color: #17161A;
     color: #F2F2F2;
 }
+
+.dark_theme .wrapper {
+    /*background: url("./images/chrysler_pacifica_608607.jpg") fixed center no-repeat;*/
+    /*background-size: contain;*/
+    /*height: Calc(100vh - 10px);*/
+}
+
 
 .dark_theme .modal__cross {
     background-color: #EFEFEF;

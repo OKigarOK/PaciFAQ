@@ -1,15 +1,18 @@
 import {HEADERS} from "./data/maintenance.js";
 import {ERRORS} from "./data/errors_list.js";
 
-const FAVORITES = [];
-const NEW_FAVORITES = [];
-
 const NEW_DATA = [];
-const myFavorites = document.getElementById('favorites');
+
+const myFavorites = document.getElementById('my_favorites');
 const currentTheme = localStorage.getItem('theme');
 const currentFontSize = localStorage.getItem('fontSize');
 const currentView = localStorage.getItem('view');
-// const isFavorites = localStorage.getItem('favorites');
+const currentMyDetails = localStorage.getItem('myDetails');
+
+function myFavoritesToLocal(itemsArray) {
+    const items = JSON.stringify(itemsArray)
+    localStorage.setItem('myDetails', items);
+}
 
 const setSettings = document.getElementById('setSettings');
 const setTheme = document.getElementById('theme');
@@ -17,15 +20,17 @@ const setTheme = document.getElementById('theme');
 const SETTINGS = {
     THEME: currentTheme || 'original_theme',
     FONT_SIZE: currentFontSize || 'fontSizeM',
-    VIEW: currentView || 'details_table'
+    VIEW: currentView || 'details_table',
+    MY_DETAILS: currentMyDetails || ''
 }
 
-saveSettingsToLocal(SETTINGS.THEME, SETTINGS.FONT_SIZE, SETTINGS.VIEW)
+saveSettingsToLocal(SETTINGS.THEME, SETTINGS.FONT_SIZE, SETTINGS.VIEW, SETTINGS.MY_DETAILS)
 
-function saveSettingsToLocal(theme, font, view) {
+function saveSettingsToLocal(theme, font, view, details) {
     localStorage.setItem('theme', theme);
     localStorage.setItem('fontSize', font);
     localStorage.setItem('view', view);
+    localStorage.setItem('myDetails', details);
     setTheme.classList.add(theme);
 }
 
@@ -46,15 +51,19 @@ function render(theme, font, view) {
     document.getElementById(view).checked = true;
 }
 
-// function renderContentMenu() {
-//     const contentContainer = document.querySelector('.content_container');
-//     contentContainer.innerHTML = '';
-//     saveSettingsToLocal(SETTINGS.THEME, SETTINGS.FONT_SIZE, SETTINGS.VIEW)
-//     render(SETTINGS.THEME, SETTINGS.FONT_SIZE, SETTINGS.VIEW)
-//     createContentMenu(HEADERS);
-//     renderSettings();
-//     callAccord();
-// }
+let NEW_FAVORITES;
+
+const myDetailsInLocal = localStorage.getItem('myDetails')
+
+if (myDetailsInLocal) {
+    NEW_FAVORITES = JSON.parse(myDetailsInLocal);
+    createDetailsInMyDetails()
+
+} else {
+    console.log('ПУСТО');
+    myFavorites.innerHTML = 'Сюда можно будет добавить и здесь будут отображаться выбранные детали :)';
+    NEW_FAVORITES = []
+}
 
 createContentMenu(HEADERS)
 renderSettings();
@@ -197,7 +206,6 @@ function createDetails(subTitleDetails, containerItems) {
 
         const detailCode = document.createElement('div');
         detailCode.className = 'detail_code';
-        // detailCode.textContent = detail.detail_code + ` (${detail.detail_manufacturer})`;
 
         detailCode.textContent = detail.detail_code;
         if (detail.detail_manufacturer) {
@@ -244,6 +252,27 @@ function createDetails(subTitleDetails, containerItems) {
             detailScheme.textContent = 'На схеме';
             detailOptions.append(detailScheme);
         }
+
+        // ИЗБРАННОЕ
+
+        const detailFavorite = document.createElement('div');
+
+        detailFavorite.className = 'detail_favorite_add detail_button';
+        detailFavorite.textContent = 'Добавить';
+
+        for (let favoriteItem of NEW_FAVORITES) {
+            if (favoriteItem.detail_code === detail.detail_code) {
+                detailFavorite.className = 'detail_favorite_delete detail_button';
+                detailFavorite.textContent = 'Удалить';
+            }
+        }
+
+        if (NEW_FAVORITES.length === 0) {
+            detailFavorite.className = 'detail_favorite_add detail_button';
+            detailFavorite.textContent = 'Добавить';
+        }
+
+        detailOptions.append(detailFavorite);
     }
 }
 
@@ -321,13 +350,8 @@ function createDetailInSearch (detail, containerItem) {
 
         // НОВЬЁ
 
-        // const detailInfo = document.createElement('div');
-        // detailInfo.className = 'detail_info';
-        // detailInfo.innerHTML = detail.detail_more;
-
         const detailCode = document.createElement('div');
         detailCode.className = 'detail_code';
-        // detailCode.textContent = detail.detail_code + ` (${detail.detail_manufacturer})`;
 
         detailCode.textContent = detail.detail_code;
         if (detail.detail_manufacturer) {
@@ -368,6 +392,25 @@ function createDetailInSearch (detail, containerItem) {
             detailScheme.textContent = 'На схеме';
             detailOptions.append(detailScheme);
         }
+
+        const detailFavorite = document.createElement('div');
+
+        detailFavorite.className = 'detail_favorite_add detail_button';
+        detailFavorite.textContent = 'Добавить';
+
+        for (let favoriteItem of NEW_FAVORITES) {
+            if (favoriteItem.detail_code === detail.detail_code) {
+                detailFavorite.className = 'detail_favorite_delete detail_button';
+                detailFavorite.textContent = 'Удалить';
+            }
+        }
+
+        if (NEW_FAVORITES.length === 0) {
+            detailFavorite.className = 'detail_favorite_add detail_button';
+            detailFavorite.textContent = 'Добавить';
+        }
+
+        detailOptions.append(detailFavorite);
     }
 }
 
@@ -398,20 +441,11 @@ function callAccord() {
 window.onclick = function(event) {
     // event.preventDefault();
     const target = event.target; // где был клик?
-    // console.log(target);
     const isClick = target.className;
 
     if (isClick === 'detail_scheme detail_button') {
 
-        // let imageElement;
-        // if (SETTINGS.VIEW === 'details_table') {
-        //     imageElement = target.parentElement.previousElementSibling.previousElementSibling;
-        // } else {
-        //     imageElement = target.parentElement.previousElementSibling.previousElementSibling.previousElementSibling;
-        // }
-
         const imageElement = target.parentElement.previousElementSibling.previousElementSibling.previousElementSibling;
-
 
         if (target.textContent === 'На схеме') {
             target.textContent = 'Деталь';
@@ -427,22 +461,61 @@ window.onclick = function(event) {
     if (isClick === 'detail_price detail_button') {
         console.log('СТОИМОСТЬ В МОДАЛКЕ');
 
-        // const idElement = target.parentElement.parentElement.id;
-        // console.log(target.parentElement.parentElement.id);
-        //
-        // if (!FAVORITES.includes(idElement)) {
-        //     // ПУШИМ ЭЛЕМЕНТ
-        //     findDetailInArray(idElement);
-        //     // FAVORITES.push(idElement);
-        //     // ДОБАВЛЯЕМ В ДОМ
-        //     // console.log(FAVORITES);
-        //     const divElem = document.createElement('h3');
-        //     divElem.innerText = idElement;
-        //     // myFavorites.append(divElem);
-        //
-        //     const myFavorites = document.getElementById('my_favorites');
-        //
-        // }
+        // ИЩЕМ КОД
+        const isCode = target.parentElement.parentElement.firstElementChild.textContent
+        const onlyCode = isCode.split(' ')
+        // КОНЕЦ )
+
+        console.log(onlyCode[0]);
+    }
+
+    if (isClick === 'detail_favorite_add detail_button') {
+        console.log('ИЗБРАННОЕ');
+        // ИЩЕМ КОД
+        const isCode = target.parentElement.parentElement.firstElementChild.textContent
+        const onlyCode = isCode.split(' ')
+        // КОНЕЦ )
+
+        target.className = 'detail_favorite_delete detail_button'
+
+            console.log('ДОБАВЛЯЕМ');
+            target.textContent = 'Удалить';
+            console.log(NEW_FAVORITES);
+            findDetailInArray(onlyCode[0]);
+
+            myFavorites.innerHTML = '';
+            createDetailsInMyDetails()
+            myFavoritesToLocal(NEW_FAVORITES)
+    }
+
+    if (isClick === 'detail_favorite_delete detail_button') {
+        console.log('ИЗБРАННОЕ');
+
+        // ИЩЕМ КОД
+        const isCode = target.parentElement.parentElement.firstElementChild.textContent
+        console.log(isCode);
+        const onlyCode = isCode.split(' ')
+        console.log(onlyCode[0]);
+        // КОНЕЦ )
+
+        target.className = 'detail_favorite_add detail_button'
+
+        console.log('УДАЛЯЕМ')
+        target.textContent = 'Добавить';
+
+        deleteDetailFromArray(onlyCode[0]);
+
+        const delElementFromDom = document.getElementById(onlyCode[0])
+
+        if (!!delElementFromDom) {
+            const elementButton = delElementFromDom.lastElementChild.lastElementChild
+            elementButton.className = 'detail_favorite_add detail_button'
+            elementButton.innerHTML = 'Добавить'
+        }
+
+            myFavorites.innerHTML = '';
+            createDetailsInMyDetails()
+            myFavoritesToLocal(NEW_FAVORITES)
     }
 
     if (isClick === 'modal__cross js-modal-close') {
@@ -481,11 +554,8 @@ window.onclick = function(event) {
         const detailsListElement = document.getElementById('details_list');
         const detailsTableElement = document.getElementById('details_table');
         detailsTableElement.checked = false;
-        // detailsTableElement.disabled = true;
-
         detailsListElement.checked = true;
-        // detailsListElement.disabled = false;
-
+        localStorage.setItem('myDetails', '')
         location.reload();
         localStorage.setItem('view', SETTINGS.VIEW);
     }
@@ -502,28 +572,20 @@ window.onclick = function(event) {
 
     switch (target.className) {
 
-        case 'detail_price detail_button':
-            // console.log('смотрим ЦЕНУ');
-            // console.log(targetElementId);
-
-            // ДОБАВЛЯЕМ В ИЗБРАННОЕ
-
-            if (FAVORITES.includes(targetElementId)) {
-                // console.log('такое уже есть )');
-            } else {
-                console.log('ТЫЦ');
-                // FAVORITES.push(targetElementId);
-                // localStorage.setItem('favorites', FAVORITES.push(targetElementId.toString()));
-                // const divElem = document.createElement('h3');
-                // divElem.innerText = targetElementId;
-                // myFavorites.append(divElem)
-            }
-
-            // console.log(FAVORITES);
-            // addDetailToFavorites()
-
-            // console.log(targetElementId);
-            break
+        // case 'detail_price detail_button':
+        //     // console.log('смотрим ЦЕНУ');
+        //     // console.log(targetElementId);
+        //
+        //     // ДОБАВЛЯЕМ В ИЗБРАННОЕ
+        //     // ЗДЕСЯ ОШИБКИ ВАЛЯТСЯ....
+        //
+        //     if (FAVORITES.includes(targetElementId)) {
+        //         // console.log('такое уже есть )');
+        //     } else {
+        //         console.log('ТЫЦ');
+        //     }
+        //
+        //     break
 
         case 'detail_more detail_button js-open-modal':
             // console.log('смотрим ПОДРОБНЕЕ');
@@ -565,7 +627,6 @@ window.onclick = function(event) {
 
             const detailCode = document.createElement('div');
             detailCode.className = 'detail_code';
-            // detailCode.textContent = detail.detail_code + ` (${detail.detail_manufacturer})`;
 
             detailCode.textContent = detail.detail_code;
             if (detail.detail_manufacturer) {
@@ -624,32 +685,17 @@ const searchElementsList = document.getElementById('search_menu')
 
 inputText.oninput = function () {
 
-    // УБИРАЕМ БУРГЕР
-    // if (menuElement.classList.contains('active')) {
-    //     menuElement.classList.remove('active');
-    //     burgerElement.classList.remove('active');
-    // }
-
-    // if (searchElementsList.classList.contains('active')) {
-    //     document.body.classList.add('lock');
-    // } else {
-    //     document.body.classList.remove('lock');
-    // }
-
     const substring = inputText.value.toLowerCase();
 
     if (!substring) {
         searchElementsList.innerHTML = '';
         searchElementsList.classList.remove('active')
-
         burgerElement.classList.remove('active')
-
         callAccord();
         return
     }
 
     burgerElement.classList.add('active')
-
     searchElementsList.classList.add('active');
     menuElement.classList.remove('active');
 
@@ -662,14 +708,12 @@ function findObjectInArray(item) {
     searchElementsList.innerHTML = '';
 
     for (let el of NEW_DATA) {
-
         if (el.detail_info.includes(item)) {
             createDetailInSearch(el, searchElementsList)
         }
     }
 
     for (let el of ERRORS) {
-
         if (el.error_code.includes(item)) {
             createCodeInSearch(el, searchElementsList)
         }
@@ -858,7 +902,11 @@ function removeDetailsWrapView() {
 function addElementToDataArray (item) {
     if (!NEW_DATA.some(e => e.detail_code === item.detail_code)) {
         item.detail_info = item.detail_info.toLowerCase();
+
+        // ИЗБРАННОЕ
+        // item.detail_favorite = true;
         NEW_DATA.push(item);
+        // console.log(item.detail_code);
     }
 }
 
@@ -866,15 +914,18 @@ function addElementToDataArray (item) {
 
 function createDetailsInMyDetails(subTitleDetails, containerItems) {
 
+    if (NEW_FAVORITES.length === 0) {
+        console.log('ЗДЕСЯ ПУСТО :)');
+        myFavorites.innerText = 'Сюда можно добавить и здесь будут отображаться выбранные детали :)';
+
+    }
+
     for (let detail of NEW_FAVORITES) {
 
         // Новый массив с проверкой
 
         const containerDetail = document.createElement('div');
         containerDetail.className = 'container_detail_table';
-
-        // containerDetail.setAttribute('id' , `${detail.detail_code}` );
-        // detail.detail_id = detail.detail_code;
 
         const detailImage = document.createElement('div');
         detailImage.className = 'detail_image';
@@ -895,11 +946,8 @@ function createDetailsInMyDetails(subTitleDetails, containerItems) {
         detailInfo.className = 'detail_info';
         detailInfo.innerHTML = detail.detail_info;
 
-        // detailInfo.innerHTML = detail.detail_more;
-
         const detailCode = document.createElement('div');
         detailCode.className = 'detail_code';
-        // detailCode.textContent = detail.detail_code + ` (${detail.detail_manufacturer})`;
 
         detailCode.textContent = detail.detail_code;
         if (detail.detail_manufacturer) {
@@ -924,27 +972,36 @@ function createDetailsInMyDetails(subTitleDetails, containerItems) {
         detailMore.className = 'detail_more detail_button js-open-modal';
         detailMore.setAttribute('data-modal', '11');
         detailMore.textContent = 'Подробнее';
-        detailOptions.append(detailMore);
 
         if (detail.detail_scheme && (SETTINGS.VIEW === 'details_list')) {
             const detailScheme = document.createElement('div');
             detailScheme.className = 'detail_scheme detail_button';
             detailScheme.textContent = 'На схеме';
-            detailOptions.append(detailScheme);
         }
+
+        const detailFavorite = document.createElement('div');
+        detailFavorite.className = 'detail_favorite_delete detail_button';
+        detailFavorite.textContent = 'Удалить';
+        detailOptions.append(detailFavorite);
     }
 }
-
-// console.log(NEW_DATA);
 
 function findDetailInArray(item) {
     for (let el of NEW_DATA) {
         if (el.detail_code.includes(item)) {
             NEW_FAVORITES.push(el)
+            return
         }
     }
-
-    createDetailsInMyDetails()
-
-    console.log(NEW_FAVORITES);
 }
+
+function deleteDetailFromArray(item) {
+    for (let el of NEW_FAVORITES) {
+        if (el.detail_code === item) {
+            NEW_FAVORITES.splice(NEW_FAVORITES.indexOf(el), 1);
+            return
+        }
+    }
+}
+
+// createDetailsInMyDetails()
