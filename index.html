@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Burger</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+</head>
+
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+<body id="theme">
+
+<div class="wrapper">
+
+    <header class="header">
+        <div class="container">
+            <div class="header_body">
+
+                <div class="header_burger" id="header_burger">
+                    <span></span>
+                </div>
+
+                <nav class="header_menu" id="header_menu">
+                    <ul class="header_menu_list">
+                        <li>
+                            <a href="#" class="header_menu_link js-open-modal" data-modal="10">мои запчасти</a>
+                        </li>
+                        <li>
+                            <a href="#" class="header_menu_link js-open-modal" data-modal="1">Полезное</a>
+                        </li>
+                        <li>
+                            <a href="#" class="header_menu_link js-open-modal" data-modal="2">События</a>
+                        </li>
+                        <li>
+                            <a href="#" class="header_menu_link js-open-modal" data-modal="7">Качалка</a>
+                        </li>
+                        <li>
+                            <a href="#" class="header_menu_link js-open-modal" data-modal="8">Плюшки с "Алика"</a>
+                        </li>
+                        <li>
+                            <a href="#" class="header_menu_link js-open-modal" data-modal="9">Запцацки БУ</a>
+                        </li>
+                        <li>
+                            <a href="#" class="header_menu_link js-open-modal" data-modal="3">Настройки</a>
+<!--                            <a class="header_menu_link" style="opacity: 0.5">Настройки</a>-->
+
+                        </li>
+                        <li>
+                            <a href="#" class="header_menu_link js-open-modal" data-modal="4">Поддержать</a>
+                        </li>
+                        <li>
+                            <a href="#" class="header_menu_link js-open-modal" data-modal="5">Контакты</a>
+                        </li>
+                        <li>
+                            <a href="#" class="header_menu_link js-open-modal" data-modal="6">О приложении</a>
+                        </li>
+                        <li>
+                            <a href="#" class="header_menu_link js-open-modal" data-modal="12">словарь "чатланина"</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <nav class="search_menu" id="search_menu">
+<!--                ОКНО ПОИСКА -->
+                </nav>
+                <!-- Несколько модальных окон -->
+<!--МОИ ЗАПЧАСТИ-->
+                <div class="modal" data-modal="10" id="favorites">
+                    <svg class="modal__cross js-modal-close"
+                         xmlns="http://www.w3.org/2000/svg"
+                         viewBox="0 0 24 24">
+                        <path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/>
+                    </svg>
+                    <h3 class="modal__title">МОИ ЗАПЧАСТИ</h3>
+
+                    <!--                    <h3 class="modal__title">БЛОКНОТ</h3>-->
+                    <!--                СЮДА ДОБАВЛЯЕМ ЗАПЧАСТИ   -->
+                    <div class="container_items_table" id="my_favorites">
+<!--                        Сюда можно будет добавить и здесь будут отображаться выбранные детали-->
+                    </div>
+                </div>
+                
+                
+<!--ПОЛЕЗНОЕ-->
+                <div class="modal modal_height" data-modal="1">
+                    <svg class="modal__cross js-modal-close"
+                         xmlns="http://www.w3.org/2000/svg"
+                         viewBox="0 0 24 24">
+                        <path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/>
+                    </svg>
+                    <h3 class="modal__title">ПОЛЕЗНОЕ</h3>
+
+                    <div class="modal_scroll">
+                        <!--                    <p>Всякие схемы, ёмкости, моменты затяжки и т.д....</p>-->
+
+                        <button class="accordion search_title">Объемы технических жидкостей:</button>
+                        <div class="panel">
+                            <div class="container_detail more_modal_settings">
+                                <div class="detail_image">
+                                    <img src="./images/useful/fluid_capasities.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="accordion search_title">Параметры клиренса в стоке:</button>
+                        <div class="panel">
+                            <div class="container_detail more_modal_settings">
+                                <div class="detail_image">
+                                    <img src="./images/useful/clearance.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="accordion search_title">Передние проставки (чертеж):</button>
+                        <div class="panel">
+                            <div class="container_detail more_modal_settings">
+                                <div class="detail_image">
+                                    <img src="images/useful/front_spacers.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="accordion search_title">Все сальники раздатки AWD:</button>
+                        <div class="panel">
+                            <div class="container_detail more_modal_settings">
+                                <div class="detail_image">
+                                    <img src="./images/useful/awd_seals.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <button class="accordion search_title">Как правильно запресовать большой сайлентблок переднего рычага:</button>
+                        <div class="panel">
+                            <div class="container_detail more_modal_settings">
+                                <div class="detail_image">
+                                    <img src="./images/useful/front_suspension_arm.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+<!--СОБЫТИЯ-->
+                <div class="modal" data-modal="2">
+                    <svg class="modal__cross js-modal-close"
+                         xmlns="http://www.w3.org/2000/svg"
+                         viewBox="0 0 24 24">
+                        <path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/>
+                    </svg>
+
+                    <h3 class="modal__title">СОБЫТИЯ</h3>
+                    <p>Здесь наверное ДР и прочие праздники )))</p>
+                    <p>Может сделать календарь...</p>
+                    <p>Может сделать висящее уведомление</p>
+                </div>
+
+
+<!--КАЧАЛКА-->
+                <div class="modal" data-modal="7">
+                    <svg class="modal__cross js-modal-close"
+                         xmlns="http://www.w3.org/2000/svg"
+                         viewBox="0 0 24 24">
+                        <path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/>
+                    </svg>
+
+                    <!--                    <h3 class="modal__title">КАЧАЛКА</h3>-->
+                    <h3 class="">СКАЧАТЬ ДОКУМЕНТАЦИЮ:</h3>
+
+                    <a href="./downloads/Предохранители_и_реле_Chrysler_Pacifica_CS;_2004_2008_Предохранители.pdf" download>
+                        <button class="link_button">Предохранители_и_реле_CS.pdf</button>
+                    </a>
+
+                    <a href="./downloads/Схема_блока_предохранителей.pdf" download>
+                        <button class="link_button">Схема_блока_предохранителей.pdf</button>
+                    </a>
+
+                    <a href="./downloads/Все_схемы_для_электропроводки_Chrysler_Pacifica_2004.pdf" download>
+                        <button class="link_button">Все_схемы_для_электропроводки.pdf</button>
+                    </a>
+
+                    <a href="./downloads/SERVICE_MANUAL_PACIFICA_2004.pdf" download>
+                        <button class="link_button">SERVICE_MANUAL_PACIFICA_2004.pdf</button>
+                    </a>
+
+                    <a href="./downloads/A604_REBUILD_PROCEDURES.pdf" download>
+                        <button class="link_button">A604_REBUILD_PROCEDURES.pdf</button>
+                    </a>
+
+                    <a href="./downloads/A604_40TE_41TE_41AE_CATALOG.pdf" download>
+                        <button class="link_button">A604_40TE_41TE_41AE_CATALOG.pdf</button>
+                    </a>
+
+                    <a href="./downloads/2005-CS-TRANSMISSION.PDF" download>
+                        <button class="link_button">2005-CS-TRANSMISSION.pdf</button>
+                    </a>
+
+                    <a href="./downloads/62TE_PRELIMINARY_INFORMATION.pdf" download>
+                        <button class="link_button">62TE_PRELIMINARY_INFORMATION.pdf</button>
+                    </a>
+
+                    <!--                    <p><a href="https://drive.google.com/uc?export=download&confirm=no_antivirus&id=1fQ_7cbGBGiKEoz-GXX0KflVcAyfU3Rqs" download>Скачать файл c Google Drive</a>-->
+
+                </div>
+
+
+<!--ПЛЮШКИ С АЛИКА-->
+                <div class="modal modal_height" data-modal="8">
+                    <svg class="modal__cross js-modal-close"
+                         xmlns="http://www.w3.org/2000/svg"
+                         viewBox="0 0 24 24">
+                        <path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/>
+                    </svg>
+
+                    <h3 class="modal__title">ПЛЮШКИ С "АЛИКА"</h3>
+<!--                    <p>Ссылки на детали с Алиэкспресс: муфты, лампочки, замки и т.д.</p>-->
+
+                    <div class="modal_scroll">
+                        <button class="accordion search_title">Дополнительная кнопка багажника:</button>
+                        <div class="panel">
+                            <div class="container_detail more_modal_settings">
+                                <div class="detail_image">
+                                    <img src="./images/ali_express/Hc7f89e0cbb9b4caf9a981b004b653451R.jpg" alt="">
+                                </div>
+                                <a href="https://aliexpress.ru/item/33041541261.html?spm=a2g2w.orderdetail.0.0.5e2d4aa6UGeMdM&sku_id=10000015512933303"
+                                   onclick="url=this.href;setTimeout('location.href=url',500);this.href='javascript:void(0)';">
+                                    <button class="link_button">Заказать на AliExpress</button>
+                                </a>
+                            </div>
+                        </div>
+
+                        <button class="accordion search_title">Клипсы в переднюю юбку бампера:</button>
+                        <div class="panel">
+                            <div class="container_detail more_modal_settings">
+                                <div class="detail_image">
+                                    <img src="./images/ali_express/S5e158c6eb7434d48974afd687874912bA.jpg" alt="">
+                                </div>
+                                <a href="https://aliexpress.ru/item/4000672941719.html?spm=a2g2w.orderdetail.0.0.28e14aa6iCtOdO&sku_id=10000005654728781"
+                                   onclick="url=this.href;setTimeout('location.href=url',500);this.href='javascript:void(0)';">
+                                    <button class="link_button">Заказать на AliExpress</button>
+                                </a>
+                            </div>
+                        </div>
+
+                        <button class="accordion search_title">Набор различных пластиковых "пуцок":</button>
+                        <div class="panel">
+                            <div class="container_detail more_modal_settings">
+                                <div class="detail_image">
+                                    <img src="./images/ali_express/Sa460a255e59841c8a6907277b90bcac92.jpg" alt="">
+                                </div>
+                                <a href="https://aliexpress.ru/item/4000322957352.html?spm=a2g2w.orderdetail.0.0.40444aa6p1QWQz&sku_id=10000002207843540"
+                                   onclick="url=this.href;setTimeout('location.href=url',500);this.href='javascript:void(0)';">
+                                    <button class="link_button">Заказать на AliExpress</button>
+                                </a>
+                            </div>
+                        </div>
+
+                        <button class="accordion search_title">Муфта компрессора кондиционера:</button>
+                        <div class="panel">
+                            <div class="container_detail more_modal_settings">
+                                <div class="detail_image">
+                                    <img src="./images/ali_express/He25397354492461cb9ddf5a6b7680ffdW.jpg" alt="">
+                                </div>
+                                <a href="https://aliexpress.ru/item/33019412282.html?sku_id=67194514629"
+                                   onclick="url=this.href;setTimeout('location.href=url',500);this.href='javascript:void(0)';">
+                                    <button class="link_button">Заказать на AliExpress</button>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+<!--ЗАПЦАЦКИ Б/У-->
+                <div class="modal" data-modal="9">
+                    <svg class="modal__cross js-modal-close"
+                         xmlns="http://www.w3.org/2000/svg"
+                         viewBox="0 0 24 24">
+                        <path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/>
+                    </svg>
+
+                    <h3 class="modal__title">ЗАПЦАЦКИ Б/У</h3>
+                    <p>Адреса, явки и пароли разборок...</p>
+                </div>
+                
+
+<!--НАСТРОЙКИ-->
+                    <div class="modal theme_container" id="setSettings" data-modal="3">
+                        <svg class="modal__cross js-modal-close"
+                             xmlns="http://www.w3.org/2000/svg"
+                             viewBox="0 0 24 24">
+                            <path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/>
+                        </svg>
+                        <div class="theme_body">
+                            <h3>НАСТРОЙКИ</h3>
+                            <br>
+                            <h3>Основная тема:</h3>
+                            <div>
+                                <div>
+                                    <input type="radio" id="original_theme" name="theme">
+                                    <label for="original_theme">Оригинальная</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="light_theme" name="theme" >
+                                    <label for="light_theme">Светлая</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="dark_theme" name="theme">
+                                    <label for="dark_theme">Тёмная</label>
+                                </div>
+                            </div>
+                            <br>
+                            <!--        <p>Обои (задний фон)</p>-->
+
+                            <h3>Размер шрифта:</h3>
+                            <div>
+                                <div>
+                                    <input type="radio" id="fontSizeS" name="fontSize" disabled>
+                                    <label for="fontSizeS" class="fontSizeS">Мелкий</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="fontSizeM" name="fontSize">
+                                    <label for="fontSizeM" class="fontSizeM">Обычный</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="fontSizeL" name="fontSize" disabled>
+                                    <label for="fontSizeL" class="fontSizeL">Огромный</label>
+                                </div>
+                            </div>
+                            <br>
+
+                            <h3>Отображение деталей:</h3>
+                            <div>
+                                <div>
+                                    <input type="radio" id="details_list" name="view">
+                                    <label for="details_list">Списком</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="details_table" name="view">
+                                    <label for="details_table">Таблицей</label>
+                                </div>
+                            </div>
+                            <br>
+
+                            <button class="link_button" id="reset_settings">Сбросить настройки</button>
+
+                            <br>
+                            <!--        <div>-->
+                            <!--            Светлая-->
+                            <!--            <input type="range" min="0" max="1">-->
+                            <!--            Темная-->
+                            <!--        </div>-->
+                        </div>
+                    </div>
+
+                
+<!--ПОДДЕРЖАТЬ-->
+                <div class="modal" data-modal="4">
+                    <svg class="modal__cross js-modal-close"
+                         xmlns="http://www.w3.org/2000/svg"
+                         viewBox="0 0 24 24">
+                        <path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/>
+                    </svg>
+                    <h3 class="modal__title">ПОДДЕРЖАТЬ</h3>
+                    <div class="menu_image">
+                        <img src="./images/menu/for_beer.jpg" alt="">
+                    </div>
+                    <p>
+                        Перейдя по ссылке, Вы можете сделать добровольный донат на поддержание и развитие приложения
+                        скромному собирателю житейской мудрости Пацифистов всех времен и народов
+                    </p>
+                    <a href="https://donate.stream/donate_6368cb89e59ec" onclick="url=this.href;setTimeout('location.href=url',500);this.href='javascript:void(0)';">
+                        <button class="link_button">Бабе на цветы, дитЯм на мороженное</button>
+                    </a>
+                </div>
+
+                
+<!--КОНТАКТЫ-->
+                <div class="modal" data-modal="5">
+                    <svg class="modal__cross js-modal-close"
+                         xmlns="http://www.w3.org/2000/svg"
+                         viewBox="0 0 24 24">
+                        <path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/>
+                    </svg>
+                    <h3 class="modal__title">КОНТАКТЫ</h3>
+                    <div class="menu_image">
+                        <img src="images/menu/contact_image.jpg" alt="">
+                    </div>
+                    <p>Замечания и предложения по улучшению и дополнению приложения можно присылать мне лично, удобным для Вас способом:
+                    </p>
+                    <div class="contacts_links">
+                        <a href="https://wa.me/+375291730020" target="_blank">
+                            <img style="height: 40px; padding-left: 6px" src="./images/menu/icon_whatsap.png" alt="whatsapp" title="Whatsapp">
+                        </a>
+                        <a href="https://t.me/okigarok" target="_blank">
+                            <img style="height: 40px; padding-left: 10px" src="./images/menu/icon_telegram.png" alt="telegram" title="Telegram">
+                        </a>
+                        <a href="mailto:1730020@gmail.com" target="_blank">
+                            <img style="height: 55px; padding-left: 8px" src="./images/menu/icon_gmail.png" alt="email" title="Email">
+                        </a>
+                        <a href="https://www.drive2.ru/r/chrysler/pacifica/491169987143139953/" target="_blank">
+                            <img style="height: 50px; padding-left: 4px " src="./images/menu/icon_drive2.png" alt="drive2" title="Drive2">
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCQnuGmKlz4jtkdxSamt4z5w/videos" target="_blank">
+                            <img style="height: 55px" src="./images/menu/icon_youtube.png" alt="youtube" title="YouTube">
+                        </a>
+                    </div>
+                </div>
+                
+                
+<!--О ПРИЛОЖЕНИИ-->
+                <div class="modal" data-modal="6">
+                    <svg class="modal__cross js-modal-close"
+                         xmlns="http://www.w3.org/2000/svg"
+                         viewBox="0 0 24 24">
+                        <path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/>
+                    </svg>
+
+                    <h3 class="modal__title">О ПРИЛОЖЕНИИ</h3>
+
+                    <div class="menu_image">
+                        <img src="./images/menu/about_image.jpg" alt="">
+                    </div>
+                    <p class="modal__title">Справочник составлен благодаря и с помощью гуру сообщества Пацифистов,
+                        а также всех причастных к эксплуатации замечательного автомобиля  Chrysler Pacifica CS.
+                        Все рекомендуемые запчасти – проверены на автомобилях чатлан, методы и способы ремонта
+                        – апробированы ими же. Следовательно, заслуживают полного доверия и абсолютного одобрения.
+                        Также спешу напомнить, что для общительных людей функционирует чат в WhatsApp, где вежливые
+                        и веселые чатлане с удовольствием проконсультируют Вас по любым вопросам, в том числе и
+                        касающимся ремонта автомобиля.
+                    </p>
+                    <br>
+                    <p><strong>Обновление базы: 03-04-2023</strong></p>
+                </div>
+
+
+<!--СЛОВАРЬ ЧАТЛАНИНА-->
+                <div class="modal" data-modal="12">
+                    <svg class="modal__cross js-modal-close"
+                         xmlns="http://www.w3.org/2000/svg"
+                         viewBox="0 0 24 24">
+                        <path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/>
+                    </svg>
+                    <h3 class="modal__title">СЛОВАРЬ ЧАТЛАНИНА</h3>
+                    <p>устойчивые фразеологизмы...</p>
+                    <!--                    <img class="add" src="./images/menu/arrow.png" alt="">-->
+                </div>
+                
+                <div class="modal" data-modal="11">
+                    <svg class="modal__cross js-modal-close"
+                         xmlns="http://www.w3.org/2000/svg"
+                         viewBox="0 0 24 24">
+                        <path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/>
+                    </svg>
+                </div>
+
+                <!-- Подложка под модальным окном -->
+                <div class="overlay js-overlay-modal"></div>
+
+<!--                ПРОДОЛЖЕНИЕ -->
+
+                <div>
+<!--                    <form id="form-search" class="form-search" action="/search/" target="_blank">-->
+                        <form id="form-search" class="form-search" onSubmit="return false;">
+
+                        <!--                        <input type="hidden" name="searchid" value="808327">-->
+                        <input id="search" type="text" name="text" autocomplete="off" required placeholder="Поиск...">
+                        <input type="image" src="http://3.bp.blogspot.com/-4w14hQHr5yQ/Tgm6u7KwUkI/AAAAAAAACAI/Hu2poBOPx3g/s1600/search.png"/>  <!-- вместо кнопки submit -->
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!--                SEARCH WINDOW-->
+        <div class="add_class"></div>
+    </header>
+
+    <div class="content">
+        <div class="content_container"></div>
+    </div>
+
+</div>
+
+<!--<script src="./data/maintenance.js"></script>-->
+
+<script type="module" src="app.js"></script>
+<script src="burger.js"></script>
+
+</body>
+</html>
