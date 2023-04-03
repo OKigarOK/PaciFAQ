@@ -2,6 +2,7 @@ const burgerElement = document.getElementById('header_burger')
 const menuElement = document.getElementById('header_menu')
 const searchElement = document.getElementById('form-search')
 const searchMenu = document.getElementById('search_menu')
+const clearSearchString = document.getElementById('search')
 
 burgerElement.addEventListener('click', () => {
 
@@ -28,11 +29,7 @@ burgerElement.addEventListener('click', () => {
     //     document.body.classList.remove('lock')
     // }
 
-
-
 })
-
-
 
 searchElement.addEventListener('click', () => {
     // searchMenu.classList.toggle('active')
