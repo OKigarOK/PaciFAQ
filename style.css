@@ -294,7 +294,7 @@ button.accordion {}
 button.accordion:hover {}
 
 button:disabled {
-    opacity: 0.75;
+    opacity: 0.5;
 }
 
 /*DETAILS*/
