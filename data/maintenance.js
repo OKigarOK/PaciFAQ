@@ -2177,6 +2177,97 @@ const BRIDGE_BEAM = [
     },
 ]
 
+// РУЛЕВОЕ УПРАВЛЕНИЕ
+
+const STEERING_TIPS = [
+    {
+        detail_info: 'Рулевой наконечник',
+        detail_code: 'CECR8',
+        detail_manufacturer: 'CTR',
+        detail_image: './images/details/steering_tip/steering_tip_ctr_CECR8.jpg',
+        detail_scheme: './images/details/steering_tip/steering_tip.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Рулевой наконечник',
+        detail_code: 'AMGES3614',
+        detail_manufacturer: 'Moog',
+        detail_image: './images/details/steering_tip/steering_tip_moog_AMGES3614.jpg',
+        detail_scheme: './images/details/steering_tip/steering_tip.gif',
+        detail_more: 'Отличный наконечник, правда цена не гуманная',
+    },
+    {
+        detail_info: 'Рулевой наконечник',
+        detail_code: '5039304',
+        detail_manufacturer: 'NK',
+        detail_image: './images/details/steering_tip/steering_tip_nk_5039304.jpg',
+        detail_scheme: './images/details/steering_tip/steering_tip.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Рулевой наконечник',
+        detail_code: '2021CAR',
+        detail_manufacturer: 'Febest',
+        detail_image: './images/details/steering_tip/steering_tip_febest_2021CAR.jpg',
+        detail_scheme: './images/details/steering_tip/steering_tip.gif',
+        detail_more: 'ХЗ как ходит, но народ ставит',
+    },
+]
+
+const POWER_STEERING_PUMPS = [
+    {
+        detail_info: 'Насос ГУР',
+        detail_code: 'P1885HG',
+        detail_manufacturer: 'Motorherz',
+        detail_image: './images/details/power_steering_pump/power_steering_pump_motorherz_P1885HG.jpg',
+        detail_scheme: './images/details/power_steering_pump/power_steering_pump.gif',
+        detail_more: 'Насос идёт без шкива, нужно приобретать отдельно',
+    },
+    {
+        detail_info: 'Насос ГУР',
+        detail_code: 'PPS135',
+        detail_manufacturer: 'Patron',
+        detail_image: './images/details/power_steering_pump/power_steering_pump_patron_PPS135.jpg',
+        detail_scheme: './images/details/power_steering_pump/power_steering_pump.gif',
+        detail_more: 'Насос идёт без шкива, нужно приобретать отдельно. После установки издает посторонние звуки',
+    },
+]
+
+const TIE_ROD = [
+    {
+        detail_info: 'Рулевая тяга',
+        detail_code: '68032249AA',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/tie_rods/tie_rod_mopar_68032249AA.jpg',
+        detail_scheme: './images/details/tie_rods/tie_rod.gif',
+        detail_more: 'Комплект рулевой тяги по космической цене',
+    },
+    {
+        detail_info: 'Рулевая тяга',
+        detail_code: 'TI81230',
+        detail_manufacturer: 'Dorman',
+        detail_image: './images/details/tie_rods/tie_rod_dorman_TI81230.jpg',
+        detail_scheme: './images/details/tie_rods/tie_rod.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Рулевая тяга',
+        detail_code: 'GES80646',
+        detail_manufacturer: 'Mevotech',
+        detail_image: './images/details/tie_rods/tie_rod_mevotech_GES80646.jpg',
+        detail_scheme: './images/details/tie_rods/tie_rod.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Рулевая тяга',
+        detail_code: 'MES80646',
+        detail_manufacturer: 'Mevotech',
+        detail_image: './images/details/tie_rods/tie_rod_mevotech_MES80646.jpg',
+        detail_scheme: './images/details/tie_rods/tie_rod.gif',
+        detail_more: '',
+    },
+]
+
 const QWERTY = [
     {
         detail_info: '',
@@ -2680,11 +2771,11 @@ export const HEADERS = [
         subtitles: [
             {
                 subtitle: 'Шарниры (рулевые наконечники)',
-                // details: END_TIE_ROD
+                details: STEERING_TIPS
             },
             {
-                subtitle: 'Рейка рулевая, насос ГУР',
-                // details: STEERING_RAIL
+                subtitle: 'Насос ГУР',
+                details: POWER_STEERING_PUMPS
             },
             {
                 subtitle: 'Бачок ГУР',
@@ -2692,7 +2783,7 @@ export const HEADERS = [
             },
             {
                 subtitle: 'Тяга рулевая',
-                // details: TIE_ROD
+                details: TIE_ROD
             },
         ],
     },
