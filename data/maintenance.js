@@ -1537,6 +1537,170 @@ const BRAKE_DISCS = [
     },
 ]
 
+const BRAKE_PARTS = [
+    {
+        detail_info: 'Поршень переднего суппорта (2шт)',
+        detail_code: '7815',
+        detail_manufacturer: 'Carlson',
+        detail_image: './images/details/brake_parts/caliper_piston_front_carlson_7815.jpg',
+        detail_scheme: './images/details/brake_parts/caliper_piston_front_support.gif',
+        detail_more: 'На суппорте ДВА поршня. Параметры поршня: диаметр 48.3мм; высота 50.8мм',
+    },
+    {
+        detail_info: 'Пыльник направляющей переднего суппорта',
+        detail_code: '16177',
+        detail_manufacturer: 'Carlson',
+        detail_image: './images/details/brake_parts/front_support_caliper_bushing_carlson_16177.jpg',
+        detail_scheme: './images/details/brake_parts/front_support_caliper_bushing.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Пыльник направляющей переднего суппорта',
+        detail_code: 'H16177',
+        detail_manufacturer: 'Raybestos',
+        detail_image: './images/details/brake_parts/front_support_caliper_bushing_raybestos_H16117.jpg',
+        detail_scheme: './images/details/brake_parts/front_support_caliper_bushing.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Пыльник поршня переднего суппорта',
+        detail_code: '41418K',
+        detail_manufacturer: 'BBP',
+        detail_image: './images/details/brake_parts/front_piston_boot_bbp_41418K.jpg',
+        detail_scheme: './images/details/brake_parts/front_support_piston_boot.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Пыльник поршня переднего суппорта',
+        detail_code: '41161',
+        detail_manufacturer: 'Carlson',
+        detail_image: './images/details/brake_parts/front_piston_boot_carlson_41161.jpg',
+        detail_scheme: './images/details/brake_parts/front_support_piston_boot.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Пыльник поршня переднего суппорта',
+        detail_code: 'D670030',
+        detail_manufacturer: 'Dorman',
+        detail_image: './images/details/brake_parts/front_piston_boot_dorman_D670030.jpg',
+        detail_scheme: './images/details/brake_parts/front_support_piston_boot.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Направляющие переднего суппорта',
+        detail_code: 'H5087',
+        detail_manufacturer: 'Carlson/Raybestos',
+        detail_image: './images/details/brake_parts/front_support_slide_pin_raybestos_H5087.jpg',
+        detail_scheme: './images/details/brake_parts/front_support_slide_pin.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Штуцер прокачки тормозов',
+        detail_code: '5093343AA',
+        detail_manufacturer: 'Crown',
+        detail_image: './images/details/brake_parts/brake_bleeder_screw_crown_5093343AA.jpg',
+        detail_scheme: './images/details/brake_parts/brake_bleeder_screw.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Поршень заднего суппорта',
+        detail_code: '7855',
+        detail_manufacturer: 'Carlson',
+        detail_image: './images/details/brake_parts/caliper_piston_rear_carlson_7855.jpg',
+        detail_scheme: './images/details/brake_parts/caliper_piston_rear_support.gif',
+        detail_more: 'Параметры поршня: диаметр 41.9мм; высота 52.3мм',
+    },
+    {
+        detail_info: 'Пыльник направляющей заднего суппорта',
+        detail_code: '16122',
+        detail_manufacturer: 'Carlson',
+        detail_image: './images/details/brake_parts/rear_support_caliper_bushing_carlson_16122.jpg',
+        detail_scheme: './images/details/brake_parts/rear_support_caliper_bushing.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Пыльник направляющей заднего суппорта',
+        detail_code: 'H16122',
+        detail_manufacturer: 'Raybestos',
+        detail_image: './images/details/brake_parts/rear_support_caliper_bushing_raybestos_H16122.jpg',
+        detail_scheme: './images/details/brake_parts/rear_support_caliper_bushing.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Пыльник поршня заднего суппорта',
+        detail_code: '41557K',
+        detail_manufacturer: 'BBP',
+        detail_image: './images/details/brake_parts/rear_piston_boot_bbp_41557K.jpg',
+        detail_scheme: './images/details/brake_parts/rear_support_piston_boot.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Пыльник поршня заднего суппорта',
+        detail_code: '41226',
+        detail_manufacturer: 'Carlson',
+        detail_image: './images/details/brake_parts/rear_piston_boot_carlson_41226.jpg',
+        detail_scheme: './images/details/brake_parts/rear_support_piston_boot.gif',
+        detail_more: '',
+    },
+
+]
+
+const PARKING_BRAKE = [
+    {
+        detail_info: 'Монтажный комплект стояночного тормоза',
+        detail_code: 'PSRK0126',
+        detail_manufacturer: 'Patron',
+        detail_image: './images/details/brake_parts/mounting_kit _brake_pads_patron_PSRK0126.jpg',
+        detail_scheme: './images/details/brake_parts/mounting_kit _brake_pads.gif',
+        detail_more: '',
+    },
+]
+
+const BRAKE_CABLES = [
+    {
+        detail_info: 'Главный трос стояночного тормоза',
+        detail_code: 'BC97332',
+        detail_manufacturer: 'Raybestos',
+        detail_image: './images/details/parking_brake/parking_brake_cable_raybestos_BC97332.jpg',
+        detail_scheme: './images/details/parking_brake/parking_brake_cable.gif',
+        detail_more: 'Для 03-04 модельного года (до 01.06.04)',
+    },
+    {
+        detail_info: 'Главный трос стояночного тормоза',
+        detail_code: 'BC97333',
+        detail_manufacturer: 'Raybestos',
+        detail_image: './images/details/parking_brake/parking_brake_cable_raybestos_BC97333.jpg',
+        detail_scheme: './images/details/parking_brake/parking_brake_cable.gif',
+        detail_more: 'Для 05-06 модельного года (после 01.07.04)',
+    },
+    {
+        detail_info: 'Трос стояночного тормоза',
+        detail_code: '04683858AD',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/parking_brake/parking_brake_cable_mopar_04683858AD.jpg',
+        detail_scheme: './images/details/parking_brake/parking_brake_cable2.gif',
+        detail_more: 'Левый = Правый',
+    },
+    {
+        detail_info: 'Трос стояночного тормоза',
+        detail_code: 'BC97130',
+        detail_manufacturer: 'Raybestos',
+        detail_image: './images/details/parking_brake/parking_brake_cable_raybestos_BC97130.jpg',
+        detail_scheme: './images/details/parking_brake/parking_brake_cable2.gif',
+        detail_more: 'Левый = Правый',
+    },
+    {
+        detail_info: 'Трос стояночного тормоза',
+        detail_code: 'C661260',
+        detail_manufacturer: 'Dorman',
+        detail_image: './images/details/parking_brake/parking_brake_cable_dorman_C661260.jpg',
+        detail_scheme: './images/details/parking_brake/parking_brake_cable2.gif',
+        detail_more: 'Левый = Правый',
+    },
+]
+
+
+
 // СИСТЕМА ВЫПУСКА
 
 const EXHAUST_GAS_NEUTRALIZATION = [
@@ -2217,6 +2381,14 @@ const STEERING_TIPS = [
 const POWER_STEERING_PUMPS = [
     {
         detail_info: 'Насос ГУР',
+        detail_code: '215343',
+        detail_manufacturer: 'Cardone',
+        detail_image: './images/details/power_steering_pump/power_steering_pump_cardone_215343.jpg',
+        detail_scheme: './images/details/power_steering_pump/power_steering_pump.gif',
+        detail_more: 'Насос восстановленный, идёт без шкива, нужно приобретать отдельно',
+    },
+    {
+        detail_info: 'Насос ГУР',
         detail_code: 'P1885HG',
         detail_manufacturer: 'Motorherz',
         detail_image: './images/details/power_steering_pump/power_steering_pump_motorherz_P1885HG.jpg',
@@ -2230,6 +2402,14 @@ const POWER_STEERING_PUMPS = [
         detail_image: './images/details/power_steering_pump/power_steering_pump_patron_PPS135.jpg',
         detail_scheme: './images/details/power_steering_pump/power_steering_pump.gif',
         detail_more: 'Насос идёт без шкива, нужно приобретать отдельно. После установки издает посторонние звуки',
+    },
+    {
+        detail_info: 'Насос ГУР',
+        detail_code: 'P0503',
+        detail_manufacturer: 'Raikanen',
+        detail_image: './images/details/power_steering_pump/power_steering_pump_raikanen_P0503.jpg',
+        detail_scheme: './images/details/power_steering_pump/power_steering_pump.gif',
+        detail_more: 'Насос восстановленный со шкивом (но лучше уточнять)',
     },
 ]
 
@@ -2264,6 +2444,73 @@ const TIE_ROD = [
         detail_manufacturer: 'Mevotech',
         detail_image: './images/details/tie_rods/tie_rod_mevotech_MES80646.jpg',
         detail_scheme: './images/details/tie_rods/tie_rod.gif',
+        detail_more: '',
+    },
+]
+
+const BRAKE_HOSES = [
+    {
+        detail_info: 'Передний левый тормозной шланг',
+        detail_code: 'H620545',
+        detail_manufacturer: 'Dorman',
+        detail_image: './images/details/brake_hoses/front_brake_hose_left_dorman_H620545.jpg',
+        detail_scheme: './images/details/brake_hoses/front_brake_hose_left.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Передний левый тормозной шланг',
+        detail_code: 'BH382518',
+        detail_manufacturer: 'Raybestos',
+        detail_image: './images/details/brake_hoses/front_brake_hose_left_raybestos_BH382518.jpg',
+        detail_scheme: './images/details/brake_hoses/front_brake_hose_left.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Передний правый тормозной шланг',
+        detail_code: 'H620544',
+        detail_manufacturer: 'Dorman',
+        detail_image: './images/details/brake_hoses/front_brake_hose_right_dorman_H620544.jpg',
+        detail_scheme: './images/details/brake_hoses/front_brake_hose_right.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Передний правый тормозной шланг',
+        detail_code: 'BH382753',
+        detail_manufacturer: 'Raybestos',
+        detail_image: './images/details/brake_hoses/front_brake_hose_right_raybestos_BH382753.jpg',
+        detail_scheme: './images/details/brake_hoses/front_brake_hose_right.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Задний левый тормозной шланг',
+        detail_code: 'H620547',
+        detail_manufacturer: 'Dorman',
+        detail_image: './images/details/brake_hoses/rear_brake_hose_left_dorman_H620547.jpg',
+        detail_scheme: './images/details/brake_hoses/rear_brake_hose_left.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Задний левый тормозной шланг',
+        detail_code: 'BH382362',
+        detail_manufacturer: 'Raybestos',
+        detail_image: './images/details/brake_hoses/rear_brake_hose_left_raybestos_BH382362.jpg',
+        detail_scheme: './images/details/brake_hoses/rear_brake_hose_left.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Задний правый тормозной шланг',
+        detail_code: 'H620546',
+        detail_manufacturer: 'Dorman',
+        detail_image: './images/details/brake_hoses/rear_brake_hose_right_dorman_H620546.jpg',
+        detail_scheme: './images/details/brake_hoses/rear_brake_hose_right.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Задний правый тормозной шланг',
+        detail_code: 'BH382368',
+        detail_manufacturer: 'Raybestos',
+        detail_image: './images/details/brake_hoses/rear_brake_hose_right_raybestos_BH382368.jpg',
+        detail_scheme: './images/details/brake_hoses/rear_brake_hose_right.gif',
         detail_more: '',
     },
 ]
@@ -2804,7 +3051,7 @@ export const HEADERS = [
                     },
                     {
                         sub_subtitle: 'Детали тормозной системы',
-                        details: ''
+                        details: BRAKE_PARTS
                     },
                 ]
             },
@@ -2818,21 +3065,21 @@ export const HEADERS = [
                     },
                     {
                         sub_subtitle: 'Стояночный тормоз',
-                        details: ''
+                        details: PARKING_BRAKE
                     },
                 ]
             },
             {
                 subtitle: 'Тросы, тяги и рычаги тормозной системы',
-                // details: BRAKE_CABLES
+                details: BRAKE_CABLES
             },
             {
                 subtitle: 'Стояночный тормоз',
-                // details: PARKING_BRAKE
+                details: PARKING_BRAKE
             },
             {
                 subtitle: 'Шланги тормозные',
-                // details: BRAKE_HOSE
+                details: BRAKE_HOSES
             },
             {
                 subtitle: 'Тормозной усилитель',
