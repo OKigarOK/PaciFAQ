@@ -1439,6 +1439,14 @@ const RADIATOR_FANS = [
         detail_scheme: './images/details/radiator_fans/radiator_fans.gif',
         detail_more: '',
     },
+    {
+        detail_info: 'Вентиляторы радиатора в сборе',
+        detail_code: '246023W1',
+        detail_manufacturer: 'Polcar',
+        detail_image: './images/details/radiator_fans/radiator_fans_polcar_246023W1.jpg',
+        detail_scheme: './images/details/radiator_fans/radiator_fans.gif',
+        detail_more: '',
+    },
 ]
 
 // ТРАНСМИССИЯ
@@ -2411,6 +2419,14 @@ const POWER_STEERING_PUMPS = [
         detail_scheme: './images/details/power_steering_pump/power_steering_pump.gif',
         detail_more: 'Насос восстановленный со шкивом (но лучше уточнять)',
     },
+    {
+        detail_info: 'Ремкомплект рулевой рейки',
+        detail_code: 'AG0040',
+        detail_manufacturer: 'Auto-Gur',
+        detail_image: './images/details/power_steering_pump/steering_rack_repair_kit_auto-gur_AG0040.jpg',
+        // detail_scheme: './images/details/power_steering_pump/power_steering_pump.gif',
+        // detail_more: 'Насос восстановленный со шкивом (но лучше уточнять)',
+    },
 ]
 
 const TIE_ROD = [
@@ -3021,7 +3037,7 @@ export const HEADERS = [
                 details: STEERING_TIPS
             },
             {
-                subtitle: 'Насос ГУР',
+                subtitle: 'Рулевая рейка, Насос ГУР',
                 details: POWER_STEERING_PUMPS
             },
             {
@@ -3039,7 +3055,6 @@ export const HEADERS = [
         subtitles: [
             {
                 subtitle: 'Дисковый тормоз',
-                // details: BRAKE_DISC
                 sub_subtitles: [
                     {
                         sub_subtitle: 'Диск тормозной',
@@ -3057,7 +3072,6 @@ export const HEADERS = [
             },
             {
                 subtitle: 'Барабанный тормозной механизм',
-                // details: DRUM_BRAKE
                 sub_subtitles: [
                     {
                         sub_subtitle: 'Колодки тормозные',
@@ -3099,7 +3113,7 @@ export const HEADERS = [
             },
             {
                 subtitle: 'Суппорт тормозной',
-                // details: BRAKE_CALIPER
+                details: BRAKE_PARTS
             },
         ],
     },
@@ -3224,4 +3238,5 @@ export const HEADERS = [
         ],
     },
 ]
+
 // console.log(HEADERS);
