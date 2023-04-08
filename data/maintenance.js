@@ -1505,6 +1505,52 @@ const TRANSMISSION_CASE_COVERS = [
     },
 ]
 
+const SHIFT_SOLENOID = [
+    {
+        detail_info: 'Прокладка блока соленоидов',
+        detail_code: '04659982',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/transmission_shift_solenoid/control_solenoid_seal_mopar_04659982.jpg',
+        detail_scheme: './images/details/transmission_shift_solenoid/control_solenoid_seal.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Прокладка блока соленоидов',
+        detail_code: '92328A',
+        detail_manufacturer: 'Transtar',
+        detail_image: './images/details/transmission_shift_solenoid/control_solenoid_seal_transtar_92328A.jpg',
+        detail_scheme: './images/details/transmission_shift_solenoid/control_solenoid_seal.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Блок соленоидов',
+        detail_code: '50083',
+        detail_manufacturer: 'Borg-Warner',
+        detail_image: './images/details/transmission_shift_solenoid/shift_solenoid_borg-warner_50083.jpg',
+        detail_scheme: './images/details/transmission_shift_solenoid/shift_solenoid.gif',
+        detail_more: '',
+    },
+]
+
+const SPEED_SENSORS = [
+    {
+        detail_info: 'Датчик скорости входного вала АКПП',
+        detail_code: '04800878',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/transmission_speed_sensors/speed_sensor_input_mopar_04800878.jpg',
+        detail_scheme: './images/details/transmission_speed_sensors/speed_sensor_input.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Датчик скорости выходного вала АКПП',
+        detail_code: '04800879',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/transmission_speed_sensors/speed_sensor_output_mopar_04800879.jpg',
+        detail_scheme: './images/details/transmission_speed_sensors/speed_sensor_output.gif',
+        detail_more: '',
+    },
+]
+
 const CARDAN_SHAFT = [
         {
         detail_info: 'Подвесной подшипник кардана',
@@ -3069,7 +3115,26 @@ export const HEADERS = [
             {
                 subtitle: 'Автоматическая коробка передач',
                 // details: AUTOMATIC_TRANSMISSION
-                details: TRANSMISSION_PANS.concat(TRANSMISSION_CASE_COVERS, TRANSMISSION_FILTERS)
+                sub_subtitles: [
+                    {
+                        sub_subtitle: 'Блок соленоидов',
+                        details: SHIFT_SOLENOID
+                    },
+                    {
+                        sub_subtitle: 'Датчики скорости',
+                        details: SPEED_SENSORS
+                    },
+                    {
+                        sub_subtitle: 'Крышка АКПП, дифференциала',
+                        details: TRANSMISSION_CASE_COVERS
+                    },
+                    {
+                        sub_subtitle: 'Поддон АКПП',
+                        details: TRANSMISSION_PANS.concat(TRANSMISSION_FILTERS)
+                    },
+                ]
+
+                    // TRANSMISSION_PANS.concat(TRANSMISSION_CASE_COVERS, TRANSMISSION_FILTERS)
             },
             {
                 subtitle: 'Привод колеса (полуоси)',
