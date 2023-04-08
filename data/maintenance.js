@@ -1454,7 +1454,7 @@ const RADIATOR_FANS = [
 const TRANSMISSION_PANS = [
     {
         detail_info: 'Маслянный поддон АКПП',
-        detail_code: '48800210AA',
+        detail_code: '4800210AA',
         detail_manufacturer: 'Mopar',
         detail_image: './images/details/transmission_pans/transmission_pan_mopar_04800210AA.jpg',
         detail_scheme: './images/details/transmission_pans/transmission_pan.gif',
@@ -1466,6 +1466,41 @@ const TRANSMISSION_PANS = [
         detail_manufacturer: 'NTY',
         detail_image: './images/details/transmission_pans/transmission_pan_nty_BMO-CH-031.JPG',
         detail_scheme: './images/details/transmission_pans/transmission_pan.gif',
+        detail_more: '',
+    },
+]
+
+const TRANSMISSION_CASE_COVERS = [
+    {
+        detail_info: 'Крышка корпуса АКПП',
+        detail_code: '04659636',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/transmission_case_cover/case_cover_mopar_04659636.jpg',
+        detail_scheme: './images/details/transmission_case_cover/case_cover.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Крышка корпуса АКПП',
+        detail_code: '265820',
+        detail_manufacturer: 'Dorman',
+        detail_image: './images/details/transmission_case_cover/case_cover_dorman_265-820.jpg',
+        detail_scheme: './images/details/transmission_case_cover/case_cover.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Крышка корпуса АКПП',
+        detail_code: 'GCD201027',
+        detail_manufacturer: 'GUD',
+        detail_image: './images/details/transmission_case_cover/case_cover_gud_GCD201027.jpg',
+        detail_scheme: './images/details/transmission_case_cover/case_cover.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Крышка корпуса АКПП',
+        detail_code: 'BMO-CH-033',
+        detail_manufacturer: 'NTY',
+        detail_image: './images/details/transmission_case_cover/case_cover_nty_BMO-CH-033.jpg',
+        detail_scheme: './images/details/transmission_case_cover/case_cover.gif',
         detail_more: '',
     },
 ]
@@ -1706,8 +1741,6 @@ const BRAKE_CABLES = [
         detail_more: 'Левый = Правый',
     },
 ]
-
-
 
 // СИСТЕМА ВЫПУСКА
 
@@ -2531,6 +2564,78 @@ const BRAKE_HOSES = [
     },
 ]
 
+// ДЕТАЛИ КУЗОВА
+
+const FRONT_BUMPER_REFLECTOR = [
+    {
+        detail_info: 'Катафот переднего бампера левый',
+        detail_code: '246192',
+        detail_manufacturer: 'Polcar',
+        detail_image: './images/details/front_bumper_reflector/front_bumper_reflector_left_polcar_246192.jpg',
+        detail_scheme: './images/details/front_bumper_reflector/front_bumper_reflector.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Катафот переднего бампера левый',
+        detail_code: '185986001N',
+        detail_manufacturer: 'TYC',
+        detail_image: './images/details/front_bumper_reflector/front_bumper_reflector_left_tyc_18-5986-001N.jpg',
+        detail_scheme: './images/details/front_bumper_reflector/front_bumper_reflector.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Катафот переднего бампера правый',
+        detail_code: '246202',
+        detail_manufacturer: 'Polcar',
+        detail_image: './images/details/front_bumper_reflector/front_bumper_reflector_right_polcar_246202.jpg',
+        detail_scheme: './images/details/front_bumper_reflector/front_bumper_reflector.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Катафот переднего бампера правый',
+        detail_code: '185985001N',
+        detail_manufacturer: 'TYC',
+        detail_image: './images/details/front_bumper_reflector/front_bumper_reflector_right_tyc_18-5985-001N.jpg',
+        detail_scheme: './images/details/front_bumper_reflector/front_bumper_reflector.gif',
+        detail_more: '',
+    },
+]
+
+const GLAZING_MIRRORS = [
+    {
+        detail_info: 'Зеркальный элемент левый',
+        detail_code: '18250308',
+        detail_manufacturer: 'Ergon',
+        detail_image: './images/details/glass_mirror_elements/ergon_left.jpg',
+        detail_scheme: './images/details/glass_mirror_elements/glass_mirror_element.gif',
+        detail_more: 'Сферический элемент с обогревом',
+    },
+    {
+        detail_info: 'Зеркальный элемент левый',
+        detail_code: '18250306',
+        detail_manufacturer: 'Ergon',
+        detail_image: './images/details/glass_mirror_elements/ergon_left.jpg',
+        detail_scheme: './images/details/glass_mirror_elements/glass_mirror_element.gif',
+        detail_more: 'Асферический элемент с обогревом',
+    },
+    {
+        detail_info: 'Зеркальный элемент правый',
+        detail_code: '18250309',
+        detail_manufacturer: 'Ergon',
+        detail_image: './images/details/glass_mirror_elements/ergon_right.jpg',
+        detail_scheme: './images/details/glass_mirror_elements/glass_mirror_element.gif',
+        detail_more: 'Сферический элемент с обогревом',
+    },
+    {
+        detail_info: 'Зеркальный элемент правый',
+        detail_code: '18250300',
+        detail_manufacturer: 'Ergon',
+        detail_image: './images/details/glass_mirror_elements/ergon_right.jpg',
+        detail_scheme: './images/details/glass_mirror_elements/glass_mirror_element.gif',
+        detail_more: 'Асферический элемент с обогревом',
+    },
+]
+
 const QWERTY = [
     {
         detail_info: '',
@@ -2964,7 +3069,7 @@ export const HEADERS = [
             {
                 subtitle: 'Автоматическая коробка передач',
                 // details: AUTOMATIC_TRANSMISSION
-                details: TRANSMISSION_PANS.concat(TRANSMISSION_FILTERS)
+                details: TRANSMISSION_PANS.concat(TRANSMISSION_CASE_COVERS, TRANSMISSION_FILTERS)
             },
             {
                 subtitle: 'Привод колеса (полуоси)',
@@ -3202,6 +3307,7 @@ export const HEADERS = [
             {
                 subtitle: 'Автомобиль, передняя часть',
                 // details: FRONT_END
+                details: FRONT_BUMPER_REFLECTOR
             },
             {
                 subtitle: 'Кабина пассажира',
@@ -3221,7 +3327,7 @@ export const HEADERS = [
             },
             {
                 subtitle: 'Остекление, зеркала',
-                // details: GLAZING_MIRRORS
+                details: GLAZING_MIRRORS
             },
             {
                 subtitle: 'Головной свет',
