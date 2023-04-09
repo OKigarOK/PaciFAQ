@@ -1069,6 +1069,22 @@ const PULLEY_ALTERNATOR = [
         detail_scheme: './images/details/pulley_alternator/alternator_pulley.gif',
         detail_more: '',
     },
+    {
+        detail_info: 'Обгонная муфта генератора',
+        detail_code: 'KR6029',
+        detail_manufacturer: 'Torque',
+        detail_image: './images/details/pulley_alternator/torque_KR6029.jpeg',
+        detail_scheme: './images/details/pulley_alternator/alternator_pulley.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Обгонная муфта генератора',
+        detail_code: 'ZN5428',
+        detail_manufacturer: 'ZEN',
+        detail_image: './images/details/pulley_alternator/alternator_pulley_zen_ZN5428.jpg',
+        detail_scheme: './images/details/pulley_alternator/alternator_pulley.gif',
+        detail_more: '',
+    },
 ]
 
 const BYPASS_ROLLERS = [
@@ -2871,6 +2887,75 @@ const FUEL_PUMP = [
 
 ]
 
+// ЭЛЕКТРООБОРУДОВАНИЕ
+
+const GENERATOR = [
+    {
+        detail_info: 'Коллектор генератора',
+        detail_code: '133.3701',
+        detail_manufacturer: 'КРОНА',
+        detail_image: './images/details/generator/generator_manifold_krona_1333701.jpg',
+        // detail_scheme: './images/details/',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Коллектор генератора',
+        detail_code: '239718',
+        detail_manufacturer: 'Cargo',
+        detail_image: './images/details/generator/generator_manifold_cargo_239718.jpg',
+        // detail_scheme: './images/details/',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Диодный мост',
+        detail_code: 'RN-29',
+        detail_manufacturer: 'Mobiletron',
+        detail_image: './images/details/generator/diode_bridge_mobiletron_RN-29.jpg',
+        // detail_scheme: './images/details/',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Диодный мост',
+        detail_code: 'TT34547',
+        detail_manufacturer: 'Tesla',
+        detail_image: './images/details/generator/diode_bridge_tesla_TT34547.jpg',
+        // detail_scheme: './images/details/',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Щеткодержатель',
+        detail_code: '235607',
+        detail_manufacturer: 'Cargo',
+        detail_image: './images/details/generator/generator_brush_holder_cargo_235607.jpg',
+        // detail_scheme: './images/details/',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Щеткодержатель',
+        detail_code: 'HN5607B',
+        detail_manufacturer: 'UTM',
+        detail_image: './images/details/generator/generator_brush_holder_utm_HN5607B.jpg',
+        // detail_scheme: './images/details/',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Подшипник генератора',
+        detail_code: '6303.2RSR.C3',
+        detail_manufacturer: 'FAG',
+        detail_image: './images/details/generator/generator_bearing_fag_6202_6303.jpg',
+        // detail_scheme: './images/details/',
+        detail_more: 'подшипник генератора! 17x47x14',
+    },
+    {
+        detail_info: 'Подшипник генератора',
+        detail_code: '6202.2RSR.C3',
+        detail_manufacturer: 'FAG',
+        detail_image: './images/details/generator/generator_bearing_fag_6202_6303.jpg',
+        // detail_scheme: './images/details/',
+        detail_more: 'подшипник генератора! 15x35x11',
+    },
+]
+
 const QWERTY = [
     {
         detail_info: '',
@@ -3509,7 +3594,7 @@ export const HEADERS = [
             },
             {
                 subtitle: 'Генератор, составляющие',
-                // details: GENERATOR
+                details: GENERATOR
             },
             {
                 subtitle: 'Головной свет, составляющие',
