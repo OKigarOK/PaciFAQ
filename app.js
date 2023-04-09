@@ -65,6 +65,11 @@ if (myDetailsInLocal) {
     NEW_FAVORITES = []
 }
 
+// console.log(NEW_FAVORITES);
+
+// console.log(HEADERS[0].subtitles[0].details = NEW_FAVORITES);
+// console.log(HEADERS);
+
 createContentMenu(HEADERS)
 renderSettings();
 callAccord();

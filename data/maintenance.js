@@ -1605,6 +1605,33 @@ const WHEEL_DRIVE = [
     },
 ]
 
+const REAR_REDUCER = [
+    {
+        detail_info: 'Сальник полуосей заднего редуктора',
+        detail_code: '05134787AB',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/rear_gear_seal/rear_gear_seal_mopar_05134787AB.jpg',
+        detail_scheme: './images/details/rear_gear_seal/rear_gear_seal.jpg',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Сальник полуосей заднего редуктора',
+        detail_code: 'NUP-CH-003',
+        detail_manufacturer: 'NTY',
+        detail_image: './images/details/rear_gear_seal/rear_gear_seal_nty_NUP-CH-003.jpeg',
+        detail_scheme: './images/details/rear_gear_seal/rear_gear_seal.jpg',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Сальник полуосей заднего редуктора',
+        detail_code: '95IEW40641113C',
+        detail_manufacturer: 'Febest',
+        detail_image: './images/details/rear_gear_seal/rear_gear_seal_febest_95IEW40641113C.jpg',
+        detail_scheme: './images/details/rear_gear_seal/rear_gear_seal.jpg',
+        detail_more: '',
+    },
+]
+
 // ТОРМОЗНАЯ СИСТЕМА
 
 const BRAKE_DISCS = [
@@ -2682,6 +2709,168 @@ const GLAZING_MIRRORS = [
     },
 ]
 
+// ТОПЛИВНАЯ СИСТЕМА
+
+const TANK_FUEL = [
+    {
+        detail_info: 'Топливный бак',
+        detail_code: '05101802AB',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/fuel_tank/fuel_tank_mopar_05101802AB.jpg',
+        detail_scheme: './images/details/fuel_tank/fuel_tank.gif',
+        detail_more: '',
+    },
+]
+
+const FUEL_LEVEL_SENSORS = [
+    {
+        detail_info: 'Датчик уровня топлива',
+        detail_code: '05101804AC',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/fuel_level_sensor/fuel_level_sensor_mopar_05101804AC.jpg',
+        detail_scheme: './images/details/fuel_level_sensor/fuel_level_sensor.gif',
+        detail_more: 'Рабочее сопротивление 70...1050 Ом (для 3.5). Левый = Правый',
+    },
+]
+
+const LEAK_DETECTION_PUMP = [
+    {
+        detail_info: 'Насос для обнаружения утечек паров',
+        detail_code: '04891427AB',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/vapor_detection_pump/vapor_detection_pump_mopar_04891427AB.jpg',
+        detail_scheme: './images/details/vapor_detection_pump/vapor_detection_pump.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Насос для обнаружения утечек паров',
+        detail_code: '310500',
+        detail_manufacturer: 'Dorman',
+        detail_image: './images/details/vapor_detection_pump/vapor_detection_pump_dorman_310-500.jpg',
+        detail_scheme: './images/details/vapor_detection_pump/vapor_detection_pump.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Фильтр насоса для обнаружения утечек паров',
+        detail_code: '04891561AA',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/vapor_detection_pump/vapor_recovery_filter_mopar_04891561AA.jpg',
+        detail_scheme: './images/details/vapor_detection_pump/vapor_recovery_filter.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Фильтр насоса для обнаружения утечек паров',
+        detail_code: 'LDP74',
+        detail_manufacturer: 'Standard',
+        detail_image: './images/details/vapor_detection_pump/vapor_recovery_filter_standart_LDP74.jpg',
+        detail_scheme: './images/details/vapor_detection_pump/vapor_recovery_filter.gif',
+        detail_more: '',
+    },
+]
+
+const REGULATOR_FUEL_PRESSURE = [
+    {
+        detail_info: 'Регулятор давления топлива',
+        detail_code: 'PR321',
+        detail_manufacturer: 'Standard',
+        detail_image: './images/details/regulator_fuel_pressure/regulator_fuel_pressure_standard_PR321.jpg',
+        detail_scheme: './images/details/regulator_fuel_pressure/regulator_fuel_pressure.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Модуль регулятора давления топлива',
+        detail_code: '05101805AC',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/regulator_fuel_pressure/regulator_fuel_pressure_module_mopar_05101805AC.jpg',
+        detail_scheme: './images/details/regulator_fuel_pressure/regulator_fuel_pressure_module.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Модуль регулятора давления топлива',
+        detail_code: 'FG0785K',
+        detail_manufacturer: 'Delphi',
+        detail_image: './images/details/regulator_fuel_pressure/regulator_fuel_pressure_module_delphi_FG0785K.jpg',
+        detail_scheme: './images/details/regulator_fuel_pressure/regulator_fuel_pressure_module.gif',
+        detail_more: '',
+    },
+]
+
+const FUEL_PUMP = [
+    {
+        detail_info: 'Модуль топливного насоса',
+        detail_code: '68028056AB',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/fuel_pump/fuel_pump_module_mopar_68028056AB.jpg',
+        detail_scheme: './images/details/fuel_pump/fuel_pump_module.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Модуль топливного насоса',
+        detail_code: 'CBB2G440',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/fuel_pump/fuel_pump_module_mopar_CBB2F440.jpg',
+        detail_scheme: './images/details/fuel_pump/fuel_pump_module.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Прокладка топливного модуля',
+        detail_code: '52100410AA',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/fuel_pump/fuel_pump_gasket_mopar_52100410AA.jpg',
+        detail_scheme: './images/details/fuel_pump/fuel_pump_gasket.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Фильтр насоса, грубой очистки',
+        detail_code: 'HS109001',
+        detail_manufacturer: 'Patron',
+        detail_image: './images/details/fuel_pump/mesh_pump_patron_HS109001.jpg',
+        detail_scheme: './images/details/fuel_pump/fuel_pump_mesh.jpg',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Насос топливный',
+        detail_code: '0580453453',
+        detail_manufacturer: 'Bosch',
+        detail_image: './images/details/fuel_pump/fuel_pump_bosch_0580453453.jpg',
+        detail_scheme: './images/details/fuel_pump/fuel_pump.jpg',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Насос топливный',
+        detail_code: 'KR0261P',
+        detail_manufacturer: 'Krauf',
+        detail_image: './images/details/fuel_pump/fuel_pump_krauf_KR0261P.jpg',
+        detail_scheme: './images/details/fuel_pump/fuel_pump.jpg',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Насос топливный',
+        detail_code: 'KR5093P',
+        detail_manufacturer: 'Krauf',
+        detail_image: './images/details/fuel_pump/fuel_pump_krauf_KR5093P.jpg',
+        detail_scheme: './images/details/fuel_pump/fuel_pump.jpg',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Насос топливный',
+        detail_code: 'FP453453',
+        detail_manufacturer: 'Weber',
+        detail_image: './images/details/fuel_pump/fuel_pump_weber_FP453453.jpg',
+        detail_scheme: './images/details/fuel_pump/fuel_pump.jpg',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Фильтр тонкой очистки',
+        detail_code: 'FC002S',
+        detail_manufacturer: 'Japanparts',
+        detail_image: './images/details/fuel_pump/fuel_filter_japanparts_FC002S.jpg',
+        detail_scheme: './images/details/fuel_pump/fuel_pump_filter.jpg',
+        detail_more: '',
+    },
+
+]
+
 const QWERTY = [
     {
         detail_info: '',
@@ -2694,6 +2883,15 @@ const QWERTY = [
 ]
 
 export const HEADERS = [
+    // {
+    //     title: 'МОИ ЗАПЧАСТИ',
+    //     subtitles: [
+    //         {
+    //             subtitle: 'УБРАТЬ ЭТО НАХРЕН',
+    //             details: null
+    //         }
+    //     ]
+    // },
     {
         title: 'Детали ТО',
         subtitles: [
@@ -3013,23 +3211,23 @@ export const HEADERS = [
         subtitles: [
             {
                 subtitle: 'Бак топливный',
-                // details: TANK_FUEL
+                details: TANK_FUEL
             },
             {
                 subtitle: 'Клапан',
-                // details: LEAK_DETECTION_PUMP
+                details: LEAK_DETECTION_PUMP
             },
             {
                 subtitle: 'Датчик уровня топлива',
-                // details: FUEL_SENDING_UNIT
+                details: FUEL_LEVEL_SENSORS
             },
             {
                 subtitle: 'Регулятор давления подачи топлива',
-                // details: REGULATOR_FUEL_PRESSURE
+                details: REGULATOR_FUEL_PRESSURE
             },
             {
                 subtitle: 'Насос топливный, комплектующие',
-                // details: FUEL_PUMP
+                details: FUEL_PUMP
             },
         ],
     },
@@ -3142,7 +3340,22 @@ export const HEADERS = [
             },
             {
                 subtitle: 'Главная передача: раздатка, кардан (AWD)',
-                details: CARDAN_SHAFT
+                // details: CARDAN_SHAFT
+                sub_subtitles: [
+                    {
+                        sub_subtitle: 'Угловой редуктор (раздатка)',
+                        details: null
+                    },
+                    {
+                      sub_subtitle: 'Кардан',
+                      details: CARDAN_SHAFT
+                    },
+                    {
+                        sub_subtitle: 'Задний редуктор',
+                        details: REAR_REDUCER
+                    },
+
+                ]
             },
         ],
     },
