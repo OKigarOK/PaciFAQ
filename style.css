@@ -228,7 +228,7 @@ body {
 .accordion.title {
     font-size: 0.85em;
     margin: 10px 0;
-    border: 2px solid;
+    /*border: 2px solid;*/
     border-radius: 15px;
     text-align: left;
     padding: 3px 0.5em 3px 0.5em;
@@ -236,6 +236,10 @@ body {
     white-space: nowrap; /* Запрещаем перенос строк */
     overflow: hidden; /* Обрезаем все, что не помещается в область */
     text-overflow: ellipsis; /* Добавляем многоточие */
+}
+
+.frame {
+    border: 2px solid;
 }
 
 .accordion.search_title {

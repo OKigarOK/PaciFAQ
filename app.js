@@ -136,6 +136,7 @@ function createSubtitles(headerSubtitles, panelElement) {
         }
 
         if (subTitle.sub_subtitles) {
+            headerSubtitle.classList.add('frame');
             createSubSubtitles(subTitle.sub_subtitles, newPanelElement);
         }
     }
