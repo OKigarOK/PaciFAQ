@@ -2956,6 +2956,51 @@ const GENERATOR = [
     },
 ]
 
+// КОНДИЦИОНЕР
+
+const AIR_CONDITIONER = [
+    {
+        detail_info: 'Радиатор кондиционера',
+        detail_code: 'CR500P',
+        detail_manufacturer: 'AVG',
+        detail_image: './images/details/condenser_air_conditioning/condenser_air_conditioning_avg_CR500P.jpg',
+        detail_scheme: './images/details/condenser_air_conditioning/condenser_air_conditioning.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Радиатор кондиционера',
+        detail_code: '4770816',
+        detail_manufacturer: 'Denso',
+        detail_image: './images/details/condenser_air_conditioning/condenser_air_conditioning_denso_477-0816.jpg',
+        detail_scheme: './images/details/condenser_air_conditioning/condenser_air_conditioning.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Радиатор кондиционера',
+        detail_code: '94906',
+        detail_manufacturer: 'Nissens',
+        detail_image: './images/details/condenser_air_conditioning/condenser_air_conditioning_nissens_94906.jpg',
+        detail_scheme: './images/details/condenser_air_conditioning/condenser_air_conditioning.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Радиатор кондиционера',
+        detail_code: '2460K8C1',
+        detail_manufacturer: 'Polcar',
+        detail_image: './images/details/condenser_air_conditioning/condenser_air_conditioning_polcar_2460K8C1.jpg',
+        detail_scheme: './images/details/condenser_air_conditioning/condenser_air_conditioning.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Радиатор кондиционера',
+        detail_code: 'KTT110207',
+        detail_manufacturer: 'Thermotec',
+        detail_image: './images/details/condenser_air_conditioning/condenser_air_conditioning_thermotec_KTT110207.jpg',
+        detail_scheme: './images/details/condenser_air_conditioning/condenser_air_conditioning.gif',
+        detail_more: '',
+    },
+]
+
 const QWERTY = [
     {
         detail_info: '',
@@ -3639,7 +3684,7 @@ export const HEADERS = [
             },
             {
                 subtitle: 'Кондиционер',
-                // details: AIR_CONDITIONER
+                details: AIR_CONDITIONER
             },
         ],
     },
