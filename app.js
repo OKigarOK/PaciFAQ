@@ -979,6 +979,8 @@ function createDetailsInMyDetails(subTitleDetails, containerItems) {
         detailMore.setAttribute('data-modal', '11');
         detailMore.textContent = 'Подробнее';
 
+        // detailOptions.append(detailMore)
+
         if (detail.detail_scheme && (SETTINGS.VIEW === 'details_list')) {
             const detailScheme = document.createElement('div');
             detailScheme.className = 'detail_scheme detail_button';
