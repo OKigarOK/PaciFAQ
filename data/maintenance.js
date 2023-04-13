@@ -1,6 +1,4 @@
-// ДЕТАЛИ ТО
-
-// DETAIL_IMAGE - основная картинка
+// ДЕТАЛИ ТО - готово
 
 const OIL_FILTERS = [
     {
@@ -9,8 +7,8 @@ const OIL_FILTERS = [
         detail_manufacturer: 'Mopar',
         detail_image: './images/details/oil_filters/oil-filter_mopar_05281090AB.jpg',
         detail_scheme: './images/details/oil_filters/oil-filter.gif',
-        detail_more: 'У многих на этом фильтре появляется стук',
-        detail_favorite: false,
+        detail_more: 'у многих на этом фильтре появляется стук при запуске',
+        // detail_favorite: false,
     },
     {
         detail_info: 'Фильтр маслянный',
@@ -18,7 +16,7 @@ const OIL_FILTERS = [
         detail_manufacturer: 'Fram',
         detail_image: './images/details/oil_filters/oil-filter_fram_PH16.jpg',
         detail_scheme: './images/details/oil_filters/oil-filter.gif',
-        detail_more: 'Нормальный фильтр, но после 5000 пробега превращается в г..но',
+        detail_more: 'нормальный фильтр, но после 5000 пробега превращается в г..но',
         // detail_options: [{},],
     },
     {
@@ -27,7 +25,7 @@ const OIL_FILTERS = [
         detail_manufacturer: 'Mahle/Knecht',
         detail_image: './images/details/oil_filters/oil-filter_mahle_OC23.jpg',
         detail_scheme: './images/details/oil_filters/oil-filter.gif',
-        detail_more: 'Норм фильтр',
+        detail_more: 'норм фильтр',
         // detail_options: [{},],
     },
     {
@@ -36,7 +34,7 @@ const OIL_FILTERS = [
         detail_manufacturer: 'Mahle/Knecht',
         detail_image: './images/details/oil_filters/oil-filter_mahle_OC236.jpg',
         detail_scheme: './images/details/oil_filters/oil-filter.gif',
-        detail_more: 'Тоже норм фильтр',
+        detail_more: 'норм фильтр',
         // detail_options: [{},],
     },
 ]
@@ -91,7 +89,7 @@ const CABIN_FILTERS = [
         detail_manufacturer: 'Patron',
         detail_image: './images/details/cabin_filters/cabin-filter_patron_PF2250.JPG',
         detail_scheme: './images/details/cabin_filters/cabin-filter.gif',
-        detail_more: '',
+        detail_more: 'угольный',
     },
     {
         detail_info: 'Фильтр салона',
@@ -99,7 +97,7 @@ const CABIN_FILTERS = [
         detail_manufacturer: 'Blue Print',
         detail_image: './images/details/cabin_filters/cabin-filter_blue-print_ADA102503.jpg',
         detail_scheme: './images/details/cabin_filters/cabin-filter.gif',
-        detail_more: '',
+        detail_more: 'угольный',
     },
     {
         detail_info: 'Фильтр салона',
@@ -118,7 +116,7 @@ const TRANSMISSION_FILTERS = [
         detail_manufacturer: 'Mopar',
         detail_image: './images/details/transmission_filters/transmission-filter_mopar_4864505AB.jpg',
         detail_scheme: './images/details/transmission_filters/transmission-filter.gif',
-        detail_more: '',
+        detail_more: 'если надо прокладка, то приобретается отдельно. Обычно народ сажает на гермет. По заводу, кстати, стоит на герметике',
     },
     {
         detail_info: 'Фильтр АКПП',
@@ -126,7 +124,7 @@ const TRANSMISSION_FILTERS = [
         detail_manufacturer: 'Fram',
         detail_image: './images/details/transmission_filters/transmission-filter_fram_FT1122A.jpg',
         detail_scheme: './images/details/transmission_filters/transmission-filter.gif',
-        detail_more: 'В комплекте идёт пробковая прокладка, но обычно народ сажает на гермет. По заводу, кстати, стоит на герметике',
+        detail_more: 'в комплекте идёт пробковая прокладка, ',
     },
     {
         detail_info: 'Фильтр АКПП',
@@ -134,7 +132,7 @@ const TRANSMISSION_FILTERS = [
         detail_manufacturer: 'JSAsakashi',
         detail_image: './images/details/transmission_filters/transmission-filter_JS-Asakashi_JT398K.jpg',
         detail_scheme: './images/details/transmission_filters/transmission-filter.gif',
-        detail_more: '',
+        detail_more: 'в комплекте идёт прокладка',
     },
     {
         detail_info: 'Фильтр АКПП',
@@ -142,7 +140,7 @@ const TRANSMISSION_FILTERS = [
         detail_manufacturer: 'Patron',
         detail_image: './images/details/transmission_filters/transmission-filter_patron_PF5001.jpg',
         detail_scheme: './images/details/transmission_filters/transmission-filter.gif',
-        detail_more: '',
+        detail_more: 'в комплекте идёт прокладка',
     },
 ]
 
@@ -188,7 +186,7 @@ const V_RIBBED_BELTS = [
         detail_manufacturer: '',
         detail_image: './images/details/v_ribbed_belts/v-ribbed-belt_bypass.jpg',
         detail_scheme: './images/details/v_ribbed_belts/v-ribbed-belt.gif',
-        detail_more: 'Длина в обход компрессора кондиционера 2050-2100мм, можно любой ремень, натяжитель компенсирует длину.',
+        detail_more: 'длина в обход компрессора кондиционера 2050-2100мм, можно любой ремень, натяжитель компенсирует длину.',
     },
 ]
 
@@ -207,7 +205,7 @@ const TIMING_BELTS = [
         detail_manufacturer: 'Gates',
         detail_image: './images/details/timing_belts/timing-belt_gates_5674XS.jpg',
         detail_scheme: './images/details/timing_belts/timing-belt.gif',
-        detail_more: 'Отличный ремень, ставим только его',
+        detail_more: 'отличный ремень, ставим только его',
     },
 ]
 
@@ -226,7 +224,7 @@ const THERMOSTATS = [
         detail_manufacturer: 'Motorad',
         detail_image: './images/details/thermostats/thermostat_motorad_465-195.jpg',
         detail_scheme: './images/details/thermostats/thermostat.gif',
-        detail_more: 'термостат на 91 градус',
+        detail_more: 'на 91 градус',
     }
 ]
 
@@ -237,7 +235,7 @@ const WATER_PUMPS = [
         detail_manufacturer: 'Mopar',
         detail_image: './images/details/water_pumps/water_pump_mopar_V9900085.jpg',
         detail_scheme: './images/details/water_pumps/water_pump.gif',
-        detail_more: 'малая помпа, на 03-04 модельный год',
+        detail_more: 'на 03-04 модельный год',
     },
     {
         detail_info: 'Водяной насос (малая помпа)',
@@ -245,7 +243,7 @@ const WATER_PUMPS = [
         detail_manufacturer: 'Airtex',
         detail_image: './images/details/water_pumps/water_pump_airtex_7162.jpg',
         detail_scheme: './images/details/water_pumps/water_pump.gif',
-        detail_more: 'малая помпа, на 03-04 модельный год. Бюджетный вариант, лучше не ставить, но некоторые ставят'
+        detail_more: 'на 03-04 модельный год. Бюджетный вариант, лучше не ставить, но некоторые ставят'
     },
     {
         detail_info: 'Водяной насос (малая помпа)',
@@ -253,7 +251,7 @@ const WATER_PUMPS = [
         detail_manufacturer: 'GMB',
         detail_image: './images/details/water_pumps/water_pump_gmb_GWCR35A.jpeg',
         detail_scheme: './images/details/water_pumps/water_pump.gif',
-        detail_more: 'малая помпа, на 03-04 модельный год. Наверное лучшее из цена/качество',
+        detail_more: 'на 03-04 модельный год. Наверное лучшее из цена/качество',
     },
     {
         detail_info: 'Водяной насос (малая помпа)',
@@ -261,7 +259,7 @@ const WATER_PUMPS = [
         detail_manufacturer: 'Patron',
         detail_image: './images/details/water_pumps/water_pump_patron_PWP1018.jpg',
         detail_scheme: './images/details/water_pumps/water_pump.gif',
-        detail_more: 'малая помпа, на 03-04 модельный год',
+        detail_more: 'на 03-04 модельный год',
     },
     {
         detail_info: 'Водяной насос (большая помпа)',
@@ -269,7 +267,7 @@ const WATER_PUMPS = [
         detail_manufacturer: 'Mopar',
         detail_image: './images/details/water_pumps/water_pump_mopar_04792968AD.jpg',
         detail_scheme: './images/details/water_pumps/water_pump.gif',
-        detail_more: 'большая помпа, на 05-06 модельный год',
+        detail_more: 'на 05-06 модельный год',
     },
     {
         detail_info: 'Водяной насос (большая помпа)',
@@ -277,7 +275,7 @@ const WATER_PUMPS = [
         detail_manufacturer: 'Airtex',
         detail_image: './images/details/water_pumps/water_pump_airtex_1835.jpeg',
         detail_scheme: './images/details/water_pumps/water_pump.gif',
-        detail_more: 'большая помпа, на 05-06 модельный год. Бюджетный вариант, лучше не ставить, но некоторые ставят',
+        detail_more: 'на 05-06 модельный год. Бюджетный вариант, лучше не ставить, но некоторые ставят',
     },
     {
         detail_info: 'Водяной насос (большая помпа)',
@@ -285,7 +283,7 @@ const WATER_PUMPS = [
         detail_manufacturer: 'GMB',
         detail_image: './images/details/water_pumps/water_pump_gmb_GWCR43A.jpg',
         detail_scheme: './images/details/water_pumps/water_pump.gif',
-        detail_more: 'большая помпа, на 05-06 модельный год. Наверное лучшее из цена/качество',
+        detail_more: 'на 05-06 модельный год. Наверное лучшее из цена/качество',
     },
     {
         detail_info: 'Водяной насос (большая помпа)',
@@ -293,7 +291,7 @@ const WATER_PUMPS = [
         detail_manufacturer: 'Patron',
         detail_image: './images/details/water_pumps/water_pump_patron_PWP1217.jpg',
         detail_scheme: './images/details/water_pumps/water_pump.gif',
-        detail_more: 'большая помпа, на 05-06 модельный год',
+        detail_more: 'на 05-06 модельный год',
     },
 ]
 
@@ -312,7 +310,7 @@ const FRONT_BRAKE_PADS = [
         detail_manufacturer: 'Raybestos',
         detail_image: './images/details/brake_pads/front-brake-pad_raybestos_EHT997H.jpg',
         detail_scheme: './images/details/brake_pads/front-brake-pad.gif',
-        detail_more: 'Гибридные колодки для мажоров, но говорят ничего',
+        detail_more: 'гибридные колодки для мажоров, но говорят ничего',
     },
 ]
 
@@ -323,7 +321,7 @@ const REAR_BRAKE_PADS = [
         detail_manufacturer: 'Patron',
         detail_image: './images/details/brake_pads/rear_brake_pad_patron_PBP7001.jpg',
         detail_scheme: './images/details/brake_pads/rear-brake-pad.gif',
-        detail_more: '',
+        detail_more: 'нормальные колодки цена/качество',
     },
     {
         detail_info: 'Задние тормозные колодки',
@@ -331,7 +329,7 @@ const REAR_BRAKE_PADS = [
         detail_manufacturer: 'Raybestos',
         detail_image: './images/details/brake_pads/rear-brake-pad_raybestos_EHT998H.jpg',
         detail_scheme: './images/details/brake_pads/rear-brake-pad.gif',
-        detail_more: 'Гибридные колодки для мажоров, но говорят ничего',
+        detail_more: 'гибридные колодки для мажоров, но говорят ничего',
     },
 ]
 
@@ -2083,6 +2081,14 @@ const SHOCK_ABSORBER_SUPPORTS = [
         detail_scheme: './images/details/strut_mounts/strut_bearing.gif',
         detail_more: '',
     },
+    {
+        detail_info: 'Опорный подшипник',
+        detail_code: 'AD-CH-004',
+        detail_manufacturer: 'NTY',
+        detail_image: './images/details/strut_mounts/nty_AD-CH-004.jpg',
+        detail_scheme: './images/details/strut_mounts/strut_bearing.gif',
+        detail_more: '',
+    },
 ]
 
 const SHOCK_ABSORBERS = [
@@ -2235,6 +2241,14 @@ const HUBS = [
         detail_image: './images/details/hubs/hub_stud_nty_KSP-CH-005.jpeg',
         detail_scheme: './images/details/hubs/hub_stud.gif',
         detail_more: 'Шпилька М12-1,5мм, если не врут, длина 46мм',
+    },
+    {
+        detail_info: 'Болт крепления задней ступицы',
+        detail_code: '28677',
+        detail_manufacturer: 'Febi',
+        detail_image: './images/details/hubs/rear_hub_bolt_febi_28677.jpg',
+        detail_scheme: './images/details/hubs/rear_hub_bolt.gif',
+        detail_more: 'Головка болта TORX, длина 42мм(29мм), резьба М10',
     },
 ]
 
@@ -3528,10 +3542,10 @@ export const HEADERS = [
                 subtitle: 'Балка моста, подвеска оси',
                 details: BRIDGE_BEAM
             },
-            {
-                subtitle: 'Колесо, крепление колеса',
-                // details: WHEEL
-            },
+            // {
+            //     subtitle: 'Колесо, крепление колеса',
+            //     // details: WHEEL
+            // },
             {
                 subtitle: 'Система контроля давления в шинах',
                 // details: TPMS
