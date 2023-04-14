@@ -1685,6 +1685,14 @@ const BRAKE_DISCS = [
 
 const BRAKE_PARTS = [
     {
+        detail_info: 'Штуцер прокачки тормозов',
+        detail_code: '5093343AA',
+        detail_manufacturer: 'Crown',
+        detail_image: './images/details/brake_parts/brake_bleeder_screw_crown_5093343AA.jpg',
+        detail_scheme: './images/details/brake_parts/brake_bleeder_screw.gif',
+        detail_more: '',
+    },
+    {
         detail_info: 'Поршень переднего суппорта (2шт)',
         detail_code: '7815',
         detail_manufacturer: 'Carlson',
@@ -1709,6 +1717,22 @@ const BRAKE_PARTS = [
         detail_more: '',
     },
     {
+        detail_info: 'Ремкомплект переднего суппорта',
+        detail_code: '5681K',
+        detail_manufacturer: 'BBP',
+        detail_image: './images/details/brake_parts/front_caliper_repair_kit_bbp_5681K.jpg',
+        detail_scheme: './images/details/brake_parts/front_caliper_repair_kit.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Ремкомплект переднего суппорта',
+        detail_code: 'H5681Q',
+        detail_manufacturer: 'Carlson',
+        detail_image: './images/details/brake_parts/front_caliper_repair_kit_carlson_H5681Q.jpg',
+        detail_scheme: './images/details/brake_parts/front_caliper_repair_kit.gif',
+        detail_more: '',
+    },
+    {
         detail_info: 'Пыльник поршня переднего суппорта',
         detail_code: '41418K',
         detail_manufacturer: 'BBP',
@@ -1730,22 +1754,6 @@ const BRAKE_PARTS = [
         detail_manufacturer: 'Dorman',
         detail_image: './images/details/brake_parts/front_piston_boot_dorman_D670030.jpg',
         detail_scheme: './images/details/brake_parts/front_support_piston_boot.gif',
-        detail_more: '',
-    },
-    {
-        detail_info: 'Направляющие переднего суппорта',
-        detail_code: 'H5087',
-        detail_manufacturer: 'Carlson/Raybestos',
-        detail_image: './images/details/brake_parts/front_support_slide_pin_raybestos_H5087.jpg',
-        detail_scheme: './images/details/brake_parts/front_support_slide_pin.gif',
-        detail_more: '',
-    },
-    {
-        detail_info: 'Штуцер прокачки тормозов',
-        detail_code: '5093343AA',
-        detail_manufacturer: 'Crown',
-        detail_image: './images/details/brake_parts/brake_bleeder_screw_crown_5093343AA.jpg',
-        detail_scheme: './images/details/brake_parts/brake_bleeder_screw.gif',
         detail_more: '',
     },
     {
