@@ -841,6 +841,14 @@ const CRANKCASE_BLOCK = [
         detail_scheme: './images/details/pcv_valve/pcv_valve.gif',
         detail_more: '',
     },
+    {
+        detail_info: 'Шланг вентиляции картера',
+        detail_code: '04792682AB',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/pcv_valve/valve_hose_pcv_mopar_04792682AB.jpg',
+        detail_scheme: './images/details/pcv_valve/valve_hose_pcv.gif',
+        detail_more: '',
+    },
 ]
 
 const ENGINE_ELECTRONICS = []
@@ -1347,6 +1355,14 @@ const RADIATOR_HOSES = [
         detail_image: './images/details/radiator_hoses/hose_radiator_inlet_gates_22851.jpg',
         detail_scheme: './images/details/radiator_hoses/hose_radiator_inlet.gif',
         detail_more: '',
+    },
+    {
+        detail_info: 'Верхний патрубок радиатора',
+        detail_code: '2170810120811',
+        detail_manufacturer: 'БРТ Балаково',
+        detail_image: './images/details/radiator_hoses/hose_radiator_inlet_btr_2170810120811.jpg',
+        detail_scheme: './images/details/radiator_hoses/hose_radiator_inlet.gif',
+        detail_more: 'армированный патрубок от ТАЗ-2170',
     },
     {
         detail_info: 'Нижний патрубок радиатора',
