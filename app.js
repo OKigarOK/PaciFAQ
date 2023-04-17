@@ -1,3 +1,13 @@
+// РЕГИОН
+let myCountry;
+
+async function getCountry(e) {
+    const o = ymaps.geolocation;
+    console.log(o);
+    myCountry = o.country;
+    return myCountry
+}
+
 import {HEADERS} from "./data/maintenance.js";
 import {ERRORS} from "./data/errors_list.js";
 
@@ -466,6 +476,8 @@ window.onclick = function(event) {
     }
     if (isClick === 'detail_price detail_button') {
         console.log('СТОИМОСТЬ В МОДАЛКЕ');
+
+        getCountry().then(confirm(`Ваш регион ${myCountry}?`))
 
         // ИЩЕМ КОД
         const isCode = target.parentElement.parentElement.firstElementChild.textContent
@@ -1013,3 +1025,4 @@ function deleteDetailFromArray(item) {
 }
 
 // createDetailsInMyDetails()
+
