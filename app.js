@@ -477,14 +477,28 @@ window.onclick = function(event) {
     if (isClick === 'detail_price detail_button') {
         console.log('СТОИМОСТЬ В МОДАЛКЕ');
 
-        getCountry().then(confirm(`Ваш регион ${myCountry}?`))
-
+        // getCountry().then(confirm(`Ваш регион ${myCountry}?`))
+        getCountry().then()
+        
         // ИЩЕМ КОД
         const isCode = target.parentElement.parentElement.firstElementChild.textContent
         const onlyCode = isCode.split(' ')
         // КОНЕЦ )
 
         console.log(onlyCode[0]);
+
+        if (myCountry === 'Беларусь') {
+            console.log(`смотрим ${onlyCode[0]} в ${myCountry}`);
+            // window.open(`https://www.zzap.ru/public/search.aspx#rawdata=${onlyCode[0]}`, "_blank");
+            window.open(`https://www.zap.by/carparts/search/${onlyCode[0]}`, "_blank");
+        }
+
+        if (myCountry === 'Россия') {
+            console.log(`смотрим ${onlyCode[0]} в ${myCountry}`);
+            window.open(`https://www.zzap.ru/public/search.aspx#rawdata=${onlyCode[0]}`, "_blank");
+            // window.open(`https://www.zap.by/carparts/search/${onlyCode[0]}`, "_blank");
+        }
+
     }
 
     if (isClick === 'detail_favorite_add detail_button') {
