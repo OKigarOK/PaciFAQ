@@ -981,6 +981,41 @@ const CRANKCASE_BLOCK = [
 
 const ENGINE_ELECTRONICS = []
 
+const CAMSHAFT = [
+    {
+        detail_info: 'Задняя крышка распредвала',
+        detail_code: '04556518AB',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/camshaft/camshaft_thrust_plate_mopar_04556518AB.jpg',
+        detail_scheme: './images/details/camshaft/camshaft_thrust_plate.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Прокладка задней крышки распредвала',
+        detail_code: '04556518AB',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/camshaft/camshaft_seal_mopar_04536492AB.jpg',
+        detail_scheme: './images/details/camshaft/camshaft_thrust_plate.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Прокладка задней крышки распредвала',
+        detail_code: '01210000',
+        detail_manufacturer: 'Ajusa',
+        detail_image: './images/details/camshaft/camshaft_seal_ajusa_01210000.jpg',
+        detail_scheme: './images/details/camshaft/camshaft_thrust_plate.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Кольцо с прокладкой задней крышки распредвала',
+        detail_code: 'ES73216',
+        detail_manufacturer: 'FEL-PRO',
+        detail_image: './images/details/camshaft/camshaft-housing-gasket_fel-pro_ES73216.jpg',
+        detail_scheme: './images/details/camshaft/camshaft_seal.gif',
+        detail_more: '',
+    },
+]
+
 // КШМ
 
 const LINERS = [
@@ -2192,7 +2227,7 @@ const EXHAUST_MANIFOLD = [
 const SPRINGS = [
     {
         detail_info: 'Передняя пружина подвески',
-        detail_code: 'C4T61532H',
+        detail_code: 'C4T61562H',
         detail_manufacturer: 'OBK',
         detail_image: './images/details/springs/front_spring_obk_C4T61562H.jpg',
         detail_scheme: './images/details/springs/front_spring.gif',
@@ -2206,6 +2241,7 @@ const SPRINGS = [
         detail_scheme: './images/details/springs/rear_spring.gif',
         detail_more: 'Пружина от "Прадика", желательно подпилить, но кто-то гоняет и так',
     },
+
     {
         detail_info: 'Передняя пружина подвески',
         detail_code: '4063492',
@@ -2221,6 +2257,14 @@ const SPRINGS = [
         detail_image: './images/details/springs/rear_spring_lesjofors_4014219.jpeg',
         detail_scheme: './images/details/springs/rear_spring.gif',
         detail_more: 'Хороший производитель, пружины подбирались по параметрам оригинала, но ещё не устанавливались',
+    },
+    {
+        detail_info: 'Задняя пружина подвески',
+        detail_code: 'SF-1223',
+        detail_manufacturer: 'Zekkert',
+        detail_image: './images/details/springs/rear_spring_zekkert_SF-1223.jpg',
+        detail_scheme: './images/details/springs/rear_spring.gif',
+        detail_more: 'Проходят "обкатку"',
     },
 ]
 
@@ -3370,7 +3414,7 @@ export const HEADERS = [
                     },
                     {
                         sub_subtitle: 'Распредвал',
-                        details: ''
+                        details: CAMSHAFT
                     },
                     {
                         sub_subtitle: 'Коромысло, балансир',
