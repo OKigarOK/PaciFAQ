@@ -3202,6 +3202,14 @@ const GENERATOR = [
 
 const AIR_CONDITIONER = [
     {
+        detail_info: 'Подшипник компрессора кондиционера',
+        detail_code: '30BD5222DUM6',
+        detail_manufacturer: 'NSK',
+        detail_image: './images/details/bearings/air_conditioner_compressor_bearing_nsk_30BD5222DUM6.jpg',
+        detail_scheme: './images/details/bearings/air_conditioner_compressor_bearing.gif',
+        detail_more: 'Практически никто и никогда его не менял, поэтому клинит и горят муфты. Размеры 30X52X22мм',
+    },
+    {
         detail_info: 'Радиатор кондиционера',
         detail_code: 'CR500P',
         detail_manufacturer: 'AVG',
