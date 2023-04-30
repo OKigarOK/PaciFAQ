@@ -307,7 +307,7 @@ const FRONT_BRAKE_PADS = [
     {
         detail_info: 'Передние тормозные колодки',
         detail_code: 'CMX997',
-        detail_manufacturer: 'Morse/Friction Master',
+        detail_manufacturer: 'Friction Master',
         detail_image: './images/details/brake_pads/front-brake-pad_fm_CMX997.jpg',
         detail_scheme: './images/details/brake_pads/front-brake-pad.gif',
         detail_more: 'Серия CMX - Керамические',
@@ -315,7 +315,7 @@ const FRONT_BRAKE_PADS = [
     {
         detail_info: 'Передние тормозные колодки',
         detail_code: 'MKD997',
-        detail_manufacturer: 'Morse/Friction Master',
+        detail_manufacturer: 'Friction Master',
         detail_image: './images/details/brake_pads/front-brake-pad_fm_MKD997.jpeg',
         detail_scheme: './images/details/brake_pads/front-brake-pad.gif',
         detail_more: 'Серия MKD - бюджетный стандарт',
@@ -382,7 +382,7 @@ const REAR_BRAKE_PADS = [
     {
         detail_info: 'Задние тормозные колодки',
         detail_code: 'ELT998',
-        detail_manufacturer: 'Morse/Friction Master',
+        detail_manufacturer: 'Friction Master',
         detail_image: './images/details/brake_pads/rear-brake-pad_fm_ELT998.jpg',
         detail_scheme: './images/details/brake_pads/rear-brake-pad.gif',
         detail_more: 'Серия ELT - соответствует оригиналу, а может и лучше',
@@ -390,7 +390,7 @@ const REAR_BRAKE_PADS = [
     {
         detail_info: 'Задние тормозные колодки',
         detail_code: 'MKD998',
-        detail_manufacturer: 'Morse/Friction Master',
+        detail_manufacturer: 'Friction Master',
         detail_image: './images/details/brake_pads/rear-brake-pad_fm_MKD998.jpg',
         detail_scheme: './images/details/brake_pads/rear-brake-pad.gif',
         detail_more: 'Серия MKD - бюджетный стандарт',
@@ -992,7 +992,7 @@ const CAMSHAFT = [
     },
     {
         detail_info: 'Прокладка задней крышки распредвала',
-        detail_code: '04556518AB',
+        detail_code: '04536492AB',
         detail_manufacturer: 'Mopar',
         detail_image: './images/details/camshaft/camshaft_seal_mopar_04536492AB.jpg',
         detail_scheme: './images/details/camshaft/camshaft_thrust_plate.gif',
