@@ -16,7 +16,8 @@ import {ERRORS} from "./data/errors_list.js";
 // CONST
 const download = document.querySelector('.download');
 const wrapper = document.querySelector('.wrapper');
-const NEW_DATA = [];
+// const NEW_DATA = [];
+const ALL_DETAILS = [];
 let MY_DETAILS;
 const BUTTON_STATUS = {
     ADD: {
@@ -237,7 +238,7 @@ function createDetailsInContainer (details, container) {
     }
 }
 
-// КОДЫ ОШИБОК
+// КОДЫ ОШИБОК В ПОИСКЕ
 
 function createCodeInSearch(item, containerItem) {
 
@@ -442,8 +443,6 @@ window.onclick = function (event) {
         case 'detail_favorite_add detail_button':
             // const isCode = target.parentElement.parentElement.firstElementChild.firstElementChild.textContent
             const foundDetail = findDetailInAllDetailsArray(isCode.textContent);
-            // isClick = BUTTON_STATUS.DELETE.CLASS;
-
             target.className = BUTTON_STATUS.DELETE.CLASS;
             target.textContent = BUTTON_STATUS.DELETE.TEXT;
             MY_DETAILS.push(foundDetail)
@@ -535,7 +534,7 @@ window.onclick = function (event) {
 
 // !function(e){"function"!=typeof e.matches&&(e.matches=e.msMatchesSelector||e.mozMatchesSelector||e.webkitMatchesSelector||function(e){for(var t=this,o=(t.document||t.ownerDocument).querySelectorAll(e),n=0;o[n]&&o[n]!==t;)++n;return Boolean(o[n])}),"function"!=typeof e.closest&&(e.closest=function(e){for(var t=this;t&&1===t.nodeType;){if(t.matches(e))return t;t=t.parentNode}return null})}(window.Element.prototype);
 
-// SEARCH
+// ПОИСК
 
 const inputText = document.getElementById('search')
 const searchElementsList = document.getElementById('search_menu')
@@ -556,27 +555,42 @@ inputText.oninput = function () {
     searchElementsList.classList.add('active');
     menuElement.classList.remove('active');
 
+    if (substring[0] === 'p') {
+       findErrorInArray(substring);
+       return;
+    }
+
     findObjectInArray(substring);
     callAccord();
 }
 
-function findObjectInArray(item) {
-
-    console.log(item);
-
+function findErrorInArray(item) {
     searchElementsList.innerHTML = '';
-
-    for (let el of NEW_DATA) {
-        if (el.detail_info.includes(item)) {
-            createDetailInSearch(el, searchElementsList)
-        }
-    }
 
     for (let el of ERRORS) {
         if (el.error_code.includes(item)) {
             createCodeInSearch(el, searchElementsList)
         }
     }
+}
+
+function findObjectInArray(item) {
+
+    console.log(item[0]);
+
+    searchElementsList.innerHTML = '';
+
+    // for (let el of ALL_DETAILS) {
+    //     if (el.detail_info.includes(item)) {
+    //         createDetailInSearch(el, searchElementsList)
+    //     }
+    // }
+
+    // for (let el of ERRORS) {
+    //     if (el.error_code.includes(item)) {
+    //         createCodeInSearch(el, searchElementsList)
+    //     }
+    // }
 }
 
 // МНОГО МОДАЛОК
@@ -759,11 +773,13 @@ function removeDetailsWrapView() {
 }
 
 function addDetailToAllDetailArray(item) {
-    if (!NEW_DATA.some(e => e.detail_code === item.detail_code)) {
+    if (!ALL_DETAILS.some(e => e.detail_code === item.detail_code)) {
         item.detail_info = item.detail_info.toLowerCase();
-        NEW_DATA.push(item);
+        ALL_DETAILS.push(item);
     }
 }
+
+console.log(ALL_DETAILS);
 
 // РИСУЕМ ДЕТАЛЬ В МОИ ЗАПЧАСТИ
 
@@ -772,7 +788,7 @@ function checkDetailInFavoriteArray(itemCode) {
 }
 
 function findDetailInAllDetailsArray(item) {
-    for (let el of NEW_DATA) {
+    for (let el of ALL_DETAILS) {
         if (el.detail_code.includes(item)) {
             return el
         }
