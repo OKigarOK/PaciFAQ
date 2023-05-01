@@ -244,7 +244,7 @@ function createCodeInSearch(item, containerItem) {
 
     const headerSubtitle = document.createElement('button');
     headerSubtitle.className = 'accordion search_title'
-    headerSubtitle.innerHTML = 'Ошибка ' + item.error_code;
+    headerSubtitle.innerHTML = 'Ошибка ' + item.error_code.toUpperCase();
 
     const newPanelElement = document.createElement('div');
     newPanelElement.className = 'panel';
@@ -255,8 +255,8 @@ function createCodeInSearch(item, containerItem) {
     containerItem.append(headerSubtitle);
     headerSubtitle.after(newPanelElement);
     newPanelElement.append(containerItems);
-    // РИСУЕМ ДЕТАЛЬ
 
+    // РИСУЕМ ДЕТАЛЬ
     const containerDetail = document.createElement('div');
     containerDetail.className = `container_detail full_width more_modal_settings`;
     const detailInfo = document.createElement('div');
@@ -311,6 +311,8 @@ function createDetailInSearch(detail, containerItem) {
         detailImage.append(schemeElement);
 
         // НОВЬЁ
+
+
 
         const detailCode = document.createElement('div');
         detailCode.className = 'detail_code';
@@ -557,7 +559,10 @@ inputText.oninput = function () {
 
     if (substring[0] === 'p') {
        findErrorInArray(substring);
+       callAccord();
        return;
+    } else {
+        console.log('ищем по описанию');
     }
 
     findObjectInArray(substring);
@@ -576,7 +581,7 @@ function findErrorInArray(item) {
 
 function findObjectInArray(item) {
 
-    console.log(item[0]);
+    console.log(item);
 
     searchElementsList.innerHTML = '';
 
@@ -659,72 +664,72 @@ function checkClick() {
 
 // СМЕНА НАСТРОЕК
 
-function renderSettings() {
-    const allInputs = document.querySelectorAll('input');
-
-    for (let elem of allInputs) {
-        elem.addEventListener('click', () => {
-
-            const detailsListElement = document.getElementById('details_list');
-            const detailsTableElement = document.getElementById('details_table');
-
-            // СМЕНА ТЕМЫ //
-            if (elem.name === 'theme') {
-                clearThemeClass();
-                setTheme.classList.add(`${elem.id}`);
-                setSettings.classList.add(`${elem.id}`);
-                localStorage.setItem('theme', `${elem.id}`);
-            }
-
-            // СМЕНА ШРИФТА //
-            if (elem.name === 'fontSize') {
-                clearFontClasses();
-                setSettings.classList.add(`${elem.id}`);
-                document.body.classList.add(`${elem.id}`);
-                localStorage.setItem('fontSize', `${elem.id}`);
-
-                // если S только ТАБЛИЦА
-                if (elem.id === 'fontSizeS') {
-                    detailsListElement.checked = false;
-                    detailsListElement.disabled = true;
-                    detailsTableElement.checked = true;
-                    detailsTableElement.disabled = false;
-                    removeDetailsWrapView();
-                    removeFullView();
-                    localStorage.setItem('view', 'details_table');
-                }
-
-                // если M тогда ДВА варианта
-                if (elem.id === 'fontSizeM') {
-                    detailsTableElement.disabled = false;
-                    detailsListElement.disabled = false;
-                    if (localStorage.getItem('view') === 'details_table') {
-                        addDetailsWrapView();
-                    } else {
-                        removeDetailsWrapView();
-                    }
-                }
-
-                // если L только СПИСОК
-                if (elem.id === 'fontSizeL') {
-                    detailsTableElement.checked = false;
-                    detailsTableElement.disabled = true;
-                    detailsListElement.checked = true;
-                    detailsListElement.disabled = false;
-                    removeDetailsWrapView();
-                    addFullView();
-                    localStorage.setItem('view', 'details_list');
-                }
-            }
-
-            // СМЕНА ВИДА //
-            if (elem.name === 'view') {
-                localStorage.setItem('view', `${elem.id}`);
-                location.reload();
-            }
-        })
-    }
-}
+// function renderSettings() {
+//     const allInputs = document.querySelectorAll('input');
+//
+//     for (let elem of allInputs) {
+//         elem.addEventListener('click', () => {
+//
+//             const detailsListElement = document.getElementById('details_list');
+//             const detailsTableElement = document.getElementById('details_table');
+//
+//             // СМЕНА ТЕМЫ //
+//             if (elem.name === 'theme') {
+//                 clearThemeClass();
+//                 setTheme.classList.add(`${elem.id}`);
+//                 setSettings.classList.add(`${elem.id}`);
+//                 localStorage.setItem('theme', `${elem.id}`);
+//             }
+//
+//             // СМЕНА ШРИФТА //
+//             if (elem.name === 'fontSize') {
+//                 clearFontClasses();
+//                 setSettings.classList.add(`${elem.id}`);
+//                 document.body.classList.add(`${elem.id}`);
+//                 localStorage.setItem('fontSize', `${elem.id}`);
+//
+//                 // если S только ТАБЛИЦА
+//                 if (elem.id === 'fontSizeS') {
+//                     detailsListElement.checked = false;
+//                     detailsListElement.disabled = true;
+//                     detailsTableElement.checked = true;
+//                     detailsTableElement.disabled = false;
+//                     removeDetailsWrapView();
+//                     removeFullView();
+//                     localStorage.setItem('view', 'details_table');
+//                 }
+//
+//                 // если M тогда ДВА варианта
+//                 if (elem.id === 'fontSizeM') {
+//                     detailsTableElement.disabled = false;
+//                     detailsListElement.disabled = false;
+//                     if (localStorage.getItem('view') === 'details_table') {
+//                         addDetailsWrapView();
+//                     } else {
+//                         removeDetailsWrapView();
+//                     }
+//                 }
+//
+//                 // если L только СПИСОК
+//                 if (elem.id === 'fontSizeL') {
+//                     detailsTableElement.checked = false;
+//                     detailsTableElement.disabled = true;
+//                     detailsListElement.checked = true;
+//                     detailsListElement.disabled = false;
+//                     removeDetailsWrapView();
+//                     addFullView();
+//                     localStorage.setItem('view', 'details_list');
+//                 }
+//             }
+//
+//             // СМЕНА ВИДА //
+//             if (elem.name === 'view') {
+//                 localStorage.setItem('view', `${elem.id}`);
+//                 location.reload();
+//             }
+//         })
+//     }
+// }
 
 function clearThemeClass() {
     setTheme.classList.remove('dark_theme');
