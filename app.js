@@ -1,7 +1,13 @@
 window.onload = function () { // можно также использовать window.addEventListener('load', (event) => {
     console.log('Страница загружена');
     download.style.display = 'none'
-    wrapper.style.display = 'block'
+    const display = window.innerWidth
+    if (display > 500) {
+        console.log('много');
+        wrapper.style.display = 'none'
+    } else {
+        wrapper.style.display = 'block'
+    }
 };
 
 import {HEADERS} from "./data/maintenance.js";
