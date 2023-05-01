@@ -227,7 +227,8 @@ body {
 }
 
 .accordion.title {
-    font-size: 0.85em;
+    /*font-size: 0.85em;*/
+    font-size: 16px;
     margin: 10px 0;
     /*border: 2px solid;*/
     border-radius: 15px;
@@ -244,7 +245,8 @@ body {
 }
 
 .accordion.search_title {
-    font-size: 0.85em;
+    /*font-size: 0.85em;*/
+    font-size: 16px;
     margin: 5px 0;
     border: 2px solid;
     border-radius: 15px;
@@ -253,7 +255,8 @@ body {
 }
 
 .accordion.title2 {
-    font-size: 0.85em;
+    /*font-size: 0.85em;*/
+    font-size: 16px;
     margin: 5px 0;
     border-radius: 15px;
     text-align: left;
@@ -335,8 +338,8 @@ button:disabled {
     border: 1px solid;
     border-radius: 10px;
     padding: 6px;
-    font-size: 1em;
-    /*font-size: 18px;*/
+    /*font-size: 1em;*/
+    font-size: 16px;
     text-align: center;
     margin: 10px 0;
 }
@@ -347,7 +350,8 @@ button:disabled {
     border: 1px solid;
     border-radius: 10px;
     padding: 2px;
-    font-size: 0.85em;
+    /*font-size: 0.85em;*/
+    font-size: 16px;
     text-align: center;
 }
 

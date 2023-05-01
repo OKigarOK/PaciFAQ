@@ -272,7 +272,7 @@ function createCodeInSearch(item, containerItem) {
     containerDetail.append(detailInfo);
 }
 
-// ДЕТАЛЬ В ПОИСКЕ
+// ДЕТАЛЬ В ПОИСКЕ - ЗДЕСЯ ДЕЛАЕМ
 
 function createDetailInSearch(detail, containerItem) {
     const headerSubtitle = document.createElement('button');
@@ -287,9 +287,11 @@ function createDetailInSearch(detail, containerItem) {
     containerItem.append(headerSubtitle);
     headerSubtitle.after(newPanelElement);
     newPanelElement.append(containerItems);
-    setElement(detail, containerItems);
+    // setElement(detail, containerItems);
 
     // РИСУЕМ ДЕТАЛЬ
+
+    createDetailCard(detail, containerItems, true, false, false, BUTTON_STATUS.ADD, true)
 
     function setElement(detail, elementContainer) {
         const containerDetail = document.createElement('div');
@@ -311,8 +313,6 @@ function createDetailInSearch(detail, containerItem) {
         detailImage.append(schemeElement);
 
         // НОВЬЁ
-
-
 
         const detailCode = document.createElement('div');
         detailCode.className = 'detail_code';
@@ -362,14 +362,14 @@ function createDetailInSearch(detail, containerItem) {
         detailFavorite.className = 'detail_favorite_add detail_button';
         detailFavorite.textContent = 'Добавить';
 
-        for (let favoriteItem of NEW_FAVORITES) {
+        for (let favoriteItem of MY_DETAILS) {
             if (favoriteItem.detail_code === detail.detail_code) {
                 detailFavorite.className = 'detail_favorite_delete detail_button';
                 detailFavorite.textContent = 'Удалить';
             }
         }
 
-        if (NEW_FAVORITES.length === 0) {
+        if (MY_DETAILS.length === 0) {
             detailFavorite.className = 'detail_favorite_add detail_button';
             detailFavorite.textContent = 'Добавить';
         }
@@ -580,22 +580,13 @@ function findErrorInArray(item) {
 }
 
 function findObjectInArray(item) {
-
-    console.log(item);
-
     searchElementsList.innerHTML = '';
 
-    // for (let el of ALL_DETAILS) {
-    //     if (el.detail_info.includes(item)) {
-    //         createDetailInSearch(el, searchElementsList)
-    //     }
-    // }
-
-    // for (let el of ERRORS) {
-    //     if (el.error_code.includes(item)) {
-    //         createCodeInSearch(el, searchElementsList)
-    //     }
-    // }
+    for (let el of ALL_DETAILS) {
+        if (el.detail_info.includes(item)) {
+            createDetailInSearch(el, searchElementsList)
+        }
+    }
 }
 
 // МНОГО МОДАЛОК
