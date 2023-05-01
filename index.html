@@ -11,10 +11,42 @@
             type="text/javascript"></script>
 </head>
 
+<style>
+    /*body {*/
+    /*    background-color: #020202;*/
+    /*    z-index: 100;*/
+    /*}*/
+    .download {
+        width: 100%;
+        height: 100vh;
+        background-image: url("./images/windows_xp_-_start_up-101761.gif");
+        /*background-image: url("./images/gufc4.gif");*/
+
+        background-repeat: no-repeat;
+        background-size: auto 100%;
+        /*background-size: 100% auto;*/
+
+        background-position: center;
+        z-index: 100;
+    }
+     .run {
+         width: 150px;
+         /*white-space: nowrap; !* Запрещаем перенос строк *!*/
+         /*overflow: hidden; !* Обрезаем все, что не помещается в область *!*/
+         /*text-overflow: ellipsis; !* Добавляем многоточие *!*/
+
+         /*background: #fc0; !* Цвет фона *!*/
+         /*padding: 5px; !* Поля вокруг текста *!*/
+     }
+
+</style>
+
 
 <body id="theme">
 
-<div class="wrapper">
+<div class="download"></div>
+
+<div class="wrapper" style="display: none">
 
     <header class="header">
         <div class="container">
@@ -32,22 +64,21 @@
                         <li>
                             <a href="#" class="header_menu_link js-open-modal" data-modal="1">Полезное</a>
                         </li>
-                        <li>
-                            <a href="#" class="header_menu_link js-open-modal" data-modal="2">События</a>
-                        </li>
+<!--                        <li>-->
+<!--                            <a href="#" class="header_menu_link js-open-modal" data-modal="2">События</a>-->
+<!--                        </li>-->
                         <li>
                             <a href="#" class="header_menu_link js-open-modal" data-modal="7">Качалка</a>
                         </li>
                         <li>
                             <a href="#" class="header_menu_link js-open-modal" data-modal="8">Плюшки с "Алика"</a>
                         </li>
-                        <li>
-                            <a href="#" class="header_menu_link js-open-modal" data-modal="9">Запцацки БУ</a>
-                        </li>
-                        <li>
-                            <a href="#" class="header_menu_link js-open-modal" data-modal="3">Настройки</a>
-<!--                            <a class="header_menu_link" style="opacity: 0.5">Настройки</a>-->
-                        </li>
+<!--                        <li>-->
+<!--                            <a href="#" class="header_menu_link js-open-modal" data-modal="9">Запцацки БУ</a>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <a href="#" class="header_menu_link js-open-modal" data-modal="3">Настройки</a>-->
+<!--                        </li>-->
                         <li>
                             <a href="#" class="header_menu_link js-open-modal" data-modal="4">Поддержать</a>
                         </li>
@@ -57,9 +88,9 @@
                         <li>
                             <a href="#" class="header_menu_link js-open-modal" data-modal="6">О приложении</a>
                         </li>
-                        <li>
-                            <a href="#" class="header_menu_link js-open-modal" data-modal="12">словарь "чатланина"</a>
-                        </li>
+<!--                        <li>-->
+<!--                            <a href="#" class="header_menu_link js-open-modal" data-modal="12">словарь "чатланина"</a>-->
+<!--                        </li>-->
                     </ul>
                 </nav>
 
@@ -75,12 +106,7 @@
                         <path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/>
                     </svg>
                     <h3 class="modal__title">МОИ ЗАПЧАСТИ</h3>
-
-                    <!--                    <h3 class="modal__title">БЛОКНОТ</h3>-->
-                    <!--                СЮДА ДОБАВЛЯЕМ ЗАПЧАСТИ   -->
-                    <div class="container_items_table" id="my_favorites">
-<!--                        Сюда можно будет добавить и здесь будут отображаться выбранные детали-->
-                    </div>
+                    <div class="container_items_table" id="my_favorites"></div>
                 </div>
 
 <!--ПОЛЕЗНОЕ-->
@@ -141,7 +167,22 @@
                             </div>
                         </div>
 
-                        <button class="accordion search_title">Как правильно запресовать большой сайлентблок переднего рычага:</button>
+<!--                        <button class="run">-->
+<!--                            &lt;!&ndash;    <marquee behavior="alternate" direction="right">Бегущая строка</marquee>&ndash;&gt;-->
+<!--                            <marquee behavior="scroll" direction="left" scrollamount=1>Насос системы охлаждения (помпа)</marquee>-->
+<!--                        </button>-->
+
+<!--                        <marquee behavior="alternate" direction="left" bgcolor="#ffcc00">-->
+<!--                            Атомистика контролирует трансцендентальный катарсис.-->
+<!--                        </marquee>-->
+
+<!--&lt;!&ndash;                        <marquee behavior="alternate" direction="left" bgcolor="#ffcc00"></marquee>&ndash;&gt;-->
+<!--                            <button class="accordion search_title">-->
+<!--                                <marquee behavior="scroll" direction="left" scrollamount=1>Насос системы охлаждения (помпа). Как правильно запресовать большой сайлентблок переднего рычага:</marquee>-->
+
+<!--&lt;!&ndash;                                Как правильно запресовать большой сайлентблок переднего рычага:&ndash;&gt;-->
+<!--                            </button>-->
+
                         <div class="panel">
                             <div class="container_detail more_modal_settings">
                                 <div class="detail_image">
@@ -466,7 +507,7 @@
                 </div>
 
 <!--НАСТРОЙКИ-->
-                    <div class="modal theme_container" id="setSettings" data-modal="3">
+                <div class="modal theme_container" id="setSettings" data-modal="3">
                         <svg class="modal__cross js-modal-close"
                              xmlns="http://www.w3.org/2000/svg"
                              viewBox="0 0 24 24">
@@ -606,7 +647,7 @@
                         касающимся ремонта автомобиля.
                     </p>
                     <br>
-                    <p><strong>Обновление базы: 23-04-2023</strong></p>
+                    <p><strong>Обновление базы: 01-05-2023</strong></p>
                 </div>
 
 <!--СЛОВАРЬ ЧАТЛАНИНА-->
@@ -621,13 +662,14 @@
                     <!--                    <img class="add" src="./images/menu/arrow.png" alt="">-->
                 </div>
 
-<!--ЧТО_ТО ТУТ ЕСТЬ...-->
+<!--ПОДРОБНЕЕ...-->
                 <div class="modal" data-modal="11">
                     <svg class="modal__cross js-modal-close"
                          xmlns="http://www.w3.org/2000/svg"
                          viewBox="0 0 24 24">
                         <path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/>
                     </svg>
+                    <div id="moreContainer"></div>
                 </div>
 
                 <!-- Подложка под модальным окном -->
