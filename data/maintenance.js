@@ -835,6 +835,33 @@ const THROTTLE_VALVE = [
     },
 ]
 
+const MAP_SENSORS = [
+    {
+        detail_info: 'Датчик абсолютного давления (МАР)',
+        detail_code: 'MP108',
+        detail_manufacturer: 'Srectra Premium',
+        detail_image: './images/details/map_sensors/map_sensor_spectra_premium_MP108.jpg',
+        detail_scheme: './images/details/map_sensors/map_sensor.jpg',
+        detail_more: 'Проверенный датчик, работает без нареканий',
+    },
+    {
+        detail_info: 'Датчик абсолютного давления (МАР)',
+        detail_code: 'FZ1018A',
+        detail_manufacturer: 'UTM',
+        detail_image: './images/details/map_sensors/map_sensor_utm_FZ1018A.jpeg',
+        detail_scheme: './images/details/map_sensors/map_sensor.jpg',
+        detail_more: 'Ставили, вроде даже работает',
+    },
+    {
+        detail_info: 'Датчик абсолютного давления (МАР)',
+        detail_code: '225-1045',
+        detail_manufacturer: 'Walker',
+        detail_image: './images/details/map_sensors/map_sensor_walker_225-1045.jpg',
+        detail_scheme: './images/details/map_sensors/map_sensor.jpg',
+        detail_more: '',
+    },
+]
+
 // Система ГРМ
 
 const CRANKSHAFT_GEAR = [
@@ -3411,7 +3438,7 @@ export const HEADERS = [
                     },
                     {
                         sub_subtitle: 'Коллектор впускной',
-                        details: INTAKE_MANIFOLD_GASKETS
+                        details: INTAKE_MANIFOLD_GASKETS.concat(MAP_SENSORS)
                     },
                     {
                         sub_subtitle: 'Заслонка дроссельная',
