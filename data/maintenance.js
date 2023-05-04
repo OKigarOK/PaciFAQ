@@ -2937,6 +2937,17 @@ const BRAKE_HOSES = [
     },
 ]
 
+const STEERING_RACK_BOOTS = [
+    {
+        detail_info: 'Пыльник рулевой рейки',
+        detail_code: '3016201',
+        detail_manufacturer: 'Lemforder',
+        detail_image: './images/details/steering_rack_boot/steering_rack_boot_lemforder_3016201.jpg',
+        detail_scheme: './images/details/steering_rack_boot/steering_rack_boot.gif',
+        detail_more: 'Говорят становится как родной',
+    },
+]
+
 // ДЕТАЛИ КУЗОВА
 
 const FRONT_BUMPER_REFLECTOR = [
@@ -3305,15 +3316,6 @@ const QWERTY = [
 ]
 
 export const HEADERS = [
-    // {
-    //     title: 'МОИ ЗАПЧАСТИ',
-    //     subtitles: [
-    //         {
-    //             subtitle: 'УБРАТЬ ЭТО НАХРЕН',
-    //             details: null
-    //         }
-    //     ]
-    // },
     {
         title: 'Детали ТО',
         subtitles: [
@@ -3843,7 +3845,7 @@ export const HEADERS = [
             },
             {
                 subtitle: 'Рулевая рейка, Насос ГУР',
-                details: POWER_STEERING_PUMPS
+                details: POWER_STEERING_PUMPS.concat(STEERING_RACK_BOOTS)
             },
             {
                 subtitle: 'Бачок ГУР',

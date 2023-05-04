@@ -99,8 +99,6 @@ function render(theme, font, view) {
     document.getElementById(view).checked = true;
 }
 
-// let NEW_FAVORITES;
-
 const myDetailsInLocal = localStorage.getItem('myDetails');
 
 function renderMyDetails() {
@@ -122,7 +120,6 @@ function renderMyDetails() {
 
 createContentMenu(HEADERS);
 renderMyDetails();
-// renderSettings();
 callAccord();
 
 function createContentMenu(HEADERS) {
@@ -534,8 +531,6 @@ window.onclick = function (event) {
 
 };
 
-// !function(e){"function"!=typeof e.matches&&(e.matches=e.msMatchesSelector||e.mozMatchesSelector||e.webkitMatchesSelector||function(e){for(var t=this,o=(t.document||t.ownerDocument).querySelectorAll(e),n=0;o[n]&&o[n]!==t;)++n;return Boolean(o[n])}),"function"!=typeof e.closest&&(e.closest=function(e){for(var t=this;t&&1===t.nodeType;){if(t.matches(e))return t;t=t.parentNode}return null})}(window.Element.prototype);
-
 // ПОИСК
 
 const inputText = document.getElementById('search')
@@ -557,7 +552,7 @@ inputText.oninput = function () {
     searchElementsList.classList.add('active');
     menuElement.classList.remove('active');
 
-    if (substring[0] === 'p') {
+    if (substring[1] === '0') {
        findErrorInArray(substring);
        callAccord();
        return;
@@ -583,7 +578,8 @@ function findObjectInArray(item) {
     searchElementsList.innerHTML = '';
 
     for (let el of ALL_DETAILS) {
-        if (el.detail_info.includes(item)) {
+
+        if (el.detail_info.includes(item) || el.detail_code.includes(item)) {
             createDetailInSearch(el, searchElementsList)
         }
     }
@@ -654,73 +650,6 @@ function checkClick() {
 }
 
 // СМЕНА НАСТРОЕК
-
-// function renderSettings() {
-//     const allInputs = document.querySelectorAll('input');
-//
-//     for (let elem of allInputs) {
-//         elem.addEventListener('click', () => {
-//
-//             const detailsListElement = document.getElementById('details_list');
-//             const detailsTableElement = document.getElementById('details_table');
-//
-//             // СМЕНА ТЕМЫ //
-//             if (elem.name === 'theme') {
-//                 clearThemeClass();
-//                 setTheme.classList.add(`${elem.id}`);
-//                 setSettings.classList.add(`${elem.id}`);
-//                 localStorage.setItem('theme', `${elem.id}`);
-//             }
-//
-//             // СМЕНА ШРИФТА //
-//             if (elem.name === 'fontSize') {
-//                 clearFontClasses();
-//                 setSettings.classList.add(`${elem.id}`);
-//                 document.body.classList.add(`${elem.id}`);
-//                 localStorage.setItem('fontSize', `${elem.id}`);
-//
-//                 // если S только ТАБЛИЦА
-//                 if (elem.id === 'fontSizeS') {
-//                     detailsListElement.checked = false;
-//                     detailsListElement.disabled = true;
-//                     detailsTableElement.checked = true;
-//                     detailsTableElement.disabled = false;
-//                     removeDetailsWrapView();
-//                     removeFullView();
-//                     localStorage.setItem('view', 'details_table');
-//                 }
-//
-//                 // если M тогда ДВА варианта
-//                 if (elem.id === 'fontSizeM') {
-//                     detailsTableElement.disabled = false;
-//                     detailsListElement.disabled = false;
-//                     if (localStorage.getItem('view') === 'details_table') {
-//                         addDetailsWrapView();
-//                     } else {
-//                         removeDetailsWrapView();
-//                     }
-//                 }
-//
-//                 // если L только СПИСОК
-//                 if (elem.id === 'fontSizeL') {
-//                     detailsTableElement.checked = false;
-//                     detailsTableElement.disabled = true;
-//                     detailsListElement.checked = true;
-//                     detailsListElement.disabled = false;
-//                     removeDetailsWrapView();
-//                     addFullView();
-//                     localStorage.setItem('view', 'details_list');
-//                 }
-//             }
-//
-//             // СМЕНА ВИДА //
-//             if (elem.name === 'view') {
-//                 localStorage.setItem('view', `${elem.id}`);
-//                 location.reload();
-//             }
-//         })
-//     }
-// }
 
 function clearThemeClass() {
     setTheme.classList.remove('dark_theme');

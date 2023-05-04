@@ -2,12 +2,9 @@
 <html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
-<!--    <meta name="viewport" content="width=device-width">-->
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
     <title>PaciFAQ</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-
     <script src="https://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU"
             type="text/javascript"></script>
 </head>
@@ -17,17 +14,12 @@
         width: 100%;
         height: 100vh;
         background-image: url("./images/windows_xp_-_start_up-101761.gif");
-        /*background-image: url("./images/gufc4.gif");*/
-
         background-repeat: no-repeat;
         background-size: auto 100%;
-        /*background-size: 100% auto;*/
-
         background-position: center;
         z-index: 100;
     }
 </style>
-
 
 <body id="theme">
 
@@ -51,21 +43,12 @@
                         <li>
                             <a href="#" class="header_menu_link js-open-modal" data-modal="1">Полезное</a>
                         </li>
-<!--                        <li>-->
-<!--                            <a href="#" class="header_menu_link js-open-modal" data-modal="2">События</a>-->
-<!--                        </li>-->
                         <li>
                             <a href="#" class="header_menu_link js-open-modal" data-modal="7">Качалка</a>
                         </li>
                         <li>
                             <a href="#" class="header_menu_link js-open-modal" data-modal="8">Плюшки с "Алика"</a>
                         </li>
-<!--                        <li>-->
-<!--                            <a href="#" class="header_menu_link js-open-modal" data-modal="9">Запцацки БУ</a>-->
-<!--                        </li>-->
-<!--                        <li>-->
-<!--                            <a href="#" class="header_menu_link js-open-modal" data-modal="3">Настройки</a>-->
-<!--                        </li>-->
                         <li>
                             <a href="#" class="header_menu_link js-open-modal" data-modal="4">Поддержать</a>
                         </li>
@@ -75,9 +58,6 @@
                         <li>
                             <a href="#" class="header_menu_link js-open-modal" data-modal="6">О приложении</a>
                         </li>
-<!--                        <li>-->
-<!--                            <a href="#" class="header_menu_link js-open-modal" data-modal="12">словарь "чатланина"</a>-->
-<!--                        </li>-->
                     </ul>
                 </nav>
 
@@ -153,22 +133,6 @@
                                 <p>Hermann HR4685863AA</p>
                             </div>
                         </div>
-
-<!--                        <button class="run">-->
-<!--                            &lt;!&ndash;    <marquee behavior="alternate" direction="right">Бегущая строка</marquee>&ndash;&gt;-->
-<!--                            <marquee behavior="scroll" direction="left" scrollamount=1>Насос системы охлаждения (помпа)</marquee>-->
-<!--                        </button>-->
-
-<!--                        <marquee behavior="alternate" direction="left" bgcolor="#ffcc00">-->
-<!--                            Атомистика контролирует трансцендентальный катарсис.-->
-<!--                        </marquee>-->
-
-<!--&lt;!&ndash;                        <marquee behavior="alternate" direction="left" bgcolor="#ffcc00"></marquee>&ndash;&gt;-->
-<!--                            <button class="accordion search_title">-->
-<!--                                <marquee behavior="scroll" direction="left" scrollamount=1>Насос системы охлаждения (помпа). Как правильно запресовать большой сайлентблок переднего рычага:</marquee>-->
-
-<!--&lt;!&ndash;                                Как правильно запресовать большой сайлентблок переднего рычага:&ndash;&gt;-->
-<!--                            </button>-->
 
                         <div class="panel">
                             <div class="container_detail more_modal_settings">
@@ -369,6 +333,11 @@
                     <a href="https://drive.google.com/file/d/1709DwSTZMSirbBnM9IPxXbTD1jLOK1ZX/view?usp=share_link" download>
                         <button class="link_button">62TE_PRELIMINARY_INFORMATION.pdf</button>
                     </a>
+
+                    <a href="https://drive.google.com/file/d/1ofuPFy9MhKoiVmeVZhwJIZa0NGKe9QeP/view?usp=share_link" download>
+                        <button class="link_button">Письмо DAIMLER CHRYSLER про VIN</button>
+                    </a>
+
 
                 </div>
 
@@ -634,7 +603,7 @@
                         касающимся ремонта автомобиля.
                     </p>
                     <br>
-                    <p><strong>Обновление базы: 02-05-2023</strong></p>
+                    <p><strong>Обновление базы: 04-05-2023</strong></p>
                 </div>
 
 <!--СЛОВАРЬ ЧАТЛАНИНА-->
@@ -663,14 +632,9 @@
                 <div class="overlay js-overlay-modal"></div>
 
 <!--                ПРОДОЛЖЕНИЕ -->
-
                 <div>
-<!--                    <form id="form-search" class="form-search" action="/search/" target="_blank">-->
                     <form id="form-search" class="form-search" onSubmit="return false;">
-
-                        <!--                        <input type="hidden" name="searchid" value="808327">-->
                         <input id="search" type="text" name="text" autocomplete="off" required placeholder="Поиск...">
-                        <input type="image" src="http://3.bp.blogspot.com/-4w14hQHr5yQ/Tgm6u7KwUkI/AAAAAAAACAI/Hu2poBOPx3g/s1600/search.png"/>  <!-- вместо кнопки submit -->
                     </form>
                 </div>
             </div>
@@ -686,12 +650,8 @@
 
 </div>
 
-<!--<script src="./data/maintenance.js"></script>-->
-
 <script type="module" src="app.js"></script>
 <script src="burger.js"></script>
-
-<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
 </body>
 </html>
