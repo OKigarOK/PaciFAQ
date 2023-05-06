@@ -12,6 +12,7 @@ window.onload = function () { // можно также использовать 
 
 import {HEADERS} from "./data/maintenance.js";
 import {ERRORS} from "./data/errors_list.js";
+import {USEFUL} from "./data/useful.js"
 
 // CONST
 const download = document.querySelector('.download');
@@ -29,6 +30,7 @@ const BUTTON_STATUS = {
         TEXT: 'Удалить'
     }
 }
+const usefulContainer = document.getElementById('usefulContainer')
 const myFavorites = document.getElementById('my_favorites');
 const moreContainer = document.getElementById('moreContainer')
 const setSettings = document.getElementById('setSettings');
@@ -116,6 +118,11 @@ function renderMyDetails() {
         myFavorites.innerHTML = 'Сюда можно будет добавить и здесь будут отображаться выбранные детали :)';
         MY_DETAILS = [];
     }
+}
+
+// РЕНДЕРИМ ПОЛЕЗНОЕ
+for (let el of USEFUL) {
+    createElementInUseful(el)
 }
 
 createContentMenu(HEADERS);
@@ -236,7 +243,6 @@ function createDetailsInContainer (details, container) {
 }
 
 // КОДЫ ОШИБОК В ПОИСКЕ
-
 function createCodeInSearch(item, containerItem) {
 
     const headerSubtitle = document.createElement('button');
@@ -270,7 +276,6 @@ function createCodeInSearch(item, containerItem) {
 }
 
 // ДЕТАЛЬ В ПОИСКЕ - ЗДЕСЯ ДЕЛАЕМ
-
 function createDetailInSearch(detail, containerItem) {
     const headerSubtitle = document.createElement('button');
     headerSubtitle.className = 'accordion search_title'
@@ -376,7 +381,6 @@ function createDetailInSearch(detail, containerItem) {
 }
 
 // АККОРДИОН
-
 function callAccord() {
     const acc = document.getElementsByClassName("accordion");
 
@@ -398,7 +402,6 @@ function callAccord() {
 }
 
 // ОБРАБОТКА КЛИКОВ
-
 window.onclick = function (event) {
     // event.preventDefault()
     const target = event.target; // где был клик?
@@ -493,46 +496,9 @@ window.onclick = function (event) {
     }
 
     // СБРОС НАСТРОЕК
-    // if (target.id === 'reset_settings') {
-    //     SETTINGS.VIEW = 'details_table';
-    //     SETTINGS.THEME = 'original_theme';
-    //     SETTINGS.FONT_SIZE = 'fontSizeM';
-    //
-    //     const originalTheme = document.getElementById('original_theme');
-    //     const lightTheme = document.getElementById('light_theme');
-    //     const darkTheme = document.getElementById('dark_theme');
-    //     originalTheme.checked = true;
-    //     lightTheme.checked = false;
-    //     darkTheme.checked = false;
-    //     clearThemeClass();
-    //     setTheme.classList.add(SETTINGS.THEME);
-    //     setSettings.classList.add(SETTINGS.THEME);
-    //     localStorage.setItem('theme', SETTINGS.THEME);
-    //
-    //     const fontSizeS = document.getElementById('fontSizeS');
-    //     const fontSizeM = document.getElementById('fontSizeM');
-    //     const fontSizeL = document.getElementById('fontSizeL');
-    //     fontSizeS.checked = false;
-    //     fontSizeM.checked = true;
-    //     fontSizeL.checked = false;
-    //     clearFontClasses();
-    //     setSettings.classList.add(SETTINGS.FONT_SIZE);
-    //     document.body.classList.add(SETTINGS.FONT_SIZE);
-    //     localStorage.setItem('fontSize', SETTINGS.FONT_SIZE);
-    //
-    //     const detailsListElement = document.getElementById('details_list');
-    //     const detailsTableElement = document.getElementById('details_table');
-    //     detailsTableElement.checked = false;
-    //     detailsListElement.checked = true;
-    //     localStorage.setItem('myDetails', '')
-    //     location.reload();
-    //     localStorage.setItem('view', SETTINGS.VIEW);
-    // }
-
 };
 
 // ПОИСК
-
 const inputText = document.getElementById('search')
 const searchElementsList = document.getElementById('search_menu')
 
@@ -651,52 +617,6 @@ function checkClick() {
 
 // СМЕНА НАСТРОЕК
 
-function clearThemeClass() {
-    setTheme.classList.remove('dark_theme');
-    setTheme.classList.remove('light_theme');
-    setTheme.classList.remove('original_theme');
-    setSettings.classList.remove('dark_theme');
-    setSettings.classList.remove('light_theme');
-    setSettings.classList.remove('original_theme');
-}
-
-function clearFontClasses() {
-    setSettings.classList.remove('fontSizeS');
-    setSettings.classList.remove('fontSizeM');
-    setSettings.classList.remove('fontSizeL');
-    document.body.classList.remove('fontSizeS');
-    document.body.classList.remove('fontSizeM');
-    document.body.classList.remove('fontSizeL');
-}
-
-function addFullView() {
-    const allElements = document.querySelectorAll('.container_detail')
-    for (let item of allElements) {
-        item.classList.add('full_width');
-    }
-}
-
-function removeFullView() {
-    const allElements = document.querySelectorAll('.container_detail')
-    for (let item of allElements) {
-        item.classList.remove('full_width');
-    }
-}
-
-function addDetailsWrapView() {
-    const allElements = document.querySelectorAll('.detail_options')
-    for (let item of allElements) {
-        item.classList.add('detail_options_wrap');
-    }
-}
-
-function removeDetailsWrapView() {
-    const allElements = document.querySelectorAll('.detail_options')
-    for (let item of allElements) {
-        item.classList.remove('detail_options_wrap')
-    }
-}
-
 function addDetailToAllDetailArray(item) {
     if (!ALL_DETAILS.some(e => e.detail_code === item.detail_code)) {
         item.detail_info = item.detail_info.toLowerCase();
@@ -708,20 +628,12 @@ console.log(ALL_DETAILS);
 
 // РИСУЕМ ДЕТАЛЬ В МОИ ЗАПЧАСТИ
 
-function checkDetailInFavoriteArray(itemCode) {
-
-}
-
 function findDetailInAllDetailsArray(item) {
     for (let el of ALL_DETAILS) {
         if (el.detail_code.includes(item)) {
             return el
         }
     }
-}
-
-function createElementsInMyDetails () {
-
 }
 
 function deleteDetailFromArray(code, array) {
@@ -846,5 +758,37 @@ function addedDetailsStatusToDomByPartNumber (item) {
             button.className = BUTTON_STATUS.DELETE.CLASS
             button.innerHTML = BUTTON_STATUS.DELETE.TEXT
         }
+    }
+}
+
+// СОЗДАЕМ ЭЛЕМЕНТ В "ПОЛЕЗНОЕ"
+function createElementInUseful(item) {
+    const accordionElement = document.createElement('button');
+    accordionElement.className = 'accordion search_title';
+    accordionElement.innerHTML = item.title;
+    usefulContainer.append(accordionElement);
+
+    const panelElement = document.createElement('div');
+    panelElement.className = 'panel';
+    usefulContainer.append(panelElement);
+
+    const containerElement = document.createElement('div');
+    containerElement.className = 'container_detail more_modal_settings';
+    panelElement.append(containerElement)
+
+    for (let el of item.images_links) {
+        const imageContainer = document.createElement('div');
+        imageContainer.className = 'detail_image';
+        containerElement.append(imageContainer);
+
+        const imageElement = document.createElement('img');
+        imageElement.src = el;
+        imageContainer.append(imageElement)
+    }
+
+    if (item.about) {
+        const aboutElement = document.createElement('p');
+        aboutElement.textContent = item.about;
+        containerElement.append(aboutElement)
     }
 }

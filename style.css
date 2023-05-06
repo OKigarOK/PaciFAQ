@@ -157,14 +157,15 @@ body {
     font-size: 1em;
     color: #6E7074;
     text-shadow: 0 1px 0 #FFF;
-    transition: all .2s ease-out;
+    transition: all .25s ease-in-out;
     position: relative;
     z-index: 2;
 }
 
 .form-search:focus-within input[type="text"],  /* изменение поля поиска при фокусе */
 .form-search input[type="text"]:focus {
-    width: 260px;
+    /*width: 280px;*/
+    width: Calc(100vw - 65px);
     color: #25464D;
     position: relative;
     z-index: 2;
@@ -224,6 +225,11 @@ body {
     outline: none;
     font: inherit;
     transition: 0.5s;
+
+    /*font: bold 1.5rem Arial, sans-serif;*/
+    /*color: white;*/
+    /*-webkit-text-stroke-color: wheat;*/
+    /*-webkit-text-stroke-width: 1px;*/
 }
 
 .accordion.title {
@@ -238,6 +244,7 @@ body {
     white-space: nowrap; /* Запрещаем перенос строк */
     overflow: hidden; /* Обрезаем все, что не помещается в область */
     text-overflow: ellipsis; /* Добавляем многоточие */
+
 }
 
 .frame {
@@ -375,23 +382,9 @@ button:disabled {
     text-align: center;
 }
 
-
-
 .more_modal_settings {
     font-size: 0.85em;
 }
-
-/*ПОД СВАЙПЕР*/
-/*.container_items_swipe {*/
-/*    !*width: 100%;*!*/
-/*    !*height: 100%;*!*/
-/*    !*box-sizing: border-box;*!*/
-/*    !*border-radius: 10px;*!*/
-/*    display: flex;*/
-/*    !*flex-shrink: 0;*!*/
-/*    flex-wrap: wrap;*/
-/*    !*justify-content: space-between;*!*/
-/*}*/
 
 .detail_image {
     /*width: 100%;*/
@@ -640,7 +633,6 @@ button:disabled {
 .modal_height {
     height: 75vh;
     overflow: hidden;
-
 }
 
 .modal_scroll {
@@ -648,22 +640,6 @@ button:disabled {
     height: 100%;
     overflow-y: auto;
 }
-
-/*.modal:before {*/
-/*    position: absolute;*/
-/*    top: 5px;*/
-/*    left: 5px;*/
-/*    font-size: 20px;*/
-/*    content: '\2716';*/
-/*    !*transform: rotate(45deg);*!*/
-/*    !*float: right;*!*/
-/*    !*margin: 6px;*!*/
-/*    transition: all ease 0.5s;*/
-/*    background-color: wheat;*/
-/*    padding: 0 4px;*/
-/*    color: black;*/
-/*    border-radius: 50%;*/
-/*}*/
 
 /* Стили для активных классов подложки и окна */
 .modal.active,
@@ -743,7 +719,6 @@ button:disabled {
 .original_theme .header:before {
     /*background-color: wheat;*/
     background: linear-gradient(135deg, #f5deb3 25%, #9f7c3a 70%, #FAEDD5);
-
 }
 
 .original_theme .header_burger:before,
@@ -782,150 +757,6 @@ button:disabled {
     /*background-color: wheat;*/
     background: linear-gradient(135deg, #f5deb3 25%, #9f7c3a 70%, #FAEDD5);
     color: #000000;
-}
-
-/* С В Е Т Л А Я */
-.light_theme,
-.light_theme .modal,
-.light_theme .container_detail_table,
-.light_theme .search_title {
-    /*border-color:  #333333;*/
-    border-color: #6653D9;
-    background-color: #FFFFFF;
-    color: #333333;
-}
-
-.light_theme .wrapper {
-    /*background: url("./images/main_bg_light.jpg") fixed center no-repeat;*/
-    /*background-size: contain;*/
-    /*height: Calc(100vh - 10px);*/
-}
-
-.light_theme .modal__cross,
-.light_theme .link_button {
-    background-color: #6653D9;
-    fill: #EAE6F2;
-    border-color: #6653D9;
-    color: #EAE6F2;
-}
-
-.light_theme .header:before {
-    background-color: #6653D9;
-}
-
-.light_theme .header_burger:before,
-.light_theme .header_burger:after,
-.light_theme .header_burger span {
-    background-color: #EAE6F2;
-}
-
-.light_theme .content_header {
-    background-color: #EAE9F2;
-    color: #FFFFFF;
-    border: 3px solid #6653D9;
-}
-
-.light_theme .accordion {
-    background-color: #EAE9F2;
-    color: #333333;
-}
-
-.light_theme .title {
-    border-color: #6653D9;
-    background-color: #EAE9F2;
-    color: #333333;
-}
-
-.light_theme .container_items {
-    background-color: #EAE9F2;
-}
-
-.light_theme .container_detail {
-    background-color: #FFFFFF;
-    color: #333333;
-    border-color: #333333;
-}
-
-.light_theme .detail_price,
-.light_theme .detail_more,
-.light_theme .detail_scheme,
-.light_theme .detail_favorite_add {
-    border-color: #6653D9;
-    background-color: #6653D9;
-    color: #FFFFFF;
-}
-
-/* Т Ё М Н А Я */
-.dark_theme,
-.dark_theme .modal,
-.dark_theme .container_detail_table,
-.dark_theme .search_title {
-    border-color:  #F2F2F2;
-    background-color: #17161A;
-    color: #F2F2F2;
-}
-
-.dark_theme .wrapper {
-    /*background: url("./images/chrysler_pacifica_608607.jpg") fixed center no-repeat;*/
-    /*background-size: contain;*/
-    /*height: Calc(100vh - 10px);*/
-}
-
-
-.dark_theme .modal__cross {
-    background-color: #EFEFEF;
-    fill: #000000;
-
-    /*background-color: #000000;*/
-    /*fill: #F2F2F2;*/
-}
-
-.dark_theme .header:before {
-    border-color:  #F2F2F2;
-    background-color: #2A2930;
-    color: #F2F2F2;
-}
-
-.dark_theme .header_burger:before,
-.dark_theme .header_burger:after,
-.dark_theme .header_burger span {
-    background-color: #F2F2F2;
-}
-
-.dark_theme .content_header {
-    background-color: #17161A;
-    color: #2A2930;
-    border: 3px solid #F2F2F2;
-}
-
-.dark_theme .accordion {
-    background-color: #17161A;
-    color: #F2F2F2;
-}
-
-.dark_theme .title {
-    border-color: #F2F2F2;
-    background-color: #17161A;
-    color: #F2F2F2;
-}
-
-.dark_theme .container_items {
-    background-color: #17161A;
-}
-
-.dark_theme .container_detail {
-    background-color: #17161A;
-    color: #F2F2F2;
-    border-color: #F2F2F2;
-}
-
-.dark_theme .detail_price,
-.dark_theme .detail_more,
-.dark_theme .detail_scheme,
-.dark_theme .detail_favorite_add {
-    border-color: #F2F2F2;
-    background-color: #2A2930;
-    color: #F2F2F2;
 }
 
 #reset_settings {}
