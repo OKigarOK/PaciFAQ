@@ -145,13 +145,13 @@ body {
 }
 
 .form-search input[type="text"] {  /* поле поиска */
-    width: 5em;
+    width: 5.5em;
     height: 32px;
     line-height: 32px;
     border: none;
     outline: none;
     box-shadow: none;
-    padding: 0 0 0 6px;
+    padding: 0 5px;
     background: transparent;
     font: inherit;
     font-size: 1em;
