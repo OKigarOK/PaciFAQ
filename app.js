@@ -3,7 +3,6 @@ window.onload = function () { // можно также использовать 
     download.style.display = 'none'
     const display = window.innerWidth
     if (display > 500) {
-        console.log('много');
         wrapper.style.display = 'none'
     } else {
         wrapper.style.display = 'block'
@@ -60,7 +59,6 @@ let myCountry;
 
 async function getCountry(e) {
     const o = ymaps.geolocation;
-    console.log(o);
     myCountry = o.country;
     return myCountry
 }
@@ -112,7 +110,6 @@ function renderMyDetails() {
         for (let el of MY_DETAILS) {
             createDetailCard(el, myFavorites,true,false,true, BUTTON_STATUS.DELETE, true, true)
             addedDetailsStatusToDomByPartNumber(el.detail_code);
-            console.log(el);
         }
     } else {
         myFavorites.innerHTML = 'Сюда можно будет добавить и здесь будут отображаться выбранные детали :)';
@@ -122,7 +119,7 @@ function renderMyDetails() {
 
 // РЕНДЕРИМ ПОЛЕЗНОЕ
 for (let el of USEFUL) {
-    createElementInUseful(el)
+    createElementInUseful(el, usefulContainer)
 }
 
 createContentMenu(HEADERS);
@@ -289,96 +286,12 @@ function createDetailInSearch(detail, containerItem) {
     containerItem.append(headerSubtitle);
     headerSubtitle.after(newPanelElement);
     newPanelElement.append(containerItems);
-    // setElement(detail, containerItems);
 
     // РИСУЕМ ДЕТАЛЬ
-
     createDetailCard(detail, containerItems, true, false, false, BUTTON_STATUS.ADD, true)
-
-    function setElement(detail, elementContainer) {
-        const containerDetail = document.createElement('div');
-        containerDetail.className = `container_detail more_modal_settings`;
-
-        const detailImage = document.createElement('div');
-        detailImage.className = 'detail_image';
-
-        const schemeImage = document.createElement('img');
-        schemeImage.src = detail.detail_image;
-        detailImage.append(schemeImage);
-
-        const schemeElement = document.createElement('img');
-        if (detail.detail_scheme) {
-            schemeElement.src = detail.detail_scheme;
-        }
-
-        schemeElement.hidden = true;
-        detailImage.append(schemeElement);
-
-        // НОВЬЁ
-
-        const detailCode = document.createElement('div');
-        detailCode.className = 'detail_code';
-
-        detailCode.textContent = detail.detail_code;
-        if (detail.detail_manufacturer) {
-            detailCode.textContent += ` (${detail.detail_manufacturer})`
-        }
-
-        const detailInfo = document.createElement('div');
-        detailInfo.className = 'detail_info';
-        detailInfo.innerHTML = detail.detail_info;
-
-        const detailAbout = document.createElement('div');
-        detailAbout.className = 'detail_info';
-        detailAbout.innerHTML = detail.detail_more;
-
-        const detailOptions = document.createElement('div');
-        detailOptions.className = 'detail_options';
-
-        const detailPrice = document.createElement('div');
-        detailPrice.className = 'detail_price detail_button';
-        detailPrice.textContent = 'Стоимость';
-        elementContainer.append(containerDetail);
-        containerDetail.append(detailCode);
-        containerDetail.append(detailImage);
-        containerDetail.append(detailInfo);
-        containerDetail.append(detailAbout);
-        containerDetail.append(detailOptions);
-        detailOptions.append(detailPrice);
-
-        if (detail.detail_more) {
-            const detailMore = document.createElement('div');
-            detailMore.className = 'detail_more detail_button js-open-modal';
-            detailMore.setAttribute('data-modal', '11');
-        }
-
-        if (detail.detail_scheme) {
-            const detailScheme = document.createElement('div');
-            detailScheme.className = 'detail_scheme detail_button';
-            detailScheme.textContent = 'На схеме';
-            detailOptions.append(detailScheme);
-        }
-
-        const detailFavorite = document.createElement('div');
-
-        detailFavorite.className = 'detail_favorite_add detail_button';
-        detailFavorite.textContent = 'Добавить';
-
-        for (let favoriteItem of MY_DETAILS) {
-            if (favoriteItem.detail_code === detail.detail_code) {
-                detailFavorite.className = 'detail_favorite_delete detail_button';
-                detailFavorite.textContent = 'Удалить';
-            }
-        }
-
-        if (MY_DETAILS.length === 0) {
-            detailFavorite.className = 'detail_favorite_add detail_button';
-            detailFavorite.textContent = 'Добавить';
-        }
-
-        detailOptions.append(detailFavorite);
-    }
 }
+
+// ПОЛЕЗНОЕ В "ПОИСКЕ"
 
 // АККОРДИОН
 function callAccord() {
@@ -429,8 +342,6 @@ window.onclick = function (event) {
         // СТОИМОСТЬ
         case 'detail_price detail_button':
             getCountry().then()
-            // const isCode = target.parentElement.parentElement.firstElementChild.firstElementChild.textContent
-            console.log(isCode);
 
             if (myCountry === 'Беларусь') {
                 window.open(`https://www.zap.by/carparts/search/${isCode.textContent}`, "_blank");
@@ -448,10 +359,8 @@ window.onclick = function (event) {
             target.className = BUTTON_STATUS.DELETE.CLASS;
             target.textContent = BUTTON_STATUS.DELETE.TEXT;
             MY_DETAILS.push(foundDetail)
-            console.log(MY_DETAILS);
             // ПЕРЕРИСОВАТЬ МОИ ДЕТАЛИ
             addedDetailsStatusToDomByPartNumber(isCode.textContent);
-            console.log(isCode.textContent);
             addMyDetailsToLocal(MY_DETAILS)
 
             myFavorites.innerHTML = '';
@@ -468,7 +377,6 @@ window.onclick = function (event) {
             deleteDetailFromArray(isCode.textContent, MY_DETAILS);
             addMyDetailsToLocal(MY_DETAILS)
 
-            console.log(MY_DETAILS);
             // ПЕРЕРИСОВАТЬ МОИ ДЕТАЛИ
             deleteAddedDetailsStatusToDomByPartNumber(isCode.textContent)
 
@@ -517,22 +425,20 @@ inputText.oninput = function () {
     burgerElement.classList.add('active')
     searchElementsList.classList.add('active');
     menuElement.classList.remove('active');
+    searchElementsList.innerHTML = '';
 
-    if (substring[1] === '0') {
+    if (substring[0] === 'p') {
        findErrorInArray(substring);
        callAccord();
        return;
-    } else {
-        console.log('ищем по описанию');
     }
 
     findObjectInArray(substring);
+    findObjectInUseful(substring);
     callAccord();
 }
 
 function findErrorInArray(item) {
-    searchElementsList.innerHTML = '';
-
     for (let el of ERRORS) {
         if (el.error_code.includes(item)) {
             createCodeInSearch(el, searchElementsList)
@@ -541,12 +447,17 @@ function findErrorInArray(item) {
 }
 
 function findObjectInArray(item) {
-    searchElementsList.innerHTML = '';
-
     for (let el of ALL_DETAILS) {
-
         if (el.detail_info.includes(item) || el.detail_code.includes(item)) {
             createDetailInSearch(el, searchElementsList)
+        }
+    }
+}
+
+function findObjectInUseful(item) {
+    for (let el of USEFUL) {
+        if (el.title.toLowerCase().includes(item)) {
+            createElementInUseful(el, searchElementsList)
         }
     }
 }
@@ -593,7 +504,6 @@ function checkClick() {
             item.addEventListener('click', function (event) {
 
                 const parentModal = this.closest('.modal');
-                console.log(parentModal);
                 parentModal.classList.remove('active');
                 overlay.classList.remove('active');
                 document.body.classList.remove('lock');
@@ -624,8 +534,6 @@ function addDetailToAllDetailArray(item) {
     }
 }
 
-console.log(ALL_DETAILS);
-
 // РИСУЕМ ДЕТАЛЬ В МОИ ЗАПЧАСТИ
 
 function findDetailInAllDetailsArray(item) {
@@ -646,7 +554,6 @@ function deleteDetailFromArray(code, array) {
 }
 
 // РИСУЕМ НОВЫЙ ЭЛЕМЕНТ
-
 function createDetailCard(item, container, priceButton, moreButton, addButton, addButtonStatus, imageButton, table) {
 
     const detailContainer = document.createElement('div');
@@ -738,7 +645,6 @@ function createDetailCard(item, container, priceButton, moreButton, addButton, a
 }
 
 // МЕНЯЕМ СТАТУС ДОБАВИТЬ/УДАЛИТЬ В DOM
-
 function deleteAddedDetailsStatusToDomByPartNumber (item) {
     const findCodes = document.getElementsByClassName('part_number')
     for (let el of findCodes) {
@@ -762,15 +668,15 @@ function addedDetailsStatusToDomByPartNumber (item) {
 }
 
 // СОЗДАЕМ ЭЛЕМЕНТ В "ПОЛЕЗНОЕ"
-function createElementInUseful(item) {
+function createElementInUseful(item, container) {
     const accordionElement = document.createElement('button');
     accordionElement.className = 'accordion search_title';
     accordionElement.innerHTML = item.title;
-    usefulContainer.append(accordionElement);
+    container.append(accordionElement);
 
     const panelElement = document.createElement('div');
     panelElement.className = 'panel';
-    usefulContainer.append(panelElement);
+    container.append(panelElement);
 
     const containerElement = document.createElement('div');
     containerElement.className = 'container_detail more_modal_settings';

@@ -9,12 +9,12 @@ export const USEFUL = [
         about: 'Чертежи можно скачать в "КАЧАЛКЕ"'
     },
     {
-        title: 'Вал привода замка зажигания:',
+        title: 'Вал привода замка зажигания',
         images_links: ['./images/useful/switch_actuator.gif'],
         about: ''
     },
     {
-        title: 'Все сальники раздатки AWD:',
+        title: 'Все сальники раздатки AWD',
         images_links: ['./images/useful/awd_seals.jpg'],
         about: ''
     },
@@ -24,37 +24,37 @@ export const USEFUL = [
         about: ''
     },
     {
-        title: 'Кузов в разрезе (для общего понимания):',
+        title: 'Кузов в разрезе (так, для общего понимания)',
         images_links: ['./images/useful/sectional_body.jpg'],
         about: ''
     },
     {
-        title: 'Лекало прокладки блока соленоидов:',
+        title: 'Лекало прокладки блока соленоидов',
         images_links: ['./images/useful/solenoid_block_gasket_template.jpg'],
         about: ''
     },
     {
-        title: 'Мини-катализатор своими руками:',
+        title: 'Мини-катализатор своими руками',
         images_links: ['./images/useful/handmade_catalyst.jpg'],
         about: ''
     },
     {
-        title: 'Моменты затяжки задней подвески:',
+        title: 'Моменты затяжки задней подвески',
         images_links: ['./images/useful/tightening_torques_rear_suspension.jpg'],
         about: ''
     },
     {
-        title: 'Моменты затяжки передней подвески:',
+        title: 'Моменты затяжки передней подвески',
         images_links: ['./images/useful/tightening_torques_front_suspension.jpg'],
         about: ''
     },
     {
-        title: 'Обозначения цветов проводов на схемах:',
+        title: 'Обозначения цветов проводов на схемах',
         images_links: ['./images/useful/wire_color_designation.jpg'],
         about: ''
     },
     {
-        title: 'Объемы технических жидкостей:',
+        title: 'Объемы технических жидкостей',
         images_links: ['./images/useful/fluid_capasities.jpg'],
         about: ''
     },
@@ -64,27 +64,27 @@ export const USEFUL = [
         about: ''
     },
     {
-        title: 'Параметры клиренса в стоке:',
+        title: 'Параметры клиренса в стоке',
         images_links: ['./images/useful/clearance.jpg'],
         about: ''
     },
     {
-        title: 'Передние проставки (чертеж):',
+        title: 'Передние проставки (чертеж)',
         images_links: ['./images/useful/front_spacers.jpg'],
         about: ''
     },
     {
-        title: 'Размеры всего кузова (для кузовщиков):',
+        title: 'Размеры всего кузова (для кузовщиков)',
         images_links: ['./images/useful/body_dimensions_2.jpg'],
         about: ''
     },
     {
-        title: 'Размеры "морды" кузова (для кузовщиков):',
+        title: 'Размеры "морды" кузова (для кузовщиков)',
         images_links: ['./images/useful/body_dimensions_1.jpg'],
         about: ''
     },
     {
-        title: 'Размеры сайлентблоков рычагов задней подвески (для "задротов"):',
+        title: 'Размеры сайлентблоков рычагов задней подвески (для "задротов")',
         images_links: [
             './images/useful/Poly1.jpg',
             './images/useful/Poly2.jpg',
@@ -92,22 +92,22 @@ export const USEFUL = [
         about: ''
     },
     {
-        title: 'Распиновка штатной магнитолы:',
+        title: 'Распиновка штатной магнитолы',
         images_links: ['./images/useful/car_radio_pinout.jpg'],
         about: ''
     },
     {
-        title: 'Система улавливания паров (EVAP):',
+        title: 'Система улавливания паров (EVAP)',
         images_links: ['./images/useful/vapor_recovery_system.jpg'],
         about: ''
     },
     {
-        title: 'Типы применяемых ламп:',
+        title: 'Типы применяемых ламп',
         images_links: ['./images/useful/lamps.jpg'],
         about: ''
     },
     {
-        title: 'Уровень масла АКПП в зависимости от температуры:',
+        title: 'Уровень масла АКПП в зависимости от температуры',
         images_links: ['./images/useful/automatic_transmission_oil_level.jpg'],
         about: ''
     },

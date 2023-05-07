@@ -145,7 +145,7 @@ body {
 }
 
 .form-search input[type="text"] {  /* поле поиска */
-    width: 6em;
+    width: 5em;
     height: 32px;
     line-height: 32px;
     border: none;
@@ -165,7 +165,7 @@ body {
 .form-search:focus-within input[type="text"],  /* изменение поля поиска при фокусе */
 .form-search input[type="text"]:focus {
     /*width: 280px;*/
-    width: Calc(100vw - 65px);
+    width: Calc(100vw - 60px);
     color: #25464D;
     position: relative;
     z-index: 2;
