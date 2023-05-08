@@ -2572,6 +2572,14 @@ const LEVERS_AND_PULLS = [
         detail_more: 'Отличная шаровая, но ооооооооочень дорогая. Имеет смысл поискать что-то подешевле',
     },
     {
+        detail_info: 'Шаровая опора переднего рычага',
+        detail_code: '2020-CAR',
+        detail_manufacturer: 'Febest',
+        detail_image: './images/manufacturer/febest/photo_2023-05-07_14-20-00.jpg',
+        detail_scheme: './images/details/silent_blocks_of_levers/ball_joint.gif',
+        detail_more: '',
+    },
+    {
         detail_info: 'Задний рычаг, "банан"',
         detail_code: '246037-3',
         detail_manufacturer: 'Polcar/SRLine',
@@ -2727,6 +2735,14 @@ const STABILIZER = [
         detail_more: 'Лучший вариант стоек по цене и как ходят, а ходят отлично',
     },
     {
+        detail_info: 'Передние стойки стабилизатора',
+        detail_code: '2023-CAR',
+        detail_manufacturer: 'Febest',
+        detail_image: './images/manufacturer/febest/photo_2023-05-07_14-20-00.jpg',
+        detail_scheme: './images/details/stabilizer/front_link_stabilizer_bar.gif',
+        detail_more: '',
+    },
+    {
         detail_info: 'Задние стойки стабилизатора',
         detail_code: '5600059SX',
         detail_manufacturer: 'Stellox',
@@ -2784,9 +2800,9 @@ const STEERING_TIPS = [
     },
     {
         detail_info: 'Рулевой наконечник',
-        detail_code: '2021CAR',
+        detail_code: '2021-CAR',
         detail_manufacturer: 'Febest',
-        detail_image: './images/details/steering_tip/steering_tip_febest_2021CAR.jpg',
+        detail_image: './images/manufacturer/febest/photo_2023-05-07_14-20-00.jpg',
         detail_scheme: './images/details/steering_tip/steering_tip.gif',
         detail_more: 'ХЗ как ходит, но народ ставит',
     },
@@ -2865,6 +2881,14 @@ const TIE_ROD = [
         detail_code: 'MES80646',
         detail_manufacturer: 'Mevotech',
         detail_image: './images/details/tie_rods/tie_rod_mevotech_MES80646.jpg',
+        detail_scheme: './images/details/tie_rods/tie_rod.gif',
+        detail_more: '',
+    },
+    {
+        detail_info: 'Рулевая тяга',
+        detail_code: '2022-PAC',
+        detail_manufacturer: 'Febest',
+        detail_image: './images/manufacturer/febest/photo_2023-05-07_14-20-00.jpg',
         detail_scheme: './images/details/tie_rods/tie_rod.gif',
         detail_more: '',
     },
@@ -3304,16 +3328,6 @@ const AIR_CONDITIONER = [
     },
 ]
 
-const QWERTY = [
-    {
-        detail_info: '',
-        detail_code: '',
-        detail_manufacturer: '',
-        detail_image: './images/details/',
-        detail_scheme: './images/details/',
-        detail_more: '',
-    },
-]
 
 export const HEADERS = [
     {
