@@ -34,6 +34,11 @@ export const USEFUL = [
         about: ''
     },
     {
+        title: 'Маркировка шин',
+        images_links: ['./images/useful/photo_2023-04-24_13-25-32.jpg'],
+        about: ''
+    },
+    {
         title: 'Мини-катализатор своими руками',
         images_links: ['./images/useful/handmade_catalyst.jpg'],
         about: ''
@@ -54,6 +59,11 @@ export const USEFUL = [
         about: ''
     },
     {
+        title: '"Обманка" второй лямбды',
+        images_links: ['./images/useful/photo_2023-05-07_14-31-04.jpg'],
+        about: 'GMK-2005 (MG-Race)'
+    },
+    {
         title: 'Объемы технических жидкостей',
         images_links: ['./images/useful/fluid_capasities.jpg'],
         about: ''
@@ -66,6 +76,11 @@ export const USEFUL = [
     {
         title: 'Параметры клиренса в стоке',
         images_links: ['./images/useful/clearance.jpg'],
+        about: ''
+    },
+    {
+        title: 'Параметры давления кондиционера в зависимости от температуры',
+        images_links: ['./images/useful/Image1.png'],
         about: ''
     },
     {
@@ -94,6 +109,11 @@ export const USEFUL = [
     {
         title: 'Распиновка штатной магнитолы',
         images_links: ['./images/useful/car_radio_pinout.jpg'],
+        about: ''
+    },
+    {
+        title: 'Регулировка углов установки колес (развал/схождение)',
+        images_links: ['./images/useful/photo_2023-05-07_15-32-46.jpg'],
         about: ''
     },
     {
