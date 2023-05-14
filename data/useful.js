@@ -1,5 +1,10 @@
 export const USEFUL = [
     {
+        title: 'Аммортизаторы на капот',
+        images_links: ['./images/useful/fda1cf2s-960.jpg'],
+        about: 'Если вам надоела подкапотная "кочерга", самое время поставить аммортизаторы FENOX A901001C3'
+    },
+    {
         title: '"Болванки" в заднюю балку замест сайлентлоков (чертежи)',
         images_links: [
             './images/useful/front_bushing_detail.jpg',

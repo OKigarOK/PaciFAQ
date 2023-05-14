@@ -1097,6 +1097,14 @@ const OIL_PRESSURE_SWITCH = [
         detail_scheme: './images/details/oil_pressure_switch/oil_pressure_switch.gif',
         detail_more: '',
     },
+    {
+        detail_info: 'Датчик давления масла',
+        detail_code: 'QF00T01679',
+        detail_manufacturer: 'Quattro freni',
+        detail_image: './images/details/oil_pressure_switch/QF00T01679.jpg',
+        detail_scheme: './images/details/oil_pressure_switch/oil_pressure_switch.gif',
+        detail_more: 'Говорят неплохо ходить и стоит совсем нядораха',
+    },
 ]
 
 const OIL_DIPSTICK = [
@@ -1723,6 +1731,14 @@ const TRANSMISSION_CASE_COVERS = [
         detail_scheme: './images/details/transmission_case_cover/case_cover.gif',
         detail_more: '',
     },
+    {
+        detail_info: 'Крышка дифференциала АКПП',
+        detail_code: '4659520',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/transmission_case_cover/pan_transaxle_differential_oil_mopar_4659520.jpg',
+        detail_scheme: './images/details/transmission_case_cover/pan_transaxle_differential_oil.gif',
+        detail_more: 'Только оригинальная крышка за космоденьги. Имеет смысл подварить или поискать Б/У',
+    },
 ]
 
 const SHIFT_SOLENOID = [
@@ -1849,6 +1865,14 @@ const REAR_REDUCER = [
         detail_image: './images/details/rear_gear_seal/rear_gear_seal_febest_95IEW40641113C.jpg',
         detail_scheme: './images/details/rear_gear_seal/rear_gear_seal.jpg',
         detail_more: '',
+    },
+    {
+        detail_info: 'Сапун заднего редуктора',
+        detail_code: '04809686AA',
+        detail_manufacturer: 'Mopar',
+        detail_image: './images/details/rear_gear_seal/rear_gear_breather_mopar_04809686AA.jpg',
+        detail_scheme: './images/details/rear_gear_seal/rear_gear_breather.jpg',
+        detail_more: 'Необходимо "потеребунькать" дабы пропускал воздух. Стоит на редукторе и вязкомуфте',
     },
 ]
 
