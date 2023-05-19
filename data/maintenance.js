@@ -1167,7 +1167,7 @@ const MOUNTS = [
         detail_manufacturer: 'Patron',
         detail_image: './images/details/cushion_engine_supports/cushion_engine_support_patron_PSE3273.jpg',
         detail_scheme: './images/details/cushion_engine_supports/cushion_engine_support.gif',
-        detail_more: 'Подушка двигателя от Мерса. Крекление болтом, нужно будет докупить',
+        detail_more: 'Подушка двигателя от Мерса. Крепление болтом, нужно будет докупить',
     },
     {
         detail_info: 'Боковая опора двигателя, подушка',
@@ -2994,6 +2994,14 @@ const STEERING_RACK_BOOTS = [
         detail_scheme: './images/details/steering_rack_boot/steering_rack_boot.gif',
         detail_more: 'Говорят становится как родной',
     },
+    {
+        detail_info: 'Пыльник рулевой рейки',
+        detail_code: '12757',
+        detail_manufacturer: 'Febi',
+        detail_image: './images/details/steering_rack_boot/steering_rack_boot_febi_12757.jpg',
+        detail_scheme: './images/details/steering_rack_boot/steering_rack_boot.gif',
+        detail_more: 'Становится как родной. Родной пластик, а этот резина. Смотрим как паходить',
+    },
 ]
 
 // ДЕТАЛИ КУЗОВА
@@ -3297,11 +3305,27 @@ const GENERATOR = [
         // detail_scheme: './images/details/',
         detail_more: 'подшипник генератора! 15x35x11',
     },
+    {
+        detail_info: 'Регулятор напряжения',
+        detail_code: 'TB-ND167',
+        detail_manufacturer: 'Mobiletron',
+        detail_image: './images/details/generator/voltage_regulator_mobiletron_TB-ND167.jpg',
+        // detail_scheme: './images/details/',
+        detail_more: '',
+    },
 ]
 
 // КОНДИЦИОНЕР
 
 const AIR_CONDITIONER = [
+    {
+        detail_info: 'Компрессор кондиционера',
+        detail_code: 'KCN0400YU',
+        detail_manufacturer: 'Krauf',
+        detail_image: './images/details/air_conditioning_compressor/air_conditioning_compressor_krauf_KCN0400YU.jpg',
+        detail_scheme: './images/details/air_conditioning_compressor/air_conditioning_compressor.gif',
+        detail_more: 'Становится и работает без проблем. Нужно только перекинуть крышки с родного кондиционера. Идёт в комплекте с муфтой',
+    },
     {
         detail_info: 'Подшипник компрессора кондиционера',
         detail_code: '30BD5222DUM6',
@@ -3351,7 +3375,6 @@ const AIR_CONDITIONER = [
         detail_more: '',
     },
 ]
-
 
 export const HEADERS = [
     {
@@ -4084,5 +4107,3 @@ export const HEADERS = [
         ],
     },
 ]
-
-// console.log(HEADERS);

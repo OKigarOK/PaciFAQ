@@ -11,7 +11,8 @@ window.onload = function () { // можно также использовать 
 
 import {HEADERS} from "./data/maintenance.js";
 import {ERRORS} from "./data/errors_list.js";
-import {USEFUL} from "./data/useful.js"
+import {USEFUL} from "./data/useful.js";
+import {ALIEXPRESS} from "./data/aliexpress.js";
 
 // CONST
 const download = document.querySelector('.download');
@@ -29,9 +30,10 @@ const BUTTON_STATUS = {
         TEXT: 'Удалить'
     }
 }
-const usefulContainer = document.getElementById('usefulContainer')
+const usefulContainer = document.getElementById('usefulContainer');
 const myFavorites = document.getElementById('my_favorites');
-const moreContainer = document.getElementById('moreContainer')
+const aliexpressContainer = document.getElementById('aliexpress_container');
+const moreContainer = document.getElementById('moreContainer');
 const setSettings = document.getElementById('setSettings');
 const setTheme = document.getElementById('theme');
 
@@ -120,6 +122,11 @@ function renderMyDetails() {
 // РЕНДЕРИМ ПОЛЕЗНОЕ
 for (let el of USEFUL) {
     createElementInUseful(el, usefulContainer)
+}
+
+// РЕНДЕРИМ АЛИЭКСПРЕСС
+for (let el of ALIEXPRESS) {
+    createElementInAliexpress(el, aliexpressContainer)
 }
 
 createContentMenu(HEADERS);
@@ -435,6 +442,7 @@ inputText.oninput = function () {
 
     findObjectInArray(substring);
     findObjectInUseful(substring);
+    findObjectInAliexpress(substring);
     callAccord();
 }
 
@@ -458,6 +466,14 @@ function findObjectInUseful(item) {
     for (let el of USEFUL) {
         if (el.title.toLowerCase().includes(item)) {
             createElementInUseful(el, searchElementsList)
+        }
+    }
+}
+
+function findObjectInAliexpress(item) {
+    for (let el of ALIEXPRESS) {
+        if (el.title.toLowerCase().includes(item)) {
+            createElementInAliexpress(el, searchElementsList)
         }
     }
 }
@@ -649,9 +665,9 @@ function deleteAddedDetailsStatusToDomByPartNumber (item) {
     const findCodes = document.getElementsByClassName('part_number')
     for (let el of findCodes) {
         if (el.innerHTML === item) {
-            const button = el.parentElement.parentElement.lastElementChild.lastElementChild
-            button.className = BUTTON_STATUS.ADD.CLASS
-            button.innerHTML = BUTTON_STATUS.ADD.TEXT
+            const button = el.parentElement.parentElement.lastElementChild.lastElementChild;
+            button.className = BUTTON_STATUS.ADD.CLASS;
+            button.innerHTML = BUTTON_STATUS.ADD.TEXT;
         }
     }
 }
@@ -660,9 +676,9 @@ function addedDetailsStatusToDomByPartNumber (item) {
     const findCodes = document.getElementsByClassName('part_number')
     for (let el of findCodes) {
         if (el.innerHTML === item) {
-            const button = el.parentElement.parentElement.lastElementChild.lastElementChild
-            button.className = BUTTON_STATUS.DELETE.CLASS
-            button.innerHTML = BUTTON_STATUS.DELETE.TEXT
+            const button = el.parentElement.parentElement.lastElementChild.lastElementChild;
+            button.className = BUTTON_STATUS.DELETE.CLASS;
+            button.innerHTML = BUTTON_STATUS.DELETE.TEXT;
         }
     }
 }
@@ -680,7 +696,7 @@ function createElementInUseful(item, container) {
 
     const containerElement = document.createElement('div');
     containerElement.className = 'container_detail more_modal_settings';
-    panelElement.append(containerElement)
+    panelElement.append(containerElement);
 
     for (let el of item.images_links) {
         const imageContainer = document.createElement('div');
@@ -689,12 +705,62 @@ function createElementInUseful(item, container) {
 
         const imageElement = document.createElement('img');
         imageElement.src = el;
-        imageContainer.append(imageElement)
+        imageContainer.append(imageElement);
     }
 
     if (item.about) {
         const aboutElement = document.createElement('p');
         aboutElement.textContent = item.about;
-        containerElement.append(aboutElement)
+        containerElement.append(aboutElement);
+    }
+}
+
+// ЭЛЕМЕНТ В "ПЛЮШКИ"
+function createElementInAliexpress(item, container) {
+    const accordionElement = document.createElement('button');
+    accordionElement.className = 'accordion search_title';
+    accordionElement.innerHTML = item.title;
+    container.append(accordionElement);
+
+    const panelElement = document.createElement('div');
+    panelElement.className = 'panel';
+    container.append(panelElement);
+
+    const containerElement = document.createElement('div');
+    containerElement.className = 'container_detail more_modal_settings';
+    panelElement.append(containerElement);
+
+    const imageContainer = document.createElement('div');
+    imageContainer.className = 'detail_image';
+    containerElement.append(imageContainer);
+
+    const imageElement = document.createElement('img');
+    imageElement.src = item.image;
+    imageContainer.append(imageElement);
+
+    if (item.about) {
+        const aboutElement = document.createElement('p');
+        aboutElement.textContent = item.about;
+        containerElement.append(aboutElement);
+    }
+
+    if (item.link_product) {
+        const buttonLink = document.createElement('a');
+        buttonLink.href = item.link_product;
+        const buttonElement = document.createElement('button');
+        buttonElement.className = 'link_button';
+        buttonElement.textContent = 'AliExpress';
+        containerElement.append(buttonLink);
+        buttonLink.append(buttonElement);
+    }
+
+    if (item.link_more) {
+        const buttonLink = document.createElement('a');
+        buttonLink.href = item.link_more;
+        const buttonElement = document.createElement('button');
+        buttonElement.className = 'link_button';
+        buttonElement.textContent = 'Подробнее';
+        containerElement.append(buttonLink);
+        buttonLink.append(buttonElement);
     }
 }
