@@ -2469,14 +2469,14 @@ const SHOCK_ABSORBERS = [
 ]
 
 const SHOCK_ABSORBER_MOUNT = [
-    {
-        detail_info: 'Передние развальные болты',
-        detail_code: 'K90474',
-        detail_manufacturer: 'Moog',
-        detail_image: './images/details/breakup_bolts/breakup_bolts_moog_K90474.jpg',
-        detail_scheme: './images/details/breakup_bolts/breakup_bolts.gif',
-        detail_more: '',
-    },
+    // {
+    //     detail_info: 'Передние развальные болты',
+    //     detail_code: 'K90474',
+    //     detail_manufacturer: 'Moog',
+    //     detail_image: './images/details/breakup_bolts/breakup_bolts_moog_K90474.jpg',
+    //     detail_scheme: './images/details/breakup_bolts/breakup_bolts.gif',
+    //     detail_more: '',
+    // },
     {
         detail_info: 'Передние развальные болты',
         detail_code: '05013687AB',
