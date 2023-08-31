@@ -182,11 +182,11 @@ const V_RIBBED_BELTS = [
     },
     {
         detail_info: 'Ремень в обход кондиционера',
-        detail_code: '6PK2050...2100',
+        detail_code: '6PK2050...2080',
         detail_manufacturer: '',
         detail_image: './images/details/v_ribbed_belts/v-ribbed-belt_bypass.jpg',
         detail_scheme: './images/details/v_ribbed_belts/v-ribbed-belt.gif',
-        detail_more: 'длина в обход компрессора кондиционера 2050-2100мм, можно любой ремень, натяжитель компенсирует длину.',
+        detail_more: 'длина в обход компрессора кондиционера 2050-2080мм, можно любой ремень, натяжитель компенсирует длину.',
     },
 ]
 
